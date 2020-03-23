@@ -5,7 +5,7 @@ namespace App;
 trait RecordsActivity
 {
     /**
-     * The project's old attributes.
+     * The article's old attributes.
      *
      * @var array
      */
@@ -55,28 +55,28 @@ trait RecordsActivity
     }
 
     /**
-     * Record activity for a project.
+     * Record activity for a article.
      *
      * @param string $description
      */
     public function recordActivity($description)
     {
         $this->activity()->create([
-            'user_id' => ($this->project ?? $this)->owner->id,
+            'user_id' => ($this->article ?? $this)->owner->id,
             'description' => $description,
             'changes' => $this->activityChanges(),
-            'project_id' => class_basename($this) === 'Project' ? $this->id : $this->project_id
+            'article_id' => class_basename($this) === 'Article' ? $this->id : $this->article_id
         ]);
     }
 
     /**
-     * The activity feed for the project.
+     * The activity feed for the article.
      *
      * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function activity()
     {
-        if (get_class($this) === Project::class) {
+        if (get_class($this) === Article::class) {
             return $this->hasMany(Activity::class)->latest();
         }
 

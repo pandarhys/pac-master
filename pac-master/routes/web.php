@@ -16,12 +16,12 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::resource('projects', 'ProjectsController');
+    Route::resource('article', 'ArticlesController');
 
-    Route::post('/projects/{project}/tasks', 'ProjectTasksController@store');
-    Route::patch('/projects/{project}/tasks/{task}', 'ProjectTasksController@update');
+    Route::post('/article/{article}/tasks', 'ArticleTasksController@store');
+    Route::patch('/article/{article}/tasks/{task}', 'ArticleTasksController@update');
 
-    Route::post('/projects/{project}/invitations', 'ProjectInvitationsController@store');
+    Route::post('/article/{article}/invitations', 'ArticleInvitationsController@store');
 
     Route::get('/home', 'HomeController@index')->name('home');
 });

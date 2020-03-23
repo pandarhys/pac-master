@@ -20,7 +20,7 @@ class Task extends Model
      *
      * @var array
      */
-    protected $touches = ['project'];
+    protected $touches = ['article'];
 
     /**
      * The attributes that should be cast to native types.
@@ -33,7 +33,7 @@ class Task extends Model
 
     /**
      * Model events that should trigger new activity.
-     * 
+     *
      * @var array
      */
     protected static $recordableEvents = ['created', 'deleted'];
@@ -59,13 +59,13 @@ class Task extends Model
     }
 
     /**
-     * Get the owning project.
+     * Get the owning article.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function project()
+    public function article()
     {
-        return $this->belongsTo(Project::class);
+        return $this->belongsTo(Article::class);
     }
 
     /**
@@ -75,6 +75,6 @@ class Task extends Model
      */
     public function path()
     {
-        return "/projects/{$this->project->id}/tasks/{$this->id}";
+        return "/article/{$this->article->id}/tasks/{$this->id}";
     }
 }

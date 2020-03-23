@@ -2,7 +2,7 @@
 
 namespace Tests\Unit;
 
-use App\Project;
+use App\Article;
 use App\Task;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -12,11 +12,11 @@ class TaskTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    function it_belongs_to_a_project()
+    function it_belongs_to_a_article()
     {
         $task = factory(Task::class)->create();
 
-        $this->assertInstanceOf(Project::class, $task->project);
+        $this->assertInstanceOf(Article::class, $task->article);
     }
 
     /** @test */
@@ -24,7 +24,7 @@ class TaskTest extends TestCase
     {
         $task = factory(Task::class)->create();
 
-        $this->assertEquals("/projects/{$task->project->id}/tasks/{$task->id}", $task->path());
+        $this->assertEquals("/article/{$task->article->id}/tasks/{$task->id}", $task->path());
     }
 
     /** @test */

@@ -3,7 +3,7 @@
         Invite a User
     </h3>
 
-    <form method="POST" action="{{ $project->path() . '/invitations' }}">
+    <form method="POST" action="{{ $article->path() . '/invitations' }}">
         @csrf
 
         <div class="mb-3">

@@ -2,45 +2,45 @@
 
 namespace App\Http\Controllers;
 
-use App\Project;
+use App\Article;
 use App\Task;
 
-class ProjectTasksController extends Controller
+class ArticleTasksController extends Controller
 {
     /**
-     * Add a task to the given project.
+     * Add a task to the given article.
      *
-     * @param Project $project
+     * @param Article $article
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
-    public function store(Project $project)
+    public function store(Article $article)
     {
-        $this->authorize('update', $project);
+        $this->authorize('update', $article);
 
         request()->validate(['body' => 'required']);
 
-        $project->addTask(request('body'));
+        $article->addTask(request('body'));
 
-        return redirect($project->path());
+        return redirect($article->path());
     }
 
     /**
-     * Update the project.
+     * Update the article.
      *
-     * @param  Project $project
+     * @param  Article $article
      * @param  Task    $task
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
-    public function update(Project $project, Task $task)
+    public function update(Article $article, Task $task)
     {
-        $this->authorize('update', $task->project);
+        $this->authorize('update', $task->article);
 
         $task->update(request()->validate(['body' => 'required']));
 
         request('completed') ? $task->complete() : $task->incomplete();
 
-        return redirect($project->path());
+        return redirect($article->path());
     }
 }

@@ -2,28 +2,28 @@
 
 namespace Tests\Setup;
 
-use App\Project;
+use App\Article;
 use App\Task;
 use App\User;
 
-class ProjectFactory
+class ArticleFactory
 {
     /**
-     * The number of tasks for the project.
+     * The number of tasks for the article.
      *
      * @var int
      */
     protected $tasksCount = 0;
 
     /**
-     * The owner of the project.
+     * The owner of the article.
      *
      * @var User
      */
     protected $user;
 
     /**
-     * Set the number of tasks to create for the project.
+     * Set the number of tasks to create for the article.
      *
      * @param  int $count
      * @return $this
@@ -36,7 +36,7 @@ class ProjectFactory
     }
 
     /**
-     * Set the owner of the new project.
+     * Set the owner of the new article.
      *
      * @param  User $user
      * @return $this
@@ -51,19 +51,19 @@ class ProjectFactory
     /**
      * Arrange the world.
      *
-     * @return Project
+     * @return Article
      */
     public function create()
     {
-        $project = factory(Project::class)->create([
+        $article = factory(Article::class)->create([
             'owner_id' => $this->user ?? factory(User::class)
         ]);
 
         factory(Task::class, $this->tasksCount)->create([
-            'project_id' => $project
+            'article_id' => $article
         ]);
 
-        return $project;
+        return $article;
     }
 }
 

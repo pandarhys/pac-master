@@ -4,12 +4,12 @@
     <header class="flex items-center mb-6 pb-4">
         <div class="flex justify-between items-end w-full">
             <p class="text-muted font-light">
-                <a href="/projects" class="text-muted no-underline hover:underline">My Projects</a>
-                / {{ $project->title }}
+                <a href="/articles" class="text-muted no-underline hover:underline">My Articles</a>
+                / {{ $article->title }}
             </p>
 
             <div class="flex items-center">
-                @foreach ($project->members as $member)
+                @foreach ($article->members as $member)
                     <img
                         src="{{ gravatar_url($member->email) }}"
                         alt="{{ $member->name }}'s avatar"
@@ -17,11 +17,11 @@
                 @endforeach
 
                 <img
-                    src="{{ gravatar_url($project->owner->email) }}"
-                    alt="{{ $project->owner->name }}'s avatar"
+                    src="{{ gravatar_url($article->owner->email) }}"
+                    alt="{{ $article->owner->name }}'s avatar"
                     class="rounded-full w-8 mr-2">
 
-                <a href="{{ $project->path().'/edit' }}" class="button ml-4">Edit Project</a>
+                <a href="{{ $article->path().'/edit' }}" class="button ml-4">Edit Article</a>
             </div>
         </div>
     </header>
@@ -33,7 +33,7 @@
                     <h2 class="text-lg text-muted font-light mb-3">Tasks</h2>
 
                     {{-- tasks --}}
-                    @foreach ($project->tasks as $task)
+                    @foreach ($article->tasks as $task)
                         <div class="card mb-3">
                             <form method="POST" action="{{ $task->path() }}">
                                 @method('PATCH')
@@ -48,7 +48,7 @@
                     @endforeach
 
                     <div class="card mb-3">
-                        <form action="{{ $project->path() . '/tasks' }}" method="POST">
+                        <form action="{{ $article->path() . '/tasks' }}" method="POST">
                             @csrf
 
                             <input placeholder="Add a new task..." class="text-default bg-card w-full" name="body">
@@ -60,7 +60,7 @@
                     <h2 class="text-lg text-muted font-light mb-3">General Notes</h2>
 
                     {{-- general notes --}}
-                    <form method="POST" action="{{ $project->path() }}">
+                    <form method="POST" action="{{ $article->path() }}">
                         @csrf
                         @method('PATCH')
 
@@ -69,7 +69,7 @@
                             class="card text-default w-full mb-4"
                             style="min-height: 200px"
                             placeholder="Anything special that you want to make a note of?"
-                        >{{ $project->notes }}</textarea>
+                        >{{ $article->notes }}</textarea>
 
                         <button type="submit" class="button">Save</button>
                     </form>
@@ -79,11 +79,11 @@
             </div>
 
             <div class="lg:w-1/4 px-3 lg:py-8">
-                @include ('projects.card')
-                @include ('projects.activity.card')
+                @include ('article.card')
+                @include ('article.activity.card')
 
-                @can ('manage', $project)
-                    @include ('projects.invite')
+                @can ('manage', $article)
+                    @include ('article.invite')
                 @endcan
             </div>
         </div>

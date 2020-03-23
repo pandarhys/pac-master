@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Project extends Model
+class Article extends Model
 {
     use RecordsActivity;
 
@@ -16,17 +16,17 @@ class Project extends Model
     protected $guarded = [];
 
     /**
-     *  The path to the project.
+     *  The path to the article.
      *
      * @return string
      */
     public function path()
     {
-        return "/projects/{$this->id}";
+        return "/article/{$this->id}";
     }
 
     /**
-     * The owner of the project.
+     * The owner of the article.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -36,7 +36,7 @@ class Project extends Model
     }
 
     /**
-     * The tasks associated with the project.
+     * The tasks associated with the article.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -46,7 +46,7 @@ class Project extends Model
     }
 
     /**
-     * Add a task to the project.
+     * Add a task to the article.
      *
      * @param array $tasks
      * @return \Illuminate\Database\Eloquent\Collection
@@ -57,7 +57,7 @@ class Project extends Model
     }
 
     /**
-     * Add a task to the project.
+     * Add a task to the article.
      *
      * @param  string $body
      * @return \Illuminate\Database\Eloquent\Model
@@ -68,7 +68,7 @@ class Project extends Model
     }
 
     /**
-     * Invite a user to the project.
+     * Invite a user to the article.
      *
      * @param \App\User $user
      */
@@ -84,6 +84,6 @@ class Project extends Model
      */
     public function members()
     {
-        return $this->belongsToMany(User::class, 'project_members')->withTimestamps();
+        return $this->belongsToMany(User::class, 'article_members')->withTimestamps();
     }
 }

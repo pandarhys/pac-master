@@ -31,23 +31,23 @@ class User extends Authenticatable
 	];
 
 	/**
-	 * Get all projects owner by the user.
+	 * Get all article owner by the user.
 	 *
 	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
 	 */
-	public function projects()
+	public function articles()
 	{
-		return $this->hasMany(Project::class, 'owner_id')->latest('updated_at');
+		return $this->hasMany(Article::class, 'owner_id')->latest('updated_at');
 	}
 
     /**
-     * Get all projects that the user has access to.
-     * 
+     * Get all article that the user has access to.
+     *
      * @return mixed
      */
-	public function accessibleProjects()
+	public function accessibleArticles()
 	{
-	    return Project::where('owner_id', $this->id)
+	    return Article::where('owner_id', $this->id)
             ->orWhereHas('members', function ($query) {
                 $query->where('user_id', $this->id);
             })

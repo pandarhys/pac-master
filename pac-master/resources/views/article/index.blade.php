@@ -3,21 +3,21 @@
 @section('content')
     <header class="flex items-center mb-3 pb-4">
         <div class="flex justify-between items-end w-full">
-            <h2 class="text-muted text-base font-light">My Projects</h2>
+            <h2 class="text-muted text-base font-light">My Articles</h2>
 
-            <a href="/projects/create" class="button" @click.prevent="$modal.show('new-project')">New Project</a>
+            <a href="/articles/create" class="button" @click.prevent="$modal.show('new-article')">New Article</a>
         </div>
     </header>
 
     <main class="lg:flex lg:flex-wrap -mx-3">
-        @forelse ($projects as $project)
+        @forelse ($articles as $article)
             <div class="lg:w-1/3 px-3 pb-6">
-                @include ('projects.card')
+                @include ('article.card')
             </div>
         @empty
-            <div>No projects yet.</div>
+            <div>No articles yet.</div>
         @endforelse
     </main>
 
-    <new-project-modal></new-project-modal>
+    <new-article-modal></new-article-modal>
 @endsection

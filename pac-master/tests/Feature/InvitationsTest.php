@@ -3,7 +3,7 @@
 namespace Tests\Feature;
 
 use App\User;
-use Facades\Tests\Setup\ProjectFactory;
+use Facades\Tests\Setup\ArticleFactory;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -14,45 +14,45 @@ class InvitationsTest extends TestCase
     /** @test */
     function non_owners_may_not_invite_users()
     {
-        $project = ProjectFactory::create();
+        $article = ArticleFactory::create();
         $user = factory(User::class)->create();
 
-        $assertInvitationForbidden = function () use ($user, $project) {
+        $assertInvitationForbidden = function () use ($user, $article) {
             $this->actingAs($user)
-                ->post($project->path() . '/invitations')
+                ->post($article->path() . '/invitations')
                 ->assertStatus(403);
         };
 
         $assertInvitationForbidden();
 
-        $project->invite($user);
+        $article->invite($user);
 
         $assertInvitationForbidden();
     }
 
     /** @test */
-    function a_project_owner_can_invite_a_user()
+    function a_article_owner_can_invite_a_user()
     {
-        $project = ProjectFactory::create();
+        $article = ArticleFactory::create();
 
         $userToInvite = factory(User::class)->create();
 
-        $this->actingAs($project->owner)
-            ->post($project->path() . '/invitations', [
+        $this->actingAs($article->owner)
+            ->post($article->path() . '/invitations', [
                 'email' => $userToInvite->email
             ])
-            ->assertRedirect($project->path());
+            ->assertRedirect($article->path());
 
-        $this->assertTrue($project->members->contains($userToInvite));
+        $this->assertTrue($article->members->contains($userToInvite));
     }
 
     /** @test */
     function the_email_address_must_be_associated_with_a_valid_birdboard_account()
     {
-        $project = ProjectFactory::create();
+        $article = ArticleFactory::create();
 
-        $this->actingAs($project->owner)
-            ->post($project->path() . '/invitations', [
+        $this->actingAs($article->owner)
+            ->post($article->path() . '/invitations', [
                 'email' => 'notauser@example.com'
             ])
             ->assertSessionHasErrors([
@@ -61,15 +61,15 @@ class InvitationsTest extends TestCase
     }
 
     /** @test */
-    function invited_users_may_update_project_details()
+    function invited_users_may_update_article_details()
     {
-        $project = ProjectFactory::create();
+        $article = ArticleFactory::create();
 
-        $project->invite($newUser = factory(User::class)->create());
+        $article->invite($newUser = factory(User::class)->create());
 
         $this
             ->actingAs($newUser)
-            ->post(action('ProjectTasksController@store', $project), $task = ['body' => 'Foo task']);
+            ->post(action('ArticleTasksController@store', $article), $task = ['body' => 'Foo task']);
 
         $this->assertDatabaseHas('tasks', $task);
     }

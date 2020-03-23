@@ -2,11 +2,11 @@
 
 Tailwind - The Utility-First CSS Framework
 
-A project by Adam Wathan (@adamwathan), Jonathan Reinink (@reinink),
+A article by Adam Wathan (@adamwathan), Jonathan Reinink (@reinink),
 David Hemphill (@davidhemphill) and Steve Schoger (@steveschoger).
 
 Welcome to the Tailwind config file. This is where you can customize
-Tailwind specifically for your project. Don't be intimidated by the
+Tailwind specifically for your article. Don't be intimidated by the
 length of this file. It's really just a big JavaScript object and
 we've done our very best to explain each section.
 
@@ -31,9 +31,9 @@ let defaultConfig = require('tailwindcss/defaultConfig')();
 | Colors                                    https://tailwindcss.com/docs/colors
 |-------------------------------------------------------------------------------
 |
-| Here you can specify the colors used in your project. To get you started,
+| Here you can specify the colors used in your article. To get you started,
 | we've provided a generous palette of great looking colors that are perfect
-| for prototyping, but don't hesitate to change them for your project. You
+| for prototyping, but don't hesitate to change them for your article. You
 | own these colors, nothing will break if you change everything about them.
 |
 | We've used literal color names ("red", "blue", etc.) for the default
@@ -73,10 +73,10 @@ module.exports = {
   |-----------------------------------------------------------------------------
   |
   | Screens in Tailwind are translated to CSS media queries. They define the
-  | responsive breakpoints for your project. By default Tailwind takes a
+  | responsive breakpoints for your article. By default Tailwind takes a
   | "mobile first" approach, where each screen size represents a minimum
   | viewport width. Feel free to have as few or as many screens as you
-  | want, naming them in whatever way you'd prefer for your project.
+  | want, naming them in whatever way you'd prefer for your article.
   |
   | Tailwind also allows for more complex screen definitions, which can be
   | useful in certain situations. Be sure to see the full responsive
@@ -98,7 +98,7 @@ module.exports = {
   | Fonts                                    https://tailwindcss.com/docs/fonts
   |-----------------------------------------------------------------------------
   |
-  | Here is where you define your project's font stack, or font families.
+  | Here is where you define your article's font stack, or font families.
   | Keep in mind that Tailwind doesn't actually load any fonts for you.
   | If you're using custom fonts you'll need to import them prior to
   | defining them here.
@@ -188,7 +188,7 @@ module.exports = {
   |
   | Here is where you define your font weights. We've provided a list of
   | common font weight names with their respective numeric scale values
-  | to get you started. It's unlikely that your project will require
+  | to get you started. It's unlikely that your article will require
   | all of these, so we recommend removing those you don't need.
   |
   | Class name: .font-{weight}
@@ -254,7 +254,7 @@ module.exports = {
   |
   | Here is where you define your text colors. By default these use the
   | color palette we defined above, however you're welcome to set these
-  | independently if that makes sense for your project.
+  | independently if that makes sense for your article.
   |
   | Class name: .text-{color}
   | CSS property: color
@@ -270,7 +270,7 @@ module.exports = {
   |
   | Here is where you define your background colors. By default these use
   | the color palette we defined above, however you're welcome to set
-  | these independently if that makes sense for your project.
+  | these independently if that makes sense for your article.
   |
   | Class name: .bg-{color}
   | CSS property: background-color
@@ -290,8 +290,8 @@ module.exports = {
   |-----------------------------------------------------------------------------
   |
   | Here is where you define your background sizes. We provide some common
-  | values that are useful in most projects, but feel free to add other sizes
-  | that are specific to your project here as well.
+  | values that are useful in most article, but feel free to add other sizes
+  | that are specific to your article here as well.
   |
   | Class name: .bg-{size}
   | CSS property: background-size
@@ -333,7 +333,7 @@ module.exports = {
   |
   | Here is where you define your border colors. By default these use the
   | color palette we defined above, however you're welcome to set these
-  | independently if that makes sense for your project.
+  | independently if that makes sense for your article.
   |
   | Take note that border colors require a special "default" value set
   | as well. This is the color that will be used when you do not
@@ -843,7 +843,7 @@ module.exports = {
   |-----------------------------------------------------------------------------
   |
   | Here is where you can register any plugins you'd like to use in your
-  | project. Tailwind's built-in `container` plugin is enabled by default to
+  | article. Tailwind's built-in `container` plugin is enabled by default to
   | give you a Bootstrap-style responsive container component out of the box.
   |
   | Be sure to view the complete plugin documentation to learn more about how

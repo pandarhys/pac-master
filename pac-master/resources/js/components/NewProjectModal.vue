@@ -1,5 +1,5 @@
 <template>
-    <modal name="new-project" classes="p-10 bg-card rounded-lg" height="auto">
+    <modal name="new-article" classes="p-10 bg-card rounded-lg" height="auto">
         <h1 class="font-normal mb-16 text-center text-2xl">Let’s Start Something New</h1>
 
         <form @submit.prevent="submit">
@@ -57,8 +57,8 @@
             </div>
 
             <footer class="flex justify-end">
-                <button type="button" class="button is-outlined mr-4" @click="$modal.hide('new-project')">Cancel</button>
-                <button class="button">Create Project</button>
+                <button type="button" class="button is-outlined mr-4" @click="$modal.hide('new-article')">Cancel</button>
+                <button class="button">Create Article</button>
             </footer>
         </form>
     </modal>
@@ -90,7 +90,7 @@
                     delete this.form.originalData.tasks;
                 }
 
-                this.form.submit('/projects')
+                this.form.submit('/article')
                     .then(response => location = response.data.message);
             }
         }

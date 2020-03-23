@@ -3,7 +3,7 @@
 namespace Tests\Unit;
 
 use App\User;
-use Facades\Tests\Setup\ProjectFactory;
+use Facades\Tests\Setup\ArticleFactory;
 use Tests\TestCase;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -13,31 +13,31 @@ class UserTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function a_user_has_projects()
+    public function a_user_has_articles()
     {
         $user = factory('App\User')->create();
 
-        $this->assertInstanceOf(Collection::class, $user->projects);
+        $this->assertInstanceOf(Collection::class, $user->articles);
     }
 
     /** @test */
-    function a_user_has_accessible_projects()
+    function a_user_has_accessible_articles()
     {
         $john = $this->signIn();
 
-        ProjectFactory::ownedBy($john)->create();
+        ArticleFactory::ownedBy($john)->create();
 
-        $this->assertCount(1, $john->accessibleProjects());
+        $this->assertCount(1, $john->accessibleArticles());
 
         $sally = factory(User::class)->create();
         $nick = factory(User::class)->create();
 
-        $project = tap(ProjectFactory::ownedBy($sally)->create())->invite($nick);
+        $article = tap(ArticleFactory::ownedBy($sally)->create())->invite($nick);
 
-        $this->assertCount(1, $john->accessibleProjects());
+        $this->assertCount(1, $john->accessibleArticles());
 
-        $project->invite($john);
+        $article->invite($john);
 
-        $this->assertCount(2, $john->accessibleProjects());
+        $this->assertCount(2, $john->accessibleArticles());
     }
 }

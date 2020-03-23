@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Validation\Rule;
 
-class ProjectInvitationRequest extends FormRequest
+class ArticleInvitationRequest extends FormRequest
 {
     /**
      * The key to be used for the view error bag.
@@ -22,7 +22,7 @@ class ProjectInvitationRequest extends FormRequest
      */
     public function authorize()
     {
-        return Gate::allows('manage', $this->route('project'));
+        return Gate::allows('manage', $this->route('article'));
     }
 
     /**
