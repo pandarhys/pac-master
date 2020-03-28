@@ -8,7 +8,7 @@
 
         <form
             method="POST"
-            action="/articles"
+            action="/article"
         >
             @include ('article.form', [
                 'article' => new App\Article,

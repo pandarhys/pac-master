@@ -8,6 +8,9 @@ Vue.use(VModal);
 Vue.component('theme-switcher', require('./components/ThemeSwitcher.vue').default);
 Vue.component('new-article-modal', require('./components/NewArticleModal.vue').default);
 Vue.component('dropdown', require('./components/Dropdown.vue').default);
+//Vue.component('vueDropzone', require('./components/vueDropzone').default);
+
+import './components/vue2Dropzone.css'
 
 new Vue({
     el: '#app'
