@@ -81,11 +81,11 @@
 
             <div class="content">
                 <div class="title">
-                    Birdboard
+                    The People's Archive Of Costume
                 </div>
 
                 <div class="links">
-                    <a href="https://laracasts.com/series/build-a-laravel-app-with-tdd">Watch the Laracasts</a>
+                    <a href="/home">Enter</a>
                 </div>
             </div>
         </div>

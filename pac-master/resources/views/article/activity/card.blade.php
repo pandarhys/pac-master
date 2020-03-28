@@ -2,7 +2,7 @@
     <ul class="text-xs list-reset">
         @foreach ($article->activity as $activity)
             <li class="{{ $loop->last ? '' : 'pb-2' }}">
-                @include ("article{$activity->description}")
+                @include ("article.activity.{$activity->description}")
                 <span class="text-muted">{{ $activity->created_at->diffForHumans(null, true) }}</span>
             </li>
         @endforeach

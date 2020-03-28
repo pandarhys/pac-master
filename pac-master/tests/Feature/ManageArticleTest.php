@@ -90,7 +90,7 @@ class ManageArticlesTest extends TestCase
             ->delete($article->path())
             ->assertRedirect('/article');
 
-        $this->assertDatabaseMissing('article', $article->only('id'));
+        $this->assertDatabaseMissing('articles', $article->only('id'));
     }
 
     /** @test */
@@ -104,7 +104,7 @@ class ManageArticlesTest extends TestCase
 
         $this->get($article->path().'/edit')->assertOk();
 
-        $this->assertDatabaseHas('article', $attributes);
+        $this->assertDatabaseHas('articles', $attributes);
     }
 
     /** @test */
@@ -115,12 +115,13 @@ class ManageArticlesTest extends TestCase
         $this->actingAs($article->owner)
             ->patch($article->path(), $attributes = ['notes' => 'Changed']);
 
-        $this->assertDatabaseHas('article', $attributes);
+        $this->assertDatabaseHas('articles', $attributes);
     }
 
     /** @test */
     public function a_user_can_view_their_article()
     {
+        $this->withExceptionHandling();
         $article = ArticleFactory::create();
 
         $this->actingAs($article->owner)

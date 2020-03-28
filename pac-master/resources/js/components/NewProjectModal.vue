@@ -65,12 +65,12 @@
 </template>
 
 <script>
-    import BirdboardForm from './BirdboardForm';
+    import PACForm from './PACForm';
 
     export default {
         data() {
             return {
-                form: new BirdboardForm({
+                form: new PACForm({
                     title: '',
                     description: '',
                     tasks: [

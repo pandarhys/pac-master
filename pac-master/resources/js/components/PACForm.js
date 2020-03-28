@@ -1,4 +1,4 @@
-class BirdboardForm {
+class PACForm {
     constructor(data) {
         this.originalData = JSON.parse(JSON.stringify(data));
 
@@ -53,4 +53,4 @@ class BirdboardForm {
     }
 }
 
-export default BirdboardForm;
+export default PACForm;
