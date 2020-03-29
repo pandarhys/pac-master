@@ -5,7 +5,7 @@
         <div class="flex justify-between items-end w-full">
             <h2 class="text-muted text-base font-light">My Articles</h2>
 
-            <a href="/articles/create" class="button" @click.prevent="$modal.show('new-article')">New Article</a>
+            <a href="/article/create" class="button" @click.prevent="$modal.show('new-article')">New Article</a>
         </div>
     </header>
 
@@ -18,6 +18,5 @@
             <div>No articles yet.</div>
         @endforelse
     </main>
-
     <new-article-modal></new-article-modal>
 @endsection

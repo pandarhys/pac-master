@@ -7,7 +7,6 @@
                 <div class="flex-1 mr-4">
                     <div class="mb-4">
                         <label for="title" class="text-sm block mb-2">Title</label>
-
                         <input
                             type="text"
                             id="title"
@@ -15,7 +14,8 @@
                             :class="form.errors.title ? 'border-error' : 'border-muted-light'"
                             v-model="form.title">
 
-                        <span class="text-xs italic text-error" v-if="form.errors.title" v-text="form.errors.title[0]"></span>
+                        <span class="text-xs italic text-error" v-if="form.errors.title"
+                              v-text="form.errors.title[0]"></span>
                     </div>
 
                     <div class="mb-4">
@@ -28,7 +28,14 @@
                             rows="7"
                             v-model="form.description"></textarea>
 
-                        <span class="text-xs italic text-error" v-if="form.errors.description" v-text="form.errors.description[0]"></span>
+                        <span class="text-xs italic text-error" v-if="form.errors.description"
+                              v-text="form.errors.description[0]"></span>
+
+
+                    </div>
+
+                    <div class="mb-4">
+                        <FileUpload />
                     </div>
                 </div>
 
@@ -47,7 +54,8 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" class="mr-2">
                             <g fill="none" fill-rule="evenodd" opacity=".307">
                                 <path stroke="#000" stroke-opacity=".012" stroke-width="0" d="M-3-3h24v24H-3z"></path>
-                                <path fill="#000" d="M9 0a9 9 0 0 0-9 9c0 4.97 4.02 9 9 9A9 9 0 0 0 9 0zm0 16c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7zm1-11H8v3H5v2h3v3h2v-3h3V8h-3V5z"></path>
+                                <path fill="#000"
+                                      d="M9 0a9 9 0 0 0-9 9c0 4.97 4.02 9 9 9A9 9 0 0 0 9 0zm0 16c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7zm1-11H8v3H5v2h3v3h2v-3h3V8h-3V5z"></path>
                             </g>
                         </svg>
 
@@ -57,7 +65,8 @@
             </div>
 
             <footer class="flex justify-end">
-                <button type="button" class="button is-outlined mr-4" @click="$modal.hide('new-article')">Cancel</button>
+                <button type="button" class="button is-outlined mr-4" @click="$modal.hide('new-article')">Cancel
+                </button>
                 <button class="button">Create Article</button>
             </footer>
         </form>
@@ -66,6 +75,7 @@
 
 <script>
     import PACForm from './PACForm';
+    import FileUpload from './FileUpload.vue'
 
     export default {
         data() {
@@ -74,25 +84,30 @@
                     title: '',
                     description: '',
                     tasks: [
-                        { body: ''},
+                        {body: ''},
                     ]
                 })
             };
         },
-
         methods: {
             addTask() {
-                this.form.tasks.push({ body: '' });
+                this.form.tasks.push({body: ''});
             },
 
             async submit() {
-                if (! this.form.tasks[0].body) {
+                if (!this.form.tasks[0].body) {
                     delete this.form.originalData.tasks;
                 }
 
                 this.form.submit('/article')
                     .then(response => location = response.data.message);
             }
+        },
+        components:{
+             FileUpload
         }
     }
 </script>
+<style lang="css">
+    @import './vue2Dropzone.css';
+</style>
