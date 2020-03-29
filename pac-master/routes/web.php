@@ -24,6 +24,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/article/{article}/invitations', 'ArticleInvitationsController@store');
 
     Route::get('/home', 'HomeController@index')->name('home');
+
 });
 
 Auth::routes();

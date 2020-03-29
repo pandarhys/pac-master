@@ -35,7 +35,7 @@
                     </div>
 
                     <div class="mb-4">
-                        <vue-dropzone />
+                        <FileUpload />
                     </div>
                 </div>
 
@@ -75,7 +75,7 @@
 
 <script>
     import PACForm from './PACForm';
-    import vueDropzone from "./vueDropzone.vue";
+    import FileUpload from './FileUpload.vue'
 
     export default {
         data() {
@@ -104,7 +104,7 @@
             }
         },
         components:{
-             vueDropzone
+             FileUpload
         }
     }
 </script>

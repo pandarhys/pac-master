@@ -18,6 +18,5 @@
             <div>No articles yet.</div>
         @endforelse
     </main>
-
     <new-article-modal></new-article-modal>
 @endsection

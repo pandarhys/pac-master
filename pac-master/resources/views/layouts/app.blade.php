@@ -67,8 +67,7 @@
 
                                     <form id="logout-form" method="POST" action="/logout">
                                         @csrf
-
-                                        <button type="submit" class="dropdown-menu-link w-full text-left">Logout</button>
+                                        <button type="subdmit" class="dropdown-menu-link w-full text-left">Logout</button>
                                     </form>
                                 </dropdown>
                             @endguest
