@@ -1796,18 +1796,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _PACForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PACForm */ "./resources/js/components/PACForm.js");
-/* harmony import */ var _vueDropzone__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./vueDropzone */ "./resources/js/components/vueDropzone.vue");
+/* harmony import */ var _vueDropzone_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./vueDropzone.vue */ "./resources/js/components/vueDropzone.vue");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-//
-//
-//
-//
-//
 //
 //
 //
@@ -1935,7 +1930,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }()
   },
   components: {
-    'vueDropzone': _vueDropzone__WEBPACK_IMPORTED_MODULE_2__["default"]
+    vueDropzone: _vueDropzone_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   }
 });
 
@@ -2005,8 +2000,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      dropOptions: {
-        url: "https://httpbin.org/post"
+      config: {
+        url: "https://appdividend.com"
       }
     };
   },
@@ -4108,21 +4103,7 @@ var render = function() {
                   : _vm._e()
               ]),
               _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "mb-4" },
-                [
-                  _c("vue-dropzone", {
-                    attrs: {
-                      options: _vm.dropOptions,
-                      "include-styling": false,
-                      id: "drop1"
-                    },
-                    on: { "vdropzone-thumbnail": _vm.thumbnail }
-                  })
-                ],
-                1
-              )
+              _c("div", { staticClass: "mb-4" }, [_c("vue-dropzone")], 1)
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "flex-1 ml-4" }, [
@@ -4307,7 +4288,7 @@ var render = function() {
   return _c(
     "div",
     { attrs: { id: "app" } },
-    [_c("vue-dropzone", { attrs: { id: "drop1", options: _vm.dropOptions } })],
+    [_c("vue-dropzone", { attrs: { id: "upload", options: _vm.config } })],
     1
   )
 }
@@ -15582,8 +15563,8 @@ __webpack_require__.r(__webpack_exports__);
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.use(vue_js_modal__WEBPACK_IMPORTED_MODULE_2___default.a);
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('theme-switcher', __webpack_require__(/*! ./components/ThemeSwitcher.vue */ "./resources/js/components/ThemeSwitcher.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('new-article-modal', __webpack_require__(/*! ./components/NewArticleModal.vue */ "./resources/js/components/NewArticleModal.vue")["default"]);
-vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('dropdown', __webpack_require__(/*! ./components/Dropdown.vue */ "./resources/js/components/Dropdown.vue")["default"]);
-vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('vueDropzone', __webpack_require__(/*! ./components/vueDropzone */ "./resources/js/components/vueDropzone.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('dropdown', __webpack_require__(/*! ./components/Dropdown.vue */ "./resources/js/components/Dropdown.vue")["default"]); //Vue.component('vueDropzone', require('./components/vueDropzone').default);
+
 
 new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
   el: '#app'
