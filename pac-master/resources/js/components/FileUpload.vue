@@ -1,9 +1,7 @@
 <template>
-    <div id="app">
         <div id="uploader">
             <vue-dropzone id="upload" :options="config"  @vdropzone-complete="afterComplete"></vue-dropzone>
         </div>
-    </div>
 </template>
 
 <script>
