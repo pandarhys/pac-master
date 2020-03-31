@@ -1918,6 +1918,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -4255,7 +4256,7 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("Cancel\n            ")]
+              [_vm._v("Cancel\n                ")]
             ),
             _vm._v(" "),
             _c("button", { staticClass: "button" }, [_vm._v("Create Article")])
@@ -15578,8 +15579,8 @@ vue__WEBPACK_IMPORTED_MODULE_1___default.a.use(vue_js_modal__WEBPACK_IMPORTED_MO
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.config.productionTip = false;
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('theme-switcher', __webpack_require__(/*! ./components/ThemeSwitcher.vue */ "./resources/js/components/ThemeSwitcher.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('new-article-modal', __webpack_require__(/*! ./components/NewArticleModal.vue */ "./resources/js/components/NewArticleModal.vue")["default"]);
-vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('dropdown', __webpack_require__(/*! ./components/Dropdown.vue */ "./resources/js/components/Dropdown.vue")["default"]); // Vue.component('FileUpload', require('./components/FileUpload.vue    ').default);
-
+vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('dropdown', __webpack_require__(/*! ./components/Dropdown.vue */ "./resources/js/components/Dropdown.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('FileUpload', __webpack_require__(/*! ./components/FileUpload.vue */ "./resources/js/components/FileUpload.vue")["default"]);
 
 new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
   el: '#app'

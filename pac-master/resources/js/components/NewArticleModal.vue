@@ -35,7 +35,8 @@
                     </div>
 
                     <div class="mb-4">
-                        <FileUpload />
+<!--                        <FileUpload />-->
+                        <FileUpload></FileUpload>
                     </div>
                 </div>
 
