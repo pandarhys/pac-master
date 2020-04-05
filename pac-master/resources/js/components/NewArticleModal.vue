@@ -83,7 +83,8 @@
                     title: '',
                     description: '',
                     tasks: [
-                        {body: ''},
+                        {body: ''}
+                        ,
                     ]
                 })
             };
