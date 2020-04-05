@@ -4,8 +4,8 @@
     <header class="flex items-center mb-3 pb-4">
         <div class="flex justify-between items-end w-full">
             <h2 class="text-muted text-base font-light">My Articles</h2>
-
             <a href="/article/create" class="button" @click.prevent="$modal.show('new-article')">New Article</a>
+            <a href="/article/create" class="button" @click.prevent="$modal.show('new-article2')">New Article</a>
         </div>
     </header>
 
@@ -19,4 +19,5 @@
         @endforelse
     </main>
     <new-article-modal></new-article-modal>
+    <new-article-modal2></new-article-modal2>
 @endsection
