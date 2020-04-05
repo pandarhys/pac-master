@@ -1,6 +1,6 @@
 <template>
     <div id="ArticleForm">
-        <form @submit.prevent="onSubmit" @keydown="form.errors.clear($event.target.name)">
+        <form @submit.prevent="Submit" @keydown="form.errors.clear($event.target.name)">
             <div class="flex">
                 <div class="flex-1 mr-4">
                     <div class="mb-4">
@@ -10,7 +10,7 @@
                             id="title"
                             class="border p-2 text-xs block w-full rounded"
                             v-model="form.title">
-                        <span class="help is-danger" v-if="form.errors.has('title')"
+                        <span class="text-xs italic text-error" v-if="form.errors.has('title')"
                               v-text="form.errors.get('title')"></span>
                     </div>
 
@@ -21,7 +21,7 @@
                             class="border border-muted-light p-2 text-xs block w-full rounded"
                             rows="7"
                             v-model="form.description"></textarea>
-                        <span class="help is-danger" v-if="form.errors.has('description')"
+                        <span class="text-xs italic text-error" v-if="form.errors.has('description')"
                               v-text="form.errors.get('description')"></span>
                     </div>
 
@@ -52,14 +52,13 @@
             };
         },
         methods: {
-            onSubmit() {
+            async Submit() {
                 this.form
                     .post('/article')
-                    .then(response => location = response.data.message);
+                    .then(article => this.$emit('completed', article));
             }
         }
     }
 </script>
 <style scoped>
-
 </style>

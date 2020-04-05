@@ -94,12 +94,10 @@ class Form {
             axios[requestType](url, this.data())
                 .then(response => {
                     this.onSuccess(response.data);
-
                     resolve(response.data);
                 })
                 .catch(error => {
                     this.onFail(error.response.data);
-
                     reject(error.response.data);
                 });
         });
@@ -112,8 +110,6 @@ class Form {
      * @param {object} data
      */
     onSuccess(data) {
-        alert(data.message); // temporary
-
         this.reset();
     }
 
@@ -124,7 +120,7 @@ class Form {
      * @param {object} errors
      */
     onFail(errors) {
-        this.errors.record(errors);
+        this.errors.record(errors.errors);
     }
 }
 export default Form;
