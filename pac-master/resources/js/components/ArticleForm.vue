@@ -28,6 +28,13 @@
                     <div class="mb-4">
                         <FileUpload></FileUpload>
                     </div>
+
+                    <div class="mb-4">
+                        <div class="example">
+                            <h3>Default datepicker</h3>
+                            <PACDatePicker placeholder="Select Date"></PACDatePicker>
+                        </div>
+                    </div>
                 </div>
                 <footer class="flex justify-end">
                     <button type="button" class="button is-outlined mr-4" @click="$modal.hide('new-article2')">Cancel
