@@ -1,6 +1,6 @@
 <template>
         <div id="uploader">
-            <vue-dropzone id="upload" :options="config"  @vdropzone-complete="afterComplete"></vue-dropzone>
+            <vue-dropzone id="upload" :options="config" :placeholderMsg="DefaultMsg"  @vdropzone-complete="afterComplete"></vue-dropzone>
         </div>
 </template>
 
@@ -8,10 +8,13 @@
     import vueDropzone from "vue2-dropzone";
 
     export default {
+        props:['placeholderMsg'],
         data: () => ({
             config: {
-                url: "http://127.0.0.1:8000/api/image"
-            }
+                url: "http://127.0.0.1:8000/api/image",
+                dictDefaultMessage: "test"
+            },
+            DefaultMsg: "Default Message"
         }),
         components: {
             vueDropzone
@@ -20,6 +23,9 @@
             afterComplete(file) {
                 console.log(file);
             }
+        },
+        mounted() {
+           this.config.dictDefaultMessage = 'placeholderMsg';
         }
     };
 </script>
