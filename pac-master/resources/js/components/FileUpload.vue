@@ -1,25 +1,30 @@
-<template>
-        <div id="uploader">
-            <vue-dropzone id="upload" :options="config"  @vdropzone-complete="afterComplete"></vue-dropzone>
-        </div>
-</template>
+    <template>
+            <div id="uploader">
+                <vue-dropzone id="upload" :options="config" @vdropzone-complete="afterComplete"></vue-dropzone>
+            </div>
+    </template>
 
-<script>
-    import vueDropzone from "vue2-dropzone";
+    <script>
+        import vueDropzone from "vue2-dropzone";
 
-    export default {
-        data: () => ({
-            config: {
-                url: "http://127.0.0.1:8000/api/image"
+        export default {
+            props: ['message'],
+            data: () => ({
+                config: {
+                    url: "http://127.0.0.1:8000/api/image",
+                    dictDefaultMessage: ""
+                },
+            }),
+            components: {
+                vueDropzone
+            },
+            methods: {
+                afterComplete(file) {
+                    console.log(file);
+                }
+            },
+            created(){
+                 this.config.dictDefaultMessage = this.message;
             }
-        }),
-        components: {
-            vueDropzone
-        },
-        methods: {
-            afterComplete(file) {
-                console.log(file);
-            }
-        }
-    };
-</script>
+        };
+    </script>
