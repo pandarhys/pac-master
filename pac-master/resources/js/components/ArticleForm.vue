@@ -38,12 +38,7 @@
                     </div>
 
                     <div class="mb-4">
-                        <FileUpload placeholderMsg="Good, clear photographs are the backbone of the archive.
-                                                Ideally showing the front, back, side, a few close-ups, and some shots of the inside. If you can put it on a mannequin that’s great (with appropriate underwear, even better!), if not then try a padded coat hanger or just neatly laid out on a flat surface.
-                                                They don’t need to be official studio shots, but good natural light, and a plain background (a plain wall, or a sheet) will help show the garment at its best; as will giving a steam with an iron (if suitable) and neatly arranging any pleats or gathers.
-                                                Taking the photo on a level with the garment rather than at an angle stops the image from getting distorted.
-                                                You can also scan a sketch of the garment to show more detail, or pictures of other related items such as original packaging or a photo on the original wearer.
-                            "></FileUpload>
+                        <FileUpload message='body it'></FileUpload>
                     </div>
                     <footer class="flex justify-end">
                         <button type="button" class="button is-outlined mr-4" @click="$modal.hide('new-article2')">Cancel

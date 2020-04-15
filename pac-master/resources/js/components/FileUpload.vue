@@ -1,31 +1,30 @@
-<template>
-        <div id="uploader">
-            <vue-dropzone id="upload" :options="config" :placeholderMsg="DefaultMsg"  @vdropzone-complete="afterComplete"></vue-dropzone>
-        </div>
-</template>
+    <template>
+            <div id="uploader">
+                <vue-dropzone id="upload" :options="config" @vdropzone-complete="afterComplete"></vue-dropzone>
+            </div>
+    </template>
 
-<script>
-    import vueDropzone from "vue2-dropzone";
+    <script>
+        import vueDropzone from "vue2-dropzone";
 
-    export default {
-        props:['placeholderMsg'],
-        data: () => ({
-            config: {
-                url: "http://127.0.0.1:8000/api/image",
-                dictDefaultMessage: "test"
+        export default {
+            props: ['message'],
+            data: () => ({
+                config: {
+                    url: "http://127.0.0.1:8000/api/image",
+                    dictDefaultMessage: ""
+                },
+            }),
+            components: {
+                vueDropzone
             },
-            DefaultMsg: "Default Message"
-        }),
-        components: {
-            vueDropzone
-        },
-        methods: {
-            afterComplete(file) {
-                console.log(file);
+            methods: {
+                afterComplete(file) {
+                    console.log(file);
+                }
+            },
+            created(){
+                 this.config.dictDefaultMessage = this.message;
             }
-        },
-        mounted() {
-           this.config.dictDefaultMessage = 'placeholderMsg';
-        }
-    };
-</script>
+        };
+    </script>

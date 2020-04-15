@@ -12,14 +12,17 @@ require('laravel-mix-tailwind');
  | file for the application as well as bundling up all the JS files.
  |
  */
-mix.webpackConfig({
-    devServer: {
-        proxy: {
-            '*': 'http://localhost:8000'
-        }
-    }
-});
-
+//
+// mix.options({
+//     hmrOptions: {
+//         host: 'http://127.0.0.1:8000',
+//         port: 8000
+//     }
+// });
+//
+if (mix.inProduction()) {
+    mix.version();
+}
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .tailwind();
