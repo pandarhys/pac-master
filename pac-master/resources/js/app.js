@@ -4,11 +4,15 @@ import Vue from 'vue';
 import VModal from 'vue-js-modal';
 import axios from 'axios';
 import Form from './core/Form.js';
+import VTooltip from 'v-tooltip';
+Vue.use(VModal);
+Vue.use(VTooltip);
 
 window.vue = Vue;
 window.axios = axios;
 window.form = Form;
-Vue.use(VModal);
+
+
 
 Vue.config.productionTip = false;
 Vue.config.devtools = true;
@@ -26,5 +30,7 @@ import './components/vue2Dropzone.css';
 new Vue({
     el: '#app'
 });
+
+
 
 
