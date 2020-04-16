@@ -71,6 +71,7 @@
                     </div>
 
                     <div class="mb-4">
+                        <country-select v-model="country" :country="country" topCountry="UK" />
                         <label for="origin" class="text-sm block mb-2">Place of Origin</label>
                         <input
                             type="text"
@@ -142,10 +143,11 @@
     import Form from '../core/Form.js'
     import Datepicker from 'vuejs-datepicker';
     import VTooltip from 'v-tooltip'
+    import vueCountryRegionSelect from 'vue-country-region-select'
 
     export default {
         components: {
-            Datepicker,VTooltip
+            Datepicker,VTooltip,vueCountryRegionSelect
         },
         data() {
             return {
@@ -159,7 +161,8 @@
                 }),
                 toolTipMsg: 'test',
                 formInput: '',
-                sewingMethods: ['Hand Sewn', 'Machine Sewn', 'Knitted', 'Unknown']
+                sewingMethods: ['Hand Sewn', 'Machine Sewn', 'Knitted', 'Unknown'],
+                country: '',
             };
         },
         methods: {

@@ -6,8 +6,9 @@ import axios from 'axios';
 import Form from './core/Form.js';
 import VTooltip from 'v-tooltip';
 import PrettyCheckbox from 'pretty-checkbox-vue';
+import vueCountryRegionSelect from 'vue-country-region-select'
 
-
+Vue.use(vueCountryRegionSelect)
 Vue.use(VModal);
 Vue.use(VTooltip);
 Vue.use(PrettyCheckbox);
