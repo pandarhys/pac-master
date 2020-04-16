@@ -5,9 +5,12 @@ import VModal from 'vue-js-modal';
 import axios from 'axios';
 import Form from './core/Form.js';
 import VTooltip from 'v-tooltip';
+import PrettyCheckbox from 'pretty-checkbox-vue';
+
+
 Vue.use(VModal);
 Vue.use(VTooltip);
-
+Vue.use(PrettyCheckbox);
 window.vue = Vue;
 window.axios = axios;
 window.form = Form;

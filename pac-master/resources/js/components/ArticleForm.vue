@@ -1,97 +1,4 @@
 <style scoped>
-    .tooltip {
-        display: block !important;
-        z-index: 10000;
-
-    .tooltip-inner {
-        background: black;
-        color: white;
-        border-radius: 16px;
-        padding: 5px 10px 4px;
-    }
-
-    .tooltip-arrow {
-        width: 0;
-        height: 0;
-        border-style: solid;
-        position: absolute;
-        margin: 5px;
-        border-color: black;
-        z-index: 1;
-    }
-
-    &[x-placement^="top"] {
-         margin-bottom: 5px;
-
-    .tooltip-arrow {
-        border-width: 5px 5px 0 5px;
-        border-left-color: transparent !important;
-        border-right-color: transparent !important;
-        border-bottom-color: transparent !important;
-        bottom: -5px;
-        left: calc(50% - 5px);
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-    }
-
-    &[x-placement^="bottom"] {
-         margin-top: 5px;
-
-    .tooltip-arrow {
-        border-width: 0 5px 5px 5px;
-        border-left-color: transparent !important;
-        border-right-color: transparent !important;
-        border-top-color: transparent !important;
-        top: -5px;
-        left: calc(50% - 5px);
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-    }
-
-    &[x-placement^="right"] {
-         margin-left: 5px;
-
-    .tooltip-arrow {
-        border-width: 5px 5px 5px 0;
-        border-left-color: transparent !important;
-        border-top-color: transparent !important;
-        border-bottom-color: transparent !important;
-        left: -5px;
-        top: calc(50% - 5px);
-        margin-left: 0;
-        margin-right: 0;
-    }
-    }
-
-    &[x-placement^="left"] {
-         margin-right: 5px;
-
-    .tooltip-arrow {
-        border-width: 5px 0 5px 5px;
-        border-top-color: transparent !important;
-        border-right-color: transparent !important;
-        border-bottom-color: transparent !important;
-        right: -5px;
-        top: calc(50% - 5px);
-        margin-left: 0;
-        margin-right: 0;
-    }
-    }
-
-    &[aria-hidden='true'] {
-         visibility: hidden;
-         opacity: 0;
-         transition: opacity .15s, visibility .15s;
-     }
-
-    &[aria-hidden='false'] {
-         visibility: visible;
-         opacity: 1;
-         transition: opacity .15s;
-     }
-    }
 </style>
 
 <template>
@@ -144,12 +51,37 @@
                             id="physicalDescription"
                             class="border border-muted-light p-2 text-xs block w-full rounded"
                             rows="7"
-                            placeholder="What does it look like? Start basic, what type of garment is it, and what is it chiefly made of? Work your way down the garment, consider; neckline"
+                            placeholder="What does it look like? Start basic, what type of garment is it, and what is it chiefly made of? Work your way down the garment, consider; neckline sleeves, chest, waistline, pockets, length, and is it full or fitted? How is it decorated (if at all), and how does it fasten? If you have an idea but are unsure, put “possibly” before the response, e.g. “possibly cotton lawn.” When describing left or right it is from the wearer’s perspective not the viewers."
                             v-model="form.physicalDescription">
                         </textarea>
                         <span class="text-xs italic text-error" v-if="form.errors.has('physicalDescription')"
                               v-text="form.errors.get('physicalDescription')"></span>
                     </div>
+
+                    <div class="mb-4">
+                        <label for="designer" class="text-sm block mb-2">Designer/Maker</label>
+                        <input
+                            type="text"
+                            id="designer"
+                            class="border p-2 text-xs block w-full rounded"
+                            placeholder="Does it have a label, or do you know who made it?"
+                            v-model="form.designer">
+                        <span class="text-xs italic text-error" v-if="form.errors.has('designer')"
+                              v-text="form.errors.get('designer')"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="origin" class="text-sm block mb-2">Place of Origin</label>
+                        <input
+                            type="text"
+                            id="origin"
+                            class="border p-2 text-xs block w-full rounded"
+                            placeholder="what country?"
+                            v-model="form.origin">
+                        <span class="text-xs italic text-error" v-if="form.errors.has('origin')"
+                              v-text="form.errors.get('origin')"></span>
+                    </div>
+
 <!--                    one word descriptions-->
                     <div class="mb-4">
                         <div class="title flex justify-between items-center">
@@ -183,6 +115,7 @@
                             </span>
                     </div>
                     <div class="mb-4">
+                        <p-check name="check" color="success" v-model="check">Check</p-check>
                         <label for="sewingMethod" class="text-sm block mb-2">Sewing Method</label>
 
                         <textarea
@@ -220,7 +153,9 @@
                     title: '',
                     description: '',
                     physicalDescription: '',
-                    searchWords:''
+                    designer:'',
+                    searchWords:'',
+                    origin:''
                 }),
                 toolTipMsg: 'test',
                 formInput: '',
