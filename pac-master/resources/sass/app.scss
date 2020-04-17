@@ -8,6 +8,8 @@
 @import 'components/dropdown';
 @import 'components/tooltip';
 @import '~pretty-checkbox/src/pretty-checkbox.scss';
+@import "~vue-select/src/scss/vue-select.scss";
+
 body,
 button {
     @apply .text-default;

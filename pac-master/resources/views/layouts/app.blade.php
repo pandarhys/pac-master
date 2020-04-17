@@ -50,7 +50,6 @@
                                 @endif
                             @else
                                 <theme-switcher></theme-switcher>
-
                                 <dropdown align="right" width="200px">
                                     <template v-slot:trigger>
                                         <button

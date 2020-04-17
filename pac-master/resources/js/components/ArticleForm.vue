@@ -1,8 +1,5 @@
-<style scoped>
-</style>
-
 <template>
-    <div id="ArticleForm">
+    <div class="ArticleForm">
         <form @submit.prevent="Submit" @keydown="form.errors.clear($event.target.name)">
             <div class="flex">
                 <div class="flex-1 mr-4">
@@ -43,8 +40,8 @@
                     <div class="mb-4">
                         <FileUpload message='Upload Pictures Here'></FileUpload>
                     </div>
-<!--                    optional input-->
 
+<!--                    optional input-->
                     <div class="mb-4">
                         <label for="physicalDescription" class="text-sm block mb-2">Physical Description</label>
                         <textarea
@@ -71,27 +68,20 @@
                     </div>
 
                     <div class="mb-4">
-                        <country-select v-model="country" :country="country" topCountry="UK" />
                         <label for="origin" class="text-sm block mb-2">Place of Origin</label>
-                        <input
-                            type="text"
-                            id="origin"
-                            class="border p-2 text-xs block w-full rounded"
-                            placeholder="what country?"
-                            v-model="form.origin">
+                            <CountrySelector
+                                id="origin"
+                                v-model="form.origin">
+                            </CountrySelector>
                         <span class="text-xs italic text-error" v-if="form.errors.has('origin')"
                               v-text="form.errors.get('origin')"></span>
                     </div>
 
-<!--                    one word descriptions-->
                     <div class="mb-4">
-                        <div class="title flex justify-between items-center">
-                            <label for="searchWords" class="text-sm block mb-2">Item Themes</label>
-                            <span @mouseover="UpdateToolTipMsg(
-                                'The occasion-(wedding; debutante; workwear; travelling; trousseau; mourning; maternity)' +
-                                '\nColloquial terms for time period-(Regency; Rocco; Victorian; Edwardian)' +
-                                '\nBroad category of the garment-(underwear; outerwear; evening; day)' +
-                                '\nMain colour or pattern-(pink; sheer; checked; multi-coloured; textured)')"
+                        <h5 class="mb-3">The answers in the next four fields are the tags that the archives search function will look through, it is basically a summary of the “physical description”. To help this work properly please write as a list of words/phrases each separated by a semi-colon.</h5>
+                        <div class="mt-1 title flex justify-between items-center">
+                        <label for="materials" class="text-sm block mb-2">Materials</label>
+                        <span @mouseover="UpdateToolTipMsg('Cotton; silk; broderie anglaise;')"
                               v-tooltip="{
                               content: toolTipMsg,
                               trigger: 'hover',
@@ -102,37 +92,128 @@
                                 show: 100,
                               },
                             }">Info</span>
-                        </div>
-                            <textarea
-                                id="searchWords"
-                                class="border border-muted-light p-2 text-xs block w-full rounded"
-                                rows="7"
-                                placeholder="List anything else that you think someone could search that would be relevant to your garment. Only use single words"
-                                v-model="form.searchWords">
+                    </div>
+                    <textarea
+                        id="materials"
+                        class="border border-muted-light p-2 text-xs block w-full rounded"
+                        rows="1"
+                        placeholder="Write the main fabric first then all other materials you can identify. "
+                        v-model="form.materials">
                             </textarea>
-                            <span class="text-xs italic text-error"
-                                  v-if="form.errors.has('searchWords')"
-                                  v-text="form.errors.get('searchWords')">
+                    <span class="text-xs italic text-error"
+                          v-if="form.errors.has('materials')"
+                          v-text="form.errors.get('materials')">
+                            </span>
+                </div>
+
+                    <div class="mb-4">
+                        <div class="mt-1 title flex justify-between items-center">
+                            <label for="techniques" class="text-sm block mb-2">Techniques</label>
+                            <span @mouseover="UpdateToolTipMsg('Examples include: pleating; gathering; smocking; piping; tailoring; shirring; insertion lace; ' +
+                              '\nfelled seam; drawn thread work; pin-tucks; cording; buttonholes; patch pockets')"
+                                  v-tooltip="{
+                              content: toolTipMsg,
+                              trigger: 'hover',
+                              placement: 'bottom-center',
+                              classes: ['info'],
+                              targetClasses: ['it-has-a-tooltip'],
+                              delay: {
+                                show: 100,
+                              },
+                            }">Info</span>
+                        </div>
+                        <textarea
+                            id="techniques"
+                            class="border border-muted-light p-2 text-xs block w-full rounded"
+                            rows="1"
+                            placeholder="List any specific techniques you can see that have been used in the making of the main garment."
+                            v-model="form.techniques">
+                            </textarea>
+                        <span class="text-xs italic text-error"
+                              v-if="form.errors.has('techniques')"
+                              v-text="form.errors.get('techniques')">
                             </span>
                     </div>
                     <div class="mb-4">
-                        <p-check name="check" color="success" v-model="check">Check</p-check>
-                        <label for="sewingMethod" class="text-sm block mb-2">Sewing Method</label>
-
+                        <div class="mt-1 title flex justify-between items-center">
+                            <label for="decoration" class="text-sm block mb-2">Trimmings/Decoration</label>
+                            <span @mouseover="UpdateToolTipMsg('Examples include: lace; ruffled flounce; embroidery; goldwork; applique; ' +
+                              '\ndeath head buttons; pom-poms; tassels; bows; pinked; slashed ')"
+                                  v-tooltip="{
+                              content: toolTipMsg,
+                              trigger: 'hover',
+                              placement: 'bottom-center',
+                              classes: ['info'],
+                              targetClasses: ['it-has-a-tooltip'],
+                              delay: {
+                                show: 100,
+                              },
+                            }">Info</span>
+                        </div>
                         <textarea
-                            id="sewingMethod"
+                            id="decoration"
                             class="border border-muted-light p-2 text-xs block w-full rounded"
-                            rows="7"
-                            v-model="form.sewingMethod">
-                        </textarea>
-                        <span class="text-xs italic text-error" v-if="form.errors.has('sewingMethod')"
-                              v-text="form.errors.get('sewingMethod')"></span>
+                            rows="1"
+                            placeholder="List all the types of additional decoration applied to the garment. "
+                            v-model="form.decoration">
+                            </textarea>
+                        <span class="text-xs italic text-error"
+                              v-if="form.errors.has('decoration')"
+                              v-text="form.errors.get('decoration')">
+                            </span>
                     </div>
-                    <footer class="flex justify-end">
-                        <button type="button" class="button is-outlined mr-4" @click="$modal.hide('new-article2')">Cancel
-                        </button>
-                        <button class="button" :disabled="form.errors.any()">Create Article</button>
-                    </footer>
+
+                    <div class="mb-4">
+                        <div class="mt-1 title flex justify-between items-center">
+                            <label for="searchWords" class="text-sm block mb-2">Item Themes</label>
+                            <span @mouseover="UpdateToolTipMsg(
+                                'The occasion-(wedding; debutante; workwear; travelling; trousseau; mourning; maternity)' +
+                                '\nColloquial terms for time period-(Regency; Rocco; Victorian; Edwardian)' +
+                                '\nBroad category of the garment-(underwear; outerwear; evening; day)' +
+                                '\nMain colour or pattern-(pink; sheer; checked; multi-coloured; textured)')"
+                                  v-tooltip="{
+                              content: toolTipMsg,
+                              trigger: 'hover',
+                              placement: 'bottom-center',
+                              classes: ['info'],
+                              targetClasses: ['it-has-a-tooltip'],
+                              delay: {
+                                show: 100,
+                              },
+                            }">Info</span>
+                        </div>
+                        <textarea
+                            id="searchWords"
+                            class="border border-muted-light p-2 text-xs block w-full rounded"
+                            rows="1"
+                            placeholder="List anything else that you think someone could search that would be relevant to your garment. Only use single words"
+                            v-model="form.searchWords">
+                            </textarea>
+                        <span class="text-xs italic text-error"
+                              v-if="form.errors.has('searchWords')"
+                              v-text="form.errors.get('searchWords')">
+                            </span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="sewingMethod" class="text-sm block mb-2">Sewing Method</label>
+                        <p-check>Default</p-check>
+<!--                        <label for="sewingMethod" class="text-sm block mb-2">Sewing Method</label>-->
+<!--                        <textarea-->
+<!--                            id="sewingMethod"-->
+<!--                            class="border border-muted-light p-2 text-xs block w-full rounded"-->
+<!--                            rows="1"-->
+<!--                            v-model="form.sewingMethod">-->
+<!--                        </textarea>-->
+<!--                        <span class="text-xs italic text-error" v-if="form.errors.has('sewingMethod')"-->
+<!--                              v-text="form.errors.get('sewingMethod')"></span>-->
+<!--                    </div>-->
+<!--                    <footer class="flex justify-end">-->
+<!--                        <button type="button" class="button is-outlined mr-4" @click="$modal.hide('new-article2')">Cancel-->
+<!--                        </button>-->
+<!--                        <button class="button" :disabled="form.errors.any()">Create Article</button>-->
+<!--                    </footer>-->
+                    </div>
                 </div>
             </div>
         </form>
@@ -143,11 +224,12 @@
     import Form from '../core/Form.js'
     import Datepicker from 'vuejs-datepicker';
     import VTooltip from 'v-tooltip'
-    import vueCountryRegionSelect from 'vue-country-region-select'
+    import CountrySelector from "./reuse/CountrySelector";
 
     export default {
+        name:'ArticleForm',
         components: {
-            Datepicker,VTooltip,vueCountryRegionSelect
+            Datepicker,VTooltip,CountrySelector
         },
         data() {
             return {
@@ -157,12 +239,14 @@
                     physicalDescription: '',
                     designer:'',
                     searchWords:'',
-                    origin:''
+                    origin:'',
+                    materials:'',
+                    techniques:'',
+                    decoration:''
                 }),
                 toolTipMsg: 'test',
                 formInput: '',
-                sewingMethods: ['Hand Sewn', 'Machine Sewn', 'Knitted', 'Unknown'],
-                country: '',
+                sewingMethods: ['Hand Sewn', 'Machine Sewn', 'Knitted', 'Unknown']
             };
         },
         methods: {
@@ -177,3 +261,5 @@
         }
     }
 </script>
+<style scoped>
+</style>
