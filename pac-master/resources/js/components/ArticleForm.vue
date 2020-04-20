@@ -196,24 +196,21 @@
                     </div>
 
                     <div class="mb-4">
-                        <label for="sewingMethod" class="text-sm block mb-2">Sewing Method</label>
-                        <p-check>Default</p-check>
-<!--                        <label for="sewingMethod" class="text-sm block mb-2">Sewing Method</label>-->
-<!--                        <textarea-->
-<!--                            id="sewingMethod"-->
-<!--                            class="border border-muted-light p-2 text-xs block w-full rounded"-->
-<!--                            rows="1"-->
-<!--                            v-model="form.sewingMethod">-->
-<!--                        </textarea>-->
-<!--                        <span class="text-xs italic text-error" v-if="form.errors.has('sewingMethod')"-->
-<!--                              v-text="form.errors.get('sewingMethod')"></span>-->
-<!--                    </div>-->
-<!--                    <footer class="flex justify-end">-->
-<!--                        <button type="button" class="button is-outlined mr-4" @click="$modal.hide('new-article2')">Cancel-->
-<!--                        </button>-->
-<!--                        <button class="button" :disabled="form.errors.any()">Create Article</button>-->
-<!--                    </footer>-->
+
+                        <h3 id="sewingMethod" class="text-sm block mb-2">Sewing Method</h3>
+                        <checkbox
+                            :items="sewingMethodsItems"
+                            checkListName="sewingMethods"
+                            @selected="setSelectedCheckBoxes">
+                        </checkbox>
+                        <span  class="text-xs italic text-error" v-if="form.errors.has('sewingMethod')"
+                                v-text="form.errors.get('sewingMethod')"></span>
                     </div>
+                    <footer class="flex justify-end">
+                        <button type="button" class="button is-outlined mr-4" @click="$modal.hide('new-article2')">Cancel
+                        </button>
+                        <button class="button" :disabled="form.errors.any()">Create Article</button>
+                    </footer>
                 </div>
             </div>
         </form>
@@ -225,11 +222,12 @@
     import Datepicker from 'vuejs-datepicker';
     import VTooltip from 'v-tooltip'
     import CountrySelector from "./reuse/CountrySelector";
+    import Checkbox from "./reuse/Checkbox";
 
     export default {
         name:'ArticleForm',
         components: {
-            Datepicker,VTooltip,CountrySelector
+            Datepicker,VTooltip,CountrySelector,Checkbox
         },
         data() {
             return {
@@ -246,12 +244,21 @@
                 }),
                 toolTipMsg: 'test',
                 formInput: '',
-                sewingMethods: ['Hand Sewn', 'Machine Sewn', 'Knitted', 'Unknown']
+                sewingMethods:[],
+                sewingMethodsItems:[
+                    { name:'handSewn' , label:'Hand Sewn'},
+                    { name:'machineSewn' , label:'Machine Sewn'},
+                    { name:'knitted' , label:'Knitted'},
+                    { name:'unknown' , label:'Unknown'}
+                ]
             };
         },
         methods: {
             UpdateToolTipMsg: function(formInput){
                 this.toolTipMsg = formInput;
+            },
+            setSelectedCheckBoxes: function(selected){
+                this.sewingMethods = selected;
             },
             async Submit() {
                 this.form
