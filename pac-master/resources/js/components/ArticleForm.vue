@@ -197,14 +197,58 @@
 
                     <div class="mb-4">
 
-                        <h3 id="sewingMethod" class="text-sm block mb-2">Sewing Method</h3>
+                        <h3 id="sewingMethod" class="text-sm block mb-2">Sewing Methods</h3>
                         <checkbox
                             :items="sewingMethodsItems"
-                            checkListName="sewingMethods"
-                            @selected="setSelectedCheckBoxes">
+                            :checkedItems.sync="sewingMethods"
+                            checkListName="sewingMethods">
                         </checkbox>
                         <span  class="text-xs italic text-error" v-if="form.errors.has('sewingMethod')"
                                 v-text="form.errors.get('sewingMethod')"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <h3 id="classification" class="text-sm block mb-2">Classification</h3>
+                        <checkbox
+                            :items="classificationItems"
+                            :checkedItems.sync="classification"
+                            checkListName="classification">
+                        </checkbox>
+                        <span  class="text-xs italic text-error" v-if="form.errors.has('classification')"
+                               v-text="form.errors.get('classification')"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <h3 id="cut" class="text-sm block mb-2">Cut</h3>
+                        <checkbox
+                            :items="cutItems"
+                            :checkedItems.sync="cut"
+                            checkListName="cut">
+                        </checkbox>
+                        <span  class="text-xs italic text-error" v-if="form.errors.has('cut')"
+                               v-text="form.errors.get('cut')"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <h3 id="fastenings" class="text-sm block mb-2">Fastenings</h3>
+                        <checkbox
+                            :items="fasteningItems"
+                            :checkedItems.sync="fastening"
+                            checkListName="fastenings">
+                        </checkbox>
+                        <span  class="text-xs italic text-error" v-if="form.errors.has('fastenings')"
+                               v-text="form.errors.get('fastenings')"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <h3 id="stiffening" class="text-sm block mb-2">Stiffening / Lining / Padding</h3>
+                        <checkbox
+                            :items="stiffeningItems"
+                            :checkedItems.sync="stiffening"
+                            checkListName="stiffening">
+                        </checkbox>
+                        <span  class="text-xs italic text-error" v-if="form.errors.has('stiffening')"
+                               v-text="form.errors.get('stiffening')"></span>
                     </div>
                     <footer class="flex justify-end">
                         <button type="button" class="button is-outlined mr-4" @click="$modal.hide('new-article2')">Cancel
@@ -250,15 +294,50 @@
                     { name:'machineSewn' , label:'Machine Sewn'},
                     { name:'knitted' , label:'Knitted'},
                     { name:'unknown' , label:'Unknown'}
-                ]
+                ],
+                classification:[],
+                classificationItems:[
+                    { name:'male' , label:'Male'},
+                    { name:'female' , label:'Female'},
+                    { name:'child' , label:'Child'},
+                    { name:'baby' , label:'Baby'},
+                    { name:'unknown' , label:'Unknown'}
+                ],
+                cut:[],
+                cutItems:[
+                    { name:'Straight' , label:'Straight'},
+                    { name:'Bias' , label:'Bias'},
+                    { name:'Stretch' , label:'Stretch'},
+                    { name:'unknown' , label:'Unknown'}
+                ],
+                fastening:[],
+                fasteningItems:[
+                    { name:'hookeye' , label:'Hook and Eye/Bar'},
+                    { name:'lacing' , label:'Lacing'},
+                    { name:'drawstring' , label:'Drawstring'},
+                    { name:'poppers' , label:'Poppers'},
+                    { name:'press Studs' , label:'Press Studs'},
+                    { name:'buttons' , label:'Buttons'},
+                    { name:'zipper' , label:'Zipper'},
+                    { name:'elastic' , label:'Elastic'},
+                    { name:'other' , label:'Other'}
+                ],
+                stiffening:[],
+                stiffeningItems:[
+                    { name:'whalebone' , label:'Whalebone'},
+                    { name:'flatsteel' , label:'Flat Steel Bone'},
+                    { name:'spiralsteel' , label:'Spiral Steel Bone'},
+                    { name:'buckram' , label:'Buckram'},
+                    { name:'padding' , label:'Padding'},
+                    { name:'canvas' , label:'Canvas'},
+                    { name:'petersham' , label:'Petersham'},
+                    { name:'other' , label:'Other'}
+                ],
             };
         },
         methods: {
             UpdateToolTipMsg: function(formInput){
                 this.toolTipMsg = formInput;
-            },
-            setSelectedCheckBoxes: function(selected){
-                this.sewingMethods = selected;
             },
             async Submit() {
                 this.form

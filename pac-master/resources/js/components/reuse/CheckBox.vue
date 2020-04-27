@@ -10,7 +10,7 @@
 <script>
     export default {
         name: "CheckBox",
-        props: ['items','checkListName'],
+        props: ['items','checkListName','checkedItems'],
         data () {
             return {
                 id:'',
@@ -21,8 +21,7 @@
         },
         methods: {
             onChange(event) {
-                this.$emit('selected',this.checkedNames);
-                console.log(this.checkedNames);
+                this.$emit('update:checkedItems',this.checkedNames);
             }
         }
     }
@@ -32,36 +31,3 @@
 
 </style>
 
-
-<!--<template>-->
-<!--    <div class="flex justify-start items-start">-->
-<!--        <div id="checkLoop" v-for="item in items">-->
-<!--            <input type="checkbox" :id="{ id }" value="" v-model="checkedName" @change="onChange($event)" class="bg-white border-2 rounded border-gray-400 w-6 h-6 flex flex-shrink-0 justify-center items-center mr-1 focus-within:border-blue-500">-->
-<!--            <label for="{ id }" class="mr-1">{{ name }}</label>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</template>-->
-
-<!--<script>-->
-<!--    export default {-->
-<!--        name: "CheckBox",-->
-<!--        props: ['id', 'value', 'name','items'],-->
-<!--        data () {-->
-<!--            return{-->
-<!--                checkedName:'',-->
-<!--                items:[{-->
-
-<!--                }]-->
-<!--            }-->
-<!--        },-->
-<!--        methods: {-->
-<!--            onChange(event) {-->
-<!--                console.log(this.checkedName)-->
-<!--            }-->
-<!--        }-->
-<!--    }-->
-<!--</script>-->
-
-<!--<style scoped>-->
-
-<!--</style>-->
