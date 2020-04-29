@@ -336,20 +336,18 @@
                             </span>
                     </div>
 
-                    <div class="mb-4">
-                        <h3 id="consent" class="text-sm block">Consent - Would you mind if another member of the archive contacted you in regards to this garment?</h3>
-                        <div class="flex justify-between w-1/2">
-                            <input type="radio" id="yes" value="yes" v-model="form.consent" >
+                    <h3 id="consent" class="text-sm block mb-2">Consent - Would you mind if another member of the archive contacted you in regards to this garment?</h3>
+                    <div class="mb-4 w-1/4">
+                        <div class="wrapper-class mb-1">
+                            <input type="radio" id="yes" value="yes" v-model="form.consent">
                             <label for="yes">Yes they can contact me</label>
                         </div>
-                            <br>
+                        <div class="wrapper-class mb-1">
                             <input type="radio" id="no" value="no" v-model="form.consent">
                             <label for="no">No, I would rather they did not</label>
-                            <br>
+                        </div>
                             <span  class="text-xs italic text-error" v-if="form.errors.has('consent')"
-                                   v-text="form.errors.get('consent')"></span>
-
-
+                               v-text="form.errors.get('consent')"></span>
                     </div>
 
                     <footer class="flex justify-end">
@@ -488,4 +486,12 @@
     }
 </script>
 <style scoped>
+    .wrapper-class input[type="radio"] {
+        width: 15px;
+    }
+
+    .wrapper-class label {
+        display: inline;
+        margin-left: 5px;
+    }
 </style>
