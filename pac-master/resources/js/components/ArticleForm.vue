@@ -80,19 +80,19 @@
                     <div class="mb-4">
                         <h5 class="mb-3">The answers in the next four fields are the tags that the archives search function will look through, it is basically a summary of the “physical description”. To help this work properly please write as a list of words/phrases each separated by a semi-colon.</h5>
                         <div class="mt-1 title flex justify-between items-center">
-                        <label for="materials" class="text-sm block mb-2">Materials</label>
-                        <span @mouseover="UpdateToolTipMsg('Cotton; silk; broderie anglaise;')"
-                              v-tooltip="{
-                              content: toolTipMsg,
-                              trigger: 'hover',
-                              placement: 'bottom-center',
-                              classes: ['info'],
-                              targetClasses: ['it-has-a-tooltip'],
-                              delay: {
-                                show: 100,
-                              },
-                            }">Info</span>
-                    </div>
+                            <label for="materials" class="text-sm block mb-2">Materials</label>
+                            <span @mouseover="UpdateToolTipMsg('Cotton; silk; broderie anglaise;')"
+                                  v-tooltip="{
+                                  content: toolTipMsg,
+                                  trigger: 'hover',
+                                  placement: 'bottom-center',
+                                  classes: ['info'],
+                                  targetClasses: ['it-has-a-tooltip'],
+                                  delay: {
+                                    show: 100,
+                                  },
+                                }">Info</span>
+                        </div>
                     <textarea
                         id="materials"
                         class="border border-muted-light p-2 text-xs block w-full rounded"
@@ -200,7 +200,7 @@
                         <h3 id="sewingMethod" class="text-sm block mb-2">Sewing Methods</h3>
                         <checkbox
                             :items="sewingMethodsItems"
-                            :checkedItems.sync="sewingMethods"
+                            :checkedItems.sync="form.sewingMethods"
                             checkListName="sewingMethods">
                         </checkbox>
                         <span  class="text-xs italic text-error" v-if="form.errors.has('sewingMethod')"
@@ -211,7 +211,7 @@
                         <h3 id="classification" class="text-sm block mb-2">Classification</h3>
                         <checkbox
                             :items="classificationItems"
-                            :checkedItems.sync="classification"
+                            :checkedItems.sync="form.classification"
                             checkListName="classification">
                         </checkbox>
                         <span  class="text-xs italic text-error" v-if="form.errors.has('classification')"
@@ -222,7 +222,7 @@
                         <h3 id="cut" class="text-sm block mb-2">Cut</h3>
                         <checkbox
                             :items="cutItems"
-                            :checkedItems.sync="cut"
+                            :checkedItems.sync="form.cut"
                             checkListName="cut">
                         </checkbox>
                         <span  class="text-xs italic text-error" v-if="form.errors.has('cut')"
@@ -233,7 +233,7 @@
                         <h3 id="fastenings" class="text-sm block mb-2">Fastenings</h3>
                         <checkbox
                             :items="fasteningItems"
-                            :checkedItems.sync="fastening"
+                            :checkedItems.sync="form.fastening"
                             checkListName="fastenings">
                         </checkbox>
                         <span  class="text-xs italic text-error" v-if="form.errors.has('fastenings')"
@@ -244,7 +244,7 @@
                         <h3 id="stiffening" class="text-sm block mb-2">Stiffening / Lining / Padding</h3>
                         <checkbox
                             :items="stiffeningItems"
-                            :checkedItems.sync="stiffening"
+                            :checkedItems.sync="form.stiffening"
                             checkListName="stiffening">
                         </checkbox>
                         <span  class="text-xs italic text-error" v-if="form.errors.has('stiffening')"
@@ -252,23 +252,106 @@
                     </div>
 
                     <div class="mb-4">
-                        <h3 id="stiffening" class="text-sm block mb-2">Stiffening / Lining / Padding</h3>
+                        <h3 id="condition" class="text-sm block mb-2">Condition</h3>
                         <checkbox
-                            :items="stiffeningItems"
-                            :checkedItems.sync="stiffening"
-                            checkListName="stiffening">
+                            :items="conditionItems"
+                            :checkedItems.sync="form.condition"
+                            checkListName="condition">
                         </checkbox>
-                        <span  class="text-xs italic text-error" v-if="form.errors.has('stiffening')"
-                               v-text="form.errors.get('stiffening')"></span>
+                        <span  class="text-xs italic text-error" v-if="form.errors.has('condition')"
+                               v-text="form.errors.get('condition')"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="w-1/3 mt-1 title flex justify-between items-center">
+                            <h3 id="measurements" class="text-sm block mb-2">Measurements</h3>
+                            <span @mouseover="UpdateToolTipMsg(
+                                    'Only fill out the fields of the table which make sense for your piece of clothing.\n' +
+                                    'Measure the garment on the inside. Terms such as “Neck” and “Waist” mean the edge and waist seam of the garment, \n' +
+                                     'not an estimate of where the wearer’s neck and waist would be. \n' +
+                                      'For example in an empire line dress the “waist” would actually be measured at the underbust. \n'+
+                                       'If there is a waistband take the bottom of the waistband as the “waist”.')"
+                                  v-tooltip="{
+                                  content: toolTipMsg,
+                                  trigger: 'hover',
+                                  placement: 'bottom-center',
+                                  classes: ['info'],
+                                  targetClasses: ['it-has-a-tooltip'],
+                                  delay: {
+                                    show: 100,
+                                  },
+                                }">Info</span>
+                        </div>
+                        <Formtable
+                            :items.sync="measurementTableItems"
+                            labelTitle="Area being measured"
+                            resultTitle="Measurement (inches)"
+                            tableName="measurements"
+                            @recordTableInput="form.measurements = measurementTableItems">
+                        </Formtable>
+                        <span  class="text-xs italic text-error" v-if="form.errors.has('measurements')"
+                               v-text="form.errors.get('measurements')"></span>
                     </div>
                     <div class="mb-4">
-                        <h3 id="measurements" class="text-sm block mb-2">Measurements</h3>
-                        <Formtable
-                            :items="measurementTableItems"
-                            :tableItems.sync="measurements"
-                            tableName="measurements">
-                        </Formtable>
+                        <div class="mt-1 title flex justify-between items-center">
+                            <label for="alterations" class="text-sm block mb-2">Alterations</label>
+                            <span @mouseover="UpdateToolTipMsg('Can you see if the garment has been altered? .\n' +
+                                    'Check for different types of thread, fabrics or trimmings that don’t quite match or look to be of a later date, \n' +
+                                     'stitch holes where seams have been unpicked, or areas of hand sewing in an item that is mostly machine sewn (or vice versa).')"
+                                  v-tooltip="{
+                                  content: toolTipMsg,
+                                  trigger: 'hover',
+                                  placement: 'bottom-center',
+                                  classes: ['info'],
+                                  targetClasses: ['it-has-a-tooltip'],
+                                  delay: {
+                                    show: 100,
+                                  },
+                                }">Info</span>
+                        </div>
+                        <textarea
+                            id="alterations"
+                            class="border border-muted-light p-2 text-xs block w-full rounded"
+                            rows="2"
+                            v-model="form.alterations">
+                            </textarea>
+                        <span class="text-xs italic text-error"
+                              v-if="form.errors.has('alterations')"
+                              v-text="form.errors.get('alterations')">
+                            </span>
                     </div>
+
+                    <div class="mb-4">
+                            <label for="provenance" class="text-sm block mb-2">Credit Line / Provenance</label>
+                        <textarea
+                            id="provenance"
+                            class="border border-muted-light p-2 text-xs block w-full rounded"
+                            rows="2"
+                            placeholder="Any information you have about the garments origins."
+                            v-model="form.provenance">
+                            </textarea>
+                        <span class="text-xs italic text-error"
+                              v-if="form.errors.has('provenance')"
+                              v-text="form.errors.get('provenance')">
+                            </span>
+                    </div>
+
+                    <div class="mb-4">
+                        <h3 id="consent" class="text-sm block">Consent - Would you mind if another member of the archive contacted you in regards to this garment?</h3>
+                        <div class="flex justify-between w-1/2">
+                            <input type="radio" id="yes" value="yes" v-model="form.consent" >
+                            <label for="yes">Yes they can contact me</label>
+                        </div>
+                            <br>
+                            <input type="radio" id="no" value="no" v-model="form.consent">
+                            <label for="no">No, I would rather they did not</label>
+                            <br>
+                            <span  class="text-xs italic text-error" v-if="form.errors.has('consent')"
+                                   v-text="form.errors.get('consent')"></span>
+
+
+                    </div>
+
                     <footer class="flex justify-end">
                         <button type="button" class="button is-outlined mr-4" @click="$modal.hide('new-article2')">Cancel
                         </button>
@@ -304,18 +387,26 @@
                     origin:'',
                     materials:'',
                     techniques:'',
-                    decoration:''
+                    decoration:'',
+                    alterations:'',
+                    sewingMethods:[],
+                    classification:[],
+                    cut:[],
+                    fastening:[],
+                    stiffening:[],
+                    measurements:[],
+                    condition:[],
+                    consent:[]
                 }),
                 toolTipMsg: 'test',
                 formInput: '',
-                sewingMethods:[],
+                //object data
                 sewingMethodsItems:[
                     { name:'handSewn' , label:'Hand Sewn'},
                     { name:'machineSewn' , label:'Machine Sewn'},
                     { name:'knitted' , label:'Knitted'},
                     { name:'unknown' , label:'Unknown'}
                 ],
-                classification:[],
                 classificationItems:[
                     { name:'male' , label:'Male'},
                     { name:'female' , label:'Female'},
@@ -323,14 +414,12 @@
                     { name:'baby' , label:'Baby'},
                     { name:'unknown' , label:'Unknown'}
                 ],
-                cut:[],
                 cutItems:[
                     { name:'Straight' , label:'Straight'},
                     { name:'Bias' , label:'Bias'},
                     { name:'Stretch' , label:'Stretch'},
                     { name:'unknown' , label:'Unknown'}
                 ],
-                fastening:[],
                 fasteningItems:[
                     { name:'hookeye' , label:'Hook and Eye/Bar'},
                     { name:'lacing' , label:'Lacing'},
@@ -342,8 +431,7 @@
                     { name:'elastic' , label:'Elastic'},
                     { name:'other' , label:'Other'}
                 ],
-                stiffening:[],
-                stiffeningItems:[
+                conditionItems:[
                     { name:'whalebone' , label:'Whalebone'},
                     { name:'flatsteel' , label:'Flat Steel Bone'},
                     { name:'spiralsteel' , label:'Spiral Steel Bone'},
@@ -353,7 +441,16 @@
                     { name:'petersham' , label:'Petersham'},
                     { name:'other' , label:'Other'}
                 ],
-                measurements:[],
+                stiffeningItems:[
+                    { name:'excellent' , label:'Excellent'},
+                    { name:'good' , label:'Good'},
+                    { name:'average' , label:'Average'},
+                    { name:'poor' , label:'Poor'}
+                ],
+                consentItems:[
+                    { name:'yes' , label:'Yes they can contact me'},
+                    { name:'no' , label:'No, I would rather they did not'}
+                ],
                 measurementTableItems:[
                     { name:'bust' , label:'Bust (circumference of the inside, not laid flat)',  result: ""},
                     { name:'waist' , label:'Waist (circumference of the inside, not laid flat)', result:""},

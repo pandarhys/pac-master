@@ -1,9 +1,9 @@
 <template>
     <div id="formTable">
-            <table class="w-1/2 flex-wrap mb-1 border-muted-light border-2 border-gray-600 px-1 py-10">
+            <table class="flex-wrap mb-1 border-muted-light border-2 border-gray-600 px-1 py-10">
                 <tr class="flex justify-between">
-                    <th class="ml-1 mb-1">Area being measured</th>
-                    <th class="mr-5">Measurement (inches)</th>
+                    <th class="ml-1 mb-1">{{ labelTitle }}</th>
+                    <th class="mr-5">{{ resultTitle }}</th>
                 </tr>
                     <div v-for="item in items" :key="item.name">
                         <tr class="flex justify-between">
@@ -22,7 +22,7 @@
 <script>
     export default {
         name: "Formtable",
-        props: ['items','tableName','tableItems'],
+        props: ['items','tableName','tableItems','labelTitle','resultTitle'],
         data () {
             return {
                 id:'',
@@ -30,7 +30,7 @@
         },
         methods: {
             onChange(event) {
-                this.$emit('update:formTableResults',this.tableItems);
+                this.$emit('recordTableInput',this.items);
             }
         }
     }
