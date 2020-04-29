@@ -250,6 +250,25 @@
                         <span  class="text-xs italic text-error" v-if="form.errors.has('stiffening')"
                                v-text="form.errors.get('stiffening')"></span>
                     </div>
+
+                    <div class="mb-4">
+                        <h3 id="stiffening" class="text-sm block mb-2">Stiffening / Lining / Padding</h3>
+                        <checkbox
+                            :items="stiffeningItems"
+                            :checkedItems.sync="stiffening"
+                            checkListName="stiffening">
+                        </checkbox>
+                        <span  class="text-xs italic text-error" v-if="form.errors.has('stiffening')"
+                               v-text="form.errors.get('stiffening')"></span>
+                    </div>
+                    <div class="mb-4">
+                        <h3 id="measurements" class="text-sm block mb-2">Measurements</h3>
+                        <Formtable
+                            :items="measurementTableItems"
+                            :tableItems.sync="measurements"
+                            tableName="measurements">
+                        </Formtable>
+                    </div>
                     <footer class="flex justify-end">
                         <button type="button" class="button is-outlined mr-4" @click="$modal.hide('new-article2')">Cancel
                         </button>
@@ -267,11 +286,12 @@
     import VTooltip from 'v-tooltip'
     import CountrySelector from "./reuse/CountrySelector";
     import Checkbox from "./reuse/Checkbox";
+    import Formtable from "./reuse/Formtable";
 
     export default {
         name:'ArticleForm',
         components: {
-            Datepicker,VTooltip,CountrySelector,Checkbox
+            Datepicker,VTooltip,CountrySelector,Checkbox,Formtable
         },
         data() {
             return {
@@ -333,6 +353,29 @@
                     { name:'petersham' , label:'Petersham'},
                     { name:'other' , label:'Other'}
                 ],
+                measurements:[],
+                measurementTableItems:[
+                    { name:'bust' , label:'Bust (circumference of the inside, not laid flat)',  result: ""},
+                    { name:'waist' , label:'Waist (circumference of the inside, not laid flat)', result:""},
+                    { name:'hip' , label:'Hip (circumference of the inside, not laid flat)', result:""},
+                    { name:'shoulder' , label:'Shoulder Seam', result:""},
+                    { name:'across_front' , label:'Across the front (half way up the armhole, seam to seam)', result:""},
+                    { name:'across_back' , label:'Across the back (half way up the armhole, seam to seam)', result:""},
+                    { name:'cf_neck_waist' , label:'CF neck to waist', result:""},
+                    { name:'cb_neck_waist' , label:'CB neck to waist', result:""},
+                    { name:'under_arm_Waist' , label:'Underarm to side waist', result:""},
+                    { name:'cf_waist_hem' , label:'CF waist to hem', result:""},
+                    { name:'cb_waist_hem' , label:'CB waist to hem', result:""},
+                    { name:'side_waist_hem' , label:'Side waist to hem', result:""},
+                    { name:'circum_hem' , label:'Circumference of the hem (just one leg on trousers)', result:""},
+                    { name:'armhole' , label:'Armhole', result:""},
+                    { name:'sleeve_length' , label:'Sleeve length', result:""},
+                    { name:'circum_wide_sleeve' , label:'Circumference of widest part of sleeve', result:""},
+                    { name:'circum_narrow_sleeve' , label:'Circumference of narrowest part of sleeve', result:""},
+                    { name:'cuff_depth' , label:'Cuff Depth', result:""},
+                    { name:'lapel_width' , label:'Lapel Width', result:""},
+                    { name:'circum_collar' , label:'Collar Circumference', result:""},
+                ]
             };
         },
         methods: {
