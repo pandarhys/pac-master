@@ -429,7 +429,7 @@
                     { name:'elastic' , label:'Elastic'},
                     { name:'other' , label:'Other'}
                 ],
-                conditionItems:[
+                stiffeningItems:[
                     { name:'whalebone' , label:'Whalebone'},
                     { name:'flatsteel' , label:'Flat Steel Bone'},
                     { name:'spiralsteel' , label:'Spiral Steel Bone'},
@@ -439,7 +439,7 @@
                     { name:'petersham' , label:'Petersham'},
                     { name:'other' , label:'Other'}
                 ],
-                stiffeningItems:[
+                conditionItems:[
                     { name:'excellent' , label:'Excellent'},
                     { name:'good' , label:'Good'},
                     { name:'average' , label:'Average'},

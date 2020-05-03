@@ -31,7 +31,7 @@ class ManageArticlesTest extends TestCase
         $this->signIn();
 
         $this->get('/article/create')->assertStatus(200);
-dd($this);
+
         $this->followingRedirects()
             ->post('/article', $attributes = factory(Article::class)->raw())
             ->assertSee($attributes['title'])

@@ -11,7 +11,7 @@
                                 <label for="item.name" class="ml-1 mr-1 mb-1">{{ item.label }}</label>
                             </td>
                             <td>
-                                <input v-model.number="item.result" type="number" :id="item.name" @change="onChange($event)" class="mr-1">
+                                <input v-model.number="item.result" type="number" min="0" :id="item.name" @change="onChange($event)" class="mr-1">
                             </td>
                         </tr>
                     </div>
