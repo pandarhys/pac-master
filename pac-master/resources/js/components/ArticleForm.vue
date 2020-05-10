@@ -11,8 +11,10 @@
                             class="border p-2 text-xs block w-full rounded"
                             placeholder="What is it? Keep it short, e.g. “Pink Corset Cover”."
                             v-model="form.title">
-                        <span class="text-xs italic text-error" v-if="form.errors.has('title')"
-                              v-text="form.errors.get('title')"></span>
+                        <span class="text-xs italic text-error"
+                              v-if="form.errors.has('title')"
+                              v-text="form.errors.get('title')">
+                        </span>
                     </div>
 
                     <div class="mb-4">
@@ -24,21 +26,37 @@
                             placeholder="One sentence to briefly summarise the garment, e.g. “A delicate pale salmon pink cotton corset cover with lace insertion detail.”"
                             v-model="form.description">
                         </textarea>
-                        <span class="text-xs italic text-error" v-if="form.errors.has('description')"
-                              v-text="form.errors.get('description')"></span>
+                        <span class="text-xs italic text-error"
+                              v-if="form.errors.has('description')"
+                              v-text="form.errors.get('description')">
+                        </span>
                     </div>
 
                     <div class="mb-4">
                         <h3 class="mb-2">Estimate Date Range</h3>
                         <p class="mb-2">When was it made? If you are unsure then keep it broad, or you can put it to the community in our “history mystery” section. If you know the exact date just put that same date in both boxes.</p>
-                        <datepicker placeholder="Earliest Date" class="mb-2">
+                        <datepicker placeholder="Earliest Date" class="mb-2" v-model="form.startDate">
                         </datepicker>
-                        <datepicker placeholder="Latest Date" class="mb-2">
+                            <span class="text-xs italic text-error"
+                                  v-if="form.errors.has('startDate')"
+                                  v-text="form.errors.get('startDate')">
+
+                            </span>
+                        <datepicker placeholder="Latest Date" class="mb-2" v-model="form.endDate">
+                            <span class="text-xs italic text-error"
+                                  v-if="form.errors.has('endDate')"
+                                  v-text="form.errors.get('endDate')">
+                            </span>
                         </datepicker>
                     </div>
 
                     <div class="mb-4">
-                        <FileUpload message='Upload Pictures Here'></FileUpload>
+                        <FileUpload message='Upload Pictures Here' @storeFileName="storeImagePath">
+                        </FileUpload>
+                        <span class="text-xs italic text-error"
+                              v-if="form.errors.has('imagePaths')"
+                              v-text="form.errors.get('imagePaths')">
+                        </span>
                     </div>
 
 <!--                    optional input-->
@@ -51,8 +69,10 @@
                             placeholder="What does it look like? Start basic, what type of garment is it, and what is it chiefly made of? Work your way down the garment, consider; neckline sleeves, chest, waistline, pockets, length, and is it full or fitted? How is it decorated (if at all), and how does it fasten? If you have an idea but are unsure, put “possibly” before the response, e.g. “possibly cotton lawn.” When describing left or right it is from the wearer’s perspective not the viewers."
                             v-model="form.physicalDescription">
                         </textarea>
-                        <span class="text-xs italic text-error" v-if="form.errors.has('physicalDescription')"
-                              v-text="form.errors.get('physicalDescription')"></span>
+                        <span class="text-xs italic text-error"
+                              v-if="form.errors.has('physicalDescription')"
+                              v-text="form.errors.get('physicalDescription')">
+                        </span>
                     </div>
 
                     <div class="mb-4">
@@ -63,8 +83,10 @@
                             class="border p-2 text-xs block w-full rounded"
                             placeholder="Does it have a label, or do you know who made it?"
                             v-model="form.designer">
-                        <span class="text-xs italic text-error" v-if="form.errors.has('designer')"
-                              v-text="form.errors.get('designer')"></span>
+                        <span class="text-xs italic text-error"
+                              v-if="form.errors.has('designer')"
+                              v-text="form.errors.get('designer')">
+                        </span>
                     </div>
 
                     <div class="mb-4">
@@ -73,8 +95,10 @@
                                 id="origin"
                                 v-model="form.origin">
                             </CountrySelector>
-                        <span class="text-xs italic text-error" v-if="form.errors.has('origin')"
-                              v-text="form.errors.get('origin')"></span>
+                        <span class="text-xs italic text-error"
+                              v-if="form.errors.has('origin')"
+                              v-text="form.errors.get('origin')">
+                        </span>
                     </div>
 
                     <div class="mb-4">
@@ -93,19 +117,18 @@
                                   },
                                 }">Info</span>
                         </div>
-                    <textarea
-                        id="materials"
-                        class="border border-muted-light p-2 text-xs block w-full rounded"
-                        rows="1"
-                        placeholder="Write the main fabric first then all other materials you can identify. "
-                        v-model="form.materials">
-                            </textarea>
-                    <span class="text-xs italic text-error"
-                          v-if="form.errors.has('materials')"
-                          v-text="form.errors.get('materials')">
-                            </span>
-                </div>
-
+                        <textarea
+                            id="materials"
+                            class="border border-muted-light p-2 text-xs block w-full rounded"
+                            rows="1"
+                            placeholder="Write the main fabric first then all other materials you can identify. "
+                            v-model="form.materials">
+                                </textarea>
+                        <span class="text-xs italic text-error"
+                              v-if="form.errors.has('materials')"
+                              v-text="form.errors.get('materials')">
+                        </span>
+                    </div>
                     <div class="mb-4">
                         <div class="mt-1 title flex justify-between items-center">
                             <label for="techniques" class="text-sm block mb-2">Techniques</label>
@@ -132,7 +155,7 @@
                         <span class="text-xs italic text-error"
                               v-if="form.errors.has('techniques')"
                               v-text="form.errors.get('techniques')">
-                            </span>
+                        </span>
                     </div>
                     <div class="mb-4">
                         <div class="mt-1 title flex justify-between items-center">
@@ -160,7 +183,7 @@
                         <span class="text-xs italic text-error"
                               v-if="form.errors.has('decoration')"
                               v-text="form.errors.get('decoration')">
-                            </span>
+                        </span>
                     </div>
 
                     <div class="mb-4">
@@ -192,7 +215,7 @@
                         <span class="text-xs italic text-error"
                               v-if="form.errors.has('searchWords')"
                               v-text="form.errors.get('searchWords')">
-                            </span>
+                        </span>
                     </div>
 
                     <div class="mb-4">
@@ -203,8 +226,10 @@
                             :checkedItems.sync="form.sewingMethods"
                             checkListName="sewingMethods">
                         </checkbox>
-                        <span  class="text-xs italic text-error" v-if="form.errors.has('sewingMethod')"
-                                v-text="form.errors.get('sewingMethod')"></span>
+                        <span  class="text-xs italic text-error"
+                               v-if="form.errors.has('sewingMethod')"
+                               v-text="form.errors.get('sewingMethod')">
+                        </span>
                     </div>
 
                     <div class="mb-4">
@@ -214,8 +239,10 @@
                             :checkedItems.sync="form.classification"
                             checkListName="classification">
                         </checkbox>
-                        <span  class="text-xs italic text-error" v-if="form.errors.has('classification')"
-                               v-text="form.errors.get('classification')"></span>
+                        <span  class="text-xs italic text-error"
+                               v-if="form.errors.has('classification')"
+                               v-text="form.errors.get('classification')">
+                        </span>
                     </div>
 
                     <div class="mb-4">
@@ -225,8 +252,10 @@
                             :checkedItems.sync="form.cut"
                             checkListName="cut">
                         </checkbox>
-                        <span  class="text-xs italic text-error" v-if="form.errors.has('cut')"
-                               v-text="form.errors.get('cut')"></span>
+                        <span  class="text-xs italic text-error"
+                               v-if="form.errors.has('cut')"
+                               v-text="form.errors.get('cut')">
+                        </span>
                     </div>
 
                     <div class="mb-4">
@@ -379,6 +408,9 @@
                 form: new Form({
                     title: '',
                     description: '',
+                    startDate:'',
+                    endDate:'',
+                    imagePaths:[],
                     physicalDescription: '',
                     designer:'',
                     searchWords:'',
@@ -477,11 +509,15 @@
             UpdateToolTipMsg: function(formInput){
                 this.toolTipMsg = formInput;
             },
+            storeImagePath: function(ImageFileName)
+            {
+                this.form.imagePaths.push(ImageFileName);
+            },
             async Submit() {
                 this.form
                     .post('/article')
                     .then(article => this.$emit('completed', article));
-            }
+            },
         }
     }
 </script>

@@ -20,6 +20,6 @@ class ImageController extends Controller
         $image->image_name = $name;
         $image->save();
 
-        return response()->json(['success' => 'You have successfully uploaded an image'], 200);
+        return response()->json($image, 200);
     }
 }
