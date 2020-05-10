@@ -35,8 +35,7 @@ class ManageArticlesTest extends TestCase
         $this->followingRedirects()
             ->post('/article', $attributes = factory(Article::class)->raw())
             ->assertSee($attributes['title'])
-            ->assertSee($attributes['description'])
-            ->assertSee($attributes['notes']);
+            ->assertSee($attributes['description']);
     }
 
     /** @test */

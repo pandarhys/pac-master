@@ -35,43 +35,40 @@
                     <div class="mb-4">
                         <h3 class="mb-2">Estimate Date Range</h3>
                         <p class="mb-2">When was it made? If you are unsure then keep it broad, or you can put it to the community in our “history mystery” section. If you know the exact date just put that same date in both boxes.</p>
-                        <datepicker placeholder="Earliest Date" class="mb-2" v-model="form.startDate">
-                        </datepicker>
-                            <span class="text-xs italic text-error"
-                                  v-if="form.errors.has('startDate')"
-                                  v-text="form.errors.get('startDate')">
-
+                        <datepicker placeholder="Earliest Date" class="mb-2" v-model="form.earliest_date"></datepicker>
+                        <span class="text-xs italic text-error"
+                              v-if="form.errors.has('earliest_date')"
+                              v-text="form.errors.get('earliest_date')">
                             </span>
-                        <datepicker placeholder="Latest Date" class="mb-2" v-model="form.endDate">
-                            <span class="text-xs italic text-error"
-                                  v-if="form.errors.has('endDate')"
-                                  v-text="form.errors.get('endDate')">
-                            </span>
+                        <datepicker placeholder="Latest Date" class="mb-2" v-model="form.latest_date">
                         </datepicker>
+                        <span class="text-xs italic text-error"
+                              v-if="form.errors.has('latest_date')"
+                              v-text="form.errors.get('latest_date')">
+                            </span>
                     </div>
-
                     <div class="mb-4">
                         <FileUpload message='Upload Pictures Here' @storeFileName="storeImagePath">
                         </FileUpload>
                         <span class="text-xs italic text-error"
-                              v-if="form.errors.has('imagePaths')"
-                              v-text="form.errors.get('imagePaths')">
+                              v-if="form.errors.has('image_file_names')"
+                              >Upload at Least One File
                         </span>
                     </div>
 
 <!--                    optional input-->
                     <div class="mb-4">
-                        <label for="physicalDescription" class="text-sm block mb-2">Physical Description</label>
+                        <label for="physical_description" class="text-sm block mb-2">Physical Description</label>
                         <textarea
-                            id="physicalDescription"
+                            id="physical_description"
                             class="border border-muted-light p-2 text-xs block w-full rounded"
                             rows="7"
                             placeholder="What does it look like? Start basic, what type of garment is it, and what is it chiefly made of? Work your way down the garment, consider; neckline sleeves, chest, waistline, pockets, length, and is it full or fitted? How is it decorated (if at all), and how does it fasten? If you have an idea but are unsure, put “possibly” before the response, e.g. “possibly cotton lawn.” When describing left or right it is from the wearer’s perspective not the viewers."
-                            v-model="form.physicalDescription">
+                            v-model="form.physical_description">
                         </textarea>
                         <span class="text-xs italic text-error"
-                              v-if="form.errors.has('physicalDescription')"
-                              v-text="form.errors.get('physicalDescription')">
+                              v-if="form.errors.has('physical_description')"
+                              v-text="form.errors.get('physical_description')">
                         </span>
                     </div>
 
@@ -188,7 +185,7 @@
 
                     <div class="mb-4">
                         <div class="mt-1 title flex justify-between items-center">
-                            <label for="searchWords" class="text-sm block mb-2">Item Themes</label>
+                            <label for="search_words" class="text-sm block mb-2">Item Themes</label>
                             <span @mouseover="UpdateToolTipMsg(
                                 'The occasion-(wedding; debutante; workwear; travelling; trousseau; mourning; maternity)' +
                                 '\nColloquial terms for time period-(Regency; Rocco; Victorian; Edwardian)' +
@@ -206,15 +203,15 @@
                             }">Info</span>
                         </div>
                         <textarea
-                            id="searchWords"
+                            id="search_words"
                             class="border border-muted-light p-2 text-xs block w-full rounded"
                             rows="1"
                             placeholder="List anything else that you think someone could search that would be relevant to your garment. Only use single words"
-                            v-model="form.searchWords">
+                            v-model="form.search_words">
                             </textarea>
                         <span class="text-xs italic text-error"
-                              v-if="form.errors.has('searchWords')"
-                              v-text="form.errors.get('searchWords')">
+                              v-if="form.errors.has('search_words')"
+                              v-text="form.errors.get('search_words')">
                         </span>
                     </div>
 
@@ -222,9 +219,9 @@
 
                         <h3 id="sewingMethod" class="text-sm block mb-2">Sewing Methods</h3>
                         <checkbox
-                            :items="sewingMethodsItems"
-                            :checkedItems.sync="form.sewingMethods"
-                            checkListName="sewingMethods">
+                            :items="sewing_methodsItems"
+                            :checkedItems.sync="form.sewing_methods"
+                            checkListName="sewing_methods">
                         </checkbox>
                         <span  class="text-xs italic text-error"
                                v-if="form.errors.has('sewingMethod')"
@@ -408,30 +405,31 @@
                 form: new Form({
                     title: '',
                     description: '',
-                    startDate:'',
-                    endDate:'',
-                    imagePaths:[],
-                    physicalDescription: '',
+                    earliest_date:'',
+                    latest_date:'',
+                    image_file_names:[],
+                    physical_description: '',
                     designer:'',
-                    searchWords:'',
+                    search_words:'',
                     origin:'',
                     materials:'',
                     techniques:'',
                     decoration:'',
                     alterations:'',
-                    sewingMethods:[],
+                    sewing_methods:[],
                     classification:[],
                     cut:[],
                     fastening:[],
                     stiffening:[],
                     measurements:[],
                     condition:[],
-                    consent:[]
+                    consent:[],
+                    provenance:''
                 }),
                 toolTipMsg: 'test',
                 formInput: '',
                 //object data
-                sewingMethodsItems:[
+                sewing_methodsItems:[
                     { name:'handSewn' , label:'Hand Sewn'},
                     { name:'machineSewn' , label:'Machine Sewn'},
                     { name:'knitted' , label:'Knitted'},
@@ -511,9 +509,11 @@
             },
             storeImagePath: function(ImageFileName)
             {
-                this.form.imagePaths.push(ImageFileName);
+                var obj = JSON.parse(ImageFileName);
+                this.form.image_file_names.push(obj.image_name);
             },
             async Submit() {
+                this.form.image_file_names = JSON.stringify(this.form.image_file_names);
                 this.form
                     .post('/article')
                     .then(article => this.$emit('completed', article));

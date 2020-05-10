@@ -22,11 +22,11 @@ class Form {
      */
     data() {
         let data = {};
-
         for (let property in this.originalData) {
-            data[property] = this[property];
+            //remove's keys for unused fields that are not nullable
+            if (this[property].toString().length > 0)
+                data[property] = this[property];
         }
-
         return data;
     }
 
