@@ -23,6 +23,7 @@
     },
     "dependencies": {
         "country-json": "^1.1.0",
+        "moment": "^2.25.3",
         "pretty-checkbox-vue": "^1.1.9",
         "v-tooltip": "^2.0.3",
         "vue-country-region-select": "^2.0.13",

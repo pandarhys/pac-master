@@ -18,8 +18,8 @@ class CreateArticlesTable extends Migration
             $table->unsignedBigInteger('owner_id');
             $table->string('title');
             $table->text('description');
-            $table->dateTimeTz('earliest_date');
-            $table->dateTimeTz('latest_date');
+            $table->date('earliest_date');
+            $table->date('latest_date');
             $table->jsonb('image_file_names');
             $table->text('physical_description')->nullable();
             $table->text('designer')->nullable();

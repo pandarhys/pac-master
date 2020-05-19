@@ -90,7 +90,9 @@
                         <label for="origin" class="text-sm block mb-2">Place of Origin</label>
                             <CountrySelector
                                 id="origin"
-                                v-model="form.origin">
+                                v-model="form.origin"
+                                :country.sync="form.origin"
+                            >
                             </CountrySelector>
                         <span class="text-xs italic text-error"
                               v-if="form.errors.has('origin')"
@@ -394,6 +396,7 @@
     import CountrySelector from "./reuse/CountrySelector";
     import Checkbox from "./reuse/Checkbox";
     import Formtable from "./reuse/Formtable";
+    import moment from 'moment'
 
     export default {
         name:'ArticleForm',
@@ -424,7 +427,7 @@
                     measurements:[],
                     condition:[],
                     consent:[],
-                    provenance:''
+                    provenance:'',
                 }),
                 toolTipMsg: 'test',
                 formInput: '',
@@ -512,8 +515,13 @@
                 var obj = JSON.parse(ImageFileName);
                 this.form.image_file_names.push(obj.image_name);
             },
+            ConvertToDate: function (date,format) {
+                return moment(date).format(format);
+            },
             async Submit() {
                 this.form.image_file_names = JSON.stringify(this.form.image_file_names);
+                this.form.earliest_date = this.ConvertToDate(this.form.earliest_date,"YYYY-MM-DD");
+                this.form.latest_date = this.ConvertToDate(this.form.latest_date,"YYYY-MM-DD");
                 this.form
                     .post('/article')
                     .then(article => this.$emit('completed', article));
