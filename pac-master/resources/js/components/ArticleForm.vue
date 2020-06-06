@@ -91,7 +91,7 @@
                             <CountrySelector
                                 id="origin"
                                 v-model="form.origin"
-                                :country.sync="form.origin"
+                                :countrySeleted.sync="form.origin"
                             >
                             </CountrySelector>
                         <span class="text-xs italic text-error"
@@ -177,7 +177,7 @@
                             class="border border-muted-light p-2 text-xs block w-full rounded"
                             rows="1"
                             placeholder="List all the types of additional decoration applied to the garment. "
-                            v-model="form.decoration">
+                            v-model="form.decorations">
                             </textarea>
                         <span class="text-xs italic text-error"
                               v-if="form.errors.has('decoration')"
@@ -261,7 +261,7 @@
                         <h3 id="fastenings" class="text-sm block mb-2">Fastenings</h3>
                         <checkbox
                             :items="fasteningItems"
-                            :checkedItems.sync="form.fastening"
+                            :checkedItems.sync="form.fastenings"
                             checkListName="fastenings">
                         </checkbox>
                         <span  class="text-xs italic text-error" v-if="form.errors.has('fastenings')"
@@ -379,8 +379,7 @@
                     </div>
 
                     <footer class="flex justify-end">
-                        <button type="button" class="button is-outlined mr-4" @click="$modal.hide('new-article2')">Cancel
-                        </button>
+                        <a href="/article/" class="button is-outlined mr-4">Cancel</a>
                         <button class="button" :disabled="form.errors.any()">Create Article</button>
                     </footer>
                 </div>
@@ -417,12 +416,12 @@
                     origin:'',
                     materials:'',
                     techniques:'',
-                    decoration:'',
+                    decorations:'',
                     alterations:'',
                     sewing_methods:[],
                     classification:[],
                     cut:[],
-                    fastening:[],
+                    fastenings:[],
                     stiffening:[],
                     measurements:[],
                     condition:[],
@@ -433,8 +432,8 @@
                 formInput: '',
                 //object data
                 sewing_methodsItems:[
-                    { name:'handSewn' , label:'Hand Sewn'},
-                    { name:'machineSewn' , label:'Machine Sewn'},
+                    { name:'hand sewn' , label:'Hand Sewn'},
+                    { name:'machine sewn' , label:'Machine Sewn'},
                     { name:'knitted' , label:'Knitted'},
                     { name:'unknown' , label:'Unknown'}
                 ],
@@ -446,9 +445,9 @@
                     { name:'unknown' , label:'Unknown'}
                 ],
                 cutItems:[
-                    { name:'Straight' , label:'Straight'},
-                    { name:'Bias' , label:'Bias'},
-                    { name:'Stretch' , label:'Stretch'},
+                    { name:'straight' , label:'Straight'},
+                    { name:'bias' , label:'Bias'},
+                    { name:'stretch' , label:'Stretch'},
                     { name:'unknown' , label:'Unknown'}
                 ],
                 fasteningItems:[
@@ -464,8 +463,8 @@
                 ],
                 stiffeningItems:[
                     { name:'whalebone' , label:'Whalebone'},
-                    { name:'flatsteel' , label:'Flat Steel Bone'},
-                    { name:'spiralsteel' , label:'Spiral Steel Bone'},
+                    { name:'flat steel' , label:'Flat Steel Bone'},
+                    { name:'spiral steel' , label:'Spiral Steel Bone'},
                     { name:'buckram' , label:'Buckram'},
                     { name:'padding' , label:'Padding'},
                     { name:'canvas' , label:'Canvas'},
@@ -519,6 +518,13 @@
                 return moment(date).format(format);
             },
             async Submit() {
+                this.form.classification = JSON.stringify(this.form.classification);
+                this.form.cut = JSON.stringify(this.form.cut);
+                this.form.fastenings = JSON.stringify(this.form.fastenings);
+                this.form.stiffening = JSON.stringify(this.form.stiffening);
+                this.form.measurements = JSON.stringify(this.form.measurements);
+                this.form.condition = JSON.stringify(this.form.condition);
+                this.form.sewing_methods = JSON.stringify(this.form.sewing_methods);
                 this.form.image_file_names = JSON.stringify(this.form.image_file_names);
                 this.form.earliest_date = this.ConvertToDate(this.form.earliest_date,"YYYY-MM-DD");
                 this.form.latest_date = this.ConvertToDate(this.form.latest_date,"YYYY-MM-DD");

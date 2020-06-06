@@ -20,11 +20,12 @@
 
     export default {
         name: "CountrySelector",
-        props: ['country'],
+        props: ['countrySeleted'],
         data: () => ({
             observer: null,
             limit: 10,
             search: '',
+            country: []
         }),
         mounted () {
             /**
@@ -54,7 +55,7 @@
             },
             onClose () {
                 this.observer.disconnect()
-                this.$emit('update:country',this.country);
+                this.$emit('update:countrySeleted',this.country);
             },
             async infiniteScroll ([{isIntersecting, target}]) {
                 if (isIntersecting) {
