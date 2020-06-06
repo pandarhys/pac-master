@@ -98,7 +98,7 @@ class ManageArticlesTest extends TestCase
         $article = ArticleFactory::create();
 
         $this->actingAs($article->owner)
-             ->patch($article->path(), $attributes = ['title' => 'Changed', 'description' => 'Changed', 'notes' => 'Changed'])
+             ->patch($article->path(), $attributes = ['title' => 'Changed', 'description' => 'Changed'])
              ->assertRedirect($article->path());
 
         $this->get($article->path().'/edit')->assertOk();
@@ -106,16 +106,16 @@ class ManageArticlesTest extends TestCase
         $this->assertDatabaseHas('articles', $attributes);
     }
 
-    /** @test */
-    function a_user_can_update_a_articles_general_notes()
-    {
-        $article = ArticleFactory::create();
-
-        $this->actingAs($article->owner)
-            ->patch($article->path(), $attributes = ['notes' => 'Changed']);
-
-        $this->assertDatabaseHas('articles', $attributes);
-    }
+//    /** @test */
+//    function a_user_can_update_a_articles_general_notes()
+//    {
+//        $article = ArticleFactory::create();
+//
+//        $this->actingAs($article->owner)
+//            ->patch($article->path(), $attributes = ['notes' => 'Changed']);
+//
+//        $this->assertDatabaseHas('articles', $attributes);
+//    }
 
     /** @test */
     public function a_user_can_view_their_article()
