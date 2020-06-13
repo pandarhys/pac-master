@@ -114,9 +114,28 @@ class ArticlesController extends Controller
     protected function validateRequest()
     {
         return request()->validate([
-            'title' => 'sometimes|required',
-            'description' => 'sometimes|required',
-            'notes' => 'nullable'
+            'title'                 => 'sometimes|required',
+            'description'           => 'sometimes|required',
+            'earliest_date'         => 'sometimes|required',
+            'latest_date'           => 'sometimes|required',
+            'image_file_names'      => 'sometimes|required',
+            'physical_description'  => 'nullable',
+            'designer'              => 'nullable',
+            'origin'                => 'nullable',
+            'materials'             => 'nullable',
+            'techniques'            => 'nullable',
+            'decorations'            => 'nullable',
+            'search_words'          => 'nullable',
+            'sewing_methods'        => 'nullable',
+            'classification'        => 'nullable',
+            'cut'                   => 'nullable',
+            'fastenings'             => 'nullable',
+            'stiffening'            => 'nullable',
+            'condition'             => 'nullable',
+            'measurements'          => 'nullable',
+            'alterations'           => 'nullable',
+            'provenance'            => 'nullable',
+            'consent'               => 'sometimes|required'
         ]);
     }
 }

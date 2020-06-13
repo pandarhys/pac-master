@@ -11,8 +11,10 @@
                             class="border p-2 text-xs block w-full rounded"
                             placeholder="What is it? Keep it short, e.g. “Pink Corset Cover”."
                             v-model="form.title">
-                        <span class="text-xs italic text-error" v-if="form.errors.has('title')"
-                              v-text="form.errors.get('title')"></span>
+                        <span class="text-xs italic text-error"
+                              v-if="form.errors.has('title')"
+                              v-text="form.errors.get('title')">
+                        </span>
                     </div>
 
                     <div class="mb-4">
@@ -24,35 +26,50 @@
                             placeholder="One sentence to briefly summarise the garment, e.g. “A delicate pale salmon pink cotton corset cover with lace insertion detail.”"
                             v-model="form.description">
                         </textarea>
-                        <span class="text-xs italic text-error" v-if="form.errors.has('description')"
-                              v-text="form.errors.get('description')"></span>
+                        <span class="text-xs italic text-error"
+                              v-if="form.errors.has('description')"
+                              v-text="form.errors.get('description')">
+                        </span>
                     </div>
 
                     <div class="mb-4">
                         <h3 class="mb-2">Estimate Date Range</h3>
                         <p class="mb-2">When was it made? If you are unsure then keep it broad, or you can put it to the community in our “history mystery” section. If you know the exact date just put that same date in both boxes.</p>
-                        <datepicker placeholder="Earliest Date" class="mb-2">
+                        <datepicker placeholder="Earliest Date" class="mb-2" v-model="form.earliest_date"></datepicker>
+                        <span class="text-xs italic text-error"
+                              v-if="form.errors.has('earliest_date')"
+                              v-text="form.errors.get('earliest_date')">
+                            </span>
+                        <datepicker placeholder="Latest Date" class="mb-2" v-model="form.latest_date">
                         </datepicker>
-                        <datepicker placeholder="Latest Date" class="mb-2">
-                        </datepicker>
+                        <span class="text-xs italic text-error"
+                              v-if="form.errors.has('latest_date')"
+                              v-text="form.errors.get('latest_date')">
+                            </span>
                     </div>
-
                     <div class="mb-4">
-                        <FileUpload message='Upload Pictures Here'></FileUpload>
+                        <FileUpload message='Upload Pictures Here' @storeFileName="storeImagePath">
+                        </FileUpload>
+                        <span class="text-xs italic text-error"
+                              v-if="form.errors.has('image_file_names')"
+                              >Upload at Least One File
+                        </span>
                     </div>
 
 <!--                    optional input-->
                     <div class="mb-4">
-                        <label for="physicalDescription" class="text-sm block mb-2">Physical Description</label>
+                        <label for="physical_description" class="text-sm block mb-2">Physical Description</label>
                         <textarea
-                            id="physicalDescription"
+                            id="physical_description"
                             class="border border-muted-light p-2 text-xs block w-full rounded"
                             rows="7"
                             placeholder="What does it look like? Start basic, what type of garment is it, and what is it chiefly made of? Work your way down the garment, consider; neckline sleeves, chest, waistline, pockets, length, and is it full or fitted? How is it decorated (if at all), and how does it fasten? If you have an idea but are unsure, put “possibly” before the response, e.g. “possibly cotton lawn.” When describing left or right it is from the wearer’s perspective not the viewers."
-                            v-model="form.physicalDescription">
+                            v-model="form.physical_description">
                         </textarea>
-                        <span class="text-xs italic text-error" v-if="form.errors.has('physicalDescription')"
-                              v-text="form.errors.get('physicalDescription')"></span>
+                        <span class="text-xs italic text-error"
+                              v-if="form.errors.has('physical_description')"
+                              v-text="form.errors.get('physical_description')">
+                        </span>
                     </div>
 
                     <div class="mb-4">
@@ -63,18 +80,24 @@
                             class="border p-2 text-xs block w-full rounded"
                             placeholder="Does it have a label, or do you know who made it?"
                             v-model="form.designer">
-                        <span class="text-xs italic text-error" v-if="form.errors.has('designer')"
-                              v-text="form.errors.get('designer')"></span>
+                        <span class="text-xs italic text-error"
+                              v-if="form.errors.has('designer')"
+                              v-text="form.errors.get('designer')">
+                        </span>
                     </div>
 
                     <div class="mb-4">
                         <label for="origin" class="text-sm block mb-2">Place of Origin</label>
                             <CountrySelector
                                 id="origin"
-                                v-model="form.origin">
+                                v-model="form.origin"
+                                :countrySeleted.sync="form.origin"
+                            >
                             </CountrySelector>
-                        <span class="text-xs italic text-error" v-if="form.errors.has('origin')"
-                              v-text="form.errors.get('origin')"></span>
+                        <span class="text-xs italic text-error"
+                              v-if="form.errors.has('origin')"
+                              v-text="form.errors.get('origin')">
+                        </span>
                     </div>
 
                     <div class="mb-4">
@@ -93,19 +116,18 @@
                                   },
                                 }">Info</span>
                         </div>
-                    <textarea
-                        id="materials"
-                        class="border border-muted-light p-2 text-xs block w-full rounded"
-                        rows="1"
-                        placeholder="Write the main fabric first then all other materials you can identify. "
-                        v-model="form.materials">
-                            </textarea>
-                    <span class="text-xs italic text-error"
-                          v-if="form.errors.has('materials')"
-                          v-text="form.errors.get('materials')">
-                            </span>
-                </div>
-
+                        <textarea
+                            id="materials"
+                            class="border border-muted-light p-2 text-xs block w-full rounded"
+                            rows="1"
+                            placeholder="Write the main fabric first then all other materials you can identify. "
+                            v-model="form.materials">
+                                </textarea>
+                        <span class="text-xs italic text-error"
+                              v-if="form.errors.has('materials')"
+                              v-text="form.errors.get('materials')">
+                        </span>
+                    </div>
                     <div class="mb-4">
                         <div class="mt-1 title flex justify-between items-center">
                             <label for="techniques" class="text-sm block mb-2">Techniques</label>
@@ -132,7 +154,7 @@
                         <span class="text-xs italic text-error"
                               v-if="form.errors.has('techniques')"
                               v-text="form.errors.get('techniques')">
-                            </span>
+                        </span>
                     </div>
                     <div class="mb-4">
                         <div class="mt-1 title flex justify-between items-center">
@@ -155,17 +177,17 @@
                             class="border border-muted-light p-2 text-xs block w-full rounded"
                             rows="1"
                             placeholder="List all the types of additional decoration applied to the garment. "
-                            v-model="form.decoration">
+                            v-model="form.decorations">
                             </textarea>
                         <span class="text-xs italic text-error"
                               v-if="form.errors.has('decoration')"
                               v-text="form.errors.get('decoration')">
-                            </span>
+                        </span>
                     </div>
 
                     <div class="mb-4">
                         <div class="mt-1 title flex justify-between items-center">
-                            <label for="searchWords" class="text-sm block mb-2">Item Themes</label>
+                            <label for="search_words" class="text-sm block mb-2">Item Themes</label>
                             <span @mouseover="UpdateToolTipMsg(
                                 'The occasion-(wedding; debutante; workwear; travelling; trousseau; mourning; maternity)' +
                                 '\nColloquial terms for time period-(Regency; Rocco; Victorian; Edwardian)' +
@@ -183,28 +205,30 @@
                             }">Info</span>
                         </div>
                         <textarea
-                            id="searchWords"
+                            id="search_words"
                             class="border border-muted-light p-2 text-xs block w-full rounded"
                             rows="1"
                             placeholder="List anything else that you think someone could search that would be relevant to your garment. Only use single words"
-                            v-model="form.searchWords">
+                            v-model="form.search_words">
                             </textarea>
                         <span class="text-xs italic text-error"
-                              v-if="form.errors.has('searchWords')"
-                              v-text="form.errors.get('searchWords')">
-                            </span>
+                              v-if="form.errors.has('search_words')"
+                              v-text="form.errors.get('search_words')">
+                        </span>
                     </div>
 
                     <div class="mb-4">
 
                         <h3 id="sewingMethod" class="text-sm block mb-2">Sewing Methods</h3>
                         <checkbox
-                            :items="sewingMethodsItems"
-                            :checkedItems.sync="form.sewingMethods"
-                            checkListName="sewingMethods">
+                            :items="sewing_methodsItems"
+                            :checkedItems.sync="form.sewing_methods"
+                            checkListName="sewing_methods">
                         </checkbox>
-                        <span  class="text-xs italic text-error" v-if="form.errors.has('sewingMethod')"
-                                v-text="form.errors.get('sewingMethod')"></span>
+                        <span  class="text-xs italic text-error"
+                               v-if="form.errors.has('sewingMethod')"
+                               v-text="form.errors.get('sewingMethod')">
+                        </span>
                     </div>
 
                     <div class="mb-4">
@@ -214,8 +238,10 @@
                             :checkedItems.sync="form.classification"
                             checkListName="classification">
                         </checkbox>
-                        <span  class="text-xs italic text-error" v-if="form.errors.has('classification')"
-                               v-text="form.errors.get('classification')"></span>
+                        <span  class="text-xs italic text-error"
+                               v-if="form.errors.has('classification')"
+                               v-text="form.errors.get('classification')">
+                        </span>
                     </div>
 
                     <div class="mb-4">
@@ -225,15 +251,17 @@
                             :checkedItems.sync="form.cut"
                             checkListName="cut">
                         </checkbox>
-                        <span  class="text-xs italic text-error" v-if="form.errors.has('cut')"
-                               v-text="form.errors.get('cut')"></span>
+                        <span  class="text-xs italic text-error"
+                               v-if="form.errors.has('cut')"
+                               v-text="form.errors.get('cut')">
+                        </span>
                     </div>
 
                     <div class="mb-4">
                         <h3 id="fastenings" class="text-sm block mb-2">Fastenings</h3>
                         <checkbox
                             :items="fasteningItems"
-                            :checkedItems.sync="form.fastening"
+                            :checkedItems.sync="form.fastenings"
                             checkListName="fastenings">
                         </checkbox>
                         <span  class="text-xs italic text-error" v-if="form.errors.has('fastenings')"
@@ -351,8 +379,7 @@
                     </div>
 
                     <footer class="flex justify-end">
-                        <button type="button" class="button is-outlined mr-4" @click="$modal.hide('new-article2')">Cancel
-                        </button>
+                        <a href="/article/" class="button is-outlined mr-4">Cancel</a>
                         <button class="button" :disabled="form.errors.any()">Create Article</button>
                     </footer>
                 </div>
@@ -368,6 +395,7 @@
     import CountrySelector from "./reuse/CountrySelector";
     import Checkbox from "./reuse/Checkbox";
     import Formtable from "./reuse/Formtable";
+    import moment from 'moment'
 
     export default {
         name:'ArticleForm',
@@ -379,29 +407,33 @@
                 form: new Form({
                     title: '',
                     description: '',
-                    physicalDescription: '',
+                    earliest_date:'',
+                    latest_date:'',
+                    image_file_names:[],
+                    physical_description: '',
                     designer:'',
-                    searchWords:'',
+                    search_words:'',
                     origin:'',
                     materials:'',
                     techniques:'',
-                    decoration:'',
+                    decorations:'',
                     alterations:'',
-                    sewingMethods:[],
+                    sewing_methods:[],
                     classification:[],
                     cut:[],
-                    fastening:[],
+                    fastenings:[],
                     stiffening:[],
                     measurements:[],
                     condition:[],
-                    consent:[]
+                    consent:[],
+                    provenance:'',
                 }),
                 toolTipMsg: 'test',
                 formInput: '',
                 //object data
-                sewingMethodsItems:[
-                    { name:'handSewn' , label:'Hand Sewn'},
-                    { name:'machineSewn' , label:'Machine Sewn'},
+                sewing_methodsItems:[
+                    { name:'hand sewn' , label:'Hand Sewn'},
+                    { name:'machine sewn' , label:'Machine Sewn'},
                     { name:'knitted' , label:'Knitted'},
                     { name:'unknown' , label:'Unknown'}
                 ],
@@ -413,9 +445,9 @@
                     { name:'unknown' , label:'Unknown'}
                 ],
                 cutItems:[
-                    { name:'Straight' , label:'Straight'},
-                    { name:'Bias' , label:'Bias'},
-                    { name:'Stretch' , label:'Stretch'},
+                    { name:'straight' , label:'Straight'},
+                    { name:'bias' , label:'Bias'},
+                    { name:'stretch' , label:'Stretch'},
                     { name:'unknown' , label:'Unknown'}
                 ],
                 fasteningItems:[
@@ -431,8 +463,8 @@
                 ],
                 stiffeningItems:[
                     { name:'whalebone' , label:'Whalebone'},
-                    { name:'flatsteel' , label:'Flat Steel Bone'},
-                    { name:'spiralsteel' , label:'Spiral Steel Bone'},
+                    { name:'flat steel' , label:'Flat Steel Bone'},
+                    { name:'spiral steel' , label:'Spiral Steel Bone'},
                     { name:'buckram' , label:'Buckram'},
                     { name:'padding' , label:'Padding'},
                     { name:'canvas' , label:'Canvas'},
@@ -477,11 +509,29 @@
             UpdateToolTipMsg: function(formInput){
                 this.toolTipMsg = formInput;
             },
+            storeImagePath: function(ImageFileName)
+            {
+                var obj = JSON.parse(ImageFileName);
+                this.form.image_file_names.push(obj.image_name);
+            },
+            ConvertToDate: function (date,format) {
+                return moment(date).format(format);
+            },
             async Submit() {
+                this.form.classification = JSON.stringify(this.form.classification);
+                this.form.cut = JSON.stringify(this.form.cut);
+                this.form.fastenings = JSON.stringify(this.form.fastenings);
+                this.form.stiffening = JSON.stringify(this.form.stiffening);
+                this.form.measurements = JSON.stringify(this.form.measurements);
+                this.form.condition = JSON.stringify(this.form.condition);
+                this.form.sewing_methods = JSON.stringify(this.form.sewing_methods);
+                this.form.image_file_names = JSON.stringify(this.form.image_file_names);
+                this.form.earliest_date = this.ConvertToDate(this.form.earliest_date,"YYYY-MM-DD");
+                this.form.latest_date = this.ConvertToDate(this.form.latest_date,"YYYY-MM-DD");
                 this.form
                     .post('/article')
                     .then(article => this.$emit('completed', article));
-            }
+            },
         }
     }
 </script>

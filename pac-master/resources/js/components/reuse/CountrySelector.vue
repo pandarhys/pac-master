@@ -2,6 +2,7 @@
     <v-select
         :options="paginated"
         :filterable="false"
+        v-model="country"
         @open="onOpen"
         @close="onClose"
         @search="query => search = query"
@@ -18,11 +19,13 @@
     import countries from '../../data/countries';
 
     export default {
-        name: "InfiniteScroll",
+        name: "CountrySelector",
+        props: ['countrySeleted'],
         data: () => ({
             observer: null,
             limit: 10,
-            search: ''
+            search: '',
+            country: []
         }),
         mounted () {
             /**
@@ -51,7 +54,8 @@
                 }
             },
             onClose () {
-                this.observer.disconnect();
+                this.observer.disconnect()
+                this.$emit('update:countrySeleted',this.country);
             },
             async infiniteScroll ([{isIntersecting, target}]) {
                 if (isIntersecting) {

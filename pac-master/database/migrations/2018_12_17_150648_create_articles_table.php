@@ -18,9 +18,27 @@ class CreateArticlesTable extends Migration
             $table->unsignedBigInteger('owner_id');
             $table->string('title');
             $table->text('description');
-            $table->text('notes')->nullable();
+            $table->date('earliest_date');
+            $table->date('latest_date');
+            $table->jsonb('image_file_names');
+            $table->text('physical_description')->nullable();
+            $table->text('designer')->nullable();
+            $table->text('origin')->nullable();
+            $table->text('materials')->nullable();
+            $table->text('techniques')->nullable();
+            $table->text('decorations')->nullable();
+            $table->text('search_words')->nullable();
+            $table->jsonb('sewing_methods')->nullable();
+            $table->jsonb('classification')->nullable();
+            $table->jsonb('cut')->nullable();
+            $table->jsonb('fastenings')->nullable();
+            $table->jsonb('stiffening')->nullable();
+            $table->jsonb('condition')->nullable();
+            $table->jsonb('measurements')->nullable();
+            $table->text('alterations')->nullable();
+            $table->text('provenance')->nullable();
+            $table->string('consent');
             $table->timestamps();
-
             $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
