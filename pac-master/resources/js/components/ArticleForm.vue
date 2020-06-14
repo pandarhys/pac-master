@@ -53,7 +53,7 @@
                         </FileUpload>
                         <span class="text-xs italic text-error"
                               v-if="form.errors.has('image_file_names')"
-                              >Upload at Least One File
+                              >Upload at Least One Image
                         </span>
                     </div>
 
@@ -397,11 +397,12 @@
     import Checkbox from "./reuse/Checkbox";
     import Formtable from "./reuse/Formtable";
     import moment from 'moment'
+    import { ValidationProvider } from 'vee-validate';
 
     export default {
         name:'ArticleForm',
         components: {
-            Datepicker,VTooltip,CountrySelector,Checkbox,Formtable
+            Datepicker,VTooltip,CountrySelector,Checkbox,Formtable,ValidationProvider
         },
         data() {
             return {
@@ -516,18 +517,32 @@
                 this.form.image_file_names.push(obj.image_name);
             },
             ConvertToDate: function (date,format) {
-                return moment(date).format(format);
+                if (date){
+                    return moment(date).format(format);
+                }
+                else
+                {
+                    return date
+                }
             },
-
+            ConvertToJson: function (obj){
+                if (obj==="") {
+                    return obj
+                }
+                else{
+                    let json = JSON.stringify(obj);
+                    return json;
+                }
+            },
             async Submit() {
-                this.form.classification = JSON.stringify(this.form.classification);
-                this.form.cut = JSON.stringify(this.form.cut);
-                this.form.fastenings = JSON.stringify(this.form.fastenings);
-                this.form.stiffening = JSON.stringify(this.form.stiffening);
-                this.form.measurements = JSON.stringify(this.form.measurements);
-                this.form.condition = JSON.stringify(this.form.condition);
-                this.form.sewing_methods = JSON.stringify(this.form.sewing_methods);
-                this.form.image_file_names = JSON.stringify(this.form.image_file_names);
+                this.form.classification = this.ConvertToJson(this.form.classification);
+                this.form.cut = this.ConvertToJson(this.form.cut);
+                this.form.fastenings = this.ConvertToJson(this.form.fastenings);
+                this.form.stiffening = this.ConvertToJson(this.form.stiffening);
+                this.form.measurements = this.ConvertToJson(this.form.measurements);
+                this.form.condition = this.ConvertToJson(this.form.condition);
+                this.form.sewing_methods = this.ConvertToJson(this.form.sewing_methods);
+                this.form.image_file_names = this.ConvertToJson(this.form.image_file_names);
                 this.form.earliest_date = this.ConvertToDate(this.form.earliest_date,"YYYY-MM-DD");
                 this.form.latest_date = this.ConvertToDate(this.form.latest_date,"YYYY-MM-DD");
                 this.form

@@ -126,7 +126,7 @@ class ArticlesController extends Controller
             'origin'                => 'nullable',
             'materials'             => 'nullable',
             'techniques'            => 'nullable',
-            'decorations'            => 'nullable',
+            'decorations'           => 'nullable',
             'search_words'          => 'nullable',
             'sewing_methods'        => 'nullable',
             'classification'        => 'nullable',
