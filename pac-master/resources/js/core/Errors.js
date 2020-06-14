@@ -43,6 +43,7 @@ class Errors {
      * @param {object} errors
      */
     record(errors) {
+        console.log(errors);
         this.errors = errors;
     }
 

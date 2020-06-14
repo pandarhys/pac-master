@@ -61,6 +61,7 @@ class ArticlesController extends Controller
         }
 
         return redirect($article->path());
+
     }
 
     /**
@@ -114,11 +115,12 @@ class ArticlesController extends Controller
     protected function validateRequest()
     {
         return request()->validate([
-            'title'                 => 'sometimes|required',
-            'description'           => 'sometimes|required',
-            'earliest_date'         => 'sometimes|required',
-            'latest_date'           => 'sometimes|required',
-            'image_file_names'      => 'sometimes|required',
+          //  'title'                 => 'sometimes|required',
+            'title'                 => 'required',
+            'description'           => 'required',
+            'earliest_date'         => 'required',
+            'latest_date'           => 'required',
+            'image_file_names'      => 'required',
             'physical_description'  => 'nullable',
             'designer'              => 'nullable',
             'origin'                => 'nullable',
@@ -135,7 +137,7 @@ class ArticlesController extends Controller
             'measurements'          => 'nullable',
             'alterations'           => 'nullable',
             'provenance'            => 'nullable',
-            'consent'               => 'sometimes|required'
+            'consent'               => 'required'
         ]);
     }
 }

@@ -35,17 +35,18 @@
                     <div class="mb-4">
                         <h3 class="mb-2">Estimate Date Range</h3>
                         <p class="mb-2">When was it made? If you are unsure then keep it broad, or you can put it to the community in our “history mystery” section. If you know the exact date just put that same date in both boxes.</p>
-                        <datepicker placeholder="Earliest Date" class="mb-2" v-model="form.earliest_date"></datepicker>
-                        <span class="text-xs italic text-error"
-                              v-if="form.errors.has('earliest_date')"
-                              v-text="form.errors.get('earliest_date')">
+                        <div class="mb-4 flex">
+                            <datepicker placeholder="Earliest Date" class="mb-2" v-model="form.earliest_date" :required="true"></datepicker>
+                            <span class="text-xs italic text-error"
+                                  v-if="form.errors.has('earliest_date')"
+                                  v-text="form.errors.get('earliest_date')">
                             </span>
-                        <datepicker placeholder="Latest Date" class="mb-2" v-model="form.latest_date">
-                        </datepicker>
-                        <span class="text-xs italic text-error"
-                              v-if="form.errors.has('latest_date')"
-                              v-text="form.errors.get('latest_date')">
+                            <datepicker placeholder="Latest Date" class="mb-2" v-model="form.latest_date" :required="true"></datepicker>
+                            <span class="text-xs italic text-error"
+                                  v-if="form.errors.has('latest_date')"
+                                  v-text="form.errors.get('latest_date')">
                             </span>
+                        </div>
                     </div>
                     <div class="mb-4">
                         <FileUpload message='Upload Pictures Here' @storeFileName="storeImagePath">
@@ -517,6 +518,7 @@
             ConvertToDate: function (date,format) {
                 return moment(date).format(format);
             },
+
             async Submit() {
                 this.form.classification = JSON.stringify(this.form.classification);
                 this.form.cut = JSON.stringify(this.form.cut);
@@ -530,7 +532,8 @@
                 this.form.latest_date = this.ConvertToDate(this.form.latest_date,"YYYY-MM-DD");
                 this.form
                     .post('/article')
-                    .then(article => this.$emit('completed', article));
+                    .then(article => location = article.message);
+                    //.then(article => this.$emit('completed', article));
             },
         }
     }
