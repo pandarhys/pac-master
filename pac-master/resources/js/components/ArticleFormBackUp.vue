@@ -394,12 +394,6 @@
         components: {
             Datepicker,VTooltip,CountrySelector,Checkbox,Formtable,ValidationProvider
         },
-        props: {
-            article: Object,
-            formType: String,
-            adminReview:Boolean
-        }
-        ,
         data() {
             return {
                 form: new Form({
@@ -530,21 +524,6 @@
                     return json;
                 }
             },
-            SetEditData: function(){
-                Object.entries(this.form).forEach(([key, value]) => {
-                    Object.entries(this.article).forEach(([articleKey, articleValue]) => {
-                        if ([articleKey][0] === [key][0]){
-                            if (Array.isArray(this.form[key]))
-                            {
-                                this.form[key] = [articleValue];
-                            }
-                            else{
-                                this.form[key] = String([articleValue]);
-                            }
-                        }
-                    });
-                });
-            },
             async Submit() {
                 this.form.classification = this.ConvertToJson(this.form.classification);
                 this.form.cut = this.ConvertToJson(this.form.cut);
@@ -556,24 +535,11 @@
                 this.form.image_file_names = this.ConvertToJson(this.form.image_file_names);
                 this.form.earliest_date = this.ConvertToDate(this.form.earliest_date,"YYYY-MM-DD");
                 this.form.latest_date = this.ConvertToDate(this.form.latest_date,"YYYY-MM-DD");
-                if (this.formType === "PATCH"){
-                    this.form
-                        .patch('/article' + '/' + this.article.id)
-                        .then(article => location = article.message);
+                this.form
+                    .post('/article')
+                    .then(article => location = article.message);
                     //.then(article => this.$emit('completed', article));
-                }
-                else{
-                    this.form
-                        .post('/article')
-                        .then(article => location = article.message);
-                    //.then(article => this.$emit('completed', article));
-                }
             },
-        },
-        created(){
-            if (this.formType === "PATCH"){
-                this.SetEditData();
-            }
         }
     }
 </script>
