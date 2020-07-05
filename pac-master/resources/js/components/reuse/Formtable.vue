@@ -32,6 +32,17 @@
             onChange(event) {
                 this.$emit('recordTableInput',this.items);
             }
+        },
+        created(){
+
+            //
+            // if (this.checkedItems !== ""){
+            //     var arr = [];
+            //     arr  = JSON.parse("[" + this.checkedItems + "]");
+            //     for (var i = 0; i < arr.length; i++){
+            //         this.checkedNames[i] = arr[i].toString();
+            //     }
+            // }
         }
     }
 </script>

@@ -423,7 +423,7 @@
                     stiffening:[],
                     measurements:[],
                     condition:[],
-                    consent:[],
+                    consent:'',
                     provenance:'',
                 }),
                 toolTipMsg: 'test',
@@ -543,6 +543,23 @@
                             }
                         }
                     });
+                });
+                //measurement table assignment
+                Object.entries(this.article).forEach(([articleKey, articleValue]) => {
+                      if ([articleKey] == "measurements"){
+                          var arr = [];
+                          arr = JSON.parse("[" + this.article[articleKey] + "]");
+                          arr = Object.setPrototypeOf(arr[0], Object.prototype);
+                          //looop over measurement table
+                          Object.entries(this.measurementTableItems).forEach(([measureTableKey, measureTableValue]) => {
+                              //loop over measurement object from article
+                              Object.entries(arr).forEach(([measureArray, measureValue]) => {
+                                  if (measureTableValue["name"] === measureValue["name"]){
+                                    this.measurementTableItems[measureTableKey]["result"] = measureValue["result"];
+                                    }
+                              });
+                          });
+                    }
                 });
             },
             async Submit() {

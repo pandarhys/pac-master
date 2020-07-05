@@ -23,6 +23,18 @@
                     this.$emit('update:checkedItems',this.checkedNames);
             }
         },
+        created(){
+            //used for edit, when values already binded
+            if (this.checkedItems !== ""){
+                var arr = [];
+                arr  = JSON.parse("[" + this.checkedItems + "]");
+                for (var i = 0; i < arr.length; i++){
+                    for (var x = 0; x < arr[i].length; x++){
+                        this.checkedNames[x] = arr[i][x].toString();
+                    }
+                }
+            }
+        }
     }
 </script>
 
