@@ -120,7 +120,7 @@ class ArticlesController extends Controller
             'description'           => 'required',
             'earliest_date'         => 'required',
             'latest_date'           => 'required',
-            'image_file_names'      => 'required',
+            'image_file_names'      => 'sometimes|required',
             'physical_description'  => 'nullable',
             'designer'              => 'nullable',
             'origin'                => 'nullable',

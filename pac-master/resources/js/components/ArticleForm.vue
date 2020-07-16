@@ -47,7 +47,7 @@
                         </div>
                     </div>
                     <div class="mb-4">
-                        <FileUpload message='Upload Pictures Here' @storeFileName="storeImagePath">
+                        <FileUpload v-show='CreateForm' message='Upload Pictures Here' @storeFileName="storeImagePath">
                         </FileUpload>
                         <span class="text-xs italic text-error"
                               v-if="form.errors.has('image_file_names')"
@@ -371,7 +371,8 @@
                     </div>
                     <footer class="flex justify-end">
                         <a href="/article/" class="button is-outlined mr-4">Cancel</a>
-                        <button class="button" :disabled="form.errors.any()">Create Article</button>
+                        <button v-if='CreateForm' class="button" :disabled="form.errors.any()">Create Article</button>
+                        <button v-else class="button" :disabled="form.errors.any()">Edit Article</button>
                     </footer>
                 </div>
             </div>
@@ -427,7 +428,7 @@
                     provenance:'',
                 }),
                 toolTipMsg: 'test',
-                formInput: '',
+                CreateForm: '',
                 //object data
                 sewing_methodsItems:[
                     { name:'hand sewn' , label:'Hand Sewn'},
@@ -531,6 +532,7 @@
                 }
             },
             SetEditData: function(){
+                this.CreateForm = false;
                 Object.entries(this.form).forEach(([key, value]) => {
                     Object.entries(this.article).forEach(([articleKey, articleValue]) => {
                         if ([articleKey][0] === [key][0]){
@@ -550,7 +552,7 @@
                           var arr = [];
                           arr = JSON.parse("[" + this.article[articleKey] + "]");
                           arr = Object.setPrototypeOf(arr[0], Object.prototype);
-                          //looop over measurement table
+                          //loop over measurement table
                           Object.entries(this.measurementTableItems).forEach(([measureTableKey, measureTableValue]) => {
                               //loop over measurement object from article
                               Object.entries(arr).forEach(([measureArray, measureValue]) => {
@@ -590,6 +592,9 @@
         created(){
             if (this.formType === "PATCH"){
                 this.SetEditData();
+            }
+            else{
+                this.CreateForm = true;
             }
         }
     }
