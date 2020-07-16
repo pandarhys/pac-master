@@ -365,9 +365,10 @@
                             <input type="radio" id="no" value="no" v-model="form.consent">
                             <label for="no">No, I would rather they did not</label>
                         </div>
-                            <span  class="text-xs italic text-error" v-if="form.errors.has('consent')"
+                        <span  class="text-xs italic text-error"
+                               v-if="form.errors.has('consent')"
                                v-text="form.errors.get('consent')">
-                            </span>
+                        </span>
                     </div>
                     <footer class="flex justify-end">
                         <a href="/article/" class="button is-outlined mr-4">Cancel</a>
@@ -578,14 +579,12 @@
                 if (this.formType === "PATCH"){
                     this.form
                         .patch('/article' + '/' + this.article.id)
-                        .then(article => location = article.message);
-                    //.then(article => this.$emit('completed', article));
+                        .then(window.location.href  = '/article' + '/' + this.article.id);
                 }
                 else{
                     this.form
                         .post('/article')
                         .then(article => location = article.message);
-                    //.then(article => this.$emit('completed', article));
                 }
             },
         },

@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('article', 'ArticlesController');
@@ -22,9 +23,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::patch('/article/{article}/tasks/{task}', 'ArticleTasksController@update');
 
     Route::post('/article/{article}/invitations', 'ArticleInvitationsController@store');
-
-    Route::get('/home', 'HomeController@index')->name('home');
-
 });
 
+Route::group(['middleware' => 'is_admin'], function () {
+//    Route::get('/admin', 'AdminController@admin')
+//        ->middleware('is_admin')
+//        ->name('admin');
+});
 Auth::routes();

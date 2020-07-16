@@ -131,7 +131,7 @@ class ArticlesController extends Controller
             'sewing_methods'        => 'nullable',
             'classification'        => 'nullable',
             'cut'                   => 'nullable',
-            'fastenings'             => 'nullable',
+            'fastenings'            => 'nullable',
             'stiffening'            => 'nullable',
             'condition'             => 'nullable',
             'measurements'          => 'nullable',
