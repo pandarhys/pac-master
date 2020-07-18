@@ -372,8 +372,9 @@
                     </div>
                     <footer class="flex justify-end">
                         <a href="/article/" class="button is-outlined mr-4">Cancel</a>
-                        <button v-if='CreateForm' class="button" :disabled="form.errors.any()">Create Article</button>
-                        <button v-else class="button" :disabled="form.errors.any()">Edit Article</button>
+                        <button v-if="CreateForm" class="button mr-4" :disabled="form.errors.any()">Create Article</button>
+                        <button v-else-if="CreateForm === false && !admin" class="button mr-4" :disabled="form.errors.any()">Edit Article</button>
+                        <button v-if="admin" class="button mr-4" :disabled="form.errors.any()">Make Live</button>
                     </footer>
                 </div>
             </div>
@@ -398,8 +399,10 @@
         },
         props: {
             article: Object,
+            admin: Object,
             formType: String,
             adminReview:Boolean
+
         }
         ,
         data() {
@@ -589,6 +592,7 @@
             },
         },
         created(){
+            console.log(this.user);
             if (this.formType === "PATCH"){
                 this.SetEditData();
             }
