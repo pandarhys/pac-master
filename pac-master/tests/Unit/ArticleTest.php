@@ -26,16 +26,16 @@ class ArticleTest extends TestCase
         $this->assertInstanceOf('App\User', $article->owner);
     }
 
-    /** @test */
-    public function it_can_add_a_task()
-    {
-        $article = factory('App\Article')->create();
-
-        $task = $article->addTask('Test task');
-
-        $this->assertCount(1, $article->tasks);
-        $this->assertTrue($article->tasks->contains($task));
-    }
+//    /** @test */
+//    public function it_can_add_a_task()
+//    {
+//        $article = factory('App\Article')->create();
+//
+//        $task = $article->addTask('Test task');
+//
+//        $this->assertCount(1, $article->tasks);
+//        $this->assertTrue($article->tasks->contains($task));
+//    }
 
     /** @test */
     function it_can_invite_a_user()

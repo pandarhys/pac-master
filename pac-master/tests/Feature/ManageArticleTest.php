@@ -38,30 +38,30 @@ class ManageArticlesTest extends TestCase
             ->assertSee($attributes['description']);
     }
 
-    /** @test */
-    function tasks_can_be_included_as_part_a_new_article_creation()
-    {
-        $this->signIn();
+//    /** @test */
+//    function tasks_can_be_included_as_part_a_new_article_creation()
+//    {
+//        $this->signIn();
+//
+//        $attributes = factory(Article::class)->raw();
+//
+//        $attributes['tasks'] = [
+//            ['body' => 'Task 1'],
+//            ['body' => 'Task 2']
+//        ];
+//
+//        $this->post('/article', $attributes);
+//
+//        $this->assertCount(2, Article::first()->tasks);
+//    }
 
-        $attributes = factory(Article::class)->raw();
-
-        $attributes['tasks'] = [
-            ['body' => 'Task 1'],
-            ['body' => 'Task 2']
-        ];
-
-        $this->post('/article', $attributes);
-
-        $this->assertCount(2, Article::first()->tasks);
-    }
-
-    /** @test */
-    function a_user_can_see_all_articles_they_have_been_invited_to_on_their_dashboard()
-    {
-        $article = tap(ArticleFactory::create())->invite($this->signIn());
-
-        $this->get('/article')->assertSee($article->title);
-    }
+//    /** @test */
+//    function a_user_can_see_all_articles_they_have_been_invited_to_on_their_dashboard()
+//    {
+//        $article = tap(ArticleFactory::create())->invite($this->signIn());
+//
+//        $this->get('/article')->assertSee($article->title);
+//    }
 
     /** @test */
     function unauthorized_users_cannot_delete_articles()

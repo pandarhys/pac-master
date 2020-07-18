@@ -1,6 +1,6 @@
 <template>
     <div class="ArticleForm">
-        <form @submit.prevent="Submit" @keydown="form.errors.clear($event.target.name)">
+        <form @submit.prevent="Submit" @click="form.errors.clear($event.target.id,false)">
             <div class="flex">
                 <div class="flex-1 mr-4">
                     <div class="mb-4">
@@ -34,12 +34,12 @@
                         <h3 class="mb-2">Estimate Date Range</h3>
                         <p class="mb-2">When was it made? If you are unsure then keep it broad, or you can put it to the community in our “history mystery” section. If you know the exact date just put that same date in both boxes.</p>
                         <div class="mb-4 flex">
-                            <datepicker placeholder="Earliest Date" class="mb-2" v-model="form.earliest_date" :required="true"></datepicker>
+                            <datepicker placeholder="Earliest Date" class="mb-2" v-model="form.earliest_date" :required="true" id="earliest_date"></datepicker>
                             <span class="text-xs italic text-error"
                                   v-if="form.errors.has('earliest_date')"
                                   v-text="form.errors.get('earliest_date')">
                             </span>
-                            <datepicker placeholder="Latest Date" class="mb-2" v-model="form.latest_date" :required="true"></datepicker>
+                            <datepicker placeholder="Latest Date" class="mb-2" v-model="form.latest_date" :required="true" id="latest_date"></datepicker>
                             <span class="text-xs italic text-error"
                                   v-if="form.errors.has('latest_date')"
                                   v-text="form.errors.get('latest_date')">
@@ -355,14 +355,14 @@
                               v-text="form.errors.get('provenance')">
                         </span>
                     </div>
-                    <h3 id="consent" class="text-sm block mb-2">Consent - Would you mind if another member of the archive contacted you in regards to this garment?</h3>
+                    <h3 id="consent-heading" class="text-sm block mb-2">Consent - Would you mind if another member of the archive contacted you in regards to this garment?</h3>
                     <div class="mb-4 w-1/4">
-                        <div class="wrapper-class mb-1">
-                            <input type="radio" id="yes" value="yes" v-model="form.consent">
+                        <div class="wrapper-class mb-1" >
+                            <input type="radio" id="yes" value="yes" v-model="form.consent" @click="form.errors.clear('consent',false)">
                             <label for="yes">Yes they can contact me</label>
                         </div>
                         <div class="wrapper-class mb-1">
-                            <input type="radio" id="no" value="no" v-model="form.consent">
+                            <input type="radio" id="no" value="no" v-model="form.consent" @click="form.errors.clear('consent',false)">
                             <label for="no">No, I would rather they did not</label>
                         </div>
                         <span  class="text-xs italic text-error"
