@@ -38,6 +38,8 @@ class CreateArticlesTable extends Migration
             $table->text('alterations')->nullable();
             $table->text('provenance')->nullable();
             $table->string('consent');
+            $table->string('status')->default('pending');
+            $table->boolean('live')->default(false);
             $table->timestamps();
             $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
         });

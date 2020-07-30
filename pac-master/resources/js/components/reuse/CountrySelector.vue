@@ -34,6 +34,9 @@
              * in that environment, so we need to do it in mounted() instead.
              */
             this.observer = new IntersectionObserver(this.infiniteScroll);
+            if (this.countrySeleted != ""){
+                this.country = this.countrySeleted;
+            }
         },
         computed: {
             filtered () {

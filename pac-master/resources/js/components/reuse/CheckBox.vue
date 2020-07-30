@@ -23,6 +23,18 @@
                     this.$emit('update:checkedItems',this.checkedNames);
             }
         },
+        created(){
+            if (this.checkedItems !== ""){
+                var arr = [];
+                arr  = JSON.parse("[" + this.checkedItems + "]");
+                for (var i = 0; i < arr.length; i++){
+                    for (var x = 0; x < arr[i].length; x++){
+                        this.checkedNames[x] = arr[i][x].toString();
+                    }
+                }
+                this.$emit('update:checkedItems',this.checkedNames)
+            }
+        }
     }
 </script>
 

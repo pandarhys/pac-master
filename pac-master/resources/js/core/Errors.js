@@ -52,14 +52,16 @@ class Errors {
      *
      * @param {string|null} field
      */
-    clear(field) {
+    clear(field,clearAll) {
         if (field) {
             delete this.errors[field];
-
             return;
         }
-
+        if (clearAll===false){
+            return
+        }
         this.errors = {};
+
     }
 }
 export default Errors;

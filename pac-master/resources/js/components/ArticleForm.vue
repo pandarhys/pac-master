@@ -1,6 +1,6 @@
 <template>
     <div class="ArticleForm">
-        <form @submit.prevent="Submit" @keydown="form.errors.clear($event.target.name)">
+        <form @submit.prevent="Submit" @click="form.errors.clear($event.target.id,false)">
             <div class="flex">
                 <div class="flex-1 mr-4">
                     <div class="mb-4">
@@ -16,7 +16,6 @@
                               v-text="form.errors.get('title')">
                         </span>
                     </div>
-
                     <div class="mb-4">
                         <label for="description" class="text-sm block mb-2">Description</label>
                         <textarea
@@ -31,32 +30,31 @@
                               v-text="form.errors.get('description')">
                         </span>
                     </div>
-
                     <div class="mb-4">
                         <h3 class="mb-2">Estimate Date Range</h3>
                         <p class="mb-2">When was it made? If you are unsure then keep it broad, or you can put it to the community in our “history mystery” section. If you know the exact date just put that same date in both boxes.</p>
-                        <datepicker placeholder="Earliest Date" class="mb-2" v-model="form.earliest_date"></datepicker>
-                        <span class="text-xs italic text-error"
-                              v-if="form.errors.has('earliest_date')"
-                              v-text="form.errors.get('earliest_date')">
+                        <div class="mb-4 flex">
+                            <datepicker placeholder="Earliest Date" class="mb-2" v-model="form.earliest_date" :required="true" id="earliest_date"></datepicker>
+                            <span class="text-xs italic text-error"
+                                  v-if="form.errors.has('earliest_date')"
+                                  v-text="form.errors.get('earliest_date')">
                             </span>
-                        <datepicker placeholder="Latest Date" class="mb-2" v-model="form.latest_date">
-                        </datepicker>
-                        <span class="text-xs italic text-error"
-                              v-if="form.errors.has('latest_date')"
-                              v-text="form.errors.get('latest_date')">
+                            <datepicker placeholder="Latest Date" class="mb-2" v-model="form.latest_date" :required="true" id="latest_date"></datepicker>
+                            <span class="text-xs italic text-error"
+                                  v-if="form.errors.has('latest_date')"
+                                  v-text="form.errors.get('latest_date')">
                             </span>
+                        </div>
                     </div>
                     <div class="mb-4">
-                        <FileUpload message='Upload Pictures Here' @storeFileName="storeImagePath">
+                        <FileUpload v-show='CreateForm' message='Upload Pictures Here' @storeFileName="storeImagePath">
                         </FileUpload>
                         <span class="text-xs italic text-error"
                               v-if="form.errors.has('image_file_names')"
-                              >Upload at Least One File
+                              >Upload at Least One Image
                         </span>
                     </div>
-
-<!--                    optional input-->
+<!--optional input-->
                     <div class="mb-4">
                         <label for="physical_description" class="text-sm block mb-2">Physical Description</label>
                         <textarea
@@ -71,7 +69,6 @@
                               v-text="form.errors.get('physical_description')">
                         </span>
                     </div>
-
                     <div class="mb-4">
                         <label for="designer" class="text-sm block mb-2">Designer/Maker</label>
                         <input
@@ -85,7 +82,6 @@
                               v-text="form.errors.get('designer')">
                         </span>
                     </div>
-
                     <div class="mb-4">
                         <label for="origin" class="text-sm block mb-2">Place of Origin</label>
                             <CountrySelector
@@ -99,7 +95,6 @@
                               v-text="form.errors.get('origin')">
                         </span>
                     </div>
-
                     <div class="mb-4">
                         <h5 class="mb-3">The answers in the next four fields are the tags that the archives search function will look through, it is basically a summary of the “physical description”. To help this work properly please write as a list of words/phrases each separated by a semi-colon.</h5>
                         <div class="mt-1 title flex justify-between items-center">
@@ -114,7 +109,8 @@
                                   delay: {
                                     show: 100,
                                   },
-                                }">Info</span>
+                                }">Info
+                            </span>
                         </div>
                         <textarea
                             id="materials"
@@ -122,7 +118,7 @@
                             rows="1"
                             placeholder="Write the main fabric first then all other materials you can identify. "
                             v-model="form.materials">
-                                </textarea>
+                        </textarea>
                         <span class="text-xs italic text-error"
                               v-if="form.errors.has('materials')"
                               v-text="form.errors.get('materials')">
@@ -184,7 +180,6 @@
                               v-text="form.errors.get('decoration')">
                         </span>
                     </div>
-
                     <div class="mb-4">
                         <div class="mt-1 title flex justify-between items-center">
                             <label for="search_words" class="text-sm block mb-2">Item Themes</label>
@@ -216,9 +211,7 @@
                               v-text="form.errors.get('search_words')">
                         </span>
                     </div>
-
                     <div class="mb-4">
-
                         <h3 id="sewingMethod" class="text-sm block mb-2">Sewing Methods</h3>
                         <checkbox
                             :items="sewing_methodsItems"
@@ -230,7 +223,6 @@
                                v-text="form.errors.get('sewingMethod')">
                         </span>
                     </div>
-
                     <div class="mb-4">
                         <h3 id="classification" class="text-sm block mb-2">Classification</h3>
                         <checkbox
@@ -243,7 +235,6 @@
                                v-text="form.errors.get('classification')">
                         </span>
                     </div>
-
                     <div class="mb-4">
                         <h3 id="cut" class="text-sm block mb-2">Cut</h3>
                         <checkbox
@@ -256,7 +247,6 @@
                                v-text="form.errors.get('cut')">
                         </span>
                     </div>
-
                     <div class="mb-4">
                         <h3 id="fastenings" class="text-sm block mb-2">Fastenings</h3>
                         <checkbox
@@ -265,9 +255,9 @@
                             checkListName="fastenings">
                         </checkbox>
                         <span  class="text-xs italic text-error" v-if="form.errors.has('fastenings')"
-                               v-text="form.errors.get('fastenings')"></span>
+                               v-text="form.errors.get('fastenings')">
+                        </span>
                     </div>
-
                     <div class="mb-4">
                         <h3 id="stiffening" class="text-sm block mb-2">Stiffening / Lining / Padding</h3>
                         <checkbox
@@ -276,9 +266,9 @@
                             checkListName="stiffening">
                         </checkbox>
                         <span  class="text-xs italic text-error" v-if="form.errors.has('stiffening')"
-                               v-text="form.errors.get('stiffening')"></span>
+                               v-text="form.errors.get('stiffening')">
+                        </span>
                     </div>
-
                     <div class="mb-4">
                         <h3 id="condition" class="text-sm block mb-2">Condition</h3>
                         <checkbox
@@ -287,9 +277,9 @@
                             checkListName="condition">
                         </checkbox>
                         <span  class="text-xs italic text-error" v-if="form.errors.has('condition')"
-                               v-text="form.errors.get('condition')"></span>
+                               v-text="form.errors.get('condition')">
+                        </span>
                     </div>
-
                     <div class="mb-4">
                         <div class="w-1/3 mt-1 title flex justify-between items-center">
                             <h3 id="measurements" class="text-sm block mb-2">Measurements</h3>
@@ -308,17 +298,19 @@
                                   delay: {
                                     show: 100,
                                   },
-                                }">Info</span>
+                                }">Info
+                            </span>
                         </div>
-                        <Formtable
-                            :items.sync="measurementTableItems"
-                            labelTitle="Area being measured"
-                            resultTitle="Measurement (inches)"
-                            tableName="measurements"
-                            @recordTableInput="form.measurements = measurementTableItems">
-                        </Formtable>
+                            <Formtable
+                                :items.sync="measurementTableItems"
+                                labelTitle="Area being measured"
+                                resultTitle="Measurement (inches)"
+                                tableName="measurements"
+                                @recordTableInput="form.measurements = measurementTableItems">
+                            </Formtable>
                         <span  class="text-xs italic text-error" v-if="form.errors.has('measurements')"
-                               v-text="form.errors.get('measurements')"></span>
+                               v-text="form.errors.get('measurements')">
+                        </span>
                     </div>
                     <div class="mb-4">
                         <div class="mt-1 title flex justify-between items-center">
@@ -335,52 +327,54 @@
                                   delay: {
                                     show: 100,
                                   },
-                                }">Info</span>
+                                }">Info
+                            </span>
                         </div>
                         <textarea
                             id="alterations"
                             class="border border-muted-light p-2 text-xs block w-full rounded"
                             rows="2"
                             v-model="form.alterations">
-                            </textarea>
+                        </textarea>
                         <span class="text-xs italic text-error"
                               v-if="form.errors.has('alterations')"
                               v-text="form.errors.get('alterations')">
-                            </span>
+                        </span>
                     </div>
-
                     <div class="mb-4">
-                            <label for="provenance" class="text-sm block mb-2">Credit Line / Provenance</label>
+                        <label for="provenance" class="text-sm block mb-2">Credit Line / Provenance</label>
                         <textarea
                             id="provenance"
                             class="border border-muted-light p-2 text-xs block w-full rounded"
                             rows="2"
                             placeholder="Any information you have about the garments origins."
                             v-model="form.provenance">
-                            </textarea>
+                        </textarea>
                         <span class="text-xs italic text-error"
                               v-if="form.errors.has('provenance')"
                               v-text="form.errors.get('provenance')">
-                            </span>
+                        </span>
                     </div>
-
-                    <h3 id="consent" class="text-sm block mb-2">Consent - Would you mind if another member of the archive contacted you in regards to this garment?</h3>
+                    <h3 id="consent-heading" class="text-sm block mb-2">Consent - Would you mind if another member of the archive contacted you in regards to this garment?</h3>
                     <div class="mb-4 w-1/4">
-                        <div class="wrapper-class mb-1">
-                            <input type="radio" id="yes" value="yes" v-model="form.consent">
+                        <div class="wrapper-class mb-1" >
+                            <input type="radio" id="yes" value="yes" v-model="form.consent" @click="form.errors.clear('consent',false)">
                             <label for="yes">Yes they can contact me</label>
                         </div>
                         <div class="wrapper-class mb-1">
-                            <input type="radio" id="no" value="no" v-model="form.consent">
+                            <input type="radio" id="no" value="no" v-model="form.consent" @click="form.errors.clear('consent',false)">
                             <label for="no">No, I would rather they did not</label>
                         </div>
-                            <span  class="text-xs italic text-error" v-if="form.errors.has('consent')"
-                               v-text="form.errors.get('consent')"></span>
+                        <span  class="text-xs italic text-error"
+                               v-if="form.errors.has('consent')"
+                               v-text="form.errors.get('consent')">
+                        </span>
                     </div>
-
                     <footer class="flex justify-end">
                         <a href="/article/" class="button is-outlined mr-4">Cancel</a>
-                        <button class="button" :disabled="form.errors.any()">Create Article</button>
+                        <button v-if="CreateForm" class="button mr-4" :disabled="form.errors.any()">Create Article</button>
+                        <button v-else-if="CreateForm === false && !admin" class="button mr-4" :disabled="form.errors.any()">Edit Article</button>
+                        <button v-if="admin" class="button mr-4" :disabled="form.errors.any()">Make Live</button>
                     </footer>
                 </div>
             </div>
@@ -396,12 +390,19 @@
     import Checkbox from "./reuse/Checkbox";
     import Formtable from "./reuse/Formtable";
     import moment from 'moment'
+    import { ValidationProvider } from 'vee-validate';
 
     export default {
         name:'ArticleForm',
         components: {
-            Datepicker,VTooltip,CountrySelector,Checkbox,Formtable
+            Datepicker,VTooltip,CountrySelector,Checkbox,Formtable,ValidationProvider
         },
+        props: {
+            article: Object,
+            admin: Number,
+            formType: String,
+        }
+        ,
         data() {
             return {
                 form: new Form({
@@ -425,11 +426,13 @@
                     stiffening:[],
                     measurements:[],
                     condition:[],
-                    consent:[],
+                    consent:'',
                     provenance:'',
+                    status:'',
+                    live:0,
                 }),
                 toolTipMsg: 'test',
-                formInput: '',
+                CreateForm: '',
                 //object data
                 sewing_methodsItems:[
                     { name:'hand sewn' , label:'Hand Sewn'},
@@ -515,23 +518,96 @@
                 this.form.image_file_names.push(obj.image_name);
             },
             ConvertToDate: function (date,format) {
-                return moment(date).format(format);
+                if (date){
+                    return moment(date).format(format);
+                }
+                else
+                {
+                    return date
+                }
+            },
+            ConvertToJson: function (obj){
+                if (obj==="") {
+                    return obj
+                }
+                else{
+                    let json = JSON.stringify(obj);
+                    return json;
+                }
+            },
+            SetEditData: function(){
+                this.CreateForm = false;
+                Object.entries(this.form).forEach(([key, value]) => {
+                    Object.entries(this.article).forEach(([articleKey, articleValue]) => {
+                        if ([articleKey][0] === [key][0]){
+                            if (Array.isArray(this.form[key]))
+                            {
+                                this.form[key] = [articleValue];
+                            }
+                            else{
+                                this.form[key] = String([articleValue]);
+                            }
+                        }
+                    });
+                });
+                //measurement table assignment
+                Object.entries(this.article).forEach(([articleKey, articleValue]) => {
+                      if ([articleKey] == "measurements"){
+                          var arr = [];
+                          arr = JSON.parse("[" + this.article[articleKey] + "]");
+                          arr = Object.setPrototypeOf(arr[0], Object.prototype);
+                          //loop over measurement table
+                          Object.entries(this.measurementTableItems).forEach(([measureTableKey, measureTableValue]) => {
+                              //loop over measurement object from article
+                              Object.entries(arr).forEach(([measureArray, measureValue]) => {
+                                  if (measureTableValue["name"] === measureValue["name"]){
+                                    this.measurementTableItems[measureTableKey]["result"] = measureValue["result"];
+                                    }
+                              });
+                          });
+                    }
+                });
             },
             async Submit() {
-                this.form.classification = JSON.stringify(this.form.classification);
-                this.form.cut = JSON.stringify(this.form.cut);
-                this.form.fastenings = JSON.stringify(this.form.fastenings);
-                this.form.stiffening = JSON.stringify(this.form.stiffening);
-                this.form.measurements = JSON.stringify(this.form.measurements);
-                this.form.condition = JSON.stringify(this.form.condition);
-                this.form.sewing_methods = JSON.stringify(this.form.sewing_methods);
-                this.form.image_file_names = JSON.stringify(this.form.image_file_names);
+                this.form.classification = this.ConvertToJson(this.form.classification);
+                this.form.cut = this.ConvertToJson(this.form.cut);
+                this.form.fastenings = this.ConvertToJson(this.form.fastenings);
+                this.form.stiffening = this.ConvertToJson(this.form.stiffening);
+                this.form.measurements = this.ConvertToJson(this.form.measurements);
+                this.form.condition = this.ConvertToJson(this.form.condition);
+                this.form.sewing_methods = this.ConvertToJson(this.form.sewing_methods);
+                this.form.image_file_names = this.ConvertToJson(this.form.image_file_names);
                 this.form.earliest_date = this.ConvertToDate(this.form.earliest_date,"YYYY-MM-DD");
                 this.form.latest_date = this.ConvertToDate(this.form.latest_date,"YYYY-MM-DD");
-                this.form
-                    .post('/article')
-                    .then(article => this.$emit('completed', article));
+                if (this.formType === "PATCH"){
+                    this.form
+                        .patch('/article' + '/' + this.article.id)
+                        .then(window.location.href  = '/article' + '/' + this.article.id);
+                }
+                else{
+                    this.form
+                        .post('/article')
+                        .then(article => location = article.message);
+                }
             },
+        },
+        created(){
+            if (this.formType === "PATCH"){
+                this.SetEditData();
+            }
+            else{
+                this.CreateForm = true;
+            }
+            if (this.admin == 1) {
+                console.log('admin');
+                this.form.status = 'live';
+                this.form.live = 1;
+            }
+            else if(!this.admin){
+                console.log('non admin');
+                this.form.status = 'pending';
+                this.form.live = 0;
+            }
         }
     }
 </script>

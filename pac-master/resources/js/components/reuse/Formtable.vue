@@ -32,6 +32,9 @@
             onChange(event) {
                 this.$emit('recordTableInput',this.items);
             }
+        },
+        created(){
+            this.$emit('recordTableInput',this.items);
         }
     }
 </script>
