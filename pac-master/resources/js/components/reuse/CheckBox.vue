@@ -24,7 +24,6 @@
             }
         },
         created(){
-            //used for edit, when values already binded
             if (this.checkedItems !== ""){
                 var arr = [];
                 arr  = JSON.parse("[" + this.checkedItems + "]");
@@ -33,6 +32,7 @@
                         this.checkedNames[x] = arr[i][x].toString();
                     }
                 }
+                this.$emit('update:checkedItems',this.checkedNames)
             }
         }
     }

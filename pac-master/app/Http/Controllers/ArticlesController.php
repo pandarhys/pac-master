@@ -137,7 +137,9 @@ class ArticlesController extends Controller
             'measurements'          => 'nullable',
             'alterations'           => 'nullable',
             'provenance'            => 'nullable',
-            'consent'               => 'required'
+            'consent'               => 'required',
+            'status'                => 'nullable',
+            'live'                  => 'nullable'
         ]);
     }
 }

@@ -5,6 +5,6 @@
         <h1 class="text-2xl font-normal mb-10 text-center">
             Edit Your Article
         </h1>
-        <article-form :form-type="'PATCH'" :admin-review="true" :article="{{ $article }}" :admin="{{ Auth::user()->admin }} "></article-form>
+        <article-form :form-type="'PATCH'" :article="{{ $article }}" :admin="{{ Auth::user()->admin }} "></article-form>
     </div>
 @endsection

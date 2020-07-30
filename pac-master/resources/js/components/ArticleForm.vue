@@ -399,10 +399,8 @@
         },
         props: {
             article: Object,
-            admin: Object,
+            admin: Number,
             formType: String,
-            adminReview:Boolean
-
         }
         ,
         data() {
@@ -430,6 +428,8 @@
                     condition:[],
                     consent:'',
                     provenance:'',
+                    status:'',
+                    live:0,
                 }),
                 toolTipMsg: 'test',
                 CreateForm: '',
@@ -592,12 +592,21 @@
             },
         },
         created(){
-            console.log(this.user);
             if (this.formType === "PATCH"){
                 this.SetEditData();
             }
             else{
                 this.CreateForm = true;
+            }
+            if (this.admin == 1) {
+                console.log('admin');
+                this.form.status = 'live';
+                this.form.live = 1;
+            }
+            else if(!this.admin){
+                console.log('non admin');
+                this.form.status = 'pending';
+                this.form.live = 0;
             }
         }
     }
