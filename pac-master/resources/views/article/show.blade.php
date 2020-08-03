@@ -6,7 +6,7 @@
             <p class="text-muted font-light">
                 <a href="/articles" class="text-muted no-underline hover:underline">My Articles</a>
                 / {{ $article->title }}
-                {{ $article }}
+
             </p>
 
             <div class="flex items-center">

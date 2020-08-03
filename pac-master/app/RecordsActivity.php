@@ -93,7 +93,8 @@ trait RecordsActivity
         if ($this->wasChanged()) {
             return [
                 'before' => array_except(
-                    array_diff($this->oldAttributes, $this->getAttributes()), 'updated_at'
+                    //array_diff($this->oldAttributes, $this->getAttributes()), 'updated_at'
+                    array_udiff($this->oldAttributes, $this->getAttributes(), 'compare_objects'),'updated_at'
                 ),
                 'after' => array_except(
                     $this->getChanges(), 'updated_at'
@@ -101,4 +102,9 @@ trait RecordsActivity
             ];
         }
     }
+    function compare_objects($obj_a, $obj_b) {
+        return $obj_a->id - $obj_b->id;
+    }
+
+
 }

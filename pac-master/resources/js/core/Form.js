@@ -92,6 +92,7 @@ class Form {
                 .then(response => {
                     this.onSuccess(response.data);
                     resolve(response.data);
+                    console.log(response.data)
                 })
                 .catch(error => {
                     this.onFail(error.response.data);

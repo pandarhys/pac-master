@@ -2,7 +2,7 @@
     <div class="ArticleForm">
         <form @submit.prevent="Submit" @click="form.errors.clear($event.target.id,false)">
             <div class="flex">
-                <div class="flex-1 mr-4">
+                <div class="flex-1 w-4/5">
                     <div class="mb-4">
                         <label for="title" class="text-sm block mb-2">Title</label>
                         <input
@@ -281,8 +281,8 @@
                         </span>
                     </div>
                     <div class="mb-4">
-                        <div class="w-1/3 mt-1 title flex justify-between items-center">
-                            <h3 id="measurements" class="text-sm block mb-2">Measurements</h3>
+                        <div class="mt-1 title flex justify-start items-left">
+                            <h3 id="measurements" class="text-sm block mb-2 mr-2">Measurements</h3>
                             <span @mouseover="UpdateToolTipMsg(
                                     'Only fill out the fields of the table which make sense for your piece of clothing.\n' +
                                     'Measure the garment on the inside. Terms such as “Neck” and “Waist” mean the edge and waist seam of the garment, \n' +
@@ -304,7 +304,7 @@
                             <Formtable
                                 :items.sync="measurementTableItems"
                                 labelTitle="Area being measured"
-                                resultTitle="Measurement (inches)"
+                                resultTitle="Inches"
                                 tableName="measurements"
                                 @recordTableInput="form.measurements = measurementTableItems">
                             </Formtable>
@@ -356,7 +356,7 @@
                         </span>
                     </div>
                     <h3 id="consent-heading" class="text-sm block mb-2">Consent - Would you mind if another member of the archive contacted you in regards to this garment?</h3>
-                    <div class="mb-4 w-1/4">
+                    <div class="mb-4">
                         <div class="wrapper-class mb-1" >
                             <input type="radio" id="yes" value="yes" v-model="form.consent" @click="form.errors.clear('consent',false)">
                             <label for="yes">Yes they can contact me</label>
@@ -370,12 +370,12 @@
                                v-text="form.errors.get('consent')">
                         </span>
                     </div>
-                    <footer class="flex justify-end">
-                        <a href="/article/" class="button is-outlined mr-4">Cancel</a>
-                        <button v-if="CreateForm" class="button mr-4" :disabled="form.errors.any()">Create Article</button>
-                        <button v-else-if="CreateForm === false && !admin" class="button mr-4" :disabled="form.errors.any()">Edit Article</button>
-                        <button v-if="admin" class="button mr-4" :disabled="form.errors.any()">Make Live</button>
-                    </footer>
+                    <div class="flex justify-end">
+                            <a href="/article/" class="button is-outlined mr-2">Cancel</a>
+                            <button v-if="CreateForm" class="button mr-2" :disabled="form.errors.any()">Create Article</button>
+                            <button v-else-if="CreateForm === false && !admin" class="button mr-2" :disabled="form.errors.any()">Edit Article</button>
+                            <button v-if="admin" class="button mr-2" :disabled="form.errors.any()">Make Live</button>
+                    </div>
                 </div>
             </div>
         </form>
@@ -582,7 +582,8 @@
                 if (this.formType === "PATCH"){
                     this.form
                         .patch('/article' + '/' + this.article.id)
-                        .then(window.location.href  = '/article' + '/' + this.article.id);
+                        .then(window.location.href  = '/article' + '/' + this.article.id, response => alert(response.statusText))
+                        .catch(error => console.log(error));
                 }
                 else{
                     this.form
@@ -599,12 +600,10 @@
                 this.CreateForm = true;
             }
             if (this.admin == 1) {
-                console.log('admin');
                 this.form.status = 'live';
                 this.form.live = 1;
             }
             else if(!this.admin){
-                console.log('non admin');
                 this.form.status = 'pending';
                 this.form.live = 0;
             }
