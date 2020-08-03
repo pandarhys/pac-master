@@ -19,6 +19,18 @@ class ArticlesController extends Controller
     }
 
     /**
+     * View only pending articles, only for admins article.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function pendingArticles()
+    {
+        $articles = auth()->user()->pendingArticles();
+
+        return view('article.index', compact('articles'));
+    }
+
+    /**
      * Show a single article.
      *
      * @param Article $article
@@ -115,7 +127,6 @@ class ArticlesController extends Controller
     protected function validateRequest()
     {
         return request()->validate([
-          //  'title'                 => 'sometimes|required',
             'title'                 => 'required',
             'description'           => 'required',
             'earliest_date'         => 'required',

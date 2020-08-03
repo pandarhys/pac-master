@@ -86,4 +86,6 @@ class Article extends Model
     {
         return $this->belongsToMany(User::class, 'article_members')->withTimestamps();
     }
+
+
 }

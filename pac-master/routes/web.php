@@ -18,18 +18,22 @@ Route::get('/', function () {
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::group(['middleware' => 'is_admin'], function () {
+//    Route::get('/admin', 'AdminController@admin')
+//        ->middleware('is_admin')
+//        ->name('admin');
+        Route::get('/pendingArticles', 'ArticlesController@pendingArticles')
+                    ->middleware('is_admin')
+                    ->name('admin');;
+    });
+
 
     Route::resource('article', 'ArticlesController');
-
     Route::post('/article/{article}/tasks', 'ArticleTasksController@store');
     Route::patch('/article/{article}/tasks/{task}', 'ArticleTasksController@update');
 
     Route::post('/article/{article}/invitations', 'ArticleInvitationsController@store');
 });
 
-Route::group(['middleware' => 'is_admin'], function () {
-//    Route::get('/admin', 'AdminController@admin')
-//        ->middleware('is_admin')
-//        ->name('admin');
-});
+
 Auth::routes();

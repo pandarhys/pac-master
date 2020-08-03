@@ -49,12 +49,39 @@ class User extends Authenticatable
      */
 	public function accessibleArticles()
 	{
-	    return Article::where('owner_id', $this->id)
-            ->orWhereHas('members', function ($query) {
-                $query->where('user_id', $this->id);
-            })
+//	    return Article::where('owner_id', $this->id)
+//            ->orWhereHas('members', function ($query) {
+//                $query->where('user_id', $this->id);
+//            })
+//            ->get();
+        if ($this->admin === 1){
+            return Article::where('status', 'live')
+                ->orWhere('status', 'pending')
+                ->orderBy('created_at','desc')
+                ->take(10)
+                ->get();
+        }
+        else{
+        return Article::where('status', 'live')
+            ->orderBy('created_at','desc')
+            ->take(10)
             ->get();
+        }
 	}
+
+	public function pendingArticles()
+    {
+        if ($this->admin === 1){
+            return Article::where('status', 'pending')
+                ->orderBy('created_at','desc')
+                ->take(10)
+                ->get();
+        }
+        else {
+            //TODO Insuffient permissions page
+            return redirect('/');
+        }
+    }
 
 	public function isAdmin()
     {
