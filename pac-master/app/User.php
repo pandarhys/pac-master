@@ -49,11 +49,6 @@ class User extends Authenticatable
      */
 	public function accessibleArticles()
 	{
-//	    return Article::where('owner_id', $this->id)
-//            ->orWhereHas('members', function ($query) {
-//                $query->where('user_id', $this->id);
-//            })
-//            ->get();
         if ($this->admin === 1){
             return Article::where('status', 'live')
                 ->orWhere('status', 'pending')

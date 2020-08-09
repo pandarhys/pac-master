@@ -16,6 +16,7 @@ class ArticlesController extends Controller
         $articles = auth()->user()->accessibleArticles();
 
         return view('article.index', compact('articles'));
+
     }
 
     /**
@@ -112,6 +113,7 @@ class ArticlesController extends Controller
      */
     public function destroy(Article $article)
     {
+
         $this->authorize('manage', $article);
 
         $article->delete();

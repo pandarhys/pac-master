@@ -540,9 +540,17 @@
                 Object.entries(this.form).forEach(([key, value]) => {
                     Object.entries(this.article).forEach(([articleKey, articleValue]) => {
                         if ([articleKey][0] === [key][0]){
-                            if (Array.isArray(this.form[key]))
+                            if (Array.isArray(this.form[key]) && this.form[key] != "measurements")
                             {
-                                this.form[key] = [articleValue];
+                                var arr = [];
+
+                                arr  = JSON.parse("[" + [articleValue] + "]");
+                                for (var i = 0; i < arr.length; i++){
+                                    for (var x = 0; x < arr[i].length; x++){
+                                        this.form[key][x] = arr[i][x].toString();
+                                    }
+                                }
+                                //this.form[key] = [articleValue];
                             }
                             else{
                                 this.form[key] = String([articleValue]);
@@ -550,6 +558,9 @@
                         }
                     });
                 });
+
+
+
                 //measurement table assignment
                 Object.entries(this.article).forEach(([articleKey, articleValue]) => {
                       if ([articleKey] == "measurements"){
