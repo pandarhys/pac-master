@@ -19,7 +19,6 @@ window.axios = axios;
 window.form = Form;
 
 
-
 Vue.config.productionTip = false;
 Vue.config.devtools = true;
 
@@ -32,6 +31,7 @@ Vue.component('new-article-modal2', require('./components/NewArticleModal2.vue')
 Vue.component('dropdown', require('./components/Dropdown.vue').default);
 Vue.component('FileUpload', require('./components/reuse/FileUpload.vue').default);
 Vue.component('PACDatePicker',require('./components/PACDatePicker.vue').default);
+Vue.component('ArticleCard',require('./components/ArticleCard.vue').default);
 
 
 new Vue({

@@ -543,14 +543,12 @@
                             if (Array.isArray(this.form[key]) && this.form[key] != "measurements")
                             {
                                 var arr = [];
-
                                 arr  = JSON.parse("[" + [articleValue] + "]");
                                 for (var i = 0; i < arr.length; i++){
                                     for (var x = 0; x < arr[i].length; x++){
                                         this.form[key][x] = arr[i][x].toString();
                                     }
                                 }
-                                //this.form[key] = [articleValue];
                             }
                             else{
                                 this.form[key] = String([articleValue]);
