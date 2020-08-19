@@ -9,14 +9,11 @@
     </header>
     <main class="lg:flex lg:flex-wrap -mx-1">
         @forelse ($articles as $article)
-            <div class="lg:w-1/3 px-1 pb-3">
+            <div class="lg:w-1/5 px-1 pb-3">
                 <article-card :article="{{ $article }}"><article-card>
             </div>
         @empty
             <div>No articles yet.</div>
         @endforelse
-        <div>
-            <img src="{{ asset('images/1597691052images.jpg') }}"/>
-        </div>
     </main>
 @endsection
