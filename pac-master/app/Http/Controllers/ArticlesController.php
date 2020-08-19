@@ -16,6 +16,19 @@ class ArticlesController extends Controller
         $articles = auth()->user()->accessibleArticles();
 
         return view('article.index', compact('articles'));
+
+    }
+
+    /**
+     * View only pending articles, only for admins article.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function pendingArticles()
+    {
+        $articles = auth()->user()->pendingArticles();
+
+        return view('article.index', compact('articles'));
     }
 
     /**
@@ -100,6 +113,7 @@ class ArticlesController extends Controller
      */
     public function destroy(Article $article)
     {
+
         $this->authorize('manage', $article);
 
         $article->delete();
@@ -115,7 +129,6 @@ class ArticlesController extends Controller
     protected function validateRequest()
     {
         return request()->validate([
-          //  'title'                 => 'sometimes|required',
             'title'                 => 'required',
             'description'           => 'required',
             'earliest_date'         => 'required',

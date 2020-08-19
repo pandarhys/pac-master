@@ -19,6 +19,7 @@ class ArticlePolicy
      */
     public function manage(User $user, Article $article)
     {
+        if ($user->isAdmin()) return true;
         return $user->is($article->owner);
     }
 

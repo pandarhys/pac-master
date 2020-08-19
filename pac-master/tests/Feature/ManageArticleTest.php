@@ -80,6 +80,7 @@ class ManageArticlesTest extends TestCase
         $this->actingAs($user)->delete($article->path())->assertStatus(403);
     }
 
+
     /** @test */
     function a_user_can_delete_a_article()
     {
@@ -95,11 +96,16 @@ class ManageArticlesTest extends TestCase
     /** @test */
     function a_user_can_update_a_article()
     {
+        $this->withExceptionHandling();
         $article = ArticleFactory::create();
-
+        $ChangedAttributes = $article->getAttributes();
+        $ChangedAttributes['title']='Changed';
+        dump($ChangedAttributes);
         $this->actingAs($article->owner)
-             ->patch($article->path(), $attributes = ['title' => 'Changed', 'description' => 'Changed'])
-             ->assertRedirect($article->path());
+            //->patch($article->path(), $ChangedAttributes)
+            ->patch($article->path(), $attributes = ['title' => 'Changed', 'description' => 'Changed'])
+
+            ->assertRedirect($article->path());
 
         $this->get($article->path().'/edit')->assertOk();
 
