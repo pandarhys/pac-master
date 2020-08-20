@@ -514,8 +514,7 @@
             },
             storeImagePath: function(ImageFileName)
             {
-                var obj = JSON.parse(ImageFileName);
-                this.form.image_file_names.push(obj.image_name);
+                this.form.image_file_names.push(ImageFileName);
             },
             ConvertToDate: function (date,format) {
                 if (date){
@@ -546,6 +545,7 @@
                                 arr  = JSON.parse("[" + [articleValue] + "]");
                                 for (var i = 0; i < arr.length; i++){
                                     for (var x = 0; x < arr[i].length; x++){
+                                        if (arr[i][x])
                                         this.form[key][x] = arr[i][x].toString();
                                     }
                                 }
@@ -556,9 +556,6 @@
                         }
                     });
                 });
-
-
-
                 //measurement table assignment
                 Object.entries(this.article).forEach(([articleKey, articleValue]) => {
                       if ([articleKey] == "measurements"){

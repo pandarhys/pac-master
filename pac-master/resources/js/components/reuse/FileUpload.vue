@@ -20,6 +20,7 @@
             },
             methods: {
                 afterComplete(file) {
+                    console.log(file.xhr.response);
                     this.$emit('storeFileName',file.xhr.response)
                 }
             },

@@ -18,8 +18,7 @@ window.vue = Vue;
 window.axios = axios;
 window.form = Form;
 
-
-Vue.config.productionTip = false;
+Vue.config.productionTip = true;
 Vue.config.devtools = true;
 
 Vue.component('article-form', require('./components/ArticleForm.vue').default);
