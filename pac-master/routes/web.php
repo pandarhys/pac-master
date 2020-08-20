@@ -29,9 +29,11 @@ Route::group(['middleware' => 'auth'], function () {
 
 
     Route::resource('article', 'ArticlesController');
+
+
+
     Route::post('/article/{article}/tasks', 'ArticleTasksController@store');
     Route::patch('/article/{article}/tasks/{task}', 'ArticleTasksController@update');
-
     Route::post('/article/{article}/invitations', 'ArticleInvitationsController@store');
 });
 
