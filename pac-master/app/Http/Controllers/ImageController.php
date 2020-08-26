@@ -18,8 +18,8 @@ class ImageController extends Controller
             $thumbnailPath = public_path().'/thumbnail/';
             $originalPath = public_path().'/images/';
             $thumbnailImage->save($originalPath.$name);
-            $thumbnailImage->resize(150,150);
-            $thumbnailImage->save($thumbnailPath.$name);
+            $img = ImageIntervention::make($originalPath.$name)->fit(145, 145,null,'top');
+            $img->save($thumbnailPath.$name);
         }
         return response()->json($name, 200);
     }
