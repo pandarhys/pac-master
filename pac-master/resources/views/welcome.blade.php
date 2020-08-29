@@ -16,6 +16,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
+        <link href="{{ mix('css/app.css') }}" rel="stylesheet">
         <style>
             html, body {
                 background-color: #fff;
@@ -69,8 +70,8 @@
             }
         </style>
     </head>
-        <body>
-            <div id="app">
+        <body class="theme-light bg-black" style="margin: 0 auto 20px;    width: 960px;    overflow: hidden;    padding: 0 0 20px;">
+            <div id="app" class="bg-page">
                 <div class="flex-center position-ref full-height">
                     @if (Route::has('login'))
                         <div class="top-right links">

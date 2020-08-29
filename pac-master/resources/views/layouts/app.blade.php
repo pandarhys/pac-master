@@ -20,8 +20,8 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body class="theme-light bg-page">
-    <div id="app">
+<body class="theme-light bg-black" style="margin: 0 auto 20px;    width: 960px;    overflow: hidden;    padding: 0 0 20px;">
+    <div id="app" class="bg-page">
         <nav class="bg-header section">
             <div class="container mx-auto">
                 <div class="flex justify-between items-center py-1">
@@ -66,7 +66,6 @@
                 </div>
             </div>
         </nav>
-
         <div class="section">
             <main class="container mx-auto py-6">
                 @yield('content')
