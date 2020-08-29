@@ -20,15 +20,30 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body class="theme-light bg-black" style="margin: 0 auto 20px;    width: 960px;    overflow: hidden;    padding: 0 0 20px;">
+<body class="theme-light bg-black" style="margin: 0 auto 20px;    width: 960px;   padding: 0 0 20px;">
     <div id="app" class="bg-page">
         <nav class="bg-header section">
             <div class="container mx-auto">
                 <div class="flex justify-between items-center py-1">
                     <h1>
-                        <a class="navbar-brand text-muted text-base font-light" href="{{ url('article') }}">People Archive of Costume
-                        </a>
+                        <a class="navbar-brand text-muted text-base font-light text-center" >    THE PEOPLE'S <br/> ARCHIVE OF COSTUME</a>
                     </h1>
+                    <div id="menu">
+                        <ul id="nav_links" class="list-style-type-none flex justify-between items-center" style="list-style-type:none;">
+                            <li class="py-4 px-4">
+                                <a href="{{ url('/') }}">HOME</a>
+                            </li>
+                            <li class="py-4 px-4">
+                                <a href="">ABOUT</a>
+                            </li>
+                            <li class="py-4 px-4">
+                                <a href="{{ url('article') }}">BROWSE</a>
+                            </li>
+                            <li class="py-4 px-4">
+                                <a href="/article/create">ADD GARMENT</a>
+                            </li>
+                        </ul>
+                    </div>
                     <div>
                         <!-- Right Side Of Navbar -->
                         <div class="flex items-center ml-auto">
@@ -40,7 +55,7 @@
                                     <a class="text-accent no-underline hover:underline" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 @endif
                             @else
-                                <theme-switcher></theme-switcher>
+{{--                                <theme-switcher></theme-switcher>--}}
                                 <dropdown align="right" width="200px">
                                     <template v-slot:trigger>
                                         <button
@@ -71,6 +86,28 @@
                 @yield('content')
             </main>
         </div>
+        <nav id="footer" class="bg-header section">
+            <div class="container mx-auto flex justify-between items-center py-1">
+                    <div>
+                        <h3>Abouts</h3>
+                        <P>
+                            About this site<br/>
+                            Contact us<br/>
+                            FAQ<br/>
+                        </P>
+                    </div>
+                    <div>
+                        <h3>Resources</h3>
+                        <P>
+                            About this site<br/>
+                            Contact us<br/>
+                            FAQ<br/>
+                        </P>
+                    </div>
+                    <div>x</div>
+                    <div>x</div>
+            </div>
+        </nav>
     </div>
 </body>
 </html>

@@ -27,9 +27,7 @@ Route::group(['middleware' => 'auth'], function () {
                     ->name('admin');;
     });
 
-
     Route::resource('article', 'ArticlesController');
-
 
 
     Route::post('/article/{article}/tasks', 'ArticleTasksController@store');
