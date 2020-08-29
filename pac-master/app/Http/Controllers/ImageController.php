@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Image;
+//use app\Image;
+use Intervention\Image\Facades\Image as ImageIntervention;
 
 class ImageController extends Controller
 {
@@ -11,15 +12,15 @@ class ImageController extends Controller
     {
         if($request->file('file'))
         {
-            $image = $request->file('file');
-            $name = time().$image->getClientOriginalName();
-            $image->move(public_path().'/images/', $name);
+            $originalImage= $request->file('file');
+            $name = time().$originalImage->getClientOriginalName();
+            $thumbnailImage = ImageIntervention::make($originalImage);
+            $thumbnailPath = public_path().'/thumbnail/';
+            $originalPath = public_path().'/images/';
+            $thumbnailImage->save($originalPath.$name);
+            $img = ImageIntervention::make($originalPath.$name)->fit(145, 145,null,'top');
+            $img->save($thumbnailPath.$name);
         }
-
-        $image= new Image();
-        $image->image_name = $name;
-        $image->save();
-
-        return response()->json($image, 200);
+        return response()->json($name, 200);
     }
 }

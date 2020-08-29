@@ -9,7 +9,15 @@
     </header>
     <main class="lg:flex lg:flex-wrap -mx-1">
         @forelse ($articles as $article)
-            <div class="lg:w-1/5 px-1 pb-3">
+{{--                            <div>--}}
+{{--                                <form method="POST" action="{{ $article->path() }}" class="text-right">--}}
+{{--                                    @method('DELETE')--}}
+{{--                                    @csrf--}}
+{{--                                    <button type="submit" class="text-xs">Delete</button>--}}
+{{--                                </form>--}}
+{{--                            </div>--}}
+{{--            <div class="lg:w-1/8  px-1 pb-3">--}}
+            <div class="h-150 w-150  px-1 pb-3">
                 <article-card :article="{{ $article }}"><article-card>
             </div>
         @empty
