@@ -1,6 +1,11 @@
 <template>
-        <div class="card flex flex-col border-0 px-1 py-1">
+        <div class="w-150 h-150 card border-0 px-1 py-1">
             <img class="rounded-lg" v-bind:src="this.displayImage"/>
+            <h3 class="text-center">
+                <a :href="this.articleUrl" class="text-center text-sm no-underline p-1 overflow-hidden">
+                {{ trimmedTitle }}
+                </a>
+            </h3>
         </div>
 </template>
 
@@ -10,29 +15,22 @@
         name: "ArticleCard",
         props: {
             article: Object,
+            articleUrl: String,
         },
         data () {
             return {
-                displayImage: String
+                displayImage: String,
+                trimmedTitled: String
             }
         },
         computed: {
-            styles() {
-                return {
-                    'background-image': this.displayImage,
-
-                }
-            },
-            img_section_style: function(){
-                    var bgImg= this.displayImage;
-                    return {
-                        'background': 'url('+bgImg+')',
-                        'background-repeat': 'no-repeat',
-                        'background-size': 'cover',
-                        'width': '145px',
-                        'height': '145px',
-
-                    }
+            trimmedTitle: function(){
+                var string = this.article.title;
+                var length = 12;
+                var trimmedString = string.length > length ?
+                    string.substring(0, length - 3) + "..." :
+                    string;
+                return  trimmedString;
             },
         },
         methods: {
@@ -45,9 +43,9 @@
             for (var i = 0; i < 1; i++){
                 for (var x = 0; x < 1; x++){
                     this.displayImage = BACKDROP_BASE + arr[i][x].split('"').join('');
-                    console.log(this.displayImage);
                 }
             }
+
         }
     }
 </script>
