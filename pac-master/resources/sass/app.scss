@@ -7,10 +7,14 @@
 @import 'components/card';
 @import 'components/dropdown';
 @import 'components/tooltip';
+@import 'components/wrapper';
 @import '~pretty-checkbox/src/pretty-checkbox.scss';
 @import "~vue-select/src/scss/vue-select.scss";
 
-body,
+html, body  {
+    min-height: 100% !important;
+    height: 100%;
+}
 button {
     @apply .text-default;
 }

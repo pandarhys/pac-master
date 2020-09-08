@@ -445,7 +445,7 @@
                     { name:'female' , label:'Female'},
                     { name:'child' , label:'Child'},
                     { name:'baby' , label:'Baby'},
-                    { name:'unknown' , label:'Unknown'}
+                    { name:'unknown' , label:'Unknown / Other'}
                 ],
                 cutItems:[
                     { name:'straight' , label:'Straight'},
