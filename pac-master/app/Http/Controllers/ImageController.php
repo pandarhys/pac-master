@@ -14,12 +14,14 @@ class ImageController extends Controller
         {
             $originalImage= $request->file('file');
             $name = time().$originalImage->getClientOriginalName();
-            $thumbnailImage = ImageIntervention::make($originalImage);
+            $img = ImageIntervention::make($originalImage);
+            $img->orientate();
             $thumbnailPath = public_path().'/thumbnail/';
             $originalPath = public_path().'/images/';
-            $thumbnailImage->save($originalPath.$name);
-            $img = ImageIntervention::make($originalPath.$name)->fit(145, 145,null,'top');
-            $img->save($thumbnailPath.$name);
+            $img->save($originalPath.$name);
+            $thumbnailImage = ImageIntervention::make($originalPath.$name)->fit(145, 145,null,'top');
+            $thumbnailImage->orientate();
+            $thumbnailImage->save($thumbnailPath.$name);
         }
         return response()->json($name, 200);
     }

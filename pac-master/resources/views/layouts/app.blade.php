@@ -19,58 +19,98 @@
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
+<body class="theme-light bg-black">
+    <div id="wrapper" class="wrapper">
+        <div id="app" class="bg-page ">
+            <nav class="bg-header section">
+                <div class="container mx-auto">
+                    <div class="flex justify-between items-center py-1">
+                        <h1>
+                            <a class="navbar-brand text-muted text-base font-light text-center" >    THE PEOPLE'S <br/> ARCHIVE OF COSTUME</a>
+                        </h1>
+                        <div id="menu">
+                            <ul id="nav_links" class="list-style-type-none flex justify-between items-center" style="list-style-type:none;">
+                                <li class="py-4 px-4">
+                                    <a href="{{ url('/') }}">HOME</a>
+                                </li>
+                                <li class="py-4 px-4">
+                                    <a href="{{ url('/about') }}">ABOUT</a>
+                                </li>
+                                <li class="py-4 px-4">
+                                    <a href="{{ url('/faq') }}">FAQ</a>
+                                </li>
+                                <li class="py-4 px-4">
+                                    <a href="{{ url('article') }}">BROWSE</a>
+                                </li>
+                                <li class="py-4 px-4">
+                                    <a href="/article/create">ADD GARMENT</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <!-- Right Side Of Navbar -->
+                            <div class="flex items-center ml-auto">
+                                <!-- Authentication Links -->
+                                @guest
+                                    <a class="text-accent mr-4 no-underline hover:underline" href="{{ route('login') }}">{{ __('Login') }}</a>
 
-<body class="theme-light bg-page">
-    <div id="app">
-        <nav class="bg-header section">
-            <div class="container mx-auto">
-                <div class="flex justify-between items-center py-1">
-                    <h1>
-                        <a class="navbar-brand text-muted text-base font-light" href="{{ url('article') }}">People Archive of Costume
-                        </a>
-                    </h1>
-                    <div>
-                        <!-- Right Side Of Navbar -->
-                        <div class="flex items-center ml-auto">
-                            <!-- Authentication Links -->
-                            @guest
-                                <a class="text-accent mr-4 no-underline hover:underline" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    @if (Route::has('register'))
+                                        <a class="text-accent no-underline hover:underline" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    @endif
+                                @else
+    {{--                                <theme-switcher></theme-switcher>--}}
+                                    <dropdown align="right" width="200px">
+                                        <template v-slot:trigger>
+                                            <button
+                                                class="flex items-center text-default no-underline text-sm focus:outline-none"
+                                                v-pre
+                                            >
+                                                <img width="35"
+                                                     class="rounded-full mr-3"
+                                                     src="{{ gravatar_url(auth()->user()->email) }}">
 
-                                @if (Route::has('register'))
-                                    <a class="text-accent no-underline hover:underline" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                @endif
-                            @else
-                                <theme-switcher></theme-switcher>
-                                <dropdown align="right" width="200px">
-                                    <template v-slot:trigger>
-                                        <button
-                                            class="flex items-center text-default no-underline text-sm focus:outline-none"
-                                            v-pre
-                                        >
-                                            <img width="35"
-                                                 class="rounded-full mr-3"
-                                                 src="{{ gravatar_url(auth()->user()->email) }}">
+                                                {{ auth()->user()->name }}
+                                            </button>
+                                        </template>
 
-                                            {{ auth()->user()->name }}
-                                        </button>
-                                    </template>
-
-                                    <form id="logout-form" method="POST" action="/logout">
-                                        @csrf
-                                        <button type="subdmit" class="dropdown-menu-link w-full text-left">Logout</button>
-                                    </form>
-                                </dropdown>
-                            @endguest
+                                        <form id="logout-form" method="POST" action="/logout">
+                                            @csrf
+                                            <button type="subdmit" class="dropdown-menu-link w-full text-left">Logout</button>
+                                        </form>
+                                    </dropdown>
+                                @endguest
+                            </div>
                         </div>
                     </div>
                 </div>
+            </nav>
+            <div class="section">
+                <main class="container mx-auto py-6">
+                    @yield('content')
+                </main>
             </div>
-        </nav>
-
-        <div class="section">
-            <main class="container mx-auto py-6">
-                @yield('content')
-            </main>
+            <nav id="footer" class="bg-header section">
+                <div class="container mx-auto flex justify-between items-center py-1">
+                        <div>
+                            <h3>Abouts</h3>
+                            <P>
+                                About this site<br/>
+                                Contact us<br/>
+                                FAQ<br/>
+                            </P>
+                        </div>
+                        <div>
+                            <h3>Resources</h3>
+                            <P>
+                                About this site<br/>
+                                Contact us<br/>
+                                FAQ<br/>
+                            </P>
+                        </div>
+                        <div>x</div>
+                        <div>x</div>
+                </div>
+            </nav>
         </div>
     </div>
 </body>

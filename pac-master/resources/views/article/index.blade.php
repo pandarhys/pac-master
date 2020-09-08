@@ -18,7 +18,7 @@
 {{--                            </div>--}}
 {{--            <div class="lg:w-1/8  px-1 pb-3">--}}
             <div class="h-150 w-150  px-1 pb-3">
-                <article-card :article="{{ $article }}"><article-card>
+                <article-card :article="{{ $article }}" article-url="{{ $article->path() }}"><article-card>
             </div>
         @empty
             <div>No articles yet.</div>
