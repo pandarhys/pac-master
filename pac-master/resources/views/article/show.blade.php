@@ -3,89 +3,65 @@
 @section('content')
     <header class="flex items-center mb-6 pb-4">
         <div class="flex justify-between items-end w-full">
-            <p class="text-muted font-light">
-                <a href="/articles" class="text-muted no-underline hover:underline">My Articles</a>
-                / {{ $article->title }}
-
-            </p>
-
+            <h2 class="text-default-color font-medium">
+                    {{ $article->title }}
+            </h2>
             <div class="flex items-center">
-                @foreach ($article->members as $member)
-                    <img
-                        src="{{ gravatar_url($member->email) }}"
-                        alt="{{ $member->name }}'s avatar"
-                        class="rounded-full w-8 mr-2">
-                @endforeach
-
-                <img
-                    src="{{ gravatar_url($article->owner->email) }}"
-                    alt="{{ $article->owner->name }}'s avatar"
-                    class="rounded-full w-8 mr-2">
-
-                <a href="{{ $article->path().'/edit' }}" class="button ml-4">Edit Article</a>
+                @can ('manage', $article)
+                    <a href="{{ $article->path().'/edit' }}" class="button ml-4">Edit Article</a>
+                @endcan
             </div>
         </div>
     </header>
-
     <main>
         <div class="lg:flex -mx-3">
-            <div class="lg:w-3/4 px-3 mb-6">
-                <div class="mb-8">
-                    <h2 class="text-lg text-muted font-light mb-3">Tasks</h2>
-
-                    {{-- tasks --}}
-                    @foreach ($article->tasks as $task)
-                        <div class="card mb-3">
-                            <form method="POST" action="{{ $task->path() }}">
-                                @method('PATCH')
-                                @csrf
-
-                                <div class="flex items-center">
-                                    <input name="body" value="{{ $task->body }}" class="text-default bg-card w-full {{ $task->completed ? 'line-through text-muted' : '' }}">
-                                    <input name="completed" type="checkbox" onChange="this.form.submit()" {{ $task->completed ? 'checked' : '' }}>
-                                </div>
-                            </form>
-                        </div>
-                    @endforeach
-
-                    <div class="card mb-3">
-                        <form action="{{ $article->path() . '/tasks' }}" method="POST">
-                            @csrf
-
-                            <input placeholder="Add a new task..." class="text-default bg-card w-full" name="body">
-                        </form>
-                    </div>
+            <div class="lg:w-5/6 px-3 mb-6">
+                <div class="mb-4 flex">
+                    <h3 class="flex text-default-color font-bold">Estimated Date Range:
+                        <P class="flex font-light ml-2"> {{ $article->earliest_date }} - {{ $article->latest_date }}</P>
+                    </h3>
                 </div>
-
-                <div>
-                    <h2 class="text-lg text-muted font-light mb-3">General Notes</h2>
-
-                    {{-- general notes --}}
-                    <form method="POST" action="{{ $article->path() }}">
-                        @csrf
-                        @method('PATCH')
-
-                        <textarea
-                            name="notes"
-                            class="card text-default w-full mb-4"
-                            style="min-height: 200px"
-                            placeholder="Anything special that you want to make a note of?"
-                        >{{ $article->notes }}</textarea>
-
-                        <button type="submit" class="button">Save</button>
-                    </form>
-
-                    @include ('errors')
+                <div class="mb-4 flex">
+                    <h3 class="flex text-default-color font-medium mb-2">First Picture
+                        <P class="flex font-light">GALLARY</P>
+                    </h3>
                 </div>
-            </div>
-
-            <div class="lg:w-1/4 px-3 lg:py-8">
-                @include ('article.card')
-                @include ('article.activity.card')
-
-                @can ('manage', $article)
-                    @include ('article.invite')
-                @endcan
+                <div class="mb-4">
+                    <h3 class="text-default-color font-bold mb-2">Description:</h3>
+                    <p class="font-light">
+                        {{ $article->description }}
+                    </p>
+                </div>
+                <div class="mb-4 flex">
+                    <div class="flex text-default-color font-bold">Maker/Designer:</div>
+                    <div class="flex font-light ml-2">{{ $article->designer }}</div>
+                </div>
+                <div class="mb-4 flex">
+                    <h3 class="flex text-default-color font-bold">Place of Origin:
+                        <P class="flex font-light ml-2"> {{ $article->origin }}</P>
+                    </h3>
+                </div>
+                <div class="mb-4 flex">
+                    <h3 class="flex text-default-color font-bold">Materials:
+                        <P class="flex font-light ml-2"> {{ $article->materials }}</P>
+                    </h3>
+                </div>
+                <div class="mb-4 flex">
+                    <h3 class="flex text-default-color font-bold">Techniques:
+                        <P class="flex font-light ml-2"> {{ $article->techniques }}</P>
+                    </h3>
+                </div>
+                <div class="mb-4 flex">
+                    <h3 class="flex text-default-color font-bold">Trimmings/Decoration:
+                        <P class="flex font-light ml-2"> {{ $article->decorations }}</P>
+                    </h3>
+                </div>
+                <div class="mb-4 flex">
+                    <h3 class="flex text-default-color font-bold">Dress Themes:
+                        <P class="flex font-light ml-2"> {{ $article->search_words }}</P>
+                    </h3>
+                </div>
+                {{$article}}
             </div>
         </div>
     </main>

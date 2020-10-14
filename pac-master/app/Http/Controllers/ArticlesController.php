@@ -20,18 +20,6 @@ class ArticlesController extends Controller
     }
 
     /**
-     * View only pending articles, only for admins article.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function pendingArticles()
-    {
-        $articles = auth()->user()->pendingArticles();
-
-        return view('article.index', compact('articles'));
-    }
-
-    /**
      * Show a single article.
      *
      * @param Article $article
@@ -42,7 +30,11 @@ class ArticlesController extends Controller
     public function show(Article $article)
     {
         $this->authorize('update', $article);
+        //TODO CHECK IF formatting transformations for show should be occuring controller or not......
+        $article->earliest_date = substr($article->earliest_date,0,4) ;
+        $article->latest_date = substr($article->latest_date,0,4);
 
+//dd($article);
         return view('article.show', compact('article'));
     }
 
@@ -155,4 +147,17 @@ class ArticlesController extends Controller
             'live'                  => 'nullable'
         ]);
     }
+
+    /**
+     * View only pending articles, only for admins article.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function pendingArticles()
+    {
+        $articles = auth()->user()->pendingArticles();
+
+        return view('article.index', compact('articles'));
+    }
+
 }
