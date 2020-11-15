@@ -33,32 +33,101 @@
                     </p>
                 </div>
                 <div class="mb-4 flex">
-                    <div class="flex text-default-color font-bold">Maker/Designer:</div>
-                    <div class="flex font-light ml-2">{{ $article->designer }}</div>
+                    <h3 class="text-default-color font-bold mb-2">Maker/Designer:</h3>
+                    <p class="font-light">
+                        {{ $article->designer }}
+                    </p>
                 </div>
                 <div class="mb-4 flex">
                     <h3 class="flex text-default-color font-bold">Place of Origin:
-                        <P class="flex font-light ml-2"> {{ $article->origin }}</P>
+                        <P class="flex font-light ml-2">
+                            {{ $article->origin }}
+                        </P>
                     </h3>
                 </div>
                 <div class="mb-4 flex">
                     <h3 class="flex text-default-color font-bold">Materials:
-                        <P class="flex font-light ml-2"> {{ $article->materials }}</P>
+                        <P class="flex font-light ml-2">
+                            {{ ucwords($article->materials) }}
+                        </P>
                     </h3>
                 </div>
                 <div class="mb-4 flex">
                     <h3 class="flex text-default-color font-bold">Techniques:
-                        <P class="flex font-light ml-2"> {{ $article->techniques }}</P>
+                        <P class="flex font-light ml-2">
+                            {{ ucwords($article->techniques) }}
+                        </P>
                     </h3>
                 </div>
                 <div class="mb-4 flex">
                     <h3 class="flex text-default-color font-bold">Trimmings/Decoration:
-                        <P class="flex font-light ml-2"> {{ $article->decorations }}</P>
+                        <P class="flex font-light ml-2">
+                            {{ ucwords($article->decorations) }}
+                        </P>
                     </h3>
                 </div>
                 <div class="mb-4 flex">
                     <h3 class="flex text-default-color font-bold">Dress Themes:
-                        <P class="flex font-light ml-2"> {{ $article->search_words }}</P>
+                        <P class="flex font-light ml-2">
+                            {{ ucwords($article->search_words) }}
+                        </P>
+                    </h3>
+                </div>
+                <div class="mb-4 flex">
+                    <h3 class="flex text-default-color font-bold">Method:
+                        <P class="flex font-light ml-2">
+                            {{ ucwords($article->sewing_methods) }}
+                        </P>
+                    </h3>
+                </div>
+                <div class="mb-4 flex">
+                    <h3 class="flex text-default-color font-bold">Classification:
+                        <P class="flex font-light ml-2">
+                            {{ ucwords($article->classification) }}
+                        </P>
+                    </h3>
+                </div>
+                <div class="mb-4 flex">
+                    <h3 class="flex text-default-color font-bold">Cut:
+                        <P class="flex font-light ml-2">
+                            {{ ucwords($article->cut) }}
+                        </P>
+                    </h3>
+                </div>
+                <div class="mb-4 flex">
+                    <h3 class="flex text-default-color font-bold">Fastenings:
+                        <P class="flex font-light ml-2">
+                            {{ ucwords($article->fastenings) }}
+
+                        </P>
+                    </h3>
+                </div>
+                <div class="mb-4 flex">
+                    <h3 class="flex text-default-color font-bold">Stiffening:
+                        <P class="flex font-light ml-2">
+                            {{ $article->stiffening }}
+                        </P>
+                    </h3>
+                </div>
+                <div class="mb-4 flex">
+                    <h3 class="flex text-default-color font-bold">Alterations:
+                        <P class="flex font-light ml-2">
+                            {{ $article->alterations }}
+                        </P>
+                    </h3>
+                </div>
+                <div class="mb-4 flex">
+                    <h3 class="flex text-default-color font-bold">Condition:
+                        <P class="flex font-light ml-2">
+                            {{ $article->condition }}
+                        </P>
+                    </h3>
+                </div>
+                <div class="mb-4 flex">
+                    <h3 class="flex text-default-color font-bold">Provenance:
+                        <P class="flex font-light ml-2">
+                            {{ $article->provenance }}
+                        </P>
                     </h3>
                 </div>
                 {{$article}}
