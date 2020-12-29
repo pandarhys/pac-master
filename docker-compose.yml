@@ -41,10 +41,10 @@ services:
     ports:
       - 4306:3306
     environment:
-      MYSQL_DATABASE: laraveldb
-      MYSQL_USER: laravel
-      MYSQL_PASSWORD: secret
-      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: pac_web_site
+      MYSQL_USER: root
+      MYSQL_PASSWORD: PacWebSite
+      MYSQL_ROOT_PASSWORD: PacWebSite
     networks:
       - laravel
 
