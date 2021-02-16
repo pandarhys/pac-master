@@ -3474,7 +3474,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       config: {
-        url: "http://127.0.0.1:8000/api/image",
+        url: "http://127.0.0.1/api/image",
         dictDefaultMessage: ""
       }
     };
@@ -38655,7 +38655,7 @@ var render = function() {
               _c(
                 "label",
                 { staticClass: "text-sm block mb-2", attrs: { for: "title" } },
-                [_vm._v("Title")]
+                [_vm._v("Title sadasdasdas")]
               ),
               _vm._v(" "),
               _c("input", {
