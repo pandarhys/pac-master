@@ -38655,7 +38655,7 @@ var render = function() {
               _c(
                 "label",
                 { staticClass: "text-sm block mb-2", attrs: { for: "title" } },
-                [_vm._v("Title Test final")]
+                [_vm._v("Title")]
               ),
               _vm._v(" "),
               _c("input", {

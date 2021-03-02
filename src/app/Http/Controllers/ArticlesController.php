@@ -36,7 +36,10 @@ class ArticlesController extends Controller
         foreach ($article->getAttributes() as $key => $attribute){
             $attribute = preg_replace('/;/',',',$attribute);
             if(substr($attribute,0,1) === "["){
-                if ($key!= "measurements") {
+                if ($key=="measurements"){
+                    $attribute = json_decode($attribute);
+                }
+                else {
                     $attribute = json_decode($attribute);
                     $attribute = ucwords(implode(', ',$attribute));
                 }
