@@ -23,13 +23,8 @@
                 </div>
                 <div class="mb-4 flex">
                     <h3 class="flex text-default-color font-medium mb-2">First Picture
-                        <P class="flex font-light">GALLARY {{  $article->image_file_names }}</P>
-                    </h3>
-                    <div class="mb-4 flex">
                         <article-picture-swipe :images="[ {{  $article->image_file_names }} ]"><article-picture-swipe>
-{{--                        <article-card :article="{{ $article }}" article-url="{{ $article->path() }}"><article-card>--}}
-
-                    </div>
+                    </h3>
                 </div>
                 <div class="mb-4">
                     <h3 class="text-default-color font-bold mb-2">Description:</h3>

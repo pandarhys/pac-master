@@ -22,10 +22,14 @@ mix.options({
     processCssUrls: false
 });
 
+mix.override((config) => {
+    delete config.watchOptions;
+});
+
 if (mix.inProduction()) {
     mix.version();
 }
-mix.js('resources/js/app.js', 'public/js')
+mix.js('resources/js/app.js', 'public/js').vue()
     .sass('resources/sass/app.scss', 'public/css')
     .tailwind();
 

@@ -25,35 +25,28 @@
                          h: 900
                      }
                  ],
-                images: '',
                 src: '',
+                thumbnail:'',
                 w:'',
-                h:''
+                h:'',
+
              };
         },
-        methods: {
-            ImageObject(src,thumbnail,w,h) {
-                this.src = src;
-                this.thumbnail = thumbnail;
-                this.w = w;
-                this.h = h;
-            }
-        },
         mounted() {
-            console.log(this.images);
             var arr = [];
             var itemArray = [];
-            arr = JSON.parse("[" + [this.images] + "]");
-            for (var i = 0; i < 1; i++) {
-                for (var x = 0; x < 1; x++) {
-                    itemArray.push( new ImageObject(BACKDROP_BASE + arr[i][x].split('"').join(''),BACKDROP_BASE + arr[i][x].split('"').join(''),600,400))
-                    // this.items.src = BACKDROP_BASE + arr[i][x].split('"').join('');
-                    // this.items.thumbnail = BACKDROP_BASE + arr[i][x].split('"').join('');
-                    // this.items.w = 600;
-                    // this.items.h = 400;
-                }
+            var obj = {};
+            arr = this.images;
+            // console.log(this.images);
+            for (var i = 0; i < arr.length; i++) {
+                obj.src = arr[i]
+                obj.thumbnail = BACKDROP_BASE + arr[i]
+                obj.w = 600
+                obj.h = 400
+                itemArray.push(obj)
             }
             this.items = itemArray;
+            console.log(this.items);
         }
     }
 </script>
