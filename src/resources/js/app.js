@@ -8,11 +8,11 @@ import VTooltip from 'v-tooltip';
 import PrettyCheckbox from 'pretty-checkbox-vue';
 import vSelect from 'vue-select'
 import './components/reuse/vue2Dropzone.css';
+import VuePictureSwipe from 'vue-picture-swipe';
 
 Vue.use(VModal);
 Vue.use(VTooltip);
 Vue.use(PrettyCheckbox);
-
 
 window.vue = Vue;
 window.axios = axios;
@@ -31,7 +31,8 @@ Vue.component('dropdown', require('./components/Dropdown.vue').default);
 Vue.component('FileUpload', require('./components/reuse/FileUpload.vue').default);
 Vue.component('PACDatePicker',require('./components/PACDatePicker.vue').default);
 Vue.component('ArticleCard',require('./components/ArticleCard.vue').default);
-
+Vue.component('vue-picture-swipe', VuePictureSwipe);
+Vue.component('ArticlePictureSwipe',require('./components/ArticlePictureSwipe.vue').default);
 
 new Vue({
     el: '#app',
