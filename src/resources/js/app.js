@@ -9,10 +9,12 @@ import PrettyCheckbox from 'pretty-checkbox-vue';
 import vSelect from 'vue-select'
 import './components/reuse/vue2Dropzone.css';
 import VuePictureSwipe from 'vue-picture-swipe';
+import VueViewer from 'v-viewer';
 
 Vue.use(VModal);
 Vue.use(VTooltip);
 Vue.use(PrettyCheckbox);
+
 
 window.vue = Vue;
 window.axios = axios;
