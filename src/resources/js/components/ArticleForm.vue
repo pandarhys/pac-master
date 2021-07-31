@@ -4,7 +4,7 @@
             <div class="flex">
                 <div class="flex-1 w-4/5">
                     <div class="mb-4">
-                        <label for="title" class="text-sm block mb-2">Title</label>
+                        <label for="title" class="text-sm block mb-2">Titledsadas dsadassdas</label>
                         <input
                             type="text"
                             id="title"
