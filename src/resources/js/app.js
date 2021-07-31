@@ -35,6 +35,7 @@ Vue.component('PACDatePicker',require('./components/PACDatePicker.vue').default)
 Vue.component('ArticleCard',require('./components/ArticleCard.vue').default);
 Vue.component('vue-picture-swipe', VuePictureSwipe);
 Vue.component('ArticlePictureSwipe',require('./components/ArticlePictureSwipe.vue').default);
+Vue.component('Measurementtable',require('./components/Measurementtable.vue').default);
 
 new Vue({
     el: '#app',

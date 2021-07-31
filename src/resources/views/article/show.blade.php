@@ -130,7 +130,19 @@
                         </P>
                     </h3>
                 </div>
-                {{$article}}
+                <div class="mb-4 flex">
+                    <h3 class="flex text-default-color font-bold">Measurements:
+                        <P class="flex font-light ml-2">
+{{--                            <Measurementtable--}}
+{{--                                items={{json_encode($article->measurements,false)}}--}}
+{{--                                labelTitle="Measurements"--}}
+{{--                                resultTitle="Inches"--}}
+{{--                                tableName="measurements">--}}
+{{--                            </Measurementtable>--}}
+                        </P>
+                    </h3>
+                </div>
+                {{json_encode($article->measurements,true)}}
             </div>
         </div>
     </main>

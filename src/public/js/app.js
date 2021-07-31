@@ -2858,13 +2858,12 @@ __webpack_require__.r(__webpack_exports__);
         thumbnail: 'http://via.placeholder.com/64x64',
         w: 600,
         h: 400
-      } // {
-      //     src: 'http://via.placeholder.com/1200x900',
-      //     thumbnail: 'http://via.placeholder.com/64x64',
-      //     w: 1200,
-      //     h: 900
-      // }
-      ],
+      }, {
+        src: 'http://via.placeholder.com/1200x900',
+        thumbnail: 'http://via.placeholder.com/64x64',
+        w: 1200,
+        h: 900
+      }],
       src: '',
       thumbnail: '',
       w: '',
@@ -2952,6 +2951,65 @@ __webpack_require__.r(__webpack_exports__);
       }
     }
   }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Measurementtable.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Measurementtable.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "Measurementtable",
+  props: {
+    'items': Array,
+    'tableName': String,
+    'tableItems': String,
+    'labelTitle': String,
+    'resultTitle': String
+  },
+  data: function data() {
+    return {
+      id: '',
+      parsedData: []
+    };
+  },
+  methods: {// onChange(event) {
+    //     this.$emit('recordTableInput',this.items);
+    // }
+  },
+  mounted: function mounted() {
+    this.items = JSON.parse(this.items);
+    console.log(this.items);
+  },
+  created: function created() {}
 });
 
 /***/ }),
@@ -3678,6 +3736,7 @@ vue__WEBPACK_IMPORTED_MODULE_10__.default.component('PACDatePicker', __webpack_r
 vue__WEBPACK_IMPORTED_MODULE_10__.default.component('ArticleCard', __webpack_require__(/*! ./components/ArticleCard.vue */ "./resources/js/components/ArticleCard.vue").default);
 vue__WEBPACK_IMPORTED_MODULE_10__.default.component('vue-picture-swipe', vue_picture_swipe__WEBPACK_IMPORTED_MODULE_8__.default);
 vue__WEBPACK_IMPORTED_MODULE_10__.default.component('ArticlePictureSwipe', __webpack_require__(/*! ./components/ArticlePictureSwipe.vue */ "./resources/js/components/ArticlePictureSwipe.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_10__.default.component('Measurementtable', __webpack_require__(/*! ./components/Measurementtable.vue */ "./resources/js/components/Measurementtable.vue").default);
 new vue__WEBPACK_IMPORTED_MODULE_10__.default({
   el: '#app'
 });
@@ -47408,6 +47467,45 @@ component.options.__file = "resources/js/components/Dropdown.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/Measurementtable.vue":
+/*!******************************************************!*\
+  !*** ./resources/js/components/Measurementtable.vue ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Measurementtable_vue_vue_type_template_id_7ede6206_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Measurementtable.vue?vue&type=template&id=7ede6206&scoped=true& */ "./resources/js/components/Measurementtable.vue?vue&type=template&id=7ede6206&scoped=true&");
+/* harmony import */ var _Measurementtable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Measurementtable.vue?vue&type=script&lang=js& */ "./resources/js/components/Measurementtable.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _Measurementtable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _Measurementtable_vue_vue_type_template_id_7ede6206_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render,
+  _Measurementtable_vue_vue_type_template_id_7ede6206_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  "7ede6206",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Measurementtable.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/NewArticleModal.vue":
 /*!*****************************************************!*\
   !*** ./resources/js/components/NewArticleModal.vue ***!
@@ -47788,6 +47886,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Measurementtable.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/Measurementtable.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Measurementtable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Measurementtable.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Measurementtable.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Measurementtable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
 /***/ "./resources/js/components/NewArticleModal.vue?vue&type=script&lang=js&":
 /*!******************************************************************************!*\
   !*** ./resources/js/components/NewArticleModal.vue?vue&type=script&lang=js& ***!
@@ -48013,6 +48127,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Dropdown_vue_vue_type_template_id_ef782e08___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Dropdown_vue_vue_type_template_id_ef782e08___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Dropdown.vue?vue&type=template&id=ef782e08& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Dropdown.vue?vue&type=template&id=ef782e08&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Measurementtable.vue?vue&type=template&id=7ede6206&scoped=true&":
+/*!*************************************************************************************************!*\
+  !*** ./resources/js/components/Measurementtable.vue?vue&type=template&id=7ede6206&scoped=true& ***!
+  \*************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Measurementtable_vue_vue_type_template_id_7ede6206_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Measurementtable_vue_vue_type_template_id_7ede6206_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Measurementtable_vue_vue_type_template_id_7ede6206_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Measurementtable.vue?vue&type=template&id=7ede6206&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Measurementtable.vue?vue&type=template&id=7ede6206&scoped=true&");
 
 
 /***/ }),
@@ -49889,6 +50020,101 @@ var render = function() {
         style: { width: _vm.width }
       },
       [_vm._t("default")],
+      2
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Measurementtable.vue?vue&type=template&id=7ede6206&scoped=true&":
+/*!****************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Measurementtable.vue?vue&type=template&id=7ede6206&scoped=true& ***!
+  \****************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { attrs: { id: "Measurementtable" } }, [
+    _c(
+      "table",
+      {
+        staticClass:
+          "flex-wrap mb-1 border-muted-light border-2 border-gray-600 px-1 py-10"
+      },
+      [
+        _c("tr", { staticClass: "flex justify-between mx-auto" }, [
+          _c("th", { staticClass: "ml-1 mb-1 w-3/4 text-left mt-1" }, [
+            _vm._v(_vm._s(_vm.labelTitle))
+          ]),
+          _vm._v(" "),
+          _c("th", { staticClass: "mr-1 mb-1 w-1/4 mt-1" }, [
+            _vm._v(_vm._s(_vm.resultTitle))
+          ])
+        ]),
+        _vm._v(" "),
+        _vm._l(_vm.items, function(item) {
+          return _c(
+            "tr",
+            { key: item.name, staticClass: "flex justify-between" },
+            [
+              _c("td", { staticClass: "w-3/4" }, [
+                _c(
+                  "label",
+                  { staticClass: "ml-1", attrs: { for: "item.name" } },
+                  [_vm._v(_vm._s(item.label))]
+                )
+              ]),
+              _vm._v(" "),
+              _c("td", { staticClass: "w-1/4" }, [
+                _c(
+                  "label",
+                  { staticClass: "ml-1", attrs: { for: "item.name" } },
+                  [_vm._v(_vm._s(item.result))]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model.number",
+                      value: item.result,
+                      expression: "item.result",
+                      modifiers: { number: true }
+                    }
+                  ],
+                  staticClass: "h-full",
+                  attrs: { type: "number", min: "0", id: item.name },
+                  domProps: { value: item.result },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(item, "result", _vm._n($event.target.value))
+                    },
+                    blur: function($event) {
+                      return _vm.$forceUpdate()
+                    }
+                  }
+                })
+              ])
+            ]
+          )
+        })
+      ],
       2
     )
   ])
