@@ -131,18 +131,23 @@
                     </h3>
                 </div>
                 <div class="mb-4 flex">
-                    <h3 class="flex text-default-color font-bold">Measurements:
-                        <P class="flex font-light ml-2">
-{{--                            <Measurementtable--}}
-{{--                                items={{json_encode($article->measurements,false)}}--}}
-{{--                                labelTitle="Measurements"--}}
-{{--                                resultTitle="Inches"--}}
-{{--                                tableName="measurements">--}}
-{{--                            </Measurementtable>--}}
-                        </P>
-                    </h3>
+                        <table class="rounded-t-lg ml-0 m-5 w-5/6 bg-gray-800 text-gray-200">
+                            <tr class="text-left border-b border-gray-300">
+                                <th class="px-4 py-3">Measurements</th>
+                                <th class="px-4 py-3">Inches</th>
+                            </tr>
+                            @foreach (json_decode(json_encode($article->measurements,true),true) as $item)
+                                @if ( !$item['result']== "")
+                                <tr class="bg-gray-700 border-b border-gray-600">
+                                    <td class="px-4 py-3">{{$item['label']}}</td>
+                                    <td class="px-4 py-3">{{$item['result']}}</td>
+                                </tr>
+                                @endif
+                            @endforeach
+                        </table>
                 </div>
-                {{json_encode($article->measurements,true)}}
+
+
             </div>
         </div>
     </main>
