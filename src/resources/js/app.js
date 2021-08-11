@@ -8,9 +8,8 @@ import VTooltip from 'v-tooltip';
 import PrettyCheckbox from 'pretty-checkbox-vue';
 import vSelect from 'vue-select'
 import './components/reuse/vue2Dropzone.css';
-// import VuePictureSwipe from 'vue-picture-swipe';
-import VueViewer from 'v-viewer';
-import VuePictureSwipe from 'vue3-picture-swipe';
+import VuePictureSwipe from 'vue-picture-swipe';
+// import VuePictureSwipeThree from 'vue3-picture-swipe';
 
 Vue.use(VModal);
 Vue.use(VTooltip);
@@ -35,6 +34,7 @@ Vue.component('FileUpload', require('./components/reuse/FileUpload.vue').default
 Vue.component('PACDatePicker',require('./components/PACDatePicker.vue').default);
 Vue.component('ArticleCard',require('./components/ArticleCard.vue').default);
 Vue.component('vue-picture-swipe', VuePictureSwipe);
+// Vue.component('vue-picture-swipe-three', VuePictureSwipeThree);
 Vue.component('ArticlePictureSwipe',require('./components/ArticlePictureSwipe.vue').default);
 Vue.component('Measurementtable',require('./components/Measurementtable.vue').default);
 

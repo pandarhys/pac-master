@@ -26,6 +26,13 @@
                         <article-picture-swipe :images="[ {{  $article->image_file_names }} ]"><article-picture-swipe>
                     </h3>
                 </div>
+                <div class="mb-4 flex">
+                    <h3 class="flex text-default-color font-medium mb-2">
+                        <vue-picture-swipe :items="[
+    {src: 'http://127.0.0.1/images/162774862015989778832018-07-29 18.48.33.jpg',thumbnail: 'http://127.0.0.1/thumbnail/162774862015989778832018-07-29 18.48.33.jpg',w: 600,h: 400, title: 'Will be used for caption'},
+    {src: 'http://127.0.0.1/images/162774862015989778832018-07-29 18.48.33.jpg',thumbnail: 'http://127.0.0.1/thumbnail/162774862015989778832018-07-29 18.48.33.jpg',w: 1200,h: 900}]"><vue-picture-swipe>
+                    </h3>
+                </div>
                 <div class="mb-4">
                     <h3 class="text-default-color font-bold mb-2">Description:</h3>
                     <p class="font-light">
