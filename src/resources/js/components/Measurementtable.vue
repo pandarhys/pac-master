@@ -39,7 +39,6 @@ export default {
     },
     mounted() {
         this.items = JSON.parse(this.items);
-        console.log(this.items);
     },
     created(){
 

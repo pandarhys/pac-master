@@ -8,8 +8,9 @@ import VTooltip from 'v-tooltip';
 import PrettyCheckbox from 'pretty-checkbox-vue';
 import vSelect from 'vue-select'
 import './components/reuse/vue2Dropzone.css';
-import VuePictureSwipe from 'vue-picture-swipe';
+// import VuePictureSwipe from 'vue-picture-swipe';
 import VueViewer from 'v-viewer';
+import VuePictureSwipe from 'vue3-picture-swipe';
 
 Vue.use(VModal);
 Vue.use(VTooltip);
