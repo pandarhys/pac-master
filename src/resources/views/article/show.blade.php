@@ -22,8 +22,15 @@
                     </h3>
                 </div>
                 <div class="mb-4 flex">
-                    <h3 class="flex text-default-color font-medium mb-2">First Picture
-                        <P class="flex font-light">GALLARY</P>
+                    <h3 class="flex text-default-color font-medium mb-2">
+                        <article-picture-swipe :images="[ {{  $article->image_file_names }} ]"><article-picture-swipe>
+                    </h3>
+                </div>
+                <div class="mb-4 flex">
+                    <h3 class="flex text-default-color font-medium mb-2">
+                        <vue-picture-swipe :items="[
+    {src: 'http://127.0.0.1/images/162774862015989778832018-07-29 18.48.33.jpg',thumbnail: 'http://127.0.0.1/thumbnail/162774862015989778832018-07-29 18.48.33.jpg',w: 600,h: 400, title: 'Will be used for caption'},
+    {src: 'http://127.0.0.1/images/162774862015989778832018-07-29 18.48.33.jpg',thumbnail: 'http://127.0.0.1/thumbnail/162774862015989778832018-07-29 18.48.33.jpg',w: 1200,h: 900}]"><vue-picture-swipe>
                     </h3>
                 </div>
                 <div class="mb-4">
@@ -130,7 +137,24 @@
                         </P>
                     </h3>
                 </div>
-                {{$article}}
+                <div class="mb-4 flex">
+                        <table class="rounded-t-lg ml-0 m-5 w-5/6 bg-gray-800 text-gray-200">
+                            <tr class="text-left border-b border-gray-300">
+                                <th class="px-4 py-3">Measurements</th>
+                                <th class="px-4 py-3">Inches</th>
+                            </tr>
+                            @foreach (json_decode(json_encode($article->measurements,true),true) as $item)
+                                @if ( !$item['result']== "")
+                                <tr class="bg-gray-700 border-b border-gray-600">
+                                    <td class="px-4 py-3">{{$item['label']}}</td>
+                                    <td class="px-4 py-3">{{$item['result']}}</td>
+                                </tr>
+                                @endif
+                            @endforeach
+                        </table>
+                </div>
+
+
             </div>
         </div>
     </main>

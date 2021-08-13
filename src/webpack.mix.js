@@ -12,18 +12,24 @@ require('laravel-mix-tailwind');
  | file for the application as well as bundling up all the JS files.
  |
  */
-//
-// mix.options({
-//     hmrOptions: {
-//         host: 'http://127.0.0.1:8000',
-//         port: 8000
-//     }
-// });
-//
+
+mix.options({
+    hmrOptions: {
+        //host: 'http://127.0.0.1:8000',
+        host: 'localhost',
+        port: 8000
+    },
+    processCssUrls: false
+});
+
+mix.override((config) => {
+    delete config.watchOptions;
+});
+
 if (mix.inProduction()) {
     mix.version();
 }
-mix.js('resources/js/app.js', 'public/js')
+mix.js('resources/js/app.js', 'public/js').vue()
     .sass('resources/sass/app.scss', 'public/css')
     .tailwind();
 

@@ -401,8 +401,7 @@
             article: Object,
             admin: Number,
             formType: String,
-        }
-        ,
+        } ,
         data() {
             return {
                 form: new Form({
