@@ -23,7 +23,7 @@
                 </div>
                 <div class="mb-4 flex">
                     <h3 class="flex text-default-color font-medium mb-2">
-{{--                        <article-picture-swipe :images="[ {{  $article->image_file_names }} ]"><article-picture-swipe>--}}
+                        <article-picture-swipe :images="[ {{  $article->image_file_names }} ]"><article-picture-swipe>
                     </h3>
                 </div>
 {{--                <div class="mb-4 flex">--}}

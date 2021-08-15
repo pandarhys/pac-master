@@ -1,5 +1,5 @@
 <template>
-    <vue-picture-swipe :items="items"></vue-picture-swipe>
+    <vue3-picture-swipe :items="items"></vue3-picture-swipe>
 </template>
 <script>
     import VuePictureSwipe from 'vue-picture-swipe';
