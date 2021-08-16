@@ -21,36 +21,31 @@
                         <P class="flex font-light ml-2"> {{ $article->earliest_date }} - {{ $article->latest_date }}</P>
                     </h3>
                 </div>
-                <div class="mb-4 flex">
-                    <h3 class="flex text-default-color font-medium mb-2">
-                        <article-picture-swipe :images="[ {{  $article->image_file_names }} ]"><article-picture-swipe>
-                    </h3>
-                </div>
 {{--                <div class="mb-4 flex">--}}
-{{--                    <h3 class="flex text-default-color font-medium mb-2">--}}
-{{--                        <vue-picture-swipe :items="[--}}
-{{--    {src: 'http://127.0.0.1/images/162774862015989778832018-07-29 18.48.33.jpg',thumbnail: 'http://127.0.0.1/thumbnail/162774862015989778832018-07-29 18.48.33.jpg',w: 600,h: 400, title: 'Will be used for caption'},--}}
-{{--    {src: 'http://127.0.0.1/images/162774862015989778832018-07-29 18.48.33.jpg',thumbnail: 'http://127.0.0.1/thumbnail/162774862015989778832018-07-29 18.48.33.jpg',w: 1200,h: 900}]"><vue-picture-swipe>--}}
+{{--                    <h3 class="flex text-default-color font-medium">--}}
+{{--                        <article-picture-swipe :images="[ {{  $article->image_file_names }} ]"><article-picture-swipe>--}}
 {{--                    </h3>--}}
 {{--                </div>--}}
                 <div class="mb-4 flex">
-                    <h3 class="flex text-default-color font-medium mb-2">
-                        <vue-picture-swipe :items="[
-    {src: 'http://127.0.0.1/images/162774862015989778832018-07-29 18.48.33.jpg',thumbnail: 'http://127.0.0.1/thumbnail/162774862015989778832018-07-29 18.48.33.jpg',w: 600,h: 400, title: 'Will be used for caption'},
-    {src: 'http://127.0.0.1/images/162774862015989778832018-07-29 18.48.33.jpg',thumbnail: 'http://127.0.0.1/thumbnail/162774862015989778832018-07-29 18.48.33.jpg',w: 1200,h: 900}]"><vue-picture-swipe>
+                    <h3 class="flex text-default-color font-medium">
+                        <article-picture-swipe2 :items="[ {{  $article->image_file_names }} ]"><article-picture-swipe2>
                     </h3>
                 </div>
+                <div class="mb-4 flex">
+                    {{  $article->image_file_names }}
+                </div>
                 <div class="mb-4">
-                    <h3 class="text-default-color font-bold mb-2">Description:</h3>
+                    <h3 class="text-default-color font-bold">Description:</h3>
                     <p class="font-light">
                         {{ $article->description }}
                     </p>
                 </div>
                 <div class="mb-4 flex">
-                    <h3 class="text-default-color font-bold mb-2">Maker/Designer:</h3>
-                    <p class="font-light">
-                        {{ $article->designer }}
-                    </p>
+                    <h3 class="flex text-default-color font-bold">Maker Designer:
+                        <P class="flex font-light ml-2">
+                            {{ $article->designer }}
+                        </P>
+                    </h3>
                 </div>
                 <div class="mb-4 flex">
                     <h3 class="flex text-default-color font-bold">Place of Origin:

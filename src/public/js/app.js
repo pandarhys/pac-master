@@ -2764,15 +2764,78 @@ __webpack_require__.r(__webpack_exports__);
     for (var i = 0; i < arr.length; i++) {
       var obj = {};
       obj.src = 'http://127.0.0.1/images/' + arr[i];
-      obj.thumbnail = 'http://127.0.0.1/thumbnail/' + arr[i];
-      obj.w = 1200;
-      obj.h = 900;
+      obj.thumbnail = 'http://127.0.0.1/thumbnail/' + arr[i]; // obj.w = 1200;
+      // obj.h = 900;
+
       itemArray.push(obj);
     }
 
     this.items = itemArray;
   }
 });
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ArticlePictureSwipe2.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ArticlePictureSwipe2.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var viewerjs_dist_viewer_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! viewerjs/dist/viewer.css */ "./node_modules/viewerjs/dist/viewer.css");
+/* harmony import */ var v_viewer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! v-viewer */ "./node_modules/v-viewer/dist/v-viewer.js");
+/* harmony import */ var v_viewer__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(v_viewer__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+var sourceImages = [];
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    Viewer: v_viewer__WEBPACK_IMPORTED_MODULE_1__.component
+  },
+  props: {
+    items: Array
+  },
+  methods: {
+    toggle: function toggle() {}
+  },
+  data: function data() {
+    return {
+      options: {
+        url: 'data-src'
+      },
+      images: sourceImages
+    };
+  },
+  mounted: function mounted() {
+    var arr = [];
+    var itemArray = [];
+    arr = this.items;
+
+    for (var i = 0; i < arr.length; i++) {
+      sourceImages.push({
+        thumbnail: 'http://127.0.0.1/thumbnail/' + arr[i],
+        source: 'http://127.0.0.1/images/' + arr[i]
+      });
+    }
+  }
+}); // {src: 'http://127.0.0.1/images/162774862015989778832018-07-29 18.48.33.jpg',
 
 /***/ }),
 
@@ -3573,7 +3636,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 /* harmony import */ var vue_js_modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-js-modal */ "./node_modules/vue-js-modal/dist/index.js");
 /* harmony import */ var vue_js_modal__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_js_modal__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
@@ -3585,7 +3648,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue-select */ "./node_modules/vue-select/dist/vue-select.js");
 /* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(vue_select__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _components_reuse_vue2Dropzone_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/reuse/vue2Dropzone.css */ "./resources/js/components/reuse/vue2Dropzone.css");
-/* harmony import */ var vue3_picture_swipe__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vue3-picture-swipe */ "./node_modules/vue3-picture-swipe/index.js");
+/* harmony import */ var vue_picture_swipe__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vue-picture-swipe */ "./node_modules/vue-picture-swipe/src/main.js");
+/* harmony import */ var v_viewer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! v-viewer */ "./node_modules/v-viewer/dist/v-viewer.js");
+/* harmony import */ var v_viewer__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(v_viewer__WEBPACK_IMPORTED_MODULE_9__);
 
 
 
@@ -3594,32 +3659,33 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // import VuePictureSwipe from 'vue-picture-swipe';
 
 
-vue__WEBPACK_IMPORTED_MODULE_9__.default.use((vue_js_modal__WEBPACK_IMPORTED_MODULE_1___default()));
-vue__WEBPACK_IMPORTED_MODULE_9__.default.use(v_tooltip__WEBPACK_IMPORTED_MODULE_4__.default);
-vue__WEBPACK_IMPORTED_MODULE_9__.default.use((pretty_checkbox_vue__WEBPACK_IMPORTED_MODULE_5___default()));
-window.vue = vue__WEBPACK_IMPORTED_MODULE_9__.default;
+
+vue__WEBPACK_IMPORTED_MODULE_10__.default.use((vue_js_modal__WEBPACK_IMPORTED_MODULE_1___default()));
+vue__WEBPACK_IMPORTED_MODULE_10__.default.use(v_tooltip__WEBPACK_IMPORTED_MODULE_4__.default);
+vue__WEBPACK_IMPORTED_MODULE_10__.default.use((pretty_checkbox_vue__WEBPACK_IMPORTED_MODULE_5___default()));
+window.vue = vue__WEBPACK_IMPORTED_MODULE_10__.default;
 window.axios = (axios__WEBPACK_IMPORTED_MODULE_2___default());
 window.form = _core_Form_js__WEBPACK_IMPORTED_MODULE_3__.default;
-vue__WEBPACK_IMPORTED_MODULE_9__.default.config.productionTip = true;
-vue__WEBPACK_IMPORTED_MODULE_9__.default.config.devtools = true;
-vue__WEBPACK_IMPORTED_MODULE_9__.default.component('article-form', __webpack_require__(/*! ./components/ArticleForm.vue */ "./resources/js/components/ArticleForm.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_9__.default.component('v-select', (vue_select__WEBPACK_IMPORTED_MODULE_6___default()));
-vue__WEBPACK_IMPORTED_MODULE_9__.default.component('CountrySelector', __webpack_require__(/*! ./components/reuse/CountrySelector.vue */ "./resources/js/components/reuse/CountrySelector.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_9__.default.component('theme-switcher', __webpack_require__(/*! ./components/ThemeSwitcher.vue */ "./resources/js/components/ThemeSwitcher.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_9__.default.component('new-article-modal', __webpack_require__(/*! ./components/NewArticleModal.vue */ "./resources/js/components/NewArticleModal.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_9__.default.component('new-article-modal2', __webpack_require__(/*! ./components/NewArticleModal2.vue */ "./resources/js/components/NewArticleModal2.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_9__.default.component('dropdown', __webpack_require__(/*! ./components/Dropdown.vue */ "./resources/js/components/Dropdown.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_9__.default.component('FileUpload', __webpack_require__(/*! ./components/reuse/FileUpload.vue */ "./resources/js/components/reuse/FileUpload.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_9__.default.component('PACDatePicker', __webpack_require__(/*! ./components/PACDatePicker.vue */ "./resources/js/components/PACDatePicker.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_9__.default.component('ArticleCard', __webpack_require__(/*! ./components/ArticleCard.vue */ "./resources/js/components/ArticleCard.vue").default); // Vue.component('vue-picture-swipe', VuePictureSwipe);
-
-vue__WEBPACK_IMPORTED_MODULE_9__.default.component('vue3-picture-swipe', vue3_picture_swipe__WEBPACK_IMPORTED_MODULE_8__.default);
-vue__WEBPACK_IMPORTED_MODULE_9__.default.component('ArticlePictureSwipe', __webpack_require__(/*! ./components/ArticlePictureSwipe.vue */ "./resources/js/components/ArticlePictureSwipe.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_9__.default.component('Measurementtable', __webpack_require__(/*! ./components/Measurementtable.vue */ "./resources/js/components/Measurementtable.vue").default);
-new vue__WEBPACK_IMPORTED_MODULE_9__.default({
+vue__WEBPACK_IMPORTED_MODULE_10__.default.config.productionTip = true;
+vue__WEBPACK_IMPORTED_MODULE_10__.default.config.devtools = true;
+vue__WEBPACK_IMPORTED_MODULE_10__.default.component('article-form', __webpack_require__(/*! ./components/ArticleForm.vue */ "./resources/js/components/ArticleForm.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_10__.default.component('v-select', (vue_select__WEBPACK_IMPORTED_MODULE_6___default()));
+vue__WEBPACK_IMPORTED_MODULE_10__.default.component('CountrySelector', __webpack_require__(/*! ./components/reuse/CountrySelector.vue */ "./resources/js/components/reuse/CountrySelector.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_10__.default.component('theme-switcher', __webpack_require__(/*! ./components/ThemeSwitcher.vue */ "./resources/js/components/ThemeSwitcher.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_10__.default.component('new-article-modal', __webpack_require__(/*! ./components/NewArticleModal.vue */ "./resources/js/components/NewArticleModal.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_10__.default.component('new-article-modal2', __webpack_require__(/*! ./components/NewArticleModal2.vue */ "./resources/js/components/NewArticleModal2.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_10__.default.component('dropdown', __webpack_require__(/*! ./components/Dropdown.vue */ "./resources/js/components/Dropdown.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_10__.default.component('FileUpload', __webpack_require__(/*! ./components/reuse/FileUpload.vue */ "./resources/js/components/reuse/FileUpload.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_10__.default.component('PACDatePicker', __webpack_require__(/*! ./components/PACDatePicker.vue */ "./resources/js/components/PACDatePicker.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_10__.default.component('ArticleCard', __webpack_require__(/*! ./components/ArticleCard.vue */ "./resources/js/components/ArticleCard.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_10__.default.component('vue-picture-swipe', vue_picture_swipe__WEBPACK_IMPORTED_MODULE_8__.default);
+vue__WEBPACK_IMPORTED_MODULE_10__.default.component('v-viewer', (v_viewer__WEBPACK_IMPORTED_MODULE_9___default()));
+vue__WEBPACK_IMPORTED_MODULE_10__.default.component('ArticlePictureSwipe', __webpack_require__(/*! ./components/ArticlePictureSwipe.vue */ "./resources/js/components/ArticlePictureSwipe.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_10__.default.component('ArticlePictureSwipe2', __webpack_require__(/*! ./components/ArticlePictureSwipe2.vue */ "./resources/js/components/ArticlePictureSwipe2.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_10__.default.component('Measurementtable', __webpack_require__(/*! ./components/Measurementtable.vue */ "./resources/js/components/Measurementtable.vue").default);
+new vue__WEBPACK_IMPORTED_MODULE_10__.default({
   el: '#app'
 });
 
@@ -4059,10 +4125,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, "/*! PhotoSwipe main CSS by Dmitry Seme
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue3-picture-swipe/dist/vue3-picture-swipe.css":
-/*!*****************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue3-picture-swipe/dist/vue3-picture-swipe.css ***!
-  \*****************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/viewerjs/dist/viewer.css":
+/*!*******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/viewerjs/dist/viewer.css ***!
+  \*******************************************************************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -4076,7 +4142,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/*! PhotoSwipe main CSS by Dmitry Semenov | photoswipe.com | MIT license */\n\n.pswp {\n  display: none;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  left: 0;\n  top: 0;\n  overflow: hidden;\n  touch-action: none;\n  z-index: 1500;\n  -webkit-text-size-adjust: 100%;\n  -webkit-backface-visibility: hidden;\n  outline: 0;\n}\n\n.pswp * {\n  box-sizing: border-box;\n}\n\n.pswp img {\n  max-width: none;\n}\n\n.pswp--animate_opacity {\n  opacity: .001;\n  will-change: opacity;\n  transition: opacity 333ms cubic-bezier(.4, 0, .22, 1);\n}\n\n.pswp--open {\n  display: block;\n}\n\n.pswp--zoom-allowed .pswp__img {\n  cursor: zoom-in;\n}\n\n.pswp--zoomed-in .pswp__img {\n  cursor: -webkit-grab;\n  cursor: grab;\n}\n\n.pswp--dragging .pswp__img {\n  cursor: -webkit-grabbing;\n  cursor: grabbing;\n}\n\n.pswp__bg {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  background: #000;\n  opacity: 0;\n  transform: translateZ(0);\n  -webkit-backface-visibility: hidden;\n  will-change: opacity;\n}\n\n.pswp__scroll-wrap {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n}\n\n.pswp__container,\n.pswp__zoom-wrap {\n  touch-action: none;\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n}\n\n.pswp__container,\n.pswp__img {\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  -webkit-tap-highlight-color: transparent;\n  -webkit-touch-callout: none;\n}\n\n.pswp__zoom-wrap {\n  position: absolute;\n  width: 100%;\n  transform-origin: left top;\n  transition: transform 333ms cubic-bezier(.4, 0, .22, 1);\n}\n\n.pswp__bg {\n  will-change: opacity;\n  transition: opacity 333ms cubic-bezier(.4, 0, .22, 1);\n}\n\n.pswp--animated-in .pswp__bg,\n.pswp--animated-in .pswp__zoom-wrap {\n  transition: none;\n}\n\n.pswp__container,\n.pswp__zoom-wrap {\n  -webkit-backface-visibility: hidden;\n}\n\n.pswp__item {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  overflow: hidden;\n}\n\n.pswp__img {\n  position: absolute;\n  width: auto;\n  height: auto;\n  top: 0;\n  left: 0;\n}\n\n.pswp__img--placeholder {\n  -webkit-backface-visibility: hidden;\n}\n\n.pswp__img--placeholder--blank {\n  background: #222;\n}\n\n.pswp--ie .pswp__img {\n  width: 100% !important;\n  height: auto !important;\n  left: 0;\n  top: 0;\n}\n\n.pswp__error-msg {\n  position: absolute;\n  left: 0;\n  top: 50%;\n  width: 100%;\n  text-align: center;\n  font-size: 14px;\n  line-height: 16px;\n  margin-top: -8px;\n  color: #ccc;\n}\n\n.pswp__error-msg a {\n  color: #ccc;\n  text-decoration: underline;\n}\n\n/*! PhotoSwipe Default UI CSS by Dmitry Semenov | photoswipe.com | MIT license */\n\n.pswp__button {\n  width: 44px;\n  height: 44px;\n  position: relative;\n  background: 0 0;\n  cursor: pointer;\n  overflow: visible;\n  -webkit-appearance: none;\n  display: block;\n  border: 0;\n  padding: 0;\n  margin: 0;\n  float: right;\n  opacity: .75;\n  transition: opacity .2s;\n  box-shadow: none;\n}\n\n.pswp__button:focus,\n.pswp__button:hover {\n  opacity: 1;\n}\n\n.pswp__button:active {\n  outline: 0;\n  opacity: .9;\n}\n\n.pswp__button::-moz-focus-inner {\n  padding: 0;\n  border: 0;\n}\n\n.pswp__ui--over-close .pswp__button--close {\n  opacity: 1;\n}\n\n.pswp__button,\n.pswp__button--arrow--left:before,\n.pswp__button--arrow--right:before {\n  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAABYCAQAAACjBqE3AAAB6klEQVR4Ae3bsWpUQRTG8YkkanwCa7GzVotsI/gEgk9h4Vu4ySLYmMYgbJrc3lrwZbJwC0FMt4j7F6Y4oIZrsXtgxvx/1c0ufEX4cnbmLCmSJEmSJEmSJEmSJP3XCBPvbJU+8doWmDFwyZpLBmYlNJebz0KwzykwsuSYJSNwykEJreV2BaBMaLIQZ2xYcFgqDlmw4ayE/FwL0dDk4Qh4W37DAjgqIT+3HRbigjH+iikVdxgZStgyN0Su2sXIeTwTT+esdpcbIlfNAuZ/TxresG4zV8kYWSZNiKUTokMMSWeIwTNEn4fK2TW3gRNgVkJLuVksROA9G+bEvoATNlBCa7nZXEwdxEZxzpKRKFh+bsv8LmPFmhX1OwfIz81jIRJQ5eeqG9B+riRJkiRJkiRJkiRJkiRJkiRJUkvA/8RQoEpKlJWINFkJ62AlrEP/mNBibnv2yz/A3t7Uq3LcpoxP8COjC1T5vxoAD5VdoEqdDrd5QuW1swtUSaueh3zkiuBiqgtA2OlkeMcP/uDqugsJdbjHF65VdPMKwS0+WQc/MgKvrIOHysB9vgPwk8+85hmPbnQdvHZyDMAFD7L3EOpgMcVdvnHFS0/vlatrXvCVx0U9gt3fxvnA0/hB4nmRJEmSJEmSJEmSJGmHfgFLaDPoMu5xWwAAAABJRU5ErkJggg==) 0 0 no-repeat;\n  background-size: 264px 88px;\n  width: 44px;\n  height: 44px;\n}\n\n@media (-webkit-min-device-pixel-ratio:1.1),\n       (-webkit-min-device-pixel-ratio:1.09375),\n       (min-resolution:105dpi),\n       (min-resolution:1.1dppx) {\n  .pswp--svg .pswp__button,\n  .pswp--svg .pswp__button--arrow--left:before,\n  .pswp--svg .pswp__button--arrow--right:before {\n    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjY0IiBoZWlnaHQ9Ijg4IiB2aWV3Qm94PSIwIDAgMjY0IDg4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjx0aXRsZT5kZWZhdWx0LXNraW4gMjwvdGl0bGU+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48Zz48cGF0aCBkPSJNNjcuMDAyIDU5LjV2My43NjhjLTYuMzA3Ljg0LTkuMTg0IDUuNzUtMTAuMDAyIDkuNzMyIDIuMjItMi44MyA1LjU2NC01LjA5OCAxMC4wMDItNS4wOThWNzEuNUw3MyA2NS41ODUgNjcuMDAyIDU5LjV6IiBpZD0iU2hhcGUiIGZpbGw9IiNmZmYiLz48ZyBmaWxsPSIjZmZmIj48cGF0aCBkPSJNMTMgMjl2LTVoMnYzaDN2MmgtNXpNMTMgMTVoNXYyaC0zdjNoLTJ2LTV6TTMxIDE1djVoLTJ2LTNoLTN2LTJoNXpNMzEgMjloLTV2LTJoM3YtM2gydjV6IiBpZD0iU2hhcGUiLz48L2c+PGcgZmlsbD0iI2ZmZiI+PHBhdGggZD0iTTYyIDI0djVoLTJ2LTNoLTN2LTJoNXpNNjIgMjBoLTV2LTJoM3YtM2gydjV6TTcwIDIwdi01aDJ2M2gzdjJoLTV6TTcwIDI0aDV2MmgtM3YzaC0ydi01eiIvPjwvZz48cGF0aCBkPSJNMjAuNTg2IDY2bC01LjY1Ni01LjY1NiAxLjQxNC0xLjQxNEwyMiA2NC41ODZsNS42NTYtNS42NTYgMS40MTQgMS40MTRMMjMuNDE0IDY2bDUuNjU2IDUuNjU2LTEuNDE0IDEuNDE0TDIyIDY3LjQxNGwtNS42NTYgNS42NTYtMS40MTQtMS40MTRMMjAuNTg2IDY2eiIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Ik0xMTEuNzg1IDY1LjAzTDExMCA2My41bDMtMy41aC0xMHYtMmgxMGwtMy0zLjUgMS43ODUtMS40NjhMMTE3IDU5bC01LjIxNSA2LjAzeiIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Ik0xNTIuMjE1IDY1LjAzTDE1NCA2My41bC0zLTMuNWgxMHYtMmgtMTBsMy0zLjUtMS43ODUtMS40NjhMMTQ3IDU5bDUuMjE1IDYuMDN6IiBmaWxsPSIjZmZmIi8+PGc+PHBhdGggaWQ9IlJlY3RhbmdsZS0xMSIgZmlsbD0iI2ZmZiIgZD0iTTE2MC45NTcgMjguNTQzbC0zLjI1LTMuMjUtMS40MTMgMS40MTQgMy4yNSAzLjI1eiIvPjxwYXRoIGQ9Ik0xNTIuNSAyN2MzLjAzOCAwIDUuNS0yLjQ2MiA1LjUtNS41cy0yLjQ2Mi01LjUtNS41LTUuNS01LjUgMi40NjItNS41IDUuNSAyLjQ2MiA1LjUgNS41IDUuNXoiIGlkPSJPdmFsLTEiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMTUwIDIxaDV2MWgtNXoiLz48L2c+PGc+PHBhdGggZD0iTTExNi45NTcgMjguNTQzbC0xLjQxNCAxLjQxNC0zLjI1LTMuMjUgMS40MTQtMS40MTQgMy4yNSAzLjI1eiIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Ik0xMDguNSAyN2MzLjAzOCAwIDUuNS0yLjQ2MiA1LjUtNS41cy0yLjQ2Mi01LjUtNS41LTUuNS01LjUgMi40NjItNS41IDUuNSAyLjQ2MiA1LjUgNS41IDUuNXoiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMTA2IDIxaDV2MWgtNXoiLz48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMTA5LjA0MyAxOS4wMDhsLS4wODUgNS0xLS4wMTcuMDg1LTV6Ii8+PC9nPjwvZz48L2c+PC9zdmc+);\n  }\n\n  .pswp--svg .pswp__button--arrow--left,\n  .pswp--svg .pswp__button--arrow--right {\n    background: 0 0;\n  }\n}\n\n.pswp__button--close {\n  background-position: 0 -44px;\n}\n\n.pswp__button--share {\n  background-position: -44px -44px;\n}\n\n.pswp__button--fs {\n  display: none;\n}\n\n.pswp--supports-fs .pswp__button--fs {\n  display: block;\n}\n\n.pswp--fs .pswp__button--fs {\n  background-position: -44px 0;\n}\n\n.pswp__button--zoom {\n  display: none;\n  background-position: -88px 0;\n}\n\n.pswp--zoom-allowed .pswp__button--zoom {\n  display: block;\n}\n\n.pswp--zoomed-in .pswp__button--zoom {\n  background-position: -132px 0;\n}\n\n.pswp--touch .pswp__button--arrow--left,\n.pswp--touch .pswp__button--arrow--right {\n  visibility: hidden;\n}\n\n.pswp__button--arrow--left,\n.pswp__button--arrow--right {\n  background: 0 0;\n  top: 50%;\n  margin-top: -50px;\n  width: 70px;\n  height: 100px;\n  position: absolute;\n}\n\n.pswp__button--arrow--left {\n  left: 0;\n}\n\n.pswp__button--arrow--right {\n  right: 0;\n}\n\n.pswp__button--arrow--left:before,\n.pswp__button--arrow--right:before {\n  content: '';\n  top: 35px;\n  background-color: rgba(0, 0, 0, .3);\n  height: 30px;\n  width: 32px;\n  position: absolute;\n}\n\n.pswp__button--arrow--left:before {\n  left: 6px;\n  background-position: -138px -44px;\n}\n\n.pswp__button--arrow--right:before {\n  right: 6px;\n  background-position: -94px -44px;\n}\n\n.pswp__counter,\n.pswp__share-modal {\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n}\n\n.pswp__share-modal {\n  display: block;\n  background: rgba(0, 0, 0, .5);\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  padding: 10px;\n  position: absolute;\n  z-index: 1600;\n  opacity: 0;\n  transition: opacity .25s ease-out;\n  -webkit-backface-visibility: hidden;\n  will-change: opacity;\n}\n\n.pswp__share-modal--hidden {\n  display: none;\n}\n\n.pswp__share-tooltip {\n  z-index: 1620;\n  position: absolute;\n  background: #fff;\n  top: 56px;\n  border-radius: 2px;\n  display: block;\n  width: auto;\n  right: 44px;\n  box-shadow: 0 2px 5px rgba(0, 0, 0, .25);\n  transform: translateY(6px);\n  transition: transform .25s;\n  -webkit-backface-visibility: hidden;\n  will-change: transform;\n}\n\n.pswp__share-tooltip a {\n  display: block;\n  padding: 8px 12px;\n  color: #000;\n  text-decoration: none;\n  font-size: 14px;\n  line-height: 18px;\n}\n\n.pswp__share-tooltip a:hover {\n  text-decoration: none;\n  color: #000;\n}\n\n.pswp__share-tooltip a:first-child {\n  border-radius: 2px 2px 0 0;\n}\n\n.pswp__share-tooltip a:last-child {\n  border-radius: 0 0 2px 2px;\n}\n\n.pswp__share-modal--fade-in {\n  opacity: 1;\n}\n\n.pswp__share-modal--fade-in .pswp__share-tooltip {\n  transform: translateY(0);\n}\n\n.pswp--touch .pswp__share-tooltip a {\n  padding: 16px 12px;\n}\n\na.pswp__share--facebook:before {\n  content: '';\n  display: block;\n  width: 0;\n  height: 0;\n  position: absolute;\n  top: -12px;\n  right: 15px;\n  border: 6px solid transparent;\n  border-bottom-color: #fff;\n  -webkit-pointer-events: none;\n     -moz-pointer-events: none;\n          pointer-events: none;\n}\n\na.pswp__share--facebook:hover {\n  background: #3e5c9a;\n  color: #fff;\n}\n\na.pswp__share--facebook:hover:before {\n  border-bottom-color: #3e5c9a;\n}\n\na.pswp__share--twitter:hover {\n  background: #55acee;\n  color: #fff;\n}\n\na.pswp__share--pinterest:hover {\n  background: #ccc;\n  color: #ce272d;\n}\n\na.pswp__share--download:hover {\n  background: #ddd;\n}\n\n.pswp__counter {\n  position: absolute;\n  left: 0;\n  top: 0;\n  height: 44px;\n  font-size: 13px;\n  line-height: 44px;\n  color: #fff;\n  opacity: .75;\n  padding: 0 10px;\n}\n\n.pswp__caption {\n  position: absolute;\n  left: 0;\n  bottom: 0;\n  width: 100%;\n  min-height: 44px;\n}\n\n.pswp__caption small {\n  font-size: 11px;\n  color: #bbb;\n}\n\n.pswp__caption__center {\n  text-align: left;\n  max-width: 420px;\n  margin: 0 auto;\n  font-size: 13px;\n  padding: 10px;\n  line-height: 20px;\n  color: #ccc;\n}\n\n.pswp__caption--empty {\n  display: none;\n}\n\n.pswp__caption--fake {\n  visibility: hidden;\n}\n\n.pswp__preloader {\n  width: 44px;\n  height: 44px;\n  position: absolute;\n  top: 0;\n  left: 50%;\n  margin-left: -22px;\n  opacity: 0;\n  transition: opacity .25s ease-out;\n  will-change: opacity;\n  direction: ltr;\n}\n\n.pswp__preloader__icn {\n  width: 20px;\n  height: 20px;\n  margin: 12px;\n}\n\n.pswp__preloader--active {\n  opacity: 1;\n}\n\n.pswp__preloader--active .pswp__preloader__icn {\n  background: url(data:image/gif;base64,R0lGODlhFAAUAPMIAIeHhz8/P1dXVycnJ8/Pz7e3t5+fn29vb////wAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFBwAIACwAAAAAFAAUAEAEUxDJSatFxtwaggWAdIyHJAhXoRYSQUhDPGx0TbmujahbXGWZWqdDAYEsp5NupLPkdDwE7oXwWVasimzWrAE1tKFHErQRK8eL8mMUlRBJVI307uoiACH5BAUHAAgALAEAAQASABIAAAROEMkpS6E4W5upMdUmEQT2feFIltMJYivbvhnZ3R0A4NMwIDodz+cL7nDEn5CH8DGZh8MtEMBEoxkqlXKVIgQCibbK9YLBYvLtHH5K0J0IACH5BAUHAAgALAEAAQASABIAAAROEMkpjaE4W5spANUmFQX2feFIltMJYivbvhnZ3d1x4BNBIDodz+cL7nDEn5CH8DGZAsFtMMBEoxkqlXKVIgIBibbK9YLBYvLtHH5K0J0IACH5BAUHAAgALAEAAQASABIAAAROEMkpAaA4W5vpOdUmGQb2feFIltMJYivbvhnZ3Z0g4FNRIDodz+cL7nDEn5CH8DGZgcCNQMBEoxkqlXKVIgYDibbK9YLBYvLtHH5K0J0IACH5BAUHAAgALAEAAQASABIAAAROEMkpz6E4W5upENUmAQD2feFIltMJYivbvhnZ3V0Q4JNhIDodz+cL7nDEn5CH8DGZg8GtUMBEoxkqlXKVIggEibbK9YLBYvLtHH5K0J0IACH5BAUHAAgALAEAAQASABIAAAROEMkphaA4W5tpCNUmHQf2feFIltMJYivbvhnZ3d0w4BMAIDodz+cL7nDEn5CH8DGZBMLNYMBEoxkqlXKVIgoFibbK9YLBYvLtHH5K0J0IACH5BAUHAAgALAEAAQASABIAAAROEMkpQ6A4W5vpGNUmCQL2feFIltMJYivbvhnZ3R1B4NNxIDodz+cL7nDEn5CH8DGZhcINAMBEoxkqlXKVIgwGibbK9YLBYvLtHH5K0J0IACH5BAUHAAcALAEAAQASABIAAANCeLo6wzA6FxkhbaoQ4L3ZxnXLh0EjWZ4RV71VUcCLIByyTNt2PsO8m452sBGJBsNxkUwuD03lAQBASqnUJ7aq5UYSADs=) 0 0 no-repeat;\n}\n\n.pswp--css_animation .pswp__preloader--active {\n  opacity: 1;\n}\n\n.pswp--css_animation .pswp__preloader--active .pswp__preloader__icn {\n  -webkit-animation: clockwise .5s linear infinite;\n          animation: clockwise .5s linear infinite;\n}\n\n.pswp--css_animation .pswp__preloader--active .pswp__preloader__donut {\n  -webkit-animation: donut-rotate 1s cubic-bezier(.4, 0, .22, 1) infinite;\n          animation: donut-rotate 1s cubic-bezier(.4, 0, .22, 1) infinite;\n}\n\n.pswp--css_animation .pswp__preloader__icn {\n  background: 0 0;\n  opacity: .75;\n  width: 14px;\n  height: 14px;\n  position: absolute;\n  left: 15px;\n  top: 15px;\n  margin: 0;\n}\n\n.pswp--css_animation .pswp__preloader__cut {\n  position: relative;\n  width: 7px;\n  height: 14px;\n  overflow: hidden;\n}\n\n.pswp--css_animation .pswp__preloader__donut {\n  box-sizing: border-box;\n  width: 14px;\n  height: 14px;\n  border: 2px solid #fff;\n  border-radius: 50%;\n  border-left-color: transparent;\n  border-bottom-color: transparent;\n  position: absolute;\n  top: 0;\n  left: 0;\n  background: 0 0;\n  margin: 0;\n}\n\n@media screen and (max-width:1024px) {\n  .pswp__preloader {\n    position: relative;\n    left: auto;\n    top: auto;\n    margin: 0;\n    float: right;\n  }\n}\n\n@-webkit-keyframes clockwise {\n  0% {\n    transform: rotate(0);\n  }\n\n  100% {\n    transform: rotate(360deg);\n  }\n}\n\n@keyframes clockwise {\n  0% {\n    transform: rotate(0);\n  }\n\n  100% {\n    transform: rotate(360deg);\n  }\n}\n\n@-webkit-keyframes donut-rotate {\n  0% {\n    transform: rotate(0);\n  }\n\n  50% {\n    transform: rotate(-140deg);\n  }\n\n  100% {\n    transform: rotate(0);\n  }\n}\n\n@keyframes donut-rotate {\n  0% {\n    transform: rotate(0);\n  }\n\n  50% {\n    transform: rotate(-140deg);\n  }\n\n  100% {\n    transform: rotate(0);\n  }\n}\n\n.pswp__ui {\n  -webkit-font-smoothing: auto;\n  visibility: visible;\n  opacity: 1;\n  z-index: 1550;\n}\n\n.pswp__top-bar {\n  position: absolute;\n  left: 0;\n  top: 0;\n  height: 44px;\n  width: 100%;\n}\n\n.pswp--has_mouse .pswp__button--arrow--left,\n.pswp--has_mouse .pswp__button--arrow--right,\n.pswp__caption,\n.pswp__top-bar {\n  -webkit-backface-visibility: hidden;\n  will-change: opacity;\n  transition: opacity 333ms cubic-bezier(.4, 0, .22, 1);\n}\n\n.pswp--has_mouse .pswp__button--arrow--left,\n.pswp--has_mouse .pswp__button--arrow--right {\n  visibility: visible;\n}\n\n.pswp__caption,\n.pswp__top-bar {\n  background-color: rgba(0, 0, 0, .5);\n}\n\n.pswp__ui--fit .pswp__caption,\n.pswp__ui--fit .pswp__top-bar {\n  background-color: rgba(0, 0, 0, .3);\n}\n\n.pswp__ui--idle .pswp__top-bar {\n  opacity: 0;\n}\n\n.pswp__ui--idle .pswp__button--arrow--left,\n.pswp__ui--idle .pswp__button--arrow--right {\n  opacity: 0;\n}\n\n.pswp__ui--hidden .pswp__button--arrow--left,\n.pswp__ui--hidden .pswp__button--arrow--right,\n.pswp__ui--hidden .pswp__caption,\n.pswp__ui--hidden .pswp__top-bar {\n  opacity: .001;\n}\n\n.pswp__ui--one-slide .pswp__button--arrow--left,\n.pswp__ui--one-slide .pswp__button--arrow--right,\n.pswp__ui--one-slide .pswp__counter {\n  display: none;\n}\n\n.pswp__element--disabled {\n  display: none !important;\n}\n\n.pswp--minimal--dark .pswp__top-bar {\n  background: 0 0;\n}\n\n.pswp__top-bar[data-v-22ef8ea6] {\n  text-align: right;\n}\n\n.pswp__caption__center[data-v-22ef8ea6] {\n  text-align: center;\n}\n\n.pswp__button--rotate[data-v-22ef8ea6] {\n  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG4AAAAsCAMAAACzFX2uAAAAAXNSR0IB2cksfwAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAZJQTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////2VbOugAAAIZ0Uk5TAICI/8BQCu6MIfoGBHf3A6zNHs6nT5Hl4SbkomLoH2F7Ap0SxgXHqniomAGFh5elGfamkxob+JDiDY0RkhAI8Vv1CV9RgklLipSPw0rFJNvdC/TyJdrcIkzEwovjSGljYFkM3xytr32jmoOZE658qepnB2Tm5+tY4Msd+ZXsiSDt77+GTr2+MLW1AAADE0lEQVR4nO2X+VsSQRjHV0Y8WgQlwYNQEAlztTRMUMkrTU2z1C677NAsszzCstOy+r+bd9hdFnauhZ6ep6feX5id9/3OZ3Z25p0XRfk3raJUoaskGioVh0rgVaDScc55mFYGzikPaOXgnPEIrSycE16Ohipd7iqnqCq3qzKnlt7YOg2suqbWCay2pjqvleRZaNhOuFRZmKfOWyCVWk9fPSq0Br8czX+ySFjvk5pkox4eCDaR3+YWGVlLMwluDQZ0eaNHbpq+ENJ3pnqKAMNtYlFbGCKb2lV9Z6KQ6N18EX0+0Q7zIMTI0nbGRbT4aYhLxKBNxB3RokFt1oXO6DOKdpvnTiPNHhGuF6LOaoqB6zZo51CErujrR+i8ztOS5jHX4P28A3zahUF4txwNcEnNpLG0KRyWHtIftGEzq4yksSPFx2VgR11UDNywTlOGQBukKUbHsGc8/+wyk1g7dkxM8mhVeGHQJePJeuDGsWNslCKZgglad9O00YjDFC/zcDOgNbfTtMXjg+PhpkhgPWbpowWxK8PDzeGAK3TXLGM153H/Al0Ck5/n4a6yX39BpLXbIpZc4wVcxwGOcjnXlvBoy7yAZRyw9NtwQ3i0lT+Hu4FHu8kLuIUDbjsbk7NV7og+9ypbC1vlLqU/yT4IGVZqsGoZeeceQztVcFStpt7Hrgc8HLxCmqolxzxAcUyuYMdDmmQNNiY/iU3gkEc0z2NWEiMrEn5i74+1snOGYZB30iOUeTxlfof1QeoVrG1gRX8fHzcARVG9ZutXn7Evr0303E6LvoDbcotPU5QeiHoZtfXHE6zrVfFEgOaJWfu2X8E4q8IqJ94JcRvb1r4YqDyvuVrPzu6eWVnuv8nCKAcSpV+uNMqu7Rsd6t5uQjhLH1R9b0PvoO2eOyBVzuGimIZTzyEJzibJ7RbIgHZHxDNKaGjrzffrMjRF+dBg14oKd3XrY6HEWydZneLv0OUt0m4KC0bF/2klL/n8RaKizdvR7Ne89ltKUL7pNjmVIQn5+PsPaj7gagO9x/D7s2ZG+q/Mf/s77BeC+E6Si7RktgAAAABJRU5ErkJggg==) 0 0 no-repeat;\n  background-size: 62px 24px;\n}\n\n.pswp__button--rotate--left[data-v-22ef8ea6] {\n  background-position: 8px 10px;\n}\n\n.pswp__button--rotate--right[data-v-22ef8ea6] {\n  background-position: -26px 10px;\n}\n\n.gallery-thumbnail[data-v-42ff1306] {\n  display: inline;\n  margin: 5px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/*!\n * Viewer.js v1.10.1\n * https://fengyuanchen.github.io/viewerjs\n *\n * Copyright 2015-present Chen Fengyuan\n * Released under the MIT license\n *\n * Date: 2021-08-01T13:35:44.576Z\n */\n\n.viewer-zoom-in::before,\n.viewer-zoom-out::before,\n.viewer-one-to-one::before,\n.viewer-reset::before,\n.viewer-prev::before,\n.viewer-play::before,\n.viewer-next::before,\n.viewer-rotate-left::before,\n.viewer-rotate-right::before,\n.viewer-flip-horizontal::before,\n.viewer-flip-vertical::before,\n.viewer-fullscreen::before,\n.viewer-fullscreen-exit::before,\n.viewer-close::before {\n  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAAUCAYAAABWOyJDAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAQPSURBVHic7Zs/iFxVFMa/0U2UaJGksUgnIVhYxVhpjDbZCBmLdAYECxsRFBTUamcXUiSNncgKQbSxsxH8gzAP3FU2jY0kKKJNiiiIghFlccnP4p3nPCdv3p9778vsLOcHB2bfveeb7955c3jvvNkBIMdxnD64a94GHMfZu3iBcRynN7zAOI7TG15gHCeeNUkr8zaxG2lbYDYsdgMbktBsP03jdQwljSXdtBhLOmtjowC9Mg9L+knSlcD8TNKpSA9lBpK2JF2VdDSR5n5J64m0qli399hNFMUlpshQii5jbXTbHGviB0nLNeNDSd9VO4A2UdB2fp+x0eCnaXxWXGA2X0au/3HgN9P4LFCjIANOJdrLr0zzZ+BEpNYDwKbpnQMeAw4m8HjQtM6Z9qa917zPQwFr3M5KgA6J5rTJCdFZJj9/lyvGhsDvwFNVuV2MhhjrK6b9bFiE+j1r87eBl4HDwCF7/U/k+ofAX5b/EXBv5JoLMuILzf3Ap6Z3EzgdqHMCuF7hcQf4HDgeoHnccncqdK/TvSDWffFXI/exICY/xZyqc6XLWF1UFZna4gJ7q8BsRvgd2/xXpo6P+D9dfT7PpECtA3cnWPM0GXGFZh/wgWltA+cDNC7X+AP4GzjZQe+k5dRxuYPeiuXU7e1qwLpDz7dFjXKRaSwuMLvAlG8zZlG+YmiK1HoFqT7wP2z+4Q45TfEGcMt01xLoNZEBTwRqD4BLpnMLeC1A41UmVxsXgXeBayV/Wx20rpTyrpnWRft7p6O/FdqzGrDukPNtkaMoMo3FBdBSQMOnYBCReyf05s126fU9ytfX98+mY54Kxnp7S9K3kj6U9KYdG0h6UdLbkh7poFXMfUnSOyVvL0h6VtIXHbS6nOP+s/Zm9mvyXW1uuC9ohZ72E9uDmXWLJOB1GxsH+DxPftsB8B6wlGDN02TAkxG6+4D3TWsbeC5CS8CDFce+AW500LhhOW2020TRjK3b21HEmgti9m0RonxbdMZeVzV+/4tF3cBpP7E9mKHNL5q8h5g0eYsCMQz0epq8gQrwMXAgcs0FGXGFRcB9wCemF9PkbYqM/Bas7fxLwNeJPdTdpo4itQti8lPMqTpXuozVRVXPpbHI3KkNTB1NfkL81j2mvhDp91HgV9MKuRIqrykj3WPq4rHyL+axj8/qGPmTqi6F9YDlHOvJU6oYcTsh/TYSzWmTE6JT19CtLTJt32D6CmHe0eQn1O8z5AXgT4sx4Vcu0/EQecMydB8z0hUWkTd2t4CrwNEePqMBcAR4mrBbwyXLPWJa8zrXmmLEhNBmfpkuY2102xxrih+pb+ieAb6vGhuA97UcJ5KR8gZ77K+99xxeYBzH6Q3/Z0fHcXrDC4zjOL3hBcZxnN74F+zlvXFWXF9PAAAAAElFTkSuQmCC');\n  background-repeat: no-repeat;\n  background-size: 280px;\n  color: transparent;\n  display: block;\n  font-size: 0;\n  height: 20px;\n  line-height: 0;\n  width: 20px;\n}\n\n.viewer-zoom-in::before {\n  background-position: 0 0;\n  content: 'Zoom In';\n}\n\n.viewer-zoom-out::before {\n  background-position: -20px 0;\n  content: 'Zoom Out';\n}\n\n.viewer-one-to-one::before {\n  background-position: -40px 0;\n  content: 'One to One';\n}\n\n.viewer-reset::before {\n  background-position: -60px 0;\n  content: 'Reset';\n}\n\n.viewer-prev::before {\n  background-position: -80px 0;\n  content: 'Previous';\n}\n\n.viewer-play::before {\n  background-position: -100px 0;\n  content: 'Play';\n}\n\n.viewer-next::before {\n  background-position: -120px 0;\n  content: 'Next';\n}\n\n.viewer-rotate-left::before {\n  background-position: -140px 0;\n  content: 'Rotate Left';\n}\n\n.viewer-rotate-right::before {\n  background-position: -160px 0;\n  content: 'Rotate Right';\n}\n\n.viewer-flip-horizontal::before {\n  background-position: -180px 0;\n  content: 'Flip Horizontal';\n}\n\n.viewer-flip-vertical::before {\n  background-position: -200px 0;\n  content: 'Flip Vertical';\n}\n\n.viewer-fullscreen::before {\n  background-position: -220px 0;\n  content: 'Enter Full Screen';\n}\n\n.viewer-fullscreen-exit::before {\n  background-position: -240px 0;\n  content: 'Exit Full Screen';\n}\n\n.viewer-close::before {\n  background-position: -260px 0;\n  content: 'Close';\n}\n\n.viewer-container {\n  bottom: 0;\n  direction: ltr;\n  font-size: 0;\n  left: 0;\n  line-height: 0;\n  overflow: hidden;\n  position: absolute;\n  right: 0;\n  -webkit-tap-highlight-color: transparent;\n  top: 0;\n  -ms-touch-action: none;\n      touch-action: none;\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n}\n\n.viewer-container::-moz-selection,\n.viewer-container *::-moz-selection {\n  background-color: transparent;\n}\n\n.viewer-container::-moz-selection, .viewer-container *::-moz-selection {\n  background-color: transparent;\n}\n\n.viewer-container::selection,\n.viewer-container *::selection {\n  background-color: transparent;\n}\n\n.viewer-container:focus {\n  outline: 0;\n}\n\n.viewer-container img {\n  display: block;\n  height: auto;\n  max-height: none !important;\n  max-width: none !important;\n  min-height: 0 !important;\n  min-width: 0 !important;\n  width: 100%;\n}\n\n.viewer-canvas {\n  bottom: 0;\n  left: 0;\n  overflow: hidden;\n  position: absolute;\n  right: 0;\n  top: 0;\n}\n\n.viewer-canvas > img {\n  height: auto;\n  margin: 15px auto;\n  max-width: 90% !important;\n  width: auto;\n}\n\n.viewer-footer {\n  bottom: 0;\n  left: 0;\n  overflow: hidden;\n  position: absolute;\n  right: 0;\n  text-align: center;\n}\n\n.viewer-navbar {\n  background-color: rgba(0, 0, 0, .5);\n  overflow: hidden;\n}\n\n.viewer-list {\n  -webkit-box-sizing: content-box;\n          box-sizing: content-box;\n  height: 50px;\n  margin: 0;\n  overflow: hidden;\n  padding: 1px 0;\n}\n\n.viewer-list > li {\n  color: transparent;\n  cursor: pointer;\n  float: left;\n  font-size: 0;\n  height: 50px;\n  line-height: 0;\n  opacity: .5;\n  overflow: hidden;\n  -webkit-transition: opacity .15s;\n          transition: opacity .15s;\n  width: 30px;\n}\n\n.viewer-list > li:focus,\n.viewer-list > li:hover {\n  opacity: .75;\n}\n\n.viewer-list > li:focus {\n  outline: 0;\n}\n\n.viewer-list > li + li {\n  margin-left: 1px;\n}\n\n.viewer-list > .viewer-loading {\n  position: relative;\n}\n\n.viewer-list > .viewer-loading::after {\n  border-width: 2px;\n  height: 20px;\n  margin-left: -10px;\n  margin-top: -10px;\n  width: 20px;\n}\n\n.viewer-list > .viewer-active,\n.viewer-list > .viewer-active:focus,\n.viewer-list > .viewer-active:hover {\n  opacity: 1;\n}\n\n.viewer-player {\n  background-color: #000;\n  bottom: 0;\n  cursor: none;\n  display: none;\n  left: 0;\n  position: absolute;\n  right: 0;\n  top: 0;\n  z-index: 1;\n}\n\n.viewer-player > img {\n  left: 0;\n  position: absolute;\n  top: 0;\n}\n\n.viewer-toolbar > ul {\n  display: inline-block;\n  margin: 0 auto 5px;\n  overflow: hidden;\n  padding: 6px 3px;\n}\n\n.viewer-toolbar > ul > li {\n  background-color: rgba(0, 0, 0, .5);\n  border-radius: 50%;\n  cursor: pointer;\n  float: left;\n  height: 24px;\n  overflow: hidden;\n  -webkit-transition: background-color .15s;\n          transition: background-color .15s;\n  width: 24px;\n}\n\n.viewer-toolbar > ul > li:focus,\n.viewer-toolbar > ul > li:hover {\n  background-color: rgba(0, 0, 0, .8);\n}\n\n.viewer-toolbar > ul > li:focus {\n  -webkit-box-shadow: 0 0 3px #fff;\n          box-shadow: 0 0 3px #fff;\n  outline: 0;\n  position: relative;\n  z-index: 1;\n}\n\n.viewer-toolbar > ul > li::before {\n  margin: 2px;\n}\n\n.viewer-toolbar > ul > li + li {\n  margin-left: 1px;\n}\n\n.viewer-toolbar > ul > .viewer-small {\n  height: 18px;\n  margin-bottom: 3px;\n  margin-top: 3px;\n  width: 18px;\n}\n\n.viewer-toolbar > ul > .viewer-small::before {\n  margin: -1px;\n}\n\n.viewer-toolbar > ul > .viewer-large {\n  height: 30px;\n  margin-bottom: -3px;\n  margin-top: -3px;\n  width: 30px;\n}\n\n.viewer-toolbar > ul > .viewer-large::before {\n  margin: 5px;\n}\n\n.viewer-tooltip {\n  background-color: rgba(0, 0, 0, .8);\n  border-radius: 10px;\n  color: #fff;\n  display: none;\n  font-size: 12px;\n  height: 20px;\n  left: 50%;\n  line-height: 20px;\n  margin-left: -25px;\n  margin-top: -10px;\n  position: absolute;\n  text-align: center;\n  top: 50%;\n  width: 50px;\n}\n\n.viewer-title {\n  color: #ccc;\n  display: inline-block;\n  font-size: 12px;\n  line-height: 1;\n  margin: 0 5% 5px;\n  max-width: 90%;\n  opacity: .8;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  -webkit-transition: opacity .15s;\n          transition: opacity .15s;\n  white-space: nowrap;\n}\n\n.viewer-title:hover {\n  opacity: 1;\n}\n\n.viewer-button {\n  background-color: rgba(0, 0, 0, .5);\n  border-radius: 50%;\n  cursor: pointer;\n  height: 80px;\n  overflow: hidden;\n  position: absolute;\n  right: -40px;\n  top: -40px;\n  -webkit-transition: background-color .15s;\n          transition: background-color .15s;\n  width: 80px;\n}\n\n.viewer-button:focus,\n.viewer-button:hover {\n  background-color: rgba(0, 0, 0, .8);\n}\n\n.viewer-button:focus {\n  -webkit-box-shadow: 0 0 3px #fff;\n          box-shadow: 0 0 3px #fff;\n  outline: 0;\n}\n\n.viewer-button::before {\n  bottom: 15px;\n  left: 15px;\n  position: absolute;\n}\n\n.viewer-fixed {\n  position: fixed;\n}\n\n.viewer-open {\n  overflow: hidden;\n}\n\n.viewer-show {\n  display: block;\n}\n\n.viewer-hide {\n  display: none;\n}\n\n.viewer-backdrop {\n  background-color: rgba(0, 0, 0, .5);\n}\n\n.viewer-invisible {\n  visibility: hidden;\n}\n\n.viewer-move {\n  cursor: move;\n  cursor: -webkit-grab;\n  cursor: grab;\n}\n\n.viewer-fade {\n  opacity: 0;\n}\n\n.viewer-in {\n  opacity: 1;\n}\n\n.viewer-transition {\n  -webkit-transition: all .3s;\n          transition: all .3s;\n}\n\n@-webkit-keyframes viewer-spinner {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n  }\n\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n  }\n}\n\n@keyframes viewer-spinner {\n  0% {\n    -webkit-transform: rotate(0deg);\n            transform: rotate(0deg);\n  }\n\n  100% {\n    -webkit-transform: rotate(360deg);\n            transform: rotate(360deg);\n  }\n}\n\n.viewer-loading::after {\n  -webkit-animation: viewer-spinner 1s linear infinite;\n          animation: viewer-spinner 1s linear infinite;\n  border: 4px solid rgba(255, 255, 255, .1);\n  border-left-color: rgba(255, 255, 255, .5);\n  border-radius: 50%;\n  content: '';\n  display: inline-block;\n  height: 40px;\n  left: 50%;\n  margin-left: -20px;\n  margin-top: -20px;\n  position: absolute;\n  top: 50%;\n  width: 40px;\n  z-index: 1;\n}\n\n@media (max-width: 767px) {\n  .viewer-hide-xs-down {\n    display: none;\n  }\n}\n\n@media (max-width: 991px) {\n  .viewer-hide-sm-down {\n    display: none;\n  }\n}\n\n@media (max-width: 1199px) {\n  .viewer-hide-md-down {\n    display: none;\n  }\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -34022,10 +34088,10 @@ var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMP
 
 /***/ }),
 
-/***/ "./node_modules/vue3-picture-swipe/dist/vue3-picture-swipe.css":
-/*!*********************************************************************!*\
-  !*** ./node_modules/vue3-picture-swipe/dist/vue3-picture-swipe.css ***!
-  \*********************************************************************/
+/***/ "./node_modules/viewerjs/dist/viewer.css":
+/*!***********************************************!*\
+  !*** ./node_modules/viewerjs/dist/viewer.css ***!
+  \***********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -34035,7 +34101,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_vue3_picture_swipe_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./vue3-picture-swipe.css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue3-picture-swipe/dist/vue3-picture-swipe.css");
+/* harmony import */ var _css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_viewer_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./viewer.css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/viewerjs/dist/viewer.css");
 
             
 
@@ -34044,11 +34110,11 @@ var options = {};
 options.insert = "head";
 options.singleton = false;
 
-var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_vue3_picture_swipe_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
+var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_viewer_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_vue3_picture_swipe_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_viewer_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 
@@ -41091,6 +41157,705 @@ module.exports = toPlainObject;
 
 /***/ }),
 
+/***/ "./node_modules/v-viewer/dist/v-viewer.js":
+/*!************************************************!*\
+  !*** ./node_modules/v-viewer/dist/v-viewer.js ***!
+  \************************************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory(__webpack_require__(/*! viewerjs */ "./node_modules/viewerjs/dist/viewer.js"), __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js"));
+	else {}
+})(this, function(__WEBPACK_EXTERNAL_MODULE_0__, __WEBPACK_EXTERNAL_MODULE_2__) {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __nested_webpack_require_715__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __nested_webpack_require_715__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__nested_webpack_require_715__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__nested_webpack_require_715__.c = installedModules;
+/******/
+/******/ 	// identity function for calling harmony imports with the correct context
+/******/ 	__nested_webpack_require_715__.i = function(value) { return value; };
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__nested_webpack_require_715__.d = function(exports, name, getter) {
+/******/ 		if(!__nested_webpack_require_715__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__nested_webpack_require_715__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__nested_webpack_require_715__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__nested_webpack_require_715__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__nested_webpack_require_715__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __nested_webpack_require_715__(__nested_webpack_require_715__.s = 6);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
+
+/***/ }),
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = extend;
+
+function extend() {
+  var extended = {};
+  var deep = false;
+  var i = 0;
+  var length = arguments.length;
+
+  if (Object.prototype.toString.call(arguments[0]) === '[object Boolean]') {
+    deep = arguments[0];
+    i++;
+  }
+
+  function merge(obj) {
+    for (var prop in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, prop)) {
+        if (deep && Object.prototype.toString.call(obj[prop]) === '[object Object]') {
+          extended[prop] = extend(true, extended[prop], obj[prop]);
+        } else {
+          extended[prop] = obj[prop];
+        }
+      }
+    }
+  }
+
+  for (; i < length; i++) {
+    var obj = arguments[i];
+    merge(obj);
+  }
+
+  return extended;
+}
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
+
+/***/ }),
+/* 3 */
+/***/ (function(module, __webpack_exports__, __nested_webpack_require_4217__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_viewerjs__ = __nested_webpack_require_4217__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_viewerjs___default = __nested_webpack_require_4217__.n(__WEBPACK_IMPORTED_MODULE_0_viewerjs__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __nested_webpack_require_4217__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue__ = __nested_webpack_require_4217__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue___default = __nested_webpack_require_4217__.n(__WEBPACK_IMPORTED_MODULE_2_vue__);
+
+
+
+
+var api = function api() {
+  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      _ref$images = _ref.images,
+      images = _ref$images === undefined ? [] : _ref$images,
+      _ref$options = _ref.options,
+      options = _ref$options === undefined ? {} : _ref$options;
+
+  options = __nested_webpack_require_4217__.i(__WEBPACK_IMPORTED_MODULE_1__utils__["a" /* extend */])(options, {
+    inline: false });
+
+  var ViewerToken = __WEBPACK_IMPORTED_MODULE_2_vue___default.a.extend({
+    render: function render(h) {
+      return h('div', {
+        style: {
+          display: 'none'
+        },
+        class: ['__viewer-token']
+      }, images.map(function (attr) {
+        return h('img', {
+          attrs: typeof attr === 'string' ? { src: attr } : attr
+        });
+      }));
+    }
+  });
+  var token = new ViewerToken();
+  token.$mount();
+  document.body.appendChild(token.$el);
+
+  var $viewer = new __WEBPACK_IMPORTED_MODULE_0_viewerjs___default.a(token.$el, options);
+  var $destroy = $viewer.destroy.bind($viewer);
+  $viewer.destroy = function () {
+    $destroy();
+    token.$destroy();
+    document.body.removeChild(token.$el);
+    return $viewer;
+  };
+  $viewer.show();
+
+  token.$el.addEventListener('hidden', function () {
+    if (this.viewer === $viewer) {
+      $viewer.destroy();
+    }
+  });
+
+  return $viewer;
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (api);
+
+/***/ }),
+/* 4 */
+/***/ (function(module, __webpack_exports__, __nested_webpack_require_6261__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_viewerjs__ = __nested_webpack_require_6261__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_viewerjs___default = __nested_webpack_require_6261__.n(__WEBPACK_IMPORTED_MODULE_0_viewerjs__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_throttle_debounce__ = __nested_webpack_require_6261__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_throttle_debounce___default = __nested_webpack_require_6261__.n(__WEBPACK_IMPORTED_MODULE_1_throttle_debounce__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue__ = __nested_webpack_require_6261__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue___default = __nested_webpack_require_6261__.n(__WEBPACK_IMPORTED_MODULE_2_vue__);
+
+
+
+
+var directive = function directive() {
+  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      _ref$name = _ref.name,
+      name = _ref$name === undefined ? 'viewer' : _ref$name,
+      _ref$debug = _ref.debug,
+      debug = _ref$debug === undefined ? false : _ref$debug;
+
+  function createViewer(el, options) {
+    var rebuild = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+    var observer = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+
+    __WEBPACK_IMPORTED_MODULE_2_vue___default.a.nextTick(function () {
+      if (observer && !imageDiff(el)) return;
+      if (rebuild || !el['$' + name]) {
+        destroyViewer(el);
+        el['$' + name] = new __WEBPACK_IMPORTED_MODULE_0_viewerjs___default.a(el, options);
+        log('Viewer created');
+      } else {
+        el['$' + name].update();
+        log('Viewer updated');
+      }
+    });
+  }
+
+  function imageDiff(el) {
+    var imageContent = el.innerHTML.match(/<img([\w\W]+?)[\\/]?>/g);
+    var viewerImageText = imageContent ? imageContent.join('') : undefined;
+    if (el.__viewerImageDiffCache === viewerImageText) {
+      log('Element change detected, but image(s) has not changed');
+      return false;
+    } else {
+      log('Image change detected');
+      el.__viewerImageDiffCache = viewerImageText;
+      return true;
+    }
+  }
+
+  function createObserver(el, options, debouncedCreateViewer, rebuild) {
+    destroyObserver(el);
+    var MutationObserver = global.MutationObserver || global.WebKitMutationObserver || global.MozMutationObserver;
+    if (!MutationObserver) {
+      log('Observer not supported');
+      return;
+    }
+    var observer = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
+        log('Viewer mutation:' + mutation.type);
+        debouncedCreateViewer(el, options, rebuild, true);
+      });
+    });
+    var config = { attributes: true, childList: true, characterData: true, subtree: true };
+    observer.observe(el, config);
+    el.__viewerMutationObserver = observer;
+    log('Observer created');
+  }
+
+  function createWatcher(el, _ref2, vnode, debouncedCreateViewer) {
+    var expression = _ref2.expression;
+
+    var simplePathRE = /^[A-Za-z_$][\w$]*(?:\.[A-Za-z_$][\w$]*|\['[^']*?']|\["[^"]*?"]|\[\d+]|\[[A-Za-z_$][\w$]*])*$/;
+    if (!expression || !simplePathRE.test(expression)) {
+      log('Only simple dot-delimited paths can create watcher');
+      return;
+    }
+    el.__viewerUnwatch = vnode.context.$watch(expression, function (newVal, oldVal) {
+      log('Change detected by watcher: ', expression);
+      debouncedCreateViewer(el, newVal, true);
+    }, {
+      deep: true
+    });
+    log('Watcher created, expression: ', expression);
+  }
+
+  function destroyViewer(el) {
+    if (!el['$' + name]) {
+      return;
+    }
+    el['$' + name].destroy();
+    delete el['$' + name];
+    log('Viewer destroyed');
+  }
+
+  function destroyObserver(el) {
+    if (!el.__viewerMutationObserver) {
+      return;
+    }
+    el.__viewerMutationObserver.disconnect();
+    delete el.__viewerMutationObserver;
+    log('Observer destroyed');
+  }
+
+  function destroyWatcher(el) {
+    if (!el.__viewerUnwatch) {
+      return;
+    }
+    el.__viewerUnwatch();
+    delete el.__viewerUnwatch;
+    log('Watcher destroyed');
+  }
+
+  function log() {
+    var _console;
+
+    debug && (_console = console).log.apply(_console, arguments);
+  }
+
+  var directive = {
+    bind: function bind(el, binding, vnode) {
+      log('Viewer bind');
+      var debouncedCreateViewer = __nested_webpack_require_6261__.i(__WEBPACK_IMPORTED_MODULE_1_throttle_debounce__["debounce"])(50, createViewer);
+      debouncedCreateViewer(el, binding.value);
+
+      createWatcher(el, binding, vnode, debouncedCreateViewer);
+
+      if (!binding.modifiers.static) {
+        createObserver(el, binding.value, debouncedCreateViewer, binding.modifiers.rebuild);
+      }
+    },
+    unbind: function unbind(el, binding) {
+      log('Viewer unbind');
+
+      destroyObserver(el);
+
+      destroyWatcher(el);
+
+      destroyViewer(el);
+    }
+  };
+
+  return directive;
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (directive);
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __nested_webpack_require_6261__(9)))
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __nested_webpack_require_11364__) {
+
+var Component = __nested_webpack_require_11364__(10)(
+  /* script */
+  __nested_webpack_require_11364__(8),
+  /* template */
+  __nested_webpack_require_11364__(11),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/Volumes/public/Workspace/web/v-viewer/src/component.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] component.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, __webpack_exports__, __nested_webpack_require_12472__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __nested_webpack_require_12472__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_viewerjs__ = __nested_webpack_require_12472__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_viewerjs___default = __nested_webpack_require_12472__.n(__WEBPACK_IMPORTED_MODULE_1_viewerjs__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__component_vue__ = __nested_webpack_require_12472__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__component_vue___default = __nested_webpack_require_12472__.n(__WEBPACK_IMPORTED_MODULE_2__component_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directive__ = __nested_webpack_require_12472__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__api__ = __nested_webpack_require_12472__(3);
+/* harmony reexport (default from non-hamory) */ __nested_webpack_require_12472__.d(__webpack_exports__, "component", function() { return __WEBPACK_IMPORTED_MODULE_2__component_vue___default.a; });
+/* harmony reexport (binding) */ __nested_webpack_require_12472__.d(__webpack_exports__, "directive", function() { return __WEBPACK_IMPORTED_MODULE_3__directive__["a"]; });
+/* harmony reexport (binding) */ __nested_webpack_require_12472__.d(__webpack_exports__, "api", function() { return __WEBPACK_IMPORTED_MODULE_4__api__["a"]; });
+/* harmony reexport (default from non-hamory) */ __nested_webpack_require_12472__.d(__webpack_exports__, "Viewer", function() { return __WEBPACK_IMPORTED_MODULE_1_viewerjs___default.a; });
+
+
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  install: function install(Vue) {
+    var _ref = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
+        _ref$name = _ref.name,
+        name = _ref$name === undefined ? 'viewer' : _ref$name,
+        _ref$debug = _ref.debug,
+        debug = _ref$debug === undefined ? false : _ref$debug,
+        defaultOptions = _ref.defaultOptions;
+
+    __WEBPACK_IMPORTED_MODULE_1_viewerjs___default.a.setDefaults(defaultOptions);
+
+    Vue.component(name, __nested_webpack_require_12472__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["a" /* extend */])(__WEBPACK_IMPORTED_MODULE_2__component_vue___default.a, { name: name }));
+    Vue.directive(name, __nested_webpack_require_12472__.i(__WEBPACK_IMPORTED_MODULE_3__directive__["a" /* default */])({ name: name, debug: debug }));
+    Vue.prototype['$' + name + 'Api'] = __WEBPACK_IMPORTED_MODULE_4__api__["a" /* default */];
+  },
+  setDefaults: function setDefaults(defaultOptions) {
+    __WEBPACK_IMPORTED_MODULE_1_viewerjs___default.a.setDefaults(defaultOptions);
+  }
+});
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+(function (global, factory) {
+	(  false ? 0 : _typeof(exports)) === 'object' && typeof module !== 'undefined' ? factory(exports) :   true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [exports], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : (0);
+})(this, function (exports) {
+	'use strict';
+
+	function throttle(delay, noTrailing, callback, debounceMode) {
+		var timeoutID;
+		var cancelled = false;
+
+		var lastExec = 0;
+
+		function clearExistingTimeout() {
+			if (timeoutID) {
+				clearTimeout(timeoutID);
+			}
+		}
+
+		function cancel() {
+			clearExistingTimeout();
+			cancelled = true;
+		}
+
+		if (typeof noTrailing !== 'boolean') {
+			debounceMode = callback;
+			callback = noTrailing;
+			noTrailing = undefined;
+		}
+
+
+		function wrapper() {
+			for (var _len = arguments.length, arguments_ = new Array(_len), _key = 0; _key < _len; _key++) {
+				arguments_[_key] = arguments[_key];
+			}
+
+			var self = this;
+			var elapsed = Date.now() - lastExec;
+
+			if (cancelled) {
+				return;
+			}
+
+			function exec() {
+				lastExec = Date.now();
+				callback.apply(self, arguments_);
+			}
+
+
+			function clear() {
+				timeoutID = undefined;
+			}
+
+			if (debounceMode && !timeoutID) {
+				exec();
+			}
+
+			clearExistingTimeout();
+
+			if (debounceMode === undefined && elapsed > delay) {
+				exec();
+			} else if (noTrailing !== true) {
+				timeoutID = setTimeout(debounceMode ? clear : exec, debounceMode === undefined ? delay - elapsed : delay);
+			}
+		}
+
+		wrapper.cancel = cancel;
+
+		return wrapper;
+	}
+
+	function debounce(delay, atBegin, callback) {
+		return callback === undefined ? throttle(delay, atBegin, false) : throttle(delay, callback, atBegin !== false);
+	}
+
+	exports.debounce = debounce;
+	exports.throttle = throttle;
+
+	Object.defineProperty(exports, '__esModule', { value: true });
+});
+
+/***/ }),
+/* 8 */
+/***/ (function(module, __webpack_exports__, __nested_webpack_require_17728__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_viewerjs__ = __nested_webpack_require_17728__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_viewerjs___default = __nested_webpack_require_17728__.n(__WEBPACK_IMPORTED_MODULE_0_viewerjs__);
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    images: {
+      type: Array
+    },
+    rebuild: {
+      type: Boolean,
+      default: false
+    },
+    trigger: {},
+    options: {
+      type: Object
+    }
+  },
+
+  data: function data() {
+    return {};
+  },
+
+
+  computed: {},
+
+  methods: {
+    onChange: function onChange() {
+      if (this.rebuild) {
+        this.rebuildViewer();
+      } else {
+        this.updateViewer();
+      }
+    },
+    rebuildViewer: function rebuildViewer() {
+      this.destroyViewer();
+      this.createViewer();
+    },
+    updateViewer: function updateViewer() {
+      if (this.$viewer) {
+        this.$viewer.update();
+        this.$emit('inited', this.$viewer);
+      } else {
+        this.createViewer();
+      }
+    },
+    destroyViewer: function destroyViewer() {
+      this.$viewer && this.$viewer.destroy();
+    },
+    createViewer: function createViewer() {
+      this.$viewer = new __WEBPACK_IMPORTED_MODULE_0_viewerjs___default.a(this.$el, this.options);
+      this.$emit('inited', this.$viewer);
+    }
+  },
+
+  watch: {
+    images: function images() {
+      var _this = this;
+
+      this.$nextTick(function () {
+        _this.onChange();
+      });
+    },
+
+    trigger: {
+      handler: function handler() {
+        var _this2 = this;
+
+        this.$nextTick(function () {
+          _this2.onChange();
+        });
+      },
+
+      deep: true
+    },
+    options: {
+      handler: function handler() {
+        var _this3 = this;
+
+        this.$nextTick(function () {
+          _this3.rebuildViewer();
+        });
+      },
+
+      deep: true
+    }
+  },
+
+  mounted: function mounted() {
+    this.createViewer();
+  },
+  destroyed: function destroyed() {
+    this.destroyViewer();
+  }
+});
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports) {
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var g;
+
+g = function () {
+	return this;
+}();
+
+try {
+	g = g || Function("return this")() || (1, eval)("this");
+} catch (e) {
+	if ((typeof window === "undefined" ? "undefined" : _typeof(window)) === "object") g = window;
+}
+
+module.exports = g;
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports) {
+
+// this module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle
+
+module.exports = function normalizeComponent (
+  rawScriptExports,
+  compiledTemplate,
+  scopeId,
+  cssModules
+) {
+  var esModule
+  var scriptExports = rawScriptExports = rawScriptExports || {}
+
+  // ES6 modules interop
+  var type = typeof rawScriptExports.default
+  if (type === 'object' || type === 'function') {
+    esModule = rawScriptExports
+    scriptExports = rawScriptExports.default
+  }
+
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (compiledTemplate) {
+    options.render = compiledTemplate.render
+    options.staticRenderFns = compiledTemplate.staticRenderFns
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = scopeId
+  }
+
+  // inject cssModules
+  if (cssModules) {
+    var computed = Object.create(options.computed || null)
+    Object.keys(cssModules).forEach(function (key) {
+      var module = cssModules[key]
+      computed[key] = function () { return module }
+    })
+    options.computed = computed
+  }
+
+  return {
+    esModule: esModule,
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_vm._t("default", null, {
+    "images": _vm.images,
+    "options": _vm.options
+  })], 2)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {}
+
+/***/ })
+/******/ ]);
+});
+
+/***/ }),
+
 /***/ "./node_modules/vee-validate/dist/vee-validate.esm.js":
 /*!************************************************************!*\
   !*** ./node_modules/vee-validate/dist/vee-validate.esm.js ***!
@@ -43152,6 +43917,3544 @@ var version = '3.4.11';
 
 /***/ }),
 
+/***/ "./node_modules/viewerjs/dist/viewer.js":
+/*!**********************************************!*\
+  !*** ./node_modules/viewerjs/dist/viewer.js ***!
+  \**********************************************/
+/***/ (function(module) {
+
+/*!
+ * Viewer.js v1.10.1
+ * https://fengyuanchen.github.io/viewerjs
+ *
+ * Copyright 2015-present Chen Fengyuan
+ * Released under the MIT license
+ *
+ * Date: 2021-08-01T13:35:49.731Z
+ */
+
+(function (global, factory) {
+   true ? module.exports = factory() :
+  0;
+}(this, (function () { 'use strict';
+
+  function ownKeys(object, enumerableOnly) {
+    var keys = Object.keys(object);
+
+    if (Object.getOwnPropertySymbols) {
+      var symbols = Object.getOwnPropertySymbols(object);
+
+      if (enumerableOnly) {
+        symbols = symbols.filter(function (sym) {
+          return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+        });
+      }
+
+      keys.push.apply(keys, symbols);
+    }
+
+    return keys;
+  }
+
+  function _objectSpread2(target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i] != null ? arguments[i] : {};
+
+      if (i % 2) {
+        ownKeys(Object(source), true).forEach(function (key) {
+          _defineProperty(target, key, source[key]);
+        });
+      } else if (Object.getOwnPropertyDescriptors) {
+        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+      } else {
+        ownKeys(Object(source)).forEach(function (key) {
+          Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+        });
+      }
+    }
+
+    return target;
+  }
+
+  function _typeof(obj) {
+    "@babel/helpers - typeof";
+
+    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+      _typeof = function (obj) {
+        return typeof obj;
+      };
+    } else {
+      _typeof = function (obj) {
+        return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+      };
+    }
+
+    return _typeof(obj);
+  }
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+  }
+
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
+  }
+
+  var DEFAULTS = {
+    /**
+     * Enable a modal backdrop, specify `static` for a backdrop
+     * which doesn't close the modal on click.
+     * @type {boolean}
+     */
+    backdrop: true,
+
+    /**
+     * Show the button on the top-right of the viewer.
+     * @type {boolean}
+     */
+    button: true,
+
+    /**
+     * Show the navbar.
+     * @type {boolean | number}
+     */
+    navbar: true,
+
+    /**
+     * Specify the visibility and the content of the title.
+     * @type {boolean | number | Function | Array}
+     */
+    title: true,
+
+    /**
+     * Show the toolbar.
+     * @type {boolean | number | Object}
+     */
+    toolbar: true,
+
+    /**
+     * Custom class name(s) to add to the viewer's root element.
+     * @type {string}
+     */
+    className: '',
+
+    /**
+     * Define where to put the viewer in modal mode.
+     * @type {string | Element}
+     */
+    container: 'body',
+
+    /**
+     * Filter the images for viewing. Return true if the image is viewable.
+     * @type {Function}
+     */
+    filter: null,
+
+    /**
+     * Enable to request fullscreen when play.
+     * {@link https://developer.mozilla.org/en-US/docs/Web/API/FullscreenOptions}
+     * @type {boolean|FullscreenOptions}
+     */
+    fullscreen: true,
+
+    /**
+     * Define the extra attributes to inherit from the original image.
+     * @type {Array}
+     */
+    inheritedAttributes: ['crossOrigin', 'decoding', 'isMap', 'loading', 'referrerPolicy', 'sizes', 'srcset', 'useMap'],
+
+    /**
+     * Define the initial index of image for viewing.
+     * @type {number}
+     */
+    initialViewIndex: 0,
+
+    /**
+     * Enable inline mode.
+     * @type {boolean}
+     */
+    inline: false,
+
+    /**
+     * The amount of time to delay between automatically cycling an image when playing.
+     * @type {number}
+     */
+    interval: 5000,
+
+    /**
+     * Enable keyboard support.
+     * @type {boolean}
+     */
+    keyboard: true,
+
+    /**
+     * Focus the viewer when initialized.
+     * @type {boolean}
+     */
+    focus: true,
+
+    /**
+     * Indicate if show a loading spinner when load image or not.
+     * @type {boolean}
+     */
+    loading: true,
+
+    /**
+     * Indicate if enable loop viewing or not.
+     * @type {boolean}
+     */
+    loop: true,
+
+    /**
+     * Min width of the viewer in inline mode.
+     * @type {number}
+     */
+    minWidth: 200,
+
+    /**
+     * Min height of the viewer in inline mode.
+     * @type {number}
+     */
+    minHeight: 100,
+
+    /**
+     * Enable to move the image.
+     * @type {boolean}
+     */
+    movable: true,
+
+    /**
+     * Enable to rotate the image.
+     * @type {boolean}
+     */
+    rotatable: true,
+
+    /**
+     * Enable to scale the image.
+     * @type {boolean}
+     */
+    scalable: true,
+
+    /**
+     * Enable to zoom the image.
+     * @type {boolean}
+     */
+    zoomable: true,
+
+    /**
+     * Enable to zoom the current image by dragging on the touch screen.
+     * @type {boolean}
+     */
+    zoomOnTouch: true,
+
+    /**
+     * Enable to zoom the image by wheeling mouse.
+     * @type {boolean}
+     */
+    zoomOnWheel: true,
+
+    /**
+     * Enable to slide to the next or previous image by swiping on the touch screen.
+     * @type {boolean}
+     */
+    slideOnTouch: true,
+
+    /**
+     * Indicate if toggle the image size between its natural size
+     * and initial size when double click on the image or not.
+     * @type {boolean}
+     */
+    toggleOnDblclick: true,
+
+    /**
+     * Show the tooltip with image ratio (percentage) when zoom in or zoom out.
+     * @type {boolean}
+     */
+    tooltip: true,
+
+    /**
+     * Enable CSS3 Transition for some special elements.
+     * @type {boolean}
+     */
+    transition: true,
+
+    /**
+     * Define the CSS `z-index` value of viewer in modal mode.
+     * @type {number}
+     */
+    zIndex: 2015,
+
+    /**
+     * Define the CSS `z-index` value of viewer in inline mode.
+     * @type {number}
+     */
+    zIndexInline: 0,
+
+    /**
+     * Define the ratio when zoom the image by wheeling mouse.
+     * @type {number}
+     */
+    zoomRatio: 0.1,
+
+    /**
+     * Define the min ratio of the image when zoom out.
+     * @type {number}
+     */
+    minZoomRatio: 0.01,
+
+    /**
+     * Define the max ratio of the image when zoom in.
+     * @type {number}
+     */
+    maxZoomRatio: 100,
+
+    /**
+     * Define where to get the original image URL for viewing.
+     * @type {string | Function}
+     */
+    url: 'src',
+
+    /**
+     * Event shortcuts.
+     * @type {Function}
+     */
+    ready: null,
+    show: null,
+    shown: null,
+    hide: null,
+    hidden: null,
+    view: null,
+    viewed: null,
+    move: null,
+    moved: null,
+    rotate: null,
+    rotated: null,
+    scale: null,
+    scaled: null,
+    zoom: null,
+    zoomed: null,
+    play: null,
+    stop: null
+  };
+
+  var TEMPLATE = '<div class="viewer-container" tabindex="-1" touch-action="none">' + '<div class="viewer-canvas"></div>' + '<div class="viewer-footer">' + '<div class="viewer-title"></div>' + '<div class="viewer-toolbar"></div>' + '<div class="viewer-navbar">' + '<ul class="viewer-list" role="navigation"></ul>' + '</div>' + '</div>' + '<div class="viewer-tooltip" role="alert" aria-hidden="true"></div>' + '<div class="viewer-button" data-viewer-action="mix" role="button"></div>' + '<div class="viewer-player"></div>' + '</div>';
+
+  var IS_BROWSER = typeof window !== 'undefined' && typeof window.document !== 'undefined';
+  var WINDOW = IS_BROWSER ? window : {};
+  var IS_TOUCH_DEVICE = IS_BROWSER && WINDOW.document.documentElement ? 'ontouchstart' in WINDOW.document.documentElement : false;
+  var HAS_POINTER_EVENT = IS_BROWSER ? 'PointerEvent' in WINDOW : false;
+  var NAMESPACE = 'viewer'; // Actions
+
+  var ACTION_MOVE = 'move';
+  var ACTION_SWITCH = 'switch';
+  var ACTION_ZOOM = 'zoom'; // Classes
+
+  var CLASS_ACTIVE = "".concat(NAMESPACE, "-active");
+  var CLASS_CLOSE = "".concat(NAMESPACE, "-close");
+  var CLASS_FADE = "".concat(NAMESPACE, "-fade");
+  var CLASS_FIXED = "".concat(NAMESPACE, "-fixed");
+  var CLASS_FULLSCREEN = "".concat(NAMESPACE, "-fullscreen");
+  var CLASS_FULLSCREEN_EXIT = "".concat(NAMESPACE, "-fullscreen-exit");
+  var CLASS_HIDE = "".concat(NAMESPACE, "-hide");
+  var CLASS_HIDE_MD_DOWN = "".concat(NAMESPACE, "-hide-md-down");
+  var CLASS_HIDE_SM_DOWN = "".concat(NAMESPACE, "-hide-sm-down");
+  var CLASS_HIDE_XS_DOWN = "".concat(NAMESPACE, "-hide-xs-down");
+  var CLASS_IN = "".concat(NAMESPACE, "-in");
+  var CLASS_INVISIBLE = "".concat(NAMESPACE, "-invisible");
+  var CLASS_LOADING = "".concat(NAMESPACE, "-loading");
+  var CLASS_MOVE = "".concat(NAMESPACE, "-move");
+  var CLASS_OPEN = "".concat(NAMESPACE, "-open");
+  var CLASS_SHOW = "".concat(NAMESPACE, "-show");
+  var CLASS_TRANSITION = "".concat(NAMESPACE, "-transition"); // Native events
+
+  var EVENT_CLICK = 'click';
+  var EVENT_DBLCLICK = 'dblclick';
+  var EVENT_DRAG_START = 'dragstart';
+  var EVENT_FOCUSIN = 'focusin';
+  var EVENT_KEY_DOWN = 'keydown';
+  var EVENT_LOAD = 'load';
+  var EVENT_TOUCH_END = IS_TOUCH_DEVICE ? 'touchend touchcancel' : 'mouseup';
+  var EVENT_TOUCH_MOVE = IS_TOUCH_DEVICE ? 'touchmove' : 'mousemove';
+  var EVENT_TOUCH_START = IS_TOUCH_DEVICE ? 'touchstart' : 'mousedown';
+  var EVENT_POINTER_DOWN = HAS_POINTER_EVENT ? 'pointerdown' : EVENT_TOUCH_START;
+  var EVENT_POINTER_MOVE = HAS_POINTER_EVENT ? 'pointermove' : EVENT_TOUCH_MOVE;
+  var EVENT_POINTER_UP = HAS_POINTER_EVENT ? 'pointerup pointercancel' : EVENT_TOUCH_END;
+  var EVENT_RESIZE = 'resize';
+  var EVENT_TRANSITION_END = 'transitionend';
+  var EVENT_WHEEL = 'wheel'; // Custom events
+
+  var EVENT_READY = 'ready';
+  var EVENT_SHOW = 'show';
+  var EVENT_SHOWN = 'shown';
+  var EVENT_HIDE = 'hide';
+  var EVENT_HIDDEN = 'hidden';
+  var EVENT_VIEW = 'view';
+  var EVENT_VIEWED = 'viewed';
+  var EVENT_MOVE = 'move';
+  var EVENT_MOVED = 'moved';
+  var EVENT_ROTATE = 'rotate';
+  var EVENT_ROTATED = 'rotated';
+  var EVENT_SCALE = 'scale';
+  var EVENT_SCALED = 'scaled';
+  var EVENT_ZOOM = 'zoom';
+  var EVENT_ZOOMED = 'zoomed';
+  var EVENT_PLAY = 'play';
+  var EVENT_STOP = 'stop'; // Data keys
+
+  var DATA_ACTION = "".concat(NAMESPACE, "Action"); // RegExps
+
+  var REGEXP_SPACES = /\s\s*/; // Misc
+
+  var BUTTONS = ['zoom-in', 'zoom-out', 'one-to-one', 'reset', 'prev', 'play', 'next', 'rotate-left', 'rotate-right', 'flip-horizontal', 'flip-vertical'];
+
+  /**
+   * Check if the given value is a string.
+   * @param {*} value - The value to check.
+   * @returns {boolean} Returns `true` if the given value is a string, else `false`.
+   */
+
+  function isString(value) {
+    return typeof value === 'string';
+  }
+  /**
+   * Check if the given value is not a number.
+   */
+
+  var isNaN = Number.isNaN || WINDOW.isNaN;
+  /**
+   * Check if the given value is a number.
+   * @param {*} value - The value to check.
+   * @returns {boolean} Returns `true` if the given value is a number, else `false`.
+   */
+
+  function isNumber(value) {
+    return typeof value === 'number' && !isNaN(value);
+  }
+  /**
+   * Check if the given value is undefined.
+   * @param {*} value - The value to check.
+   * @returns {boolean} Returns `true` if the given value is undefined, else `false`.
+   */
+
+  function isUndefined(value) {
+    return typeof value === 'undefined';
+  }
+  /**
+   * Check if the given value is an object.
+   * @param {*} value - The value to check.
+   * @returns {boolean} Returns `true` if the given value is an object, else `false`.
+   */
+
+  function isObject(value) {
+    return _typeof(value) === 'object' && value !== null;
+  }
+  var hasOwnProperty = Object.prototype.hasOwnProperty;
+  /**
+   * Check if the given value is a plain object.
+   * @param {*} value - The value to check.
+   * @returns {boolean} Returns `true` if the given value is a plain object, else `false`.
+   */
+
+  function isPlainObject(value) {
+    if (!isObject(value)) {
+      return false;
+    }
+
+    try {
+      var _constructor = value.constructor;
+      var prototype = _constructor.prototype;
+      return _constructor && prototype && hasOwnProperty.call(prototype, 'isPrototypeOf');
+    } catch (error) {
+      return false;
+    }
+  }
+  /**
+   * Check if the given value is a function.
+   * @param {*} value - The value to check.
+   * @returns {boolean} Returns `true` if the given value is a function, else `false`.
+   */
+
+  function isFunction(value) {
+    return typeof value === 'function';
+  }
+  /**
+   * Iterate the given data.
+   * @param {*} data - The data to iterate.
+   * @param {Function} callback - The process function for each element.
+   * @returns {*} The original data.
+   */
+
+  function forEach(data, callback) {
+    if (data && isFunction(callback)) {
+      if (Array.isArray(data) || isNumber(data.length)
+      /* array-like */
+      ) {
+        var length = data.length;
+        var i;
+
+        for (i = 0; i < length; i += 1) {
+          if (callback.call(data, data[i], i, data) === false) {
+            break;
+          }
+        }
+      } else if (isObject(data)) {
+        Object.keys(data).forEach(function (key) {
+          callback.call(data, data[key], key, data);
+        });
+      }
+    }
+
+    return data;
+  }
+  /**
+   * Extend the given object.
+   * @param {*} obj - The object to be extended.
+   * @param {*} args - The rest objects which will be merged to the first object.
+   * @returns {Object} The extended object.
+   */
+
+  var assign = Object.assign || function assign(obj) {
+    for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+      args[_key - 1] = arguments[_key];
+    }
+
+    if (isObject(obj) && args.length > 0) {
+      args.forEach(function (arg) {
+        if (isObject(arg)) {
+          Object.keys(arg).forEach(function (key) {
+            obj[key] = arg[key];
+          });
+        }
+      });
+    }
+
+    return obj;
+  };
+  var REGEXP_SUFFIX = /^(?:width|height|left|top|marginLeft|marginTop)$/;
+  /**
+   * Apply styles to the given element.
+   * @param {Element} element - The target element.
+   * @param {Object} styles - The styles for applying.
+   */
+
+  function setStyle(element, styles) {
+    var style = element.style;
+    forEach(styles, function (value, property) {
+      if (REGEXP_SUFFIX.test(property) && isNumber(value)) {
+        value += 'px';
+      }
+
+      style[property] = value;
+    });
+  }
+  /**
+   * Escape a string for using in HTML.
+   * @param {String} value - The string to escape.
+   * @returns {String} Returns the escaped string.
+   */
+
+  function escapeHTMLEntities(value) {
+    return isString(value) ? value.replace(/&(?!amp;|quot;|#39;|lt;|gt;)/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;') : value;
+  }
+  /**
+   * Check if the given element has a special class.
+   * @param {Element} element - The element to check.
+   * @param {string} value - The class to search.
+   * @returns {boolean} Returns `true` if the special class was found.
+   */
+
+  function hasClass(element, value) {
+    if (!element || !value) {
+      return false;
+    }
+
+    return element.classList ? element.classList.contains(value) : element.className.indexOf(value) > -1;
+  }
+  /**
+   * Add classes to the given element.
+   * @param {Element} element - The target element.
+   * @param {string} value - The classes to be added.
+   */
+
+  function addClass(element, value) {
+    if (!element || !value) {
+      return;
+    }
+
+    if (isNumber(element.length)) {
+      forEach(element, function (elem) {
+        addClass(elem, value);
+      });
+      return;
+    }
+
+    if (element.classList) {
+      element.classList.add(value);
+      return;
+    }
+
+    var className = element.className.trim();
+
+    if (!className) {
+      element.className = value;
+    } else if (className.indexOf(value) < 0) {
+      element.className = "".concat(className, " ").concat(value);
+    }
+  }
+  /**
+   * Remove classes from the given element.
+   * @param {Element} element - The target element.
+   * @param {string} value - The classes to be removed.
+   */
+
+  function removeClass(element, value) {
+    if (!element || !value) {
+      return;
+    }
+
+    if (isNumber(element.length)) {
+      forEach(element, function (elem) {
+        removeClass(elem, value);
+      });
+      return;
+    }
+
+    if (element.classList) {
+      element.classList.remove(value);
+      return;
+    }
+
+    if (element.className.indexOf(value) >= 0) {
+      element.className = element.className.replace(value, '');
+    }
+  }
+  /**
+   * Add or remove classes from the given element.
+   * @param {Element} element - The target element.
+   * @param {string} value - The classes to be toggled.
+   * @param {boolean} added - Add only.
+   */
+
+  function toggleClass(element, value, added) {
+    if (!value) {
+      return;
+    }
+
+    if (isNumber(element.length)) {
+      forEach(element, function (elem) {
+        toggleClass(elem, value, added);
+      });
+      return;
+    } // IE10-11 doesn't support the second parameter of `classList.toggle`
+
+
+    if (added) {
+      addClass(element, value);
+    } else {
+      removeClass(element, value);
+    }
+  }
+  var REGEXP_HYPHENATE = /([a-z\d])([A-Z])/g;
+  /**
+   * Transform the given string from camelCase to kebab-case
+   * @param {string} value - The value to transform.
+   * @returns {string} The transformed value.
+   */
+
+  function hyphenate(value) {
+    return value.replace(REGEXP_HYPHENATE, '$1-$2').toLowerCase();
+  }
+  /**
+   * Get data from the given element.
+   * @param {Element} element - The target element.
+   * @param {string} name - The data key to get.
+   * @returns {string} The data value.
+   */
+
+  function getData(element, name) {
+    if (isObject(element[name])) {
+      return element[name];
+    }
+
+    if (element.dataset) {
+      return element.dataset[name];
+    }
+
+    return element.getAttribute("data-".concat(hyphenate(name)));
+  }
+  /**
+   * Set data to the given element.
+   * @param {Element} element - The target element.
+   * @param {string} name - The data key to set.
+   * @param {string} data - The data value.
+   */
+
+  function setData(element, name, data) {
+    if (isObject(data)) {
+      element[name] = data;
+    } else if (element.dataset) {
+      element.dataset[name] = data;
+    } else {
+      element.setAttribute("data-".concat(hyphenate(name)), data);
+    }
+  }
+
+  var onceSupported = function () {
+    var supported = false;
+
+    if (IS_BROWSER) {
+      var once = false;
+
+      var listener = function listener() {};
+
+      var options = Object.defineProperty({}, 'once', {
+        get: function get() {
+          supported = true;
+          return once;
+        },
+
+        /**
+         * This setter can fix a `TypeError` in strict mode
+         * {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Getter_only}
+         * @param {boolean} value - The value to set
+         */
+        set: function set(value) {
+          once = value;
+        }
+      });
+      WINDOW.addEventListener('test', listener, options);
+      WINDOW.removeEventListener('test', listener, options);
+    }
+
+    return supported;
+  }();
+  /**
+   * Remove event listener from the target element.
+   * @param {Element} element - The event target.
+   * @param {string} type - The event type(s).
+   * @param {Function} listener - The event listener.
+   * @param {Object} options - The event options.
+   */
+
+
+  function removeListener(element, type, listener) {
+    var options = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
+    var handler = listener;
+    type.trim().split(REGEXP_SPACES).forEach(function (event) {
+      if (!onceSupported) {
+        var listeners = element.listeners;
+
+        if (listeners && listeners[event] && listeners[event][listener]) {
+          handler = listeners[event][listener];
+          delete listeners[event][listener];
+
+          if (Object.keys(listeners[event]).length === 0) {
+            delete listeners[event];
+          }
+
+          if (Object.keys(listeners).length === 0) {
+            delete element.listeners;
+          }
+        }
+      }
+
+      element.removeEventListener(event, handler, options);
+    });
+  }
+  /**
+   * Add event listener to the target element.
+   * @param {Element} element - The event target.
+   * @param {string} type - The event type(s).
+   * @param {Function} listener - The event listener.
+   * @param {Object} options - The event options.
+   */
+
+  function addListener(element, type, listener) {
+    var options = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
+    var _handler = listener;
+    type.trim().split(REGEXP_SPACES).forEach(function (event) {
+      if (options.once && !onceSupported) {
+        var _element$listeners = element.listeners,
+            listeners = _element$listeners === void 0 ? {} : _element$listeners;
+
+        _handler = function handler() {
+          delete listeners[event][listener];
+          element.removeEventListener(event, _handler, options);
+
+          for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+            args[_key2] = arguments[_key2];
+          }
+
+          listener.apply(element, args);
+        };
+
+        if (!listeners[event]) {
+          listeners[event] = {};
+        }
+
+        if (listeners[event][listener]) {
+          element.removeEventListener(event, listeners[event][listener], options);
+        }
+
+        listeners[event][listener] = _handler;
+        element.listeners = listeners;
+      }
+
+      element.addEventListener(event, _handler, options);
+    });
+  }
+  /**
+   * Dispatch event on the target element.
+   * @param {Element} element - The event target.
+   * @param {string} type - The event type(s).
+   * @param {Object} data - The additional event data.
+   * @param {Object} options - The additional event options.
+   * @returns {boolean} Indicate if the event is default prevented or not.
+   */
+
+  function dispatchEvent(element, type, data, options) {
+    var event; // Event and CustomEvent on IE9-11 are global objects, not constructors
+
+    if (isFunction(Event) && isFunction(CustomEvent)) {
+      event = new CustomEvent(type, _objectSpread2({
+        bubbles: true,
+        cancelable: true,
+        detail: data
+      }, options));
+    } else {
+      event = document.createEvent('CustomEvent');
+      event.initCustomEvent(type, true, true, data);
+    }
+
+    return element.dispatchEvent(event);
+  }
+  /**
+   * Get the offset base on the document.
+   * @param {Element} element - The target element.
+   * @returns {Object} The offset data.
+   */
+
+  function getOffset(element) {
+    var box = element.getBoundingClientRect();
+    return {
+      left: box.left + (window.pageXOffset - document.documentElement.clientLeft),
+      top: box.top + (window.pageYOffset - document.documentElement.clientTop)
+    };
+  }
+  /**
+   * Get transforms base on the given object.
+   * @param {Object} obj - The target object.
+   * @returns {string} A string contains transform values.
+   */
+
+  function getTransforms(_ref) {
+    var rotate = _ref.rotate,
+        scaleX = _ref.scaleX,
+        scaleY = _ref.scaleY,
+        translateX = _ref.translateX,
+        translateY = _ref.translateY;
+    var values = [];
+
+    if (isNumber(translateX) && translateX !== 0) {
+      values.push("translateX(".concat(translateX, "px)"));
+    }
+
+    if (isNumber(translateY) && translateY !== 0) {
+      values.push("translateY(".concat(translateY, "px)"));
+    } // Rotate should come first before scale to match orientation transform
+
+
+    if (isNumber(rotate) && rotate !== 0) {
+      values.push("rotate(".concat(rotate, "deg)"));
+    }
+
+    if (isNumber(scaleX) && scaleX !== 1) {
+      values.push("scaleX(".concat(scaleX, ")"));
+    }
+
+    if (isNumber(scaleY) && scaleY !== 1) {
+      values.push("scaleY(".concat(scaleY, ")"));
+    }
+
+    var transform = values.length ? values.join(' ') : 'none';
+    return {
+      WebkitTransform: transform,
+      msTransform: transform,
+      transform: transform
+    };
+  }
+  /**
+   * Get an image name from an image url.
+   * @param {string} url - The target url.
+   * @example
+   * // picture.jpg
+   * getImageNameFromURL('https://domain.com/path/to/picture.jpg?size=1280×960')
+   * @returns {string} A string contains the image name.
+   */
+
+  function getImageNameFromURL(url) {
+    return isString(url) ? decodeURIComponent(url.replace(/^.*\//, '').replace(/[?&#].*$/, '')) : '';
+  }
+  var IS_SAFARI = WINDOW.navigator && /(Macintosh|iPhone|iPod|iPad).*AppleWebKit/i.test(WINDOW.navigator.userAgent);
+  /**
+   * Get an image's natural sizes.
+   * @param {string} image - The target image.
+   * @param {Object} options - The viewer options.
+   * @param {Function} callback - The callback function.
+   * @returns {HTMLImageElement} The new image.
+   */
+
+  function getImageNaturalSizes(image, options, callback) {
+    var newImage = document.createElement('img'); // Modern browsers (except Safari)
+
+    if (image.naturalWidth && !IS_SAFARI) {
+      callback(image.naturalWidth, image.naturalHeight);
+      return newImage;
+    }
+
+    var body = document.body || document.documentElement;
+
+    newImage.onload = function () {
+      callback(newImage.width, newImage.height);
+
+      if (!IS_SAFARI) {
+        body.removeChild(newImage);
+      }
+    };
+
+    forEach(options.inheritedAttributes, function (name) {
+      var value = image.getAttribute(name);
+
+      if (value !== null) {
+        newImage.setAttribute(name, value);
+      }
+    });
+    newImage.src = image.src; // iOS Safari will convert the image automatically
+    // with its orientation once append it into DOM
+
+    if (!IS_SAFARI) {
+      newImage.style.cssText = 'left:0;' + 'max-height:none!important;' + 'max-width:none!important;' + 'min-height:0!important;' + 'min-width:0!important;' + 'opacity:0;' + 'position:absolute;' + 'top:0;' + 'z-index:-1;';
+      body.appendChild(newImage);
+    }
+
+    return newImage;
+  }
+  /**
+   * Get the related class name of a responsive type number.
+   * @param {string} type - The responsive type.
+   * @returns {string} The related class name.
+   */
+
+  function getResponsiveClass(type) {
+    switch (type) {
+      case 2:
+        return CLASS_HIDE_XS_DOWN;
+
+      case 3:
+        return CLASS_HIDE_SM_DOWN;
+
+      case 4:
+        return CLASS_HIDE_MD_DOWN;
+
+      default:
+        return '';
+    }
+  }
+  /**
+   * Get the max ratio of a group of pointers.
+   * @param {string} pointers - The target pointers.
+   * @returns {number} The result ratio.
+   */
+
+  function getMaxZoomRatio(pointers) {
+    var pointers2 = _objectSpread2({}, pointers);
+
+    var ratios = [];
+    forEach(pointers, function (pointer, pointerId) {
+      delete pointers2[pointerId];
+      forEach(pointers2, function (pointer2) {
+        var x1 = Math.abs(pointer.startX - pointer2.startX);
+        var y1 = Math.abs(pointer.startY - pointer2.startY);
+        var x2 = Math.abs(pointer.endX - pointer2.endX);
+        var y2 = Math.abs(pointer.endY - pointer2.endY);
+        var z1 = Math.sqrt(x1 * x1 + y1 * y1);
+        var z2 = Math.sqrt(x2 * x2 + y2 * y2);
+        var ratio = (z2 - z1) / z1;
+        ratios.push(ratio);
+      });
+    });
+    ratios.sort(function (a, b) {
+      return Math.abs(a) < Math.abs(b);
+    });
+    return ratios[0];
+  }
+  /**
+   * Get a pointer from an event object.
+   * @param {Object} event - The target event object.
+   * @param {boolean} endOnly - Indicates if only returns the end point coordinate or not.
+   * @returns {Object} The result pointer contains start and/or end point coordinates.
+   */
+
+  function getPointer(_ref2, endOnly) {
+    var pageX = _ref2.pageX,
+        pageY = _ref2.pageY;
+    var end = {
+      endX: pageX,
+      endY: pageY
+    };
+    return endOnly ? end : _objectSpread2({
+      timeStamp: Date.now(),
+      startX: pageX,
+      startY: pageY
+    }, end);
+  }
+  /**
+   * Get the center point coordinate of a group of pointers.
+   * @param {Object} pointers - The target pointers.
+   * @returns {Object} The center point coordinate.
+   */
+
+  function getPointersCenter(pointers) {
+    var pageX = 0;
+    var pageY = 0;
+    var count = 0;
+    forEach(pointers, function (_ref3) {
+      var startX = _ref3.startX,
+          startY = _ref3.startY;
+      pageX += startX;
+      pageY += startY;
+      count += 1;
+    });
+    pageX /= count;
+    pageY /= count;
+    return {
+      pageX: pageX,
+      pageY: pageY
+    };
+  }
+
+  var render = {
+    render: function render() {
+      this.initContainer();
+      this.initViewer();
+      this.initList();
+      this.renderViewer();
+    },
+    initBody: function initBody() {
+      var ownerDocument = this.element.ownerDocument;
+      var body = ownerDocument.body || ownerDocument.documentElement;
+      this.body = body;
+      this.scrollbarWidth = window.innerWidth - ownerDocument.documentElement.clientWidth;
+      this.initialBodyPaddingRight = body.style.paddingRight;
+      this.initialBodyComputedPaddingRight = window.getComputedStyle(body).paddingRight;
+    },
+    initContainer: function initContainer() {
+      this.containerData = {
+        width: window.innerWidth,
+        height: window.innerHeight
+      };
+    },
+    initViewer: function initViewer() {
+      var options = this.options,
+          parent = this.parent;
+      var viewerData;
+
+      if (options.inline) {
+        viewerData = {
+          width: Math.max(parent.offsetWidth, options.minWidth),
+          height: Math.max(parent.offsetHeight, options.minHeight)
+        };
+        this.parentData = viewerData;
+      }
+
+      if (this.fulled || !viewerData) {
+        viewerData = this.containerData;
+      }
+
+      this.viewerData = assign({}, viewerData);
+    },
+    renderViewer: function renderViewer() {
+      if (this.options.inline && !this.fulled) {
+        setStyle(this.viewer, this.viewerData);
+      }
+    },
+    initList: function initList() {
+      var _this = this;
+
+      var element = this.element,
+          options = this.options,
+          list = this.list;
+      var items = []; // initList may be called in this.update, so should keep idempotent
+
+      list.innerHTML = '';
+      forEach(this.images, function (image, index) {
+        var src = image.src;
+        var alt = image.alt || getImageNameFromURL(src);
+
+        var url = _this.getImageURL(image);
+
+        if (src || url) {
+          var item = document.createElement('li');
+          var img = document.createElement('img');
+          forEach(options.inheritedAttributes, function (name) {
+            var value = image.getAttribute(name);
+
+            if (value !== null) {
+              img.setAttribute(name, value);
+            }
+          });
+          img.src = src || url;
+          img.alt = alt;
+          img.setAttribute('data-original-url', url || src);
+          item.setAttribute('data-index', index);
+          item.setAttribute('data-viewer-action', 'view');
+          item.setAttribute('role', 'button');
+
+          if (options.keyboard) {
+            item.setAttribute('tabindex', 0);
+          }
+
+          item.appendChild(img);
+          list.appendChild(item);
+          items.push(item);
+        }
+      });
+      this.items = items;
+      forEach(items, function (item) {
+        var image = item.firstElementChild;
+        setData(image, 'filled', true);
+
+        if (options.loading) {
+          addClass(item, CLASS_LOADING);
+        }
+
+        addListener(image, EVENT_LOAD, function (event) {
+          if (options.loading) {
+            removeClass(item, CLASS_LOADING);
+          }
+
+          _this.loadImage(event);
+        }, {
+          once: true
+        });
+      });
+
+      if (options.transition) {
+        addListener(element, EVENT_VIEWED, function () {
+          addClass(list, CLASS_TRANSITION);
+        }, {
+          once: true
+        });
+      }
+    },
+    renderList: function renderList() {
+      var index = this.index;
+      var item = this.items[index];
+      var next = item.nextElementSibling;
+      var gutter = parseInt(window.getComputedStyle(next || item).marginLeft, 10);
+      var offsetWidth = item.offsetWidth;
+      var outerWidth = offsetWidth + gutter; // Place the active item in the center of the screen
+
+      setStyle(this.list, assign({
+        width: outerWidth * this.length - gutter
+      }, getTransforms({
+        translateX: (this.viewerData.width - offsetWidth) / 2 - outerWidth * index
+      })));
+    },
+    resetList: function resetList() {
+      var list = this.list;
+      list.innerHTML = '';
+      removeClass(list, CLASS_TRANSITION);
+      setStyle(list, getTransforms({
+        translateX: 0
+      }));
+    },
+    initImage: function initImage(done) {
+      var _this2 = this;
+
+      var options = this.options,
+          image = this.image,
+          viewerData = this.viewerData;
+      var footerHeight = this.footer.offsetHeight;
+      var viewerWidth = viewerData.width;
+      var viewerHeight = Math.max(viewerData.height - footerHeight, footerHeight);
+      var oldImageData = this.imageData || {};
+      var sizingImage;
+      this.imageInitializing = {
+        abort: function abort() {
+          sizingImage.onload = null;
+        }
+      };
+      sizingImage = getImageNaturalSizes(image, options, function (naturalWidth, naturalHeight) {
+        var aspectRatio = naturalWidth / naturalHeight;
+        var width = viewerWidth;
+        var height = viewerHeight;
+        _this2.imageInitializing = false;
+
+        if (viewerHeight * aspectRatio > viewerWidth) {
+          height = viewerWidth / aspectRatio;
+        } else {
+          width = viewerHeight * aspectRatio;
+        }
+
+        width = Math.min(width * 0.9, naturalWidth);
+        height = Math.min(height * 0.9, naturalHeight);
+        var left = (viewerWidth - width) / 2;
+        var top = (viewerHeight - height) / 2;
+        var imageData = {
+          left: left,
+          top: top,
+          x: left,
+          y: top,
+          width: width,
+          height: height,
+          oldRatio: 1,
+          ratio: width / naturalWidth,
+          aspectRatio: aspectRatio,
+          naturalWidth: naturalWidth,
+          naturalHeight: naturalHeight
+        };
+        var initialImageData = assign({}, imageData);
+
+        if (options.rotatable) {
+          imageData.rotate = oldImageData.rotate || 0;
+          initialImageData.rotate = 0;
+        }
+
+        if (options.scalable) {
+          imageData.scaleX = oldImageData.scaleX || 1;
+          imageData.scaleY = oldImageData.scaleY || 1;
+          initialImageData.scaleX = 1;
+          initialImageData.scaleY = 1;
+        }
+
+        _this2.imageData = imageData;
+        _this2.initialImageData = initialImageData;
+
+        if (done) {
+          done();
+        }
+      });
+    },
+    renderImage: function renderImage(done) {
+      var _this3 = this;
+
+      var image = this.image,
+          imageData = this.imageData;
+      setStyle(image, assign({
+        width: imageData.width,
+        height: imageData.height,
+        // XXX: Not to use translateX/Y to avoid image shaking when zooming
+        marginLeft: imageData.x,
+        marginTop: imageData.y
+      }, getTransforms(imageData)));
+
+      if (done) {
+        if ((this.viewing || this.moving || this.rotating || this.scaling || this.zooming) && this.options.transition && hasClass(image, CLASS_TRANSITION)) {
+          var onTransitionEnd = function onTransitionEnd() {
+            _this3.imageRendering = false;
+            done();
+          };
+
+          this.imageRendering = {
+            abort: function abort() {
+              removeListener(image, EVENT_TRANSITION_END, onTransitionEnd);
+            }
+          };
+          addListener(image, EVENT_TRANSITION_END, onTransitionEnd, {
+            once: true
+          });
+        } else {
+          done();
+        }
+      }
+    },
+    resetImage: function resetImage() {
+      // this.image only defined after viewed
+      if (this.viewing || this.viewed) {
+        var image = this.image;
+
+        if (this.viewing) {
+          this.viewing.abort();
+        }
+
+        image.parentNode.removeChild(image);
+        this.image = null;
+      }
+    }
+  };
+
+  var events = {
+    bind: function bind() {
+      var options = this.options,
+          viewer = this.viewer,
+          canvas = this.canvas;
+      var document = this.element.ownerDocument;
+      addListener(viewer, EVENT_CLICK, this.onClick = this.click.bind(this));
+      addListener(viewer, EVENT_DRAG_START, this.onDragStart = this.dragstart.bind(this));
+      addListener(canvas, EVENT_POINTER_DOWN, this.onPointerDown = this.pointerdown.bind(this));
+      addListener(document, EVENT_POINTER_MOVE, this.onPointerMove = this.pointermove.bind(this));
+      addListener(document, EVENT_POINTER_UP, this.onPointerUp = this.pointerup.bind(this));
+      addListener(document, EVENT_KEY_DOWN, this.onKeyDown = this.keydown.bind(this));
+      addListener(window, EVENT_RESIZE, this.onResize = this.resize.bind(this));
+
+      if (options.zoomable && options.zoomOnWheel) {
+        addListener(viewer, EVENT_WHEEL, this.onWheel = this.wheel.bind(this), {
+          passive: false,
+          capture: true
+        });
+      }
+
+      if (options.toggleOnDblclick) {
+        addListener(canvas, EVENT_DBLCLICK, this.onDblclick = this.dblclick.bind(this));
+      }
+    },
+    unbind: function unbind() {
+      var options = this.options,
+          viewer = this.viewer,
+          canvas = this.canvas;
+      var document = this.element.ownerDocument;
+      removeListener(viewer, EVENT_CLICK, this.onClick);
+      removeListener(viewer, EVENT_DRAG_START, this.onDragStart);
+      removeListener(canvas, EVENT_POINTER_DOWN, this.onPointerDown);
+      removeListener(document, EVENT_POINTER_MOVE, this.onPointerMove);
+      removeListener(document, EVENT_POINTER_UP, this.onPointerUp);
+      removeListener(document, EVENT_KEY_DOWN, this.onKeyDown);
+      removeListener(window, EVENT_RESIZE, this.onResize);
+
+      if (options.zoomable && options.zoomOnWheel) {
+        removeListener(viewer, EVENT_WHEEL, this.onWheel, {
+          passive: false,
+          capture: true
+        });
+      }
+
+      if (options.toggleOnDblclick) {
+        removeListener(canvas, EVENT_DBLCLICK, this.onDblclick);
+      }
+    }
+  };
+
+  var handlers = {
+    click: function click(event) {
+      var options = this.options,
+          imageData = this.imageData;
+      var target = event.target;
+      var action = getData(target, DATA_ACTION);
+
+      if (!action && target.localName === 'img' && target.parentElement.localName === 'li') {
+        target = target.parentElement;
+        action = getData(target, DATA_ACTION);
+      } // Cancel the emulated click when the native click event was triggered.
+
+
+      if (IS_TOUCH_DEVICE && event.isTrusted && target === this.canvas) {
+        clearTimeout(this.clickCanvasTimeout);
+      }
+
+      switch (action) {
+        case 'mix':
+          if (this.played) {
+            this.stop();
+          } else if (options.inline) {
+            if (this.fulled) {
+              this.exit();
+            } else {
+              this.full();
+            }
+          } else {
+            this.hide();
+          }
+
+          break;
+
+        case 'hide':
+          this.hide();
+          break;
+
+        case 'view':
+          this.view(getData(target, 'index'));
+          break;
+
+        case 'zoom-in':
+          this.zoom(0.1, true);
+          break;
+
+        case 'zoom-out':
+          this.zoom(-0.1, true);
+          break;
+
+        case 'one-to-one':
+          this.toggle();
+          break;
+
+        case 'reset':
+          this.reset();
+          break;
+
+        case 'prev':
+          this.prev(options.loop);
+          break;
+
+        case 'play':
+          this.play(options.fullscreen);
+          break;
+
+        case 'next':
+          this.next(options.loop);
+          break;
+
+        case 'rotate-left':
+          this.rotate(-90);
+          break;
+
+        case 'rotate-right':
+          this.rotate(90);
+          break;
+
+        case 'flip-horizontal':
+          this.scaleX(-imageData.scaleX || -1);
+          break;
+
+        case 'flip-vertical':
+          this.scaleY(-imageData.scaleY || -1);
+          break;
+
+        default:
+          if (this.played) {
+            this.stop();
+          }
+
+      }
+    },
+    dblclick: function dblclick(event) {
+      event.preventDefault();
+
+      if (this.viewed && event.target === this.image) {
+        // Cancel the emulated double click when the native dblclick event was triggered.
+        if (IS_TOUCH_DEVICE && event.isTrusted) {
+          clearTimeout(this.doubleClickImageTimeout);
+        }
+
+        this.toggle(event);
+      }
+    },
+    load: function load() {
+      var _this = this;
+
+      if (this.timeout) {
+        clearTimeout(this.timeout);
+        this.timeout = false;
+      }
+
+      var element = this.element,
+          options = this.options,
+          image = this.image,
+          index = this.index,
+          viewerData = this.viewerData;
+      removeClass(image, CLASS_INVISIBLE);
+
+      if (options.loading) {
+        removeClass(this.canvas, CLASS_LOADING);
+      }
+
+      image.style.cssText = 'height:0;' + "margin-left:".concat(viewerData.width / 2, "px;") + "margin-top:".concat(viewerData.height / 2, "px;") + 'max-width:none!important;' + 'position:relative;' + 'width:0;';
+      this.initImage(function () {
+        toggleClass(image, CLASS_MOVE, options.movable);
+        toggleClass(image, CLASS_TRANSITION, options.transition);
+
+        _this.renderImage(function () {
+          _this.viewed = true;
+          _this.viewing = false;
+
+          if (isFunction(options.viewed)) {
+            addListener(element, EVENT_VIEWED, options.viewed, {
+              once: true
+            });
+          }
+
+          dispatchEvent(element, EVENT_VIEWED, {
+            originalImage: _this.images[index],
+            index: index,
+            image: image
+          }, {
+            cancelable: false
+          });
+        });
+      });
+    },
+    loadImage: function loadImage(event) {
+      var image = event.target;
+      var parent = image.parentNode;
+      var parentWidth = parent.offsetWidth || 30;
+      var parentHeight = parent.offsetHeight || 50;
+      var filled = !!getData(image, 'filled');
+      getImageNaturalSizes(image, this.options, function (naturalWidth, naturalHeight) {
+        var aspectRatio = naturalWidth / naturalHeight;
+        var width = parentWidth;
+        var height = parentHeight;
+
+        if (parentHeight * aspectRatio > parentWidth) {
+          if (filled) {
+            width = parentHeight * aspectRatio;
+          } else {
+            height = parentWidth / aspectRatio;
+          }
+        } else if (filled) {
+          height = parentWidth / aspectRatio;
+        } else {
+          width = parentHeight * aspectRatio;
+        }
+
+        setStyle(image, assign({
+          width: width,
+          height: height
+        }, getTransforms({
+          translateX: (parentWidth - width) / 2,
+          translateY: (parentHeight - height) / 2
+        })));
+      });
+    },
+    keydown: function keydown(event) {
+      var options = this.options;
+
+      if (!options.keyboard) {
+        return;
+      }
+
+      var keyCode = event.keyCode || event.which || event.charCode;
+
+      switch (keyCode) {
+        // Enter
+        case 13:
+          if (this.viewer.contains(event.target)) {
+            this.click(event);
+          }
+
+          break;
+      }
+
+      if (!this.fulled) {
+        return;
+      }
+
+      switch (keyCode) {
+        // Escape
+        case 27:
+          if (this.played) {
+            this.stop();
+          } else if (options.inline) {
+            if (this.fulled) {
+              this.exit();
+            }
+          } else {
+            this.hide();
+          }
+
+          break;
+        // Space
+
+        case 32:
+          if (this.played) {
+            this.stop();
+          }
+
+          break;
+        // ArrowLeft
+
+        case 37:
+          this.prev(options.loop);
+          break;
+        // ArrowUp
+
+        case 38:
+          // Prevent scroll on Firefox
+          event.preventDefault(); // Zoom in
+
+          this.zoom(options.zoomRatio, true);
+          break;
+        // ArrowRight
+
+        case 39:
+          this.next(options.loop);
+          break;
+        // ArrowDown
+
+        case 40:
+          // Prevent scroll on Firefox
+          event.preventDefault(); // Zoom out
+
+          this.zoom(-options.zoomRatio, true);
+          break;
+        // Ctrl + 0
+
+        case 48: // Fall through
+        // Ctrl + 1
+        // eslint-disable-next-line no-fallthrough
+
+        case 49:
+          if (event.ctrlKey) {
+            event.preventDefault();
+            this.toggle();
+          }
+
+          break;
+      }
+    },
+    dragstart: function dragstart(event) {
+      if (event.target.localName === 'img') {
+        event.preventDefault();
+      }
+    },
+    pointerdown: function pointerdown(event) {
+      var options = this.options,
+          pointers = this.pointers;
+      var buttons = event.buttons,
+          button = event.button;
+
+      if (!this.viewed || this.showing || this.viewing || this.hiding // Handle mouse event and pointer event and ignore touch event
+      || (event.type === 'mousedown' || event.type === 'pointerdown' && event.pointerType === 'mouse') && ( // No primary button (Usually the left button)
+      isNumber(buttons) && buttons !== 1 || isNumber(button) && button !== 0 // Open context menu
+      || event.ctrlKey)) {
+        return;
+      } // Prevent default behaviours as page zooming in touch devices.
+
+
+      event.preventDefault();
+
+      if (event.changedTouches) {
+        forEach(event.changedTouches, function (touch) {
+          pointers[touch.identifier] = getPointer(touch);
+        });
+      } else {
+        pointers[event.pointerId || 0] = getPointer(event);
+      }
+
+      var action = options.movable ? ACTION_MOVE : false;
+
+      if (options.zoomOnTouch && options.zoomable && Object.keys(pointers).length > 1) {
+        action = ACTION_ZOOM;
+      } else if (options.slideOnTouch && (event.pointerType === 'touch' || event.type === 'touchstart') && this.isSwitchable()) {
+        action = ACTION_SWITCH;
+      }
+
+      if (options.transition && (action === ACTION_MOVE || action === ACTION_ZOOM)) {
+        removeClass(this.image, CLASS_TRANSITION);
+      }
+
+      this.action = action;
+    },
+    pointermove: function pointermove(event) {
+      var pointers = this.pointers,
+          action = this.action;
+
+      if (!this.viewed || !action) {
+        return;
+      }
+
+      event.preventDefault();
+
+      if (event.changedTouches) {
+        forEach(event.changedTouches, function (touch) {
+          assign(pointers[touch.identifier] || {}, getPointer(touch, true));
+        });
+      } else {
+        assign(pointers[event.pointerId || 0] || {}, getPointer(event, true));
+      }
+
+      this.change(event);
+    },
+    pointerup: function pointerup(event) {
+      var _this2 = this;
+
+      var options = this.options,
+          action = this.action,
+          pointers = this.pointers;
+      var pointer;
+
+      if (event.changedTouches) {
+        forEach(event.changedTouches, function (touch) {
+          pointer = pointers[touch.identifier];
+          delete pointers[touch.identifier];
+        });
+      } else {
+        pointer = pointers[event.pointerId || 0];
+        delete pointers[event.pointerId || 0];
+      }
+
+      if (!action) {
+        return;
+      }
+
+      event.preventDefault();
+
+      if (options.transition && (action === ACTION_MOVE || action === ACTION_ZOOM)) {
+        addClass(this.image, CLASS_TRANSITION);
+      }
+
+      this.action = false; // Emulate click and double click in touch devices to support backdrop and image zooming (#210).
+
+      if (IS_TOUCH_DEVICE && action !== ACTION_ZOOM && pointer && Date.now() - pointer.timeStamp < 500) {
+        clearTimeout(this.clickCanvasTimeout);
+        clearTimeout(this.doubleClickImageTimeout);
+
+        if (options.toggleOnDblclick && this.viewed && event.target === this.image) {
+          if (this.imageClicked) {
+            this.imageClicked = false; // This timeout will be cleared later when a native dblclick event is triggering
+
+            this.doubleClickImageTimeout = setTimeout(function () {
+              dispatchEvent(_this2.image, EVENT_DBLCLICK);
+            }, 50);
+          } else {
+            this.imageClicked = true; // The default timing of a double click in Windows is 500 ms
+
+            this.doubleClickImageTimeout = setTimeout(function () {
+              _this2.imageClicked = false;
+            }, 500);
+          }
+        } else {
+          this.imageClicked = false;
+
+          if (options.backdrop && options.backdrop !== 'static' && event.target === this.canvas) {
+            // This timeout will be cleared later when a native click event is triggering
+            this.clickCanvasTimeout = setTimeout(function () {
+              dispatchEvent(_this2.canvas, EVENT_CLICK);
+            }, 50);
+          }
+        }
+      }
+    },
+    resize: function resize() {
+      var _this3 = this;
+
+      if (!this.isShown || this.hiding) {
+        return;
+      }
+
+      if (this.fulled) {
+        this.close();
+        this.initBody();
+        this.open();
+      }
+
+      this.initContainer();
+      this.initViewer();
+      this.renderViewer();
+      this.renderList();
+
+      if (this.viewed) {
+        this.initImage(function () {
+          _this3.renderImage();
+        });
+      }
+
+      if (this.played) {
+        if (this.options.fullscreen && this.fulled && !(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement)) {
+          this.stop();
+          return;
+        }
+
+        forEach(this.player.getElementsByTagName('img'), function (image) {
+          addListener(image, EVENT_LOAD, _this3.loadImage.bind(_this3), {
+            once: true
+          });
+          dispatchEvent(image, EVENT_LOAD);
+        });
+      }
+    },
+    wheel: function wheel(event) {
+      var _this4 = this;
+
+      if (!this.viewed) {
+        return;
+      }
+
+      event.preventDefault(); // Limit wheel speed to prevent zoom too fast
+
+      if (this.wheeling) {
+        return;
+      }
+
+      this.wheeling = true;
+      setTimeout(function () {
+        _this4.wheeling = false;
+      }, 50);
+      var ratio = Number(this.options.zoomRatio) || 0.1;
+      var delta = 1;
+
+      if (event.deltaY) {
+        delta = event.deltaY > 0 ? 1 : -1;
+      } else if (event.wheelDelta) {
+        delta = -event.wheelDelta / 120;
+      } else if (event.detail) {
+        delta = event.detail > 0 ? 1 : -1;
+      }
+
+      this.zoom(-delta * ratio, true, event);
+    }
+  };
+
+  var methods = {
+    /** Show the viewer (only available in modal mode)
+     * @param {boolean} [immediate=false] - Indicates if show the viewer immediately or not.
+     * @returns {Viewer} this
+     */
+    show: function show() {
+      var immediate = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+      var element = this.element,
+          options = this.options;
+
+      if (options.inline || this.showing || this.isShown || this.showing) {
+        return this;
+      }
+
+      if (!this.ready) {
+        this.build();
+
+        if (this.ready) {
+          this.show(immediate);
+        }
+
+        return this;
+      }
+
+      if (isFunction(options.show)) {
+        addListener(element, EVENT_SHOW, options.show, {
+          once: true
+        });
+      }
+
+      if (dispatchEvent(element, EVENT_SHOW) === false || !this.ready) {
+        return this;
+      }
+
+      if (this.hiding) {
+        this.transitioning.abort();
+      }
+
+      this.showing = true;
+      this.open();
+      var viewer = this.viewer;
+      removeClass(viewer, CLASS_HIDE);
+      viewer.setAttribute('role', 'dialog');
+      viewer.setAttribute('aria-labelledby', this.title.id);
+      viewer.setAttribute('aria-modal', true);
+      viewer.removeAttribute('aria-hidden');
+
+      if (options.transition && !immediate) {
+        var shown = this.shown.bind(this);
+        this.transitioning = {
+          abort: function abort() {
+            removeListener(viewer, EVENT_TRANSITION_END, shown);
+            removeClass(viewer, CLASS_IN);
+          }
+        };
+        addClass(viewer, CLASS_TRANSITION); // Force reflow to enable CSS3 transition
+
+        viewer.initialOffsetWidth = viewer.offsetWidth;
+        addListener(viewer, EVENT_TRANSITION_END, shown, {
+          once: true
+        });
+        addClass(viewer, CLASS_IN);
+      } else {
+        addClass(viewer, CLASS_IN);
+        this.shown();
+      }
+
+      return this;
+    },
+
+    /**
+     * Hide the viewer (only available in modal mode)
+     * @param {boolean} [immediate=false] - Indicates if hide the viewer immediately or not.
+     * @returns {Viewer} this
+     */
+    hide: function hide() {
+      var _this = this;
+
+      var immediate = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+      var element = this.element,
+          options = this.options;
+
+      if (options.inline || this.hiding || !(this.isShown || this.showing)) {
+        return this;
+      }
+
+      if (isFunction(options.hide)) {
+        addListener(element, EVENT_HIDE, options.hide, {
+          once: true
+        });
+      }
+
+      if (dispatchEvent(element, EVENT_HIDE) === false) {
+        return this;
+      }
+
+      if (this.showing) {
+        this.transitioning.abort();
+      }
+
+      this.hiding = true;
+
+      if (this.played) {
+        this.stop();
+      } else if (this.viewing) {
+        this.viewing.abort();
+      }
+
+      var viewer = this.viewer,
+          image = this.image;
+
+      var hideImmediately = function hideImmediately() {
+        removeClass(viewer, CLASS_IN);
+
+        _this.hidden();
+      };
+
+      if (options.transition && !immediate) {
+        var onViewerTransitionEnd = function onViewerTransitionEnd(event) {
+          // Ignore all propagating `transitionend` events (#275).
+          if (event && event.target === viewer) {
+            removeListener(viewer, EVENT_TRANSITION_END, onViewerTransitionEnd);
+
+            _this.hidden();
+          }
+        };
+
+        var onImageTransitionEnd = function onImageTransitionEnd() {
+          // In case of show the viewer by `viewer.show(true)` previously (#407).
+          if (hasClass(viewer, CLASS_TRANSITION)) {
+            addListener(viewer, EVENT_TRANSITION_END, onViewerTransitionEnd);
+            removeClass(viewer, CLASS_IN);
+          } else {
+            hideImmediately();
+          }
+        };
+
+        this.transitioning = {
+          abort: function abort() {
+            if (_this.viewed && hasClass(image, CLASS_TRANSITION)) {
+              removeListener(image, EVENT_TRANSITION_END, onImageTransitionEnd);
+            } else if (hasClass(viewer, CLASS_TRANSITION)) {
+              removeListener(viewer, EVENT_TRANSITION_END, onViewerTransitionEnd);
+            }
+          }
+        }; // In case of hiding the viewer when holding on the image (#255),
+        // note that the `CLASS_TRANSITION` class will be removed on pointer down.
+
+        if (this.viewed && hasClass(image, CLASS_TRANSITION)) {
+          addListener(image, EVENT_TRANSITION_END, onImageTransitionEnd, {
+            once: true
+          });
+          this.zoomTo(0, false, null, true);
+        } else {
+          onImageTransitionEnd();
+        }
+      } else {
+        hideImmediately();
+      }
+
+      return this;
+    },
+
+    /**
+     * View one of the images with image's index
+     * @param {number} index - The index of the image to view.
+     * @returns {Viewer} this
+     */
+    view: function view() {
+      var _this2 = this;
+
+      var index = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.options.initialViewIndex;
+      index = Number(index) || 0;
+
+      if (this.hiding || this.played || index < 0 || index >= this.length || this.viewed && index === this.index) {
+        return this;
+      }
+
+      if (!this.isShown) {
+        this.index = index;
+        return this.show();
+      }
+
+      if (this.viewing) {
+        this.viewing.abort();
+      }
+
+      var element = this.element,
+          options = this.options,
+          title = this.title,
+          canvas = this.canvas;
+      var item = this.items[index];
+      var img = item.querySelector('img');
+      var url = getData(img, 'originalUrl');
+      var alt = img.getAttribute('alt');
+      var image = document.createElement('img');
+      forEach(options.inheritedAttributes, function (name) {
+        var value = img.getAttribute(name);
+
+        if (value !== null) {
+          image.setAttribute(name, value);
+        }
+      });
+      image.src = url;
+      image.alt = alt;
+
+      if (isFunction(options.view)) {
+        addListener(element, EVENT_VIEW, options.view, {
+          once: true
+        });
+      }
+
+      if (dispatchEvent(element, EVENT_VIEW, {
+        originalImage: this.images[index],
+        index: index,
+        image: image
+      }) === false || !this.isShown || this.hiding || this.played) {
+        return this;
+      }
+
+      var activeItem = this.items[this.index];
+
+      if (activeItem) {
+        removeClass(activeItem, CLASS_ACTIVE);
+        activeItem.removeAttribute('aria-selected');
+      }
+
+      addClass(item, CLASS_ACTIVE);
+      item.setAttribute('aria-selected', true);
+
+      if (options.focus) {
+        item.focus();
+      }
+
+      this.image = image;
+      this.viewed = false;
+      this.index = index;
+      this.imageData = {};
+      addClass(image, CLASS_INVISIBLE);
+
+      if (options.loading) {
+        addClass(canvas, CLASS_LOADING);
+      }
+
+      canvas.innerHTML = '';
+      canvas.appendChild(image); // Center current item
+
+      this.renderList(); // Clear title
+
+      title.innerHTML = ''; // Generate title after viewed
+
+      var onViewed = function onViewed() {
+        var imageData = _this2.imageData;
+        var render = Array.isArray(options.title) ? options.title[1] : options.title;
+        title.innerHTML = escapeHTMLEntities(isFunction(render) ? render.call(_this2, image, imageData) : "".concat(alt, " (").concat(imageData.naturalWidth, " \xD7 ").concat(imageData.naturalHeight, ")"));
+      };
+
+      var onLoad;
+      addListener(element, EVENT_VIEWED, onViewed, {
+        once: true
+      });
+      this.viewing = {
+        abort: function abort() {
+          removeListener(element, EVENT_VIEWED, onViewed);
+
+          if (image.complete) {
+            if (_this2.imageRendering) {
+              _this2.imageRendering.abort();
+            } else if (_this2.imageInitializing) {
+              _this2.imageInitializing.abort();
+            }
+          } else {
+            // Cancel download to save bandwidth.
+            image.src = '';
+            removeListener(image, EVENT_LOAD, onLoad);
+
+            if (_this2.timeout) {
+              clearTimeout(_this2.timeout);
+            }
+          }
+        }
+      };
+
+      if (image.complete) {
+        this.load();
+      } else {
+        addListener(image, EVENT_LOAD, onLoad = this.load.bind(this), {
+          once: true
+        });
+
+        if (this.timeout) {
+          clearTimeout(this.timeout);
+        } // Make the image visible if it fails to load within 1s
+
+
+        this.timeout = setTimeout(function () {
+          removeClass(image, CLASS_INVISIBLE);
+          _this2.timeout = false;
+        }, 1000);
+      }
+
+      return this;
+    },
+
+    /**
+     * View the previous image
+     * @param {boolean} [loop=false] - Indicate if view the last one
+     * when it is the first one at present.
+     * @returns {Viewer} this
+     */
+    prev: function prev() {
+      var loop = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+      var index = this.index - 1;
+
+      if (index < 0) {
+        index = loop ? this.length - 1 : 0;
+      }
+
+      this.view(index);
+      return this;
+    },
+
+    /**
+     * View the next image
+     * @param {boolean} [loop=false] - Indicate if view the first one
+     * when it is the last one at present.
+     * @returns {Viewer} this
+     */
+    next: function next() {
+      var loop = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+      var maxIndex = this.length - 1;
+      var index = this.index + 1;
+
+      if (index > maxIndex) {
+        index = loop ? 0 : maxIndex;
+      }
+
+      this.view(index);
+      return this;
+    },
+
+    /**
+     * Move the image with relative offsets.
+     * @param {number} x - The moving distance in the horizontal direction.
+     * @param {number} [y=x] The moving distance in the vertical direction.
+     * @returns {Viewer} this
+     */
+    move: function move(x) {
+      var y = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : x;
+      var imageData = this.imageData;
+      this.moveTo(isUndefined(x) ? x : imageData.x + Number(x), isUndefined(y) ? y : imageData.y + Number(y));
+      return this;
+    },
+
+    /**
+     * Move the image to an absolute point.
+     * @param {number} x - The new position in the horizontal direction.
+     * @param {number} [y=x] - The new position in the vertical direction.
+     * @param {Event} [_originalEvent=null] - The original event if any.
+     * @returns {Viewer} this
+     */
+    moveTo: function moveTo(x) {
+      var _this3 = this;
+
+      var y = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : x;
+
+      var _originalEvent = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+
+      var element = this.element,
+          options = this.options,
+          imageData = this.imageData;
+      x = Number(x);
+      y = Number(y);
+
+      if (this.viewed && !this.played && options.movable) {
+        var oldX = imageData.x;
+        var oldY = imageData.y;
+        var changed = false;
+
+        if (isNumber(x)) {
+          changed = true;
+        } else {
+          x = oldX;
+        }
+
+        if (isNumber(y)) {
+          changed = true;
+        } else {
+          y = oldY;
+        }
+
+        if (changed) {
+          if (isFunction(options.move)) {
+            addListener(element, EVENT_MOVE, options.move, {
+              once: true
+            });
+          }
+
+          if (dispatchEvent(element, EVENT_MOVE, {
+            x: x,
+            y: y,
+            oldX: oldX,
+            oldY: oldY,
+            originalEvent: _originalEvent
+          }) === false) {
+            return this;
+          }
+
+          imageData.x = x;
+          imageData.y = y;
+          imageData.left = x;
+          imageData.top = y;
+          this.moving = true;
+          this.renderImage(function () {
+            _this3.moving = false;
+
+            if (isFunction(options.moved)) {
+              addListener(element, EVENT_MOVED, options.moved, {
+                once: true
+              });
+            }
+
+            dispatchEvent(element, EVENT_MOVED, {
+              x: x,
+              y: y,
+              oldX: oldX,
+              oldY: oldY,
+              originalEvent: _originalEvent
+            }, {
+              cancelable: false
+            });
+          });
+        }
+      }
+
+      return this;
+    },
+
+    /**
+     * Rotate the image with a relative degree.
+     * @param {number} degree - The rotate degree.
+     * @returns {Viewer} this
+     */
+    rotate: function rotate(degree) {
+      this.rotateTo((this.imageData.rotate || 0) + Number(degree));
+      return this;
+    },
+
+    /**
+     * Rotate the image to an absolute degree.
+     * @param {number} degree - The rotate degree.
+     * @returns {Viewer} this
+     */
+    rotateTo: function rotateTo(degree) {
+      var _this4 = this;
+
+      var element = this.element,
+          options = this.options,
+          imageData = this.imageData;
+      degree = Number(degree);
+
+      if (isNumber(degree) && this.viewed && !this.played && options.rotatable) {
+        var oldDegree = imageData.rotate;
+
+        if (isFunction(options.rotate)) {
+          addListener(element, EVENT_ROTATE, options.rotate, {
+            once: true
+          });
+        }
+
+        if (dispatchEvent(element, EVENT_ROTATE, {
+          degree: degree,
+          oldDegree: oldDegree
+        }) === false) {
+          return this;
+        }
+
+        imageData.rotate = degree;
+        this.rotating = true;
+        this.renderImage(function () {
+          _this4.rotating = false;
+
+          if (isFunction(options.rotated)) {
+            addListener(element, EVENT_ROTATED, options.rotated, {
+              once: true
+            });
+          }
+
+          dispatchEvent(element, EVENT_ROTATED, {
+            degree: degree,
+            oldDegree: oldDegree
+          }, {
+            cancelable: false
+          });
+        });
+      }
+
+      return this;
+    },
+
+    /**
+     * Scale the image on the x-axis.
+     * @param {number} scaleX - The scale ratio on the x-axis.
+     * @returns {Viewer} this
+     */
+    scaleX: function scaleX(_scaleX) {
+      this.scale(_scaleX, this.imageData.scaleY);
+      return this;
+    },
+
+    /**
+     * Scale the image on the y-axis.
+     * @param {number} scaleY - The scale ratio on the y-axis.
+     * @returns {Viewer} this
+     */
+    scaleY: function scaleY(_scaleY) {
+      this.scale(this.imageData.scaleX, _scaleY);
+      return this;
+    },
+
+    /**
+     * Scale the image.
+     * @param {number} scaleX - The scale ratio on the x-axis.
+     * @param {number} [scaleY=scaleX] - The scale ratio on the y-axis.
+     * @returns {Viewer} this
+     */
+    scale: function scale(scaleX) {
+      var _this5 = this;
+
+      var scaleY = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : scaleX;
+      var element = this.element,
+          options = this.options,
+          imageData = this.imageData;
+      scaleX = Number(scaleX);
+      scaleY = Number(scaleY);
+
+      if (this.viewed && !this.played && options.scalable) {
+        var oldScaleX = imageData.scaleX;
+        var oldScaleY = imageData.scaleY;
+        var changed = false;
+
+        if (isNumber(scaleX)) {
+          changed = true;
+        } else {
+          scaleX = oldScaleX;
+        }
+
+        if (isNumber(scaleY)) {
+          changed = true;
+        } else {
+          scaleY = oldScaleY;
+        }
+
+        if (changed) {
+          if (isFunction(options.scale)) {
+            addListener(element, EVENT_SCALE, options.scale, {
+              once: true
+            });
+          }
+
+          if (dispatchEvent(element, EVENT_SCALE, {
+            scaleX: scaleX,
+            scaleY: scaleY,
+            oldScaleX: oldScaleX,
+            oldScaleY: oldScaleY
+          }) === false) {
+            return this;
+          }
+
+          imageData.scaleX = scaleX;
+          imageData.scaleY = scaleY;
+          this.scaling = true;
+          this.renderImage(function () {
+            _this5.scaling = false;
+
+            if (isFunction(options.scaled)) {
+              addListener(element, EVENT_SCALED, options.scaled, {
+                once: true
+              });
+            }
+
+            dispatchEvent(element, EVENT_SCALED, {
+              scaleX: scaleX,
+              scaleY: scaleY,
+              oldScaleX: oldScaleX,
+              oldScaleY: oldScaleY
+            }, {
+              cancelable: false
+            });
+          });
+        }
+      }
+
+      return this;
+    },
+
+    /**
+     * Zoom the image with a relative ratio.
+     * @param {number} ratio - The target ratio.
+     * @param {boolean} [hasTooltip=false] - Indicates if it has a tooltip or not.
+     * @param {Event} [_originalEvent=null] - The original event if any.
+     * @returns {Viewer} this
+     */
+    zoom: function zoom(ratio) {
+      var hasTooltip = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+      var _originalEvent = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+
+      var imageData = this.imageData;
+      ratio = Number(ratio);
+
+      if (ratio < 0) {
+        ratio = 1 / (1 - ratio);
+      } else {
+        ratio = 1 + ratio;
+      }
+
+      this.zoomTo(imageData.width * ratio / imageData.naturalWidth, hasTooltip, _originalEvent);
+      return this;
+    },
+
+    /**
+     * Zoom the image to an absolute ratio.
+     * @param {number} ratio - The target ratio.
+     * @param {boolean} [hasTooltip=false] - Indicates if it has a tooltip or not.
+     * @param {Event} [_originalEvent=null] - The original event if any.
+     * @param {Event} [_zoomable=false] - Indicates if the current zoom is available or not.
+     * @returns {Viewer} this
+     */
+    zoomTo: function zoomTo(ratio) {
+      var _this6 = this;
+
+      var hasTooltip = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+      var _originalEvent = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+
+      var _zoomable = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+
+      var element = this.element,
+          options = this.options,
+          pointers = this.pointers,
+          imageData = this.imageData;
+      var x = imageData.x,
+          y = imageData.y,
+          width = imageData.width,
+          height = imageData.height,
+          naturalWidth = imageData.naturalWidth,
+          naturalHeight = imageData.naturalHeight;
+      ratio = Math.max(0, ratio);
+
+      if (isNumber(ratio) && this.viewed && !this.played && (_zoomable || options.zoomable)) {
+        if (!_zoomable) {
+          var minZoomRatio = Math.max(0.01, options.minZoomRatio);
+          var maxZoomRatio = Math.min(100, options.maxZoomRatio);
+          ratio = Math.min(Math.max(ratio, minZoomRatio), maxZoomRatio);
+        }
+
+        if (_originalEvent && options.zoomRatio >= 0.055 && ratio > 0.95 && ratio < 1.05) {
+          ratio = 1;
+        }
+
+        var newWidth = naturalWidth * ratio;
+        var newHeight = naturalHeight * ratio;
+        var offsetWidth = newWidth - width;
+        var offsetHeight = newHeight - height;
+        var oldRatio = imageData.ratio;
+
+        if (isFunction(options.zoom)) {
+          addListener(element, EVENT_ZOOM, options.zoom, {
+            once: true
+          });
+        }
+
+        if (dispatchEvent(element, EVENT_ZOOM, {
+          ratio: ratio,
+          oldRatio: oldRatio,
+          originalEvent: _originalEvent
+        }) === false) {
+          return this;
+        }
+
+        this.zooming = true;
+
+        if (_originalEvent) {
+          var offset = getOffset(this.viewer);
+          var center = pointers && Object.keys(pointers).length ? getPointersCenter(pointers) : {
+            pageX: _originalEvent.pageX,
+            pageY: _originalEvent.pageY
+          }; // Zoom from the triggering point of the event
+
+          imageData.x -= offsetWidth * ((center.pageX - offset.left - x) / width);
+          imageData.y -= offsetHeight * ((center.pageY - offset.top - y) / height);
+        } else {
+          // Zoom from the center of the image
+          imageData.x -= offsetWidth / 2;
+          imageData.y -= offsetHeight / 2;
+        }
+
+        imageData.left = imageData.x;
+        imageData.top = imageData.y;
+        imageData.width = newWidth;
+        imageData.height = newHeight;
+        imageData.oldRatio = oldRatio;
+        imageData.ratio = ratio;
+        this.renderImage(function () {
+          _this6.zooming = false;
+
+          if (isFunction(options.zoomed)) {
+            addListener(element, EVENT_ZOOMED, options.zoomed, {
+              once: true
+            });
+          }
+
+          dispatchEvent(element, EVENT_ZOOMED, {
+            ratio: ratio,
+            oldRatio: oldRatio,
+            originalEvent: _originalEvent
+          }, {
+            cancelable: false
+          });
+        });
+
+        if (hasTooltip) {
+          this.tooltip();
+        }
+      }
+
+      return this;
+    },
+
+    /**
+     * Play the images
+     * @param {boolean|FullscreenOptions} [fullscreen=false] - Indicate if request fullscreen or not.
+     * @returns {Viewer} this
+     */
+    play: function play() {
+      var _this7 = this;
+
+      var fullscreen = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+
+      if (!this.isShown || this.played) {
+        return this;
+      }
+
+      var element = this.element,
+          options = this.options;
+
+      if (isFunction(options.play)) {
+        addListener(element, EVENT_PLAY, options.play, {
+          once: true
+        });
+      }
+
+      if (dispatchEvent(element, EVENT_PLAY) === false) {
+        return this;
+      }
+
+      var player = this.player;
+      var onLoad = this.loadImage.bind(this);
+      var list = [];
+      var total = 0;
+      var index = 0;
+      this.played = true;
+      this.onLoadWhenPlay = onLoad;
+
+      if (fullscreen) {
+        this.requestFullscreen(fullscreen);
+      }
+
+      addClass(player, CLASS_SHOW);
+      forEach(this.items, function (item, i) {
+        var img = item.querySelector('img');
+        var image = document.createElement('img');
+        image.src = getData(img, 'originalUrl');
+        image.alt = img.getAttribute('alt');
+        image.referrerPolicy = img.referrerPolicy;
+        total += 1;
+        addClass(image, CLASS_FADE);
+        toggleClass(image, CLASS_TRANSITION, options.transition);
+
+        if (hasClass(item, CLASS_ACTIVE)) {
+          addClass(image, CLASS_IN);
+          index = i;
+        }
+
+        list.push(image);
+        addListener(image, EVENT_LOAD, onLoad, {
+          once: true
+        });
+        player.appendChild(image);
+      });
+
+      if (isNumber(options.interval) && options.interval > 0) {
+        var play = function play() {
+          _this7.playing = setTimeout(function () {
+            removeClass(list[index], CLASS_IN);
+            index += 1;
+            index = index < total ? index : 0;
+            addClass(list[index], CLASS_IN);
+            play();
+          }, options.interval);
+        };
+
+        if (total > 1) {
+          play();
+        }
+      }
+
+      return this;
+    },
+    // Stop play
+    stop: function stop() {
+      var _this8 = this;
+
+      if (!this.played) {
+        return this;
+      }
+
+      var element = this.element,
+          options = this.options;
+
+      if (isFunction(options.stop)) {
+        addListener(element, EVENT_STOP, options.stop, {
+          once: true
+        });
+      }
+
+      if (dispatchEvent(element, EVENT_STOP) === false) {
+        return this;
+      }
+
+      var player = this.player;
+      this.played = false;
+      clearTimeout(this.playing);
+      forEach(player.getElementsByTagName('img'), function (image) {
+        removeListener(image, EVENT_LOAD, _this8.onLoadWhenPlay);
+      });
+      removeClass(player, CLASS_SHOW);
+      player.innerHTML = '';
+      this.exitFullscreen();
+      return this;
+    },
+    // Enter modal mode (only available in inline mode)
+    full: function full() {
+      var _this9 = this;
+
+      var options = this.options,
+          viewer = this.viewer,
+          image = this.image,
+          list = this.list;
+
+      if (!this.isShown || this.played || this.fulled || !options.inline) {
+        return this;
+      }
+
+      this.fulled = true;
+      this.open();
+      addClass(this.button, CLASS_FULLSCREEN_EXIT);
+
+      if (options.transition) {
+        removeClass(list, CLASS_TRANSITION);
+
+        if (this.viewed) {
+          removeClass(image, CLASS_TRANSITION);
+        }
+      }
+
+      addClass(viewer, CLASS_FIXED);
+      viewer.setAttribute('role', 'dialog');
+      viewer.setAttribute('aria-labelledby', this.title.id);
+      viewer.setAttribute('aria-modal', true);
+      viewer.removeAttribute('style');
+      setStyle(viewer, {
+        zIndex: options.zIndex
+      });
+
+      if (options.focus) {
+        this.enforceFocus();
+      }
+
+      this.initContainer();
+      this.viewerData = assign({}, this.containerData);
+      this.renderList();
+
+      if (this.viewed) {
+        this.initImage(function () {
+          _this9.renderImage(function () {
+            if (options.transition) {
+              setTimeout(function () {
+                addClass(image, CLASS_TRANSITION);
+                addClass(list, CLASS_TRANSITION);
+              }, 0);
+            }
+          });
+        });
+      }
+
+      return this;
+    },
+    // Exit modal mode (only available in inline mode)
+    exit: function exit() {
+      var _this10 = this;
+
+      var options = this.options,
+          viewer = this.viewer,
+          image = this.image,
+          list = this.list;
+
+      if (!this.isShown || this.played || !this.fulled || !options.inline) {
+        return this;
+      }
+
+      this.fulled = false;
+      this.close();
+      removeClass(this.button, CLASS_FULLSCREEN_EXIT);
+
+      if (options.transition) {
+        removeClass(list, CLASS_TRANSITION);
+
+        if (this.viewed) {
+          removeClass(image, CLASS_TRANSITION);
+        }
+      }
+
+      if (options.focus) {
+        this.clearEnforceFocus();
+      }
+
+      viewer.removeAttribute('role');
+      viewer.removeAttribute('aria-labelledby');
+      viewer.removeAttribute('aria-modal');
+      removeClass(viewer, CLASS_FIXED);
+      setStyle(viewer, {
+        zIndex: options.zIndexInline
+      });
+      this.viewerData = assign({}, this.parentData);
+      this.renderViewer();
+      this.renderList();
+
+      if (this.viewed) {
+        this.initImage(function () {
+          _this10.renderImage(function () {
+            if (options.transition) {
+              setTimeout(function () {
+                addClass(image, CLASS_TRANSITION);
+                addClass(list, CLASS_TRANSITION);
+              }, 0);
+            }
+          });
+        });
+      }
+
+      return this;
+    },
+    // Show the current ratio of the image with percentage
+    tooltip: function tooltip() {
+      var _this11 = this;
+
+      var options = this.options,
+          tooltipBox = this.tooltipBox,
+          imageData = this.imageData;
+
+      if (!this.viewed || this.played || !options.tooltip) {
+        return this;
+      }
+
+      tooltipBox.textContent = "".concat(Math.round(imageData.ratio * 100), "%");
+
+      if (!this.tooltipping) {
+        if (options.transition) {
+          if (this.fading) {
+            dispatchEvent(tooltipBox, EVENT_TRANSITION_END);
+          }
+
+          addClass(tooltipBox, CLASS_SHOW);
+          addClass(tooltipBox, CLASS_FADE);
+          addClass(tooltipBox, CLASS_TRANSITION);
+          tooltipBox.removeAttribute('aria-hidden'); // Force reflow to enable CSS3 transition
+
+          tooltipBox.initialOffsetWidth = tooltipBox.offsetWidth;
+          addClass(tooltipBox, CLASS_IN);
+        } else {
+          addClass(tooltipBox, CLASS_SHOW);
+          tooltipBox.removeAttribute('aria-hidden');
+        }
+      } else {
+        clearTimeout(this.tooltipping);
+      }
+
+      this.tooltipping = setTimeout(function () {
+        if (options.transition) {
+          addListener(tooltipBox, EVENT_TRANSITION_END, function () {
+            removeClass(tooltipBox, CLASS_SHOW);
+            removeClass(tooltipBox, CLASS_FADE);
+            removeClass(tooltipBox, CLASS_TRANSITION);
+            tooltipBox.setAttribute('aria-hidden', true);
+            _this11.fading = false;
+          }, {
+            once: true
+          });
+          removeClass(tooltipBox, CLASS_IN);
+          _this11.fading = true;
+        } else {
+          removeClass(tooltipBox, CLASS_SHOW);
+          tooltipBox.setAttribute('aria-hidden', true);
+        }
+
+        _this11.tooltipping = false;
+      }, 1000);
+      return this;
+    },
+
+    /**
+     * Toggle the image size between its current size and natural size
+     * @param {Event} [_originalEvent=null] - The original event if any.
+     * @returns {Viewer} this
+     */
+    toggle: function toggle() {
+      var _originalEvent = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+
+      if (this.imageData.ratio === 1) {
+        this.zoomTo(this.imageData.oldRatio, true, _originalEvent);
+      } else {
+        this.zoomTo(1, true, _originalEvent);
+      }
+
+      return this;
+    },
+    // Reset the image to its initial state
+    reset: function reset() {
+      if (this.viewed && !this.played) {
+        this.imageData = assign({}, this.initialImageData);
+        this.renderImage();
+      }
+
+      return this;
+    },
+    // Update viewer when images changed
+    update: function update() {
+      var _this12 = this;
+
+      var element = this.element,
+          options = this.options,
+          isImg = this.isImg; // Destroy viewer if the target image was deleted
+
+      if (isImg && !element.parentNode) {
+        return this.destroy();
+      }
+
+      var images = [];
+      forEach(isImg ? [element] : element.querySelectorAll('img'), function (image) {
+        if (isFunction(options.filter)) {
+          if (options.filter.call(_this12, image)) {
+            images.push(image);
+          }
+        } else if (_this12.getImageURL(image)) {
+          images.push(image);
+        }
+      });
+
+      if (!images.length) {
+        return this;
+      }
+
+      this.images = images;
+      this.length = images.length;
+
+      if (this.ready) {
+        var changedIndexes = [];
+        forEach(this.items, function (item, i) {
+          var img = item.querySelector('img');
+          var image = images[i];
+
+          if (image && img) {
+            if (image.src !== img.src // Title changed (#408)
+            || image.alt !== img.alt) {
+              changedIndexes.push(i);
+            }
+          } else {
+            changedIndexes.push(i);
+          }
+        });
+        setStyle(this.list, {
+          width: 'auto'
+        });
+        this.initList();
+
+        if (this.isShown) {
+          if (this.length) {
+            if (this.viewed) {
+              var changedIndex = changedIndexes.indexOf(this.index);
+
+              if (changedIndex >= 0) {
+                this.viewed = false;
+                this.view(Math.max(Math.min(this.index - changedIndex, this.length - 1), 0));
+              } else {
+                var activeItem = this.items[this.index]; // Reactivate the current viewing item after reset the list.
+
+                addClass(activeItem, CLASS_ACTIVE);
+                activeItem.setAttribute('aria-selected', true);
+              }
+            }
+          } else {
+            this.image = null;
+            this.viewed = false;
+            this.index = 0;
+            this.imageData = {};
+            this.canvas.innerHTML = '';
+            this.title.innerHTML = '';
+          }
+        }
+      } else {
+        this.build();
+      }
+
+      return this;
+    },
+    // Destroy the viewer
+    destroy: function destroy() {
+      var element = this.element,
+          options = this.options;
+
+      if (!element[NAMESPACE]) {
+        return this;
+      }
+
+      this.destroyed = true;
+
+      if (this.ready) {
+        if (this.played) {
+          this.stop();
+        }
+
+        if (options.inline) {
+          if (this.fulled) {
+            this.exit();
+          }
+
+          this.unbind();
+        } else if (this.isShown) {
+          if (this.viewing) {
+            if (this.imageRendering) {
+              this.imageRendering.abort();
+            } else if (this.imageInitializing) {
+              this.imageInitializing.abort();
+            }
+          }
+
+          if (this.hiding) {
+            this.transitioning.abort();
+          }
+
+          this.hidden();
+        } else if (this.showing) {
+          this.transitioning.abort();
+          this.hidden();
+        }
+
+        this.ready = false;
+        this.viewer.parentNode.removeChild(this.viewer);
+      } else if (options.inline) {
+        if (this.delaying) {
+          this.delaying.abort();
+        } else if (this.initializing) {
+          this.initializing.abort();
+        }
+      }
+
+      if (!options.inline) {
+        removeListener(element, EVENT_CLICK, this.onStart);
+      }
+
+      element[NAMESPACE] = undefined;
+      return this;
+    }
+  };
+
+  var others = {
+    getImageURL: function getImageURL(image) {
+      var url = this.options.url;
+
+      if (isString(url)) {
+        url = image.getAttribute(url);
+      } else if (isFunction(url)) {
+        url = url.call(this, image);
+      } else {
+        url = '';
+      }
+
+      return url;
+    },
+    enforceFocus: function enforceFocus() {
+      var _this = this;
+
+      this.clearEnforceFocus();
+      addListener(document, EVENT_FOCUSIN, this.onFocusin = function (event) {
+        var viewer = _this.viewer;
+        var target = event.target;
+
+        if (target !== document && target !== viewer && !viewer.contains(target) // Avoid conflicts with other modals (#474)
+        && (target.getAttribute('tabindex') === null || target.getAttribute('aria-modal') !== 'true')) {
+          viewer.focus();
+        }
+      });
+    },
+    clearEnforceFocus: function clearEnforceFocus() {
+      if (this.onFocusin) {
+        removeListener(document, EVENT_FOCUSIN, this.onFocusin);
+        this.onFocusin = null;
+      }
+    },
+    open: function open() {
+      var body = this.body;
+      addClass(body, CLASS_OPEN);
+      body.style.paddingRight = "".concat(this.scrollbarWidth + (parseFloat(this.initialBodyComputedPaddingRight) || 0), "px");
+    },
+    close: function close() {
+      var body = this.body;
+      removeClass(body, CLASS_OPEN);
+      body.style.paddingRight = this.initialBodyPaddingRight;
+    },
+    shown: function shown() {
+      var element = this.element,
+          options = this.options,
+          viewer = this.viewer;
+      this.fulled = true;
+      this.isShown = true;
+      this.render();
+      this.bind();
+      this.showing = false;
+
+      if (options.focus) {
+        viewer.focus();
+        this.enforceFocus();
+      }
+
+      if (isFunction(options.shown)) {
+        addListener(element, EVENT_SHOWN, options.shown, {
+          once: true
+        });
+      }
+
+      if (dispatchEvent(element, EVENT_SHOWN) === false) {
+        return;
+      }
+
+      if (this.ready && this.isShown && !this.hiding) {
+        this.view(this.index);
+      }
+    },
+    hidden: function hidden() {
+      var element = this.element,
+          options = this.options,
+          viewer = this.viewer;
+
+      if (options.fucus) {
+        this.clearEnforceFocus();
+      }
+
+      this.fulled = false;
+      this.viewed = false;
+      this.isShown = false;
+      this.close();
+      this.unbind();
+      addClass(viewer, CLASS_HIDE);
+      viewer.removeAttribute('role');
+      viewer.removeAttribute('aria-labelledby');
+      viewer.removeAttribute('aria-modal');
+      viewer.setAttribute('aria-hidden', true);
+      this.resetList();
+      this.resetImage();
+      this.hiding = false;
+
+      if (!this.destroyed) {
+        if (isFunction(options.hidden)) {
+          addListener(element, EVENT_HIDDEN, options.hidden, {
+            once: true
+          });
+        }
+
+        dispatchEvent(element, EVENT_HIDDEN, null, {
+          cancelable: false
+        });
+      }
+    },
+    requestFullscreen: function requestFullscreen(options) {
+      var document = this.element.ownerDocument;
+
+      if (this.fulled && !(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement)) {
+        var documentElement = document.documentElement; // Element.requestFullscreen()
+
+        if (documentElement.requestFullscreen) {
+          // Avoid TypeError when convert `options` to dictionary
+          if (isPlainObject(options)) {
+            documentElement.requestFullscreen(options);
+          } else {
+            documentElement.requestFullscreen();
+          }
+        } else if (documentElement.webkitRequestFullscreen) {
+          documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+        } else if (documentElement.mozRequestFullScreen) {
+          documentElement.mozRequestFullScreen();
+        } else if (documentElement.msRequestFullscreen) {
+          documentElement.msRequestFullscreen();
+        }
+      }
+    },
+    exitFullscreen: function exitFullscreen() {
+      var document = this.element.ownerDocument;
+
+      if (this.fulled && (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement)) {
+        // Document.exitFullscreen()
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+          document.msExitFullscreen();
+        }
+      }
+    },
+    change: function change(event) {
+      var options = this.options,
+          pointers = this.pointers;
+      var pointer = pointers[Object.keys(pointers)[0]]; // In the case of the `pointers` object is empty (#421)
+
+      if (!pointer) {
+        return;
+      }
+
+      var offsetX = pointer.endX - pointer.startX;
+      var offsetY = pointer.endY - pointer.startY;
+
+      switch (this.action) {
+        // Move the current image
+        case ACTION_MOVE:
+          this.move(offsetX, offsetY, event);
+          break;
+        // Zoom the current image
+
+        case ACTION_ZOOM:
+          this.zoom(getMaxZoomRatio(pointers), false, event);
+          break;
+
+        case ACTION_SWITCH:
+          {
+            this.action = 'switched';
+            var absoluteOffsetX = Math.abs(offsetX);
+
+            if (absoluteOffsetX > 1 && absoluteOffsetX > Math.abs(offsetY)) {
+              // Empty `pointers` as `touchend` event will not be fired after swiped in iOS browsers.
+              this.pointers = {};
+
+              if (offsetX > 1) {
+                this.prev(options.loop);
+              } else if (offsetX < -1) {
+                this.next(options.loop);
+              }
+            }
+
+            break;
+          }
+      } // Override
+
+
+      forEach(pointers, function (p) {
+        p.startX = p.endX;
+        p.startY = p.endY;
+      });
+    },
+    isSwitchable: function isSwitchable() {
+      var imageData = this.imageData,
+          viewerData = this.viewerData;
+      return this.length > 1 && imageData.x >= 0 && imageData.y >= 0 && imageData.width <= viewerData.width && imageData.height <= viewerData.height;
+    }
+  };
+
+  var AnotherViewer = WINDOW.Viewer;
+
+  var getUniqueID = function (id) {
+    return function () {
+      id += 1;
+      return id;
+    };
+  }(-1);
+
+  var Viewer = /*#__PURE__*/function () {
+    /**
+     * Create a new Viewer.
+     * @param {Element} element - The target element for viewing.
+     * @param {Object} [options={}] - The configuration options.
+     */
+    function Viewer(element) {
+      var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+      _classCallCheck(this, Viewer);
+
+      if (!element || element.nodeType !== 1) {
+        throw new Error('The first argument is required and must be an element.');
+      }
+
+      this.element = element;
+      this.options = assign({}, DEFAULTS, isPlainObject(options) && options);
+      this.action = false;
+      this.fading = false;
+      this.fulled = false;
+      this.hiding = false;
+      this.imageClicked = false;
+      this.imageData = {};
+      this.index = this.options.initialViewIndex;
+      this.isImg = false;
+      this.isShown = false;
+      this.length = 0;
+      this.moving = false;
+      this.played = false;
+      this.playing = false;
+      this.pointers = {};
+      this.ready = false;
+      this.rotating = false;
+      this.scaling = false;
+      this.showing = false;
+      this.timeout = false;
+      this.tooltipping = false;
+      this.viewed = false;
+      this.viewing = false;
+      this.wheeling = false;
+      this.zooming = false;
+      this.id = getUniqueID();
+      this.init();
+    }
+
+    _createClass(Viewer, [{
+      key: "init",
+      value: function init() {
+        var _this = this;
+
+        var element = this.element,
+            options = this.options;
+
+        if (element[NAMESPACE]) {
+          return;
+        }
+
+        element[NAMESPACE] = this; // The `focus` option requires the `keyboard` option set to `true`.
+
+        if (options.focus && !options.keyboard) {
+          options.focus = false;
+        }
+
+        var isImg = element.localName === 'img';
+        var images = [];
+        forEach(isImg ? [element] : element.querySelectorAll('img'), function (image) {
+          if (isFunction(options.filter)) {
+            if (options.filter.call(_this, image)) {
+              images.push(image);
+            }
+          } else if (_this.getImageURL(image)) {
+            images.push(image);
+          }
+        });
+        this.isImg = isImg;
+        this.length = images.length;
+        this.images = images;
+        this.initBody(); // Override `transition` option if it is not supported
+
+        if (isUndefined(document.createElement(NAMESPACE).style.transition)) {
+          options.transition = false;
+        }
+
+        if (options.inline) {
+          var count = 0;
+
+          var progress = function progress() {
+            count += 1;
+
+            if (count === _this.length) {
+              var timeout;
+              _this.initializing = false;
+              _this.delaying = {
+                abort: function abort() {
+                  clearTimeout(timeout);
+                }
+              }; // build asynchronously to keep `this.viewer` is accessible in `ready` event handler.
+
+              timeout = setTimeout(function () {
+                _this.delaying = false;
+
+                _this.build();
+              }, 0);
+            }
+          };
+
+          this.initializing = {
+            abort: function abort() {
+              forEach(images, function (image) {
+                if (!image.complete) {
+                  removeListener(image, EVENT_LOAD, progress);
+                }
+              });
+            }
+          };
+          forEach(images, function (image) {
+            if (image.complete) {
+              progress();
+            } else {
+              addListener(image, EVENT_LOAD, progress, {
+                once: true
+              });
+            }
+          });
+        } else {
+          addListener(element, EVENT_CLICK, this.onStart = function (_ref) {
+            var target = _ref.target;
+
+            if (target.localName === 'img' && (!isFunction(options.filter) || options.filter.call(_this, target))) {
+              _this.view(_this.images.indexOf(target));
+            }
+          });
+        }
+      }
+    }, {
+      key: "build",
+      value: function build() {
+        if (this.ready) {
+          return;
+        }
+
+        var element = this.element,
+            options = this.options;
+        var parent = element.parentNode;
+        var template = document.createElement('div');
+        template.innerHTML = TEMPLATE;
+        var viewer = template.querySelector(".".concat(NAMESPACE, "-container"));
+        var title = viewer.querySelector(".".concat(NAMESPACE, "-title"));
+        var toolbar = viewer.querySelector(".".concat(NAMESPACE, "-toolbar"));
+        var navbar = viewer.querySelector(".".concat(NAMESPACE, "-navbar"));
+        var button = viewer.querySelector(".".concat(NAMESPACE, "-button"));
+        var canvas = viewer.querySelector(".".concat(NAMESPACE, "-canvas"));
+        this.parent = parent;
+        this.viewer = viewer;
+        this.title = title;
+        this.toolbar = toolbar;
+        this.navbar = navbar;
+        this.button = button;
+        this.canvas = canvas;
+        this.footer = viewer.querySelector(".".concat(NAMESPACE, "-footer"));
+        this.tooltipBox = viewer.querySelector(".".concat(NAMESPACE, "-tooltip"));
+        this.player = viewer.querySelector(".".concat(NAMESPACE, "-player"));
+        this.list = viewer.querySelector(".".concat(NAMESPACE, "-list"));
+        viewer.id = "".concat(NAMESPACE).concat(this.id);
+        title.id = "".concat(NAMESPACE, "Title").concat(this.id);
+        addClass(title, !options.title ? CLASS_HIDE : getResponsiveClass(Array.isArray(options.title) ? options.title[0] : options.title));
+        addClass(navbar, !options.navbar ? CLASS_HIDE : getResponsiveClass(options.navbar));
+        toggleClass(button, CLASS_HIDE, !options.button);
+
+        if (options.keyboard) {
+          button.setAttribute('tabindex', 0);
+        }
+
+        if (options.backdrop) {
+          addClass(viewer, "".concat(NAMESPACE, "-backdrop"));
+
+          if (!options.inline && options.backdrop !== 'static') {
+            setData(canvas, DATA_ACTION, 'hide');
+          }
+        }
+
+        if (isString(options.className) && options.className) {
+          // In case there are multiple class names
+          options.className.split(REGEXP_SPACES).forEach(function (className) {
+            addClass(viewer, className);
+          });
+        }
+
+        if (options.toolbar) {
+          var list = document.createElement('ul');
+          var custom = isPlainObject(options.toolbar);
+          var zoomButtons = BUTTONS.slice(0, 3);
+          var rotateButtons = BUTTONS.slice(7, 9);
+          var scaleButtons = BUTTONS.slice(9);
+
+          if (!custom) {
+            addClass(toolbar, getResponsiveClass(options.toolbar));
+          }
+
+          forEach(custom ? options.toolbar : BUTTONS, function (value, index) {
+            var deep = custom && isPlainObject(value);
+            var name = custom ? hyphenate(index) : value;
+            var show = deep && !isUndefined(value.show) ? value.show : value;
+
+            if (!show || !options.zoomable && zoomButtons.indexOf(name) !== -1 || !options.rotatable && rotateButtons.indexOf(name) !== -1 || !options.scalable && scaleButtons.indexOf(name) !== -1) {
+              return;
+            }
+
+            var size = deep && !isUndefined(value.size) ? value.size : value;
+            var click = deep && !isUndefined(value.click) ? value.click : value;
+            var item = document.createElement('li');
+
+            if (options.keyboard) {
+              item.setAttribute('tabindex', 0);
+            }
+
+            item.setAttribute('role', 'button');
+            addClass(item, "".concat(NAMESPACE, "-").concat(name));
+
+            if (!isFunction(click)) {
+              setData(item, DATA_ACTION, name);
+            }
+
+            if (isNumber(show)) {
+              addClass(item, getResponsiveClass(show));
+            }
+
+            if (['small', 'large'].indexOf(size) !== -1) {
+              addClass(item, "".concat(NAMESPACE, "-").concat(size));
+            } else if (name === 'play') {
+              addClass(item, "".concat(NAMESPACE, "-large"));
+            }
+
+            if (isFunction(click)) {
+              addListener(item, EVENT_CLICK, click);
+            }
+
+            list.appendChild(item);
+          });
+          toolbar.appendChild(list);
+        } else {
+          addClass(toolbar, CLASS_HIDE);
+        }
+
+        if (!options.rotatable) {
+          var rotates = toolbar.querySelectorAll('li[class*="rotate"]');
+          addClass(rotates, CLASS_INVISIBLE);
+          forEach(rotates, function (rotate) {
+            toolbar.appendChild(rotate);
+          });
+        }
+
+        if (options.inline) {
+          addClass(button, CLASS_FULLSCREEN);
+          setStyle(viewer, {
+            zIndex: options.zIndexInline
+          });
+
+          if (window.getComputedStyle(parent).position === 'static') {
+            setStyle(parent, {
+              position: 'relative'
+            });
+          }
+
+          parent.insertBefore(viewer, element.nextSibling);
+        } else {
+          addClass(button, CLASS_CLOSE);
+          addClass(viewer, CLASS_FIXED);
+          addClass(viewer, CLASS_FADE);
+          addClass(viewer, CLASS_HIDE);
+          setStyle(viewer, {
+            zIndex: options.zIndex
+          });
+          var container = options.container;
+
+          if (isString(container)) {
+            container = element.ownerDocument.querySelector(container);
+          }
+
+          if (!container) {
+            container = this.body;
+          }
+
+          container.appendChild(viewer);
+        }
+
+        if (options.inline) {
+          this.render();
+          this.bind();
+          this.isShown = true;
+        }
+
+        this.ready = true;
+
+        if (isFunction(options.ready)) {
+          addListener(element, EVENT_READY, options.ready, {
+            once: true
+          });
+        }
+
+        if (dispatchEvent(element, EVENT_READY) === false) {
+          this.ready = false;
+          return;
+        }
+
+        if (this.ready && options.inline) {
+          this.view(this.index);
+        }
+      }
+      /**
+       * Get the no conflict viewer class.
+       * @returns {Viewer} The viewer class.
+       */
+
+    }], [{
+      key: "noConflict",
+      value: function noConflict() {
+        window.Viewer = AnotherViewer;
+        return Viewer;
+      }
+      /**
+       * Change the default options.
+       * @param {Object} options - The new default options.
+       */
+
+    }, {
+      key: "setDefaults",
+      value: function setDefaults(options) {
+        assign(DEFAULTS, isPlainObject(options) && options);
+      }
+    }]);
+
+    return Viewer;
+  }();
+
+  assign(Viewer.prototype, render, events, handlers, methods, others);
+
+  return Viewer;
+
+})));
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-js-modal/dist/index.js":
 /*!*************************************************!*\
   !*** ./node_modules/vue-js-modal/dist/index.js ***!
@@ -43691,6 +47994,45 @@ component.options.__file = "resources/js/components/ArticlePictureSwipe.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/ArticlePictureSwipe2.vue":
+/*!**********************************************************!*\
+  !*** ./resources/js/components/ArticlePictureSwipe2.vue ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ArticlePictureSwipe2_vue_vue_type_template_id_dbb7e32a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ArticlePictureSwipe2.vue?vue&type=template&id=dbb7e32a& */ "./resources/js/components/ArticlePictureSwipe2.vue?vue&type=template&id=dbb7e32a&");
+/* harmony import */ var _ArticlePictureSwipe2_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ArticlePictureSwipe2.vue?vue&type=script&lang=js& */ "./resources/js/components/ArticlePictureSwipe2.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _ArticlePictureSwipe2_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _ArticlePictureSwipe2_vue_vue_type_template_id_dbb7e32a___WEBPACK_IMPORTED_MODULE_0__.render,
+  _ArticlePictureSwipe2_vue_vue_type_template_id_dbb7e32a___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/ArticlePictureSwipe2.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/Dropdown.vue":
 /*!**********************************************!*\
   !*** ./resources/js/components/Dropdown.vue ***!
@@ -44133,6 +48475,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/ArticlePictureSwipe2.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/ArticlePictureSwipe2.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ArticlePictureSwipe2_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ArticlePictureSwipe2.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ArticlePictureSwipe2.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ArticlePictureSwipe2_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
 /***/ "./resources/js/components/Dropdown.vue?vue&type=script&lang=js&":
 /*!***********************************************************************!*\
   !*** ./resources/js/components/Dropdown.vue?vue&type=script&lang=js& ***!
@@ -44438,6 +48796,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ArticlePictureSwipe_vue_vue_type_template_id_25be55d7___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ArticlePictureSwipe_vue_vue_type_template_id_25be55d7___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ArticlePictureSwipe.vue?vue&type=template&id=25be55d7& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ArticlePictureSwipe.vue?vue&type=template&id=25be55d7&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/ArticlePictureSwipe2.vue?vue&type=template&id=dbb7e32a&":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/components/ArticlePictureSwipe2.vue?vue&type=template&id=dbb7e32a& ***!
+  \*****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ArticlePictureSwipe2_vue_vue_type_template_id_dbb7e32a___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ArticlePictureSwipe2_vue_vue_type_template_id_dbb7e32a___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ArticlePictureSwipe2_vue_vue_type_template_id_dbb7e32a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ArticlePictureSwipe2.vue?vue&type=template&id=dbb7e32a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ArticlePictureSwipe2.vue?vue&type=template&id=dbb7e32a&");
 
 
 /***/ }),
@@ -46205,7 +50580,57 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("vue3-picture-swipe", { attrs: { items: _vm.items } })
+  return _c("vue-picture-swipe", { attrs: { items: _vm.items } })
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ArticlePictureSwipe2.vue?vue&type=template&id=dbb7e32a&":
+/*!********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ArticlePictureSwipe2.vue?vue&type=template&id=dbb7e32a& ***!
+  \********************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "viewer",
+        {
+          ref: "viewer",
+          staticClass: "viewer",
+          attrs: { options: _vm.options, images: _vm.images }
+        },
+        [
+          _vm._l(_vm.images, function(image, index) {
+            return [
+              _c("img", {
+                key: index,
+                staticClass: "image",
+                attrs: { src: image.thumbnail, "data-src": image.source }
+              })
+            ]
+          })
+        ],
+        2
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -59515,43 +63940,6 @@ Vue.compile = compileToFunctions;
 
 !function(e,t){ true?module.exports=t():0}(this,function(){"use strict";var e,t=(function(e){var t=function(){function e(e,t){for(var i=0;i<t.length;i++){var n=t[i];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,i,n){return i&&e(t.prototype,i),n&&e(t,n),t}}();function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var r=function(){function e(){n(this,e)}return t(e,[{key:"on",value:function(e,t){return this._callbacks=this._callbacks||{},this._callbacks[e]||(this._callbacks[e]=[]),this._callbacks[e].push(t),this}},{key:"emit",value:function(e){this._callbacks=this._callbacks||{};var t=this._callbacks[e];if(t){for(var i=arguments.length,n=Array(i>1?i-1:0),r=1;r<i;r++)n[r-1]=arguments[r];for(var o=0,s=s=t;;){if(o>=s.length)break;s[o++].apply(this,n)}}return this}},{key:"off",value:function(e,t){if(!this._callbacks||0===arguments.length)return this._callbacks={},this;var i=this._callbacks[e];if(!i)return this;if(1===arguments.length)return delete this._callbacks[e],this;for(var n=0;n<i.length;n++){if(i[n]===t){i.splice(n,1);break}}return this}}]),e}(),o=function(e){function o(e,t){n(this,o);var r,s=i(this,(o.__proto__||Object.getPrototypeOf(o)).call(this)),a=void 0;if(s.element=e,s.version=o.version,s.defaultOptions.previewTemplate=s.defaultOptions.previewTemplate.replace(/\n*/g,""),s.clickableElements=[],s.listeners=[],s.files=[],"string"==typeof s.element&&(s.element=document.querySelector(s.element)),!s.element||null==s.element.nodeType)throw new Error("Invalid dropzone element.");if(s.element.dropzone)throw new Error("Dropzone already attached.");o.instances.push(s),s.element.dropzone=s;var l,u=null!=(r=o.optionsForElement(s.element))?r:{};if(s.options=o.extend({},s.defaultOptions,u,null!=t?t:{}),s.options.forceFallback||!o.isBrowserSupported())return l=s.options.fallback.call(s),i(s,l);if(null==s.options.url&&(s.options.url=s.element.getAttribute("action")),!s.options.url)throw new Error("No URL provided.");if(s.options.acceptedFiles&&s.options.acceptedMimeTypes)throw new Error("You can't provide both 'acceptedFiles' and 'acceptedMimeTypes'. 'acceptedMimeTypes' is deprecated.");if(s.options.uploadMultiple&&s.options.chunking)throw new Error("You cannot set both: uploadMultiple and chunking.");return s.options.acceptedMimeTypes&&(s.options.acceptedFiles=s.options.acceptedMimeTypes,delete s.options.acceptedMimeTypes),null!=s.options.renameFilename&&(s.options.renameFile=function(e){return s.options.renameFilename.call(s,e.name,e)}),s.options.method=s.options.method.toUpperCase(),(a=s.getExistingFallback())&&a.parentNode&&a.parentNode.removeChild(a),!1!==s.options.previewsContainer&&(s.options.previewsContainer?s.previewsContainer=o.getElement(s.options.previewsContainer,"previewsContainer"):s.previewsContainer=s.element),s.options.clickable&&(!0===s.options.clickable?s.clickableElements=[s.element]:s.clickableElements=o.getElements(s.options.clickable,"clickable")),s.init(),s}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(o,r),t(o,null,[{key:"initClass",value:function(){this.prototype.Emitter=r,this.prototype.events=["drop","dragstart","dragend","dragenter","dragover","dragleave","addedfile","addedfiles","removedfile","thumbnail","error","errormultiple","processing","processingmultiple","uploadprogress","totaluploadprogress","sending","sendingmultiple","success","successmultiple","canceled","canceledmultiple","complete","completemultiple","reset","maxfilesexceeded","maxfilesreached","queuecomplete"],this.prototype.defaultOptions={url:null,method:"post",withCredentials:!1,timeout:3e4,parallelUploads:2,uploadMultiple:!1,chunking:!1,forceChunking:!1,chunkSize:2e6,parallelChunkUploads:!1,retryChunks:!1,retryChunksLimit:3,maxFilesize:256,paramName:"file",createImageThumbnails:!0,maxThumbnailFilesize:10,thumbnailWidth:120,thumbnailHeight:120,thumbnailMethod:"crop",resizeWidth:null,resizeHeight:null,resizeMimeType:null,resizeQuality:.8,resizeMethod:"contain",filesizeBase:1e3,maxFiles:null,headers:null,clickable:!0,ignoreHiddenFiles:!0,acceptedFiles:null,acceptedMimeTypes:null,autoProcessQueue:!0,autoQueue:!0,addRemoveLinks:!1,previewsContainer:null,hiddenInputContainer:"body",capture:null,renameFilename:null,renameFile:null,forceFallback:!1,dictDefaultMessage:"Drop files here to upload",dictFallbackMessage:"Your browser does not support drag'n'drop file uploads.",dictFallbackText:"Please use the fallback form below to upload your files like in the olden days.",dictFileTooBig:"File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.",dictInvalidFileType:"You can't upload files of this type.",dictResponseError:"Server responded with {{statusCode}} code.",dictCancelUpload:"Cancel upload",dictUploadCanceled:"Upload canceled.",dictCancelUploadConfirmation:"Are you sure you want to cancel this upload?",dictRemoveFile:"Remove file",dictRemoveFileConfirmation:null,dictMaxFilesExceeded:"You can not upload any more files.",dictFileSizeUnits:{tb:"TB",gb:"GB",mb:"MB",kb:"KB",b:"b"},init:function(){},params:function(e,t,i){if(i)return{dzuuid:i.file.upload.uuid,dzchunkindex:i.index,dztotalfilesize:i.file.size,dzchunksize:this.options.chunkSize,dztotalchunkcount:i.file.upload.totalChunkCount,dzchunkbyteoffset:i.index*this.options.chunkSize}},accept:function(e,t){return t()},chunksUploaded:function(e,t){t()},fallback:function(){var e=void 0;this.element.className=this.element.className+" dz-browser-not-supported";for(var t=0,i=i=this.element.getElementsByTagName("div");;){if(t>=i.length)break;var n=i[t++];if(/(^| )dz-message($| )/.test(n.className)){e=n,n.className="dz-message";break}}e||(e=o.createElement('<div class="dz-message"><span></span></div>'),this.element.appendChild(e));var r=e.getElementsByTagName("span")[0];return r&&(null!=r.textContent?r.textContent=this.options.dictFallbackMessage:null!=r.innerText&&(r.innerText=this.options.dictFallbackMessage)),this.element.appendChild(this.getFallbackForm())},resize:function(e,t,i,n){var r={srcX:0,srcY:0,srcWidth:e.width,srcHeight:e.height},o=e.width/e.height;null==t&&null==i?(t=r.srcWidth,i=r.srcHeight):null==t?t=i*o:null==i&&(i=t/o);var s=(t=Math.min(t,r.srcWidth))/(i=Math.min(i,r.srcHeight));if(r.srcWidth>t||r.srcHeight>i)if("crop"===n)o>s?(r.srcHeight=e.height,r.srcWidth=r.srcHeight*s):(r.srcWidth=e.width,r.srcHeight=r.srcWidth/s);else{if("contain"!==n)throw new Error("Unknown resizeMethod '"+n+"'");o>s?i=t/o:t=i*o}return r.srcX=(e.width-r.srcWidth)/2,r.srcY=(e.height-r.srcHeight)/2,r.trgWidth=t,r.trgHeight=i,r},transformFile:function(e,t){return(this.options.resizeWidth||this.options.resizeHeight)&&e.type.match(/image.*/)?this.resizeImage(e,this.options.resizeWidth,this.options.resizeHeight,this.options.resizeMethod,t):t(e)},previewTemplate:'<div class="dz-preview dz-file-preview">\n  <div class="dz-image"><img data-dz-thumbnail /></div>\n  <div class="dz-details">\n    <div class="dz-size"><span data-dz-size></span></div>\n    <div class="dz-filename"><span data-dz-name></span></div>\n  </div>\n  <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress></span></div>\n  <div class="dz-error-message"><span data-dz-errormessage></span></div>\n  <div class="dz-success-mark">\n    <svg width="54px" height="54px" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">\n      <title>Check</title>\n      <defs></defs>\n      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">\n        <path d="M23.5,31.8431458 L17.5852419,25.9283877 C16.0248253,24.3679711 13.4910294,24.366835 11.9289322,25.9289322 C10.3700136,27.4878508 10.3665912,30.0234455 11.9283877,31.5852419 L20.4147581,40.0716123 C20.5133999,40.1702541 20.6159315,40.2626649 20.7218615,40.3488435 C22.2835669,41.8725651 24.794234,41.8626202 26.3461564,40.3106978 L43.3106978,23.3461564 C44.8771021,21.7797521 44.8758057,19.2483887 43.3137085,17.6862915 C41.7547899,16.1273729 39.2176035,16.1255422 37.6538436,17.6893022 L23.5,31.8431458 Z M27,53 C41.3594035,53 53,41.3594035 53,27 C53,12.6405965 41.3594035,1 27,1 C12.6405965,1 1,12.6405965 1,27 C1,41.3594035 12.6405965,53 27,53 Z" id="Oval-2" stroke-opacity="0.198794158" stroke="#747474" fill-opacity="0.816519475" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>\n      </g>\n    </svg>\n  </div>\n  <div class="dz-error-mark">\n    <svg width="54px" height="54px" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">\n      <title>Error</title>\n      <defs></defs>\n      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">\n        <g id="Check-+-Oval-2" sketch:type="MSLayerGroup" stroke="#747474" stroke-opacity="0.198794158" fill="#FFFFFF" fill-opacity="0.816519475">\n          <path d="M32.6568542,29 L38.3106978,23.3461564 C39.8771021,21.7797521 39.8758057,19.2483887 38.3137085,17.6862915 C36.7547899,16.1273729 34.2176035,16.1255422 32.6538436,17.6893022 L27,23.3431458 L21.3461564,17.6893022 C19.7823965,16.1255422 17.2452101,16.1273729 15.6862915,17.6862915 C14.1241943,19.2483887 14.1228979,21.7797521 15.6893022,23.3461564 L21.3431458,29 L15.6893022,34.6538436 C14.1228979,36.2202479 14.1241943,38.7516113 15.6862915,40.3137085 C17.2452101,41.8726271 19.7823965,41.8744578 21.3461564,40.3106978 L27,34.6568542 L32.6538436,40.3106978 C34.2176035,41.8744578 36.7547899,41.8726271 38.3137085,40.3137085 C39.8758057,38.7516113 39.8771021,36.2202479 38.3106978,34.6538436 L32.6568542,29 Z M27,53 C41.3594035,53 53,41.3594035 53,27 C53,12.6405965 41.3594035,1 27,1 C12.6405965,1 1,12.6405965 1,27 C1,41.3594035 12.6405965,53 27,53 Z" id="Oval-2" sketch:type="MSShapeGroup"></path>\n        </g>\n      </g>\n    </svg>\n  </div>\n</div>',drop:function(e){return this.element.classList.remove("dz-drag-hover")},dragstart:function(e){},dragend:function(e){return this.element.classList.remove("dz-drag-hover")},dragenter:function(e){return this.element.classList.add("dz-drag-hover")},dragover:function(e){return this.element.classList.add("dz-drag-hover")},dragleave:function(e){return this.element.classList.remove("dz-drag-hover")},paste:function(e){},reset:function(){return this.element.classList.remove("dz-started")},addedfile:function(e){var t=this;if(this.element===this.previewsContainer&&this.element.classList.add("dz-started"),this.previewsContainer){e.previewElement=o.createElement(this.options.previewTemplate.trim()),e.previewTemplate=e.previewElement,this.previewsContainer.appendChild(e.previewElement);for(var i=0,n=n=e.previewElement.querySelectorAll("[data-dz-name]");;){if(i>=n.length)break;var r=n[i++];r.textContent=e.name}for(var s=0,a=a=e.previewElement.querySelectorAll("[data-dz-size]");!(s>=a.length);)(r=a[s++]).innerHTML=this.filesize(e.size);this.options.addRemoveLinks&&(e._removeLink=o.createElement('<a class="dz-remove" href="javascript:undefined;" data-dz-remove>'+this.options.dictRemoveFile+"</a>"),e.previewElement.appendChild(e._removeLink));for(var l=function(i){return i.preventDefault(),i.stopPropagation(),e.status===o.UPLOADING?o.confirm(t.options.dictCancelUploadConfirmation,function(){return t.removeFile(e)}):t.options.dictRemoveFileConfirmation?o.confirm(t.options.dictRemoveFileConfirmation,function(){return t.removeFile(e)}):t.removeFile(e)},u=0,d=d=e.previewElement.querySelectorAll("[data-dz-remove]");;){if(u>=d.length)break;d[u++].addEventListener("click",l)}}},removedfile:function(e){return null!=e.previewElement&&null!=e.previewElement.parentNode&&e.previewElement.parentNode.removeChild(e.previewElement),this._updateMaxFilesReachedClass()},thumbnail:function(e,t){if(e.previewElement){e.previewElement.classList.remove("dz-file-preview");for(var i=0,n=n=e.previewElement.querySelectorAll("[data-dz-thumbnail]");;){if(i>=n.length)break;var r=n[i++];r.alt=e.name,r.src=t}return setTimeout(function(){return e.previewElement.classList.add("dz-image-preview")},1)}},error:function(e,t){if(e.previewElement){e.previewElement.classList.add("dz-error"),"String"!=typeof t&&t.error&&(t=t.error);for(var i=0,n=n=e.previewElement.querySelectorAll("[data-dz-errormessage]");;){if(i>=n.length)break;n[i++].textContent=t}}},errormultiple:function(){},processing:function(e){if(e.previewElement&&(e.previewElement.classList.add("dz-processing"),e._removeLink))return e._removeLink.innerHTML=this.options.dictCancelUpload},processingmultiple:function(){},uploadprogress:function(e,t,i){if(e.previewElement)for(var n=0,r=r=e.previewElement.querySelectorAll("[data-dz-uploadprogress]");;){if(n>=r.length)break;var o=r[n++];"PROGRESS"===o.nodeName?o.value=t:o.style.width=t+"%"}},totaluploadprogress:function(){},sending:function(){},sendingmultiple:function(){},success:function(e){if(e.previewElement)return e.previewElement.classList.add("dz-success")},successmultiple:function(){},canceled:function(e){return this.emit("error",e,this.options.dictUploadCanceled)},canceledmultiple:function(){},complete:function(e){if(e._removeLink&&(e._removeLink.innerHTML=this.options.dictRemoveFile),e.previewElement)return e.previewElement.classList.add("dz-complete")},completemultiple:function(){},maxfilesexceeded:function(){},maxfilesreached:function(){},queuecomplete:function(){},addedfiles:function(){}},this.prototype._thumbnailQueue=[],this.prototype._processingThumbnail=!1}},{key:"extend",value:function(e){for(var t=arguments.length,i=Array(t>1?t-1:0),n=1;n<t;n++)i[n-1]=arguments[n];for(var r=0,o=o=i;;){if(r>=o.length)break;var s=o[r++];for(var a in s){var l=s[a];e[a]=l}}return e}}]),t(o,[{key:"getAcceptedFiles",value:function(){return this.files.filter(function(e){return e.accepted}).map(function(e){return e})}},{key:"getRejectedFiles",value:function(){return this.files.filter(function(e){return!e.accepted}).map(function(e){return e})}},{key:"getFilesWithStatus",value:function(e){return this.files.filter(function(t){return t.status===e}).map(function(e){return e})}},{key:"getQueuedFiles",value:function(){return this.getFilesWithStatus(o.QUEUED)}},{key:"getUploadingFiles",value:function(){return this.getFilesWithStatus(o.UPLOADING)}},{key:"getAddedFiles",value:function(){return this.getFilesWithStatus(o.ADDED)}},{key:"getActiveFiles",value:function(){return this.files.filter(function(e){return e.status===o.UPLOADING||e.status===o.QUEUED}).map(function(e){return e})}},{key:"init",value:function(){var e=this;if("form"===this.element.tagName&&this.element.setAttribute("enctype","multipart/form-data"),this.element.classList.contains("dropzone")&&!this.element.querySelector(".dz-message")&&this.element.appendChild(o.createElement('<div class="dz-default dz-message"><span>'+this.options.dictDefaultMessage+"</span></div>")),this.clickableElements.length){!function t(){return e.hiddenFileInput&&e.hiddenFileInput.parentNode.removeChild(e.hiddenFileInput),e.hiddenFileInput=document.createElement("input"),e.hiddenFileInput.setAttribute("type","file"),(null===e.options.maxFiles||e.options.maxFiles>1)&&e.hiddenFileInput.setAttribute("multiple","multiple"),e.hiddenFileInput.className="dz-hidden-input",null!==e.options.acceptedFiles&&e.hiddenFileInput.setAttribute("accept",e.options.acceptedFiles),null!==e.options.capture&&e.hiddenFileInput.setAttribute("capture",e.options.capture),e.hiddenFileInput.style.visibility="hidden",e.hiddenFileInput.style.position="absolute",e.hiddenFileInput.style.top="0",e.hiddenFileInput.style.left="0",e.hiddenFileInput.style.height="0",e.hiddenFileInput.style.width="0",o.getElement(e.options.hiddenInputContainer,"hiddenInputContainer").appendChild(e.hiddenFileInput),e.hiddenFileInput.addEventListener("change",function(){var i=e.hiddenFileInput.files;if(i.length)for(var n=0,r=r=i;!(n>=r.length);){var o=r[n++];e.addFile(o)}return e.emit("addedfiles",i),t()})}()}this.URL=null!==window.URL?window.URL:window.webkitURL;for(var t=0,i=i=this.events;;){if(t>=i.length)break;var n=i[t++];this.on(n,this.options[n])}this.on("uploadprogress",function(){return e.updateTotalUploadProgress()}),this.on("removedfile",function(){return e.updateTotalUploadProgress()}),this.on("canceled",function(t){return e.emit("complete",t)}),this.on("complete",function(t){if(0===e.getAddedFiles().length&&0===e.getUploadingFiles().length&&0===e.getQueuedFiles().length)return setTimeout(function(){return e.emit("queuecomplete")},0)});var r=function(e){return e.stopPropagation(),e.preventDefault?e.preventDefault():e.returnValue=!1};return this.listeners=[{element:this.element,events:{dragstart:function(t){return e.emit("dragstart",t)},dragenter:function(t){return r(t),e.emit("dragenter",t)},dragover:function(t){var i=void 0;try{i=t.dataTransfer.effectAllowed}catch(e){}return t.dataTransfer.dropEffect="move"===i||"linkMove"===i?"move":"copy",r(t),e.emit("dragover",t)},dragleave:function(t){return e.emit("dragleave",t)},drop:function(t){return r(t),e.drop(t)},dragend:function(t){return e.emit("dragend",t)}}}],this.clickableElements.forEach(function(t){return e.listeners.push({element:t,events:{click:function(i){return(t!==e.element||i.target===e.element||o.elementInside(i.target,e.element.querySelector(".dz-message")))&&e.hiddenFileInput.click(),!0}}})}),this.enable(),this.options.init.call(this)}},{key:"destroy",value:function(){return this.disable(),this.removeAllFiles(!0),(null!=this.hiddenFileInput?this.hiddenFileInput.parentNode:void 0)&&(this.hiddenFileInput.parentNode.removeChild(this.hiddenFileInput),this.hiddenFileInput=null),delete this.element.dropzone,o.instances.splice(o.instances.indexOf(this),1)}},{key:"updateTotalUploadProgress",value:function(){var e=void 0,t=0,i=0;if(this.getActiveFiles().length){for(var n=0,r=r=this.getActiveFiles();;){if(n>=r.length)break;var o=r[n++];t+=o.upload.bytesSent,i+=o.upload.total}e=100*t/i}else e=100;return this.emit("totaluploadprogress",e,i,t)}},{key:"_getParamName",value:function(e){return"function"==typeof this.options.paramName?this.options.paramName(e):this.options.paramName+(this.options.uploadMultiple?"["+e+"]":"")}},{key:"_renameFile",value:function(e){return"function"!=typeof this.options.renameFile?e.name:this.options.renameFile(e)}},{key:"getFallbackForm",value:function(){var e,t=void 0;if(e=this.getExistingFallback())return e;var i='<div class="dz-fallback">';this.options.dictFallbackText&&(i+="<p>"+this.options.dictFallbackText+"</p>"),i+='<input type="file" name="'+this._getParamName(0)+'" '+(this.options.uploadMultiple?'multiple="multiple"':void 0)+' /><input type="submit" value="Upload!"></div>';var n=o.createElement(i);return"FORM"!==this.element.tagName?(t=o.createElement('<form action="'+this.options.url+'" enctype="multipart/form-data" method="'+this.options.method+'"></form>')).appendChild(n):(this.element.setAttribute("enctype","multipart/form-data"),this.element.setAttribute("method",this.options.method)),null!=t?t:n}},{key:"getExistingFallback",value:function(){for(var e=function(e){for(var t=0,i=i=e;;){if(t>=i.length)break;var n=i[t++];if(/(^| )fallback($| )/.test(n.className))return n}},t=["div","form"],i=0;i<t.length;i++){var n,r=t[i];if(n=e(this.element.getElementsByTagName(r)))return n}}},{key:"setupEventListeners",value:function(){return this.listeners.map(function(e){return function(){var t=[];for(var i in e.events){var n=e.events[i];t.push(e.element.addEventListener(i,n,!1))}return t}()})}},{key:"removeEventListeners",value:function(){return this.listeners.map(function(e){return function(){var t=[];for(var i in e.events){var n=e.events[i];t.push(e.element.removeEventListener(i,n,!1))}return t}()})}},{key:"disable",value:function(){var e=this;return this.clickableElements.forEach(function(e){return e.classList.remove("dz-clickable")}),this.removeEventListeners(),this.disabled=!0,this.files.map(function(t){return e.cancelUpload(t)})}},{key:"enable",value:function(){return delete this.disabled,this.clickableElements.forEach(function(e){return e.classList.add("dz-clickable")}),this.setupEventListeners()}},{key:"filesize",value:function(e){var t=0,i="b";if(e>0){for(var n=["tb","gb","mb","kb","b"],r=0;r<n.length;r++){var o=n[r];if(e>=Math.pow(this.options.filesizeBase,4-r)/10){t=e/Math.pow(this.options.filesizeBase,4-r),i=o;break}}t=Math.round(10*t)/10}return"<strong>"+t+"</strong> "+this.options.dictFileSizeUnits[i]}},{key:"_updateMaxFilesReachedClass",value:function(){return null!=this.options.maxFiles&&this.getAcceptedFiles().length>=this.options.maxFiles?(this.getAcceptedFiles().length===this.options.maxFiles&&this.emit("maxfilesreached",this.files),this.element.classList.add("dz-max-files-reached")):this.element.classList.remove("dz-max-files-reached")}},{key:"drop",value:function(e){if(e.dataTransfer){this.emit("drop",e);for(var t=[],i=0;i<e.dataTransfer.files.length;i++)t[i]=e.dataTransfer.files[i];if(this.emit("addedfiles",t),t.length){var n=e.dataTransfer.items;n&&n.length&&null!=n[0].webkitGetAsEntry?this._addFilesFromItems(n):this.handleFiles(t)}}}},{key:"paste",value:function(e){if(null!=(t=null!=e?e.clipboardData:void 0,i=function(e){return e.items},null!=t?i(t):void 0)){var t,i;this.emit("paste",e);var n=e.clipboardData.items;return n.length?this._addFilesFromItems(n):void 0}}},{key:"handleFiles",value:function(e){for(var t=0,i=i=e;;){if(t>=i.length)break;var n=i[t++];this.addFile(n)}}},{key:"_addFilesFromItems",value:function(e){var t=this;return function(){for(var i=[],n=0,r=r=e;;){if(n>=r.length)break;var o,s=r[n++];null!=s.webkitGetAsEntry&&(o=s.webkitGetAsEntry())?o.isFile?i.push(t.addFile(s.getAsFile())):o.isDirectory?i.push(t._addFilesFromDirectory(o,o.name)):i.push(void 0):null!=s.getAsFile&&(null==s.kind||"file"===s.kind)?i.push(t.addFile(s.getAsFile())):i.push(void 0)}return i}()}},{key:"_addFilesFromDirectory",value:function(e,t){var i=this,n=e.createReader(),r=function(e){return t=console,i="log",n=function(t){return t.log(e)},null!=t&&"function"==typeof t[i]?n(t,i):void 0;var t,i,n};return function e(){return n.readEntries(function(n){if(n.length>0){for(var r=0,o=o=n;!(r>=o.length);){var s=o[r++];s.isFile?s.file(function(e){if(!i.options.ignoreHiddenFiles||"."!==e.name.substring(0,1))return e.fullPath=t+"/"+e.name,i.addFile(e)}):s.isDirectory&&i._addFilesFromDirectory(s,t+"/"+s.name)}e()}return null},r)}()}},{key:"accept",value:function(e,t){return this.options.maxFilesize&&e.size>1024*this.options.maxFilesize*1024?t(this.options.dictFileTooBig.replace("{{filesize}}",Math.round(e.size/1024/10.24)/100).replace("{{maxFilesize}}",this.options.maxFilesize)):o.isValidFile(e,this.options.acceptedFiles)?null!=this.options.maxFiles&&this.getAcceptedFiles().length>=this.options.maxFiles?(t(this.options.dictMaxFilesExceeded.replace("{{maxFiles}}",this.options.maxFiles)),this.emit("maxfilesexceeded",e)):this.options.accept.call(this,e,t):t(this.options.dictInvalidFileType)}},{key:"addFile",value:function(e){var t=this;return e.upload={uuid:o.uuidv4(),progress:0,total:e.size,bytesSent:0,filename:this._renameFile(e),chunked:this.options.chunking&&(this.options.forceChunking||e.size>this.options.chunkSize),totalChunkCount:Math.ceil(e.size/this.options.chunkSize)},this.files.push(e),e.status=o.ADDED,this.emit("addedfile",e),this._enqueueThumbnail(e),this.accept(e,function(i){return i?(e.accepted=!1,t._errorProcessing([e],i)):(e.accepted=!0,t.options.autoQueue&&t.enqueueFile(e)),t._updateMaxFilesReachedClass()})}},{key:"enqueueFiles",value:function(e){for(var t=0,i=i=e;;){if(t>=i.length)break;var n=i[t++];this.enqueueFile(n)}return null}},{key:"enqueueFile",value:function(e){var t=this;if(e.status!==o.ADDED||!0!==e.accepted)throw new Error("This file can't be queued because it has already been processed or was rejected.");if(e.status=o.QUEUED,this.options.autoProcessQueue)return setTimeout(function(){return t.processQueue()},0)}},{key:"_enqueueThumbnail",value:function(e){var t=this;if(this.options.createImageThumbnails&&e.type.match(/image.*/)&&e.size<=1024*this.options.maxThumbnailFilesize*1024)return this._thumbnailQueue.push(e),setTimeout(function(){return t._processThumbnailQueue()},0)}},{key:"_processThumbnailQueue",value:function(){var e=this;if(!this._processingThumbnail&&0!==this._thumbnailQueue.length){this._processingThumbnail=!0;var t=this._thumbnailQueue.shift();return this.createThumbnail(t,this.options.thumbnailWidth,this.options.thumbnailHeight,this.options.thumbnailMethod,!0,function(i){return e.emit("thumbnail",t,i),e._processingThumbnail=!1,e._processThumbnailQueue()})}}},{key:"removeFile",value:function(e){if(e.status===o.UPLOADING&&this.cancelUpload(e),this.files=s(this.files,e),this.emit("removedfile",e),0===this.files.length)return this.emit("reset")}},{key:"removeAllFiles",value:function(e){null==e&&(e=!1);for(var t=0,i=i=this.files.slice();;){if(t>=i.length)break;var n=i[t++];(n.status!==o.UPLOADING||e)&&this.removeFile(n)}return null}},{key:"resizeImage",value:function(e,t,i,n,r){var s=this;return this.createThumbnail(e,t,i,n,!0,function(t,i){if(null==i)return r(e);var n=s.options.resizeMimeType;null==n&&(n=e.type);var a=i.toDataURL(n,s.options.resizeQuality);return"image/jpeg"!==n&&"image/jpg"!==n||(a=u.restore(e.dataURL,a)),r(o.dataURItoBlob(a))})}},{key:"createThumbnail",value:function(e,t,i,n,r,o){var s=this,a=new FileReader;return a.onload=function(){if(e.dataURL=a.result,"image/svg+xml"!==e.type)return s.createThumbnailFromUrl(e,t,i,n,r,o);null!=o&&o(a.result)},a.readAsDataURL(e)}},{key:"createThumbnailFromUrl",value:function(e,t,i,n,r,o,s){var a=this,u=document.createElement("img");return s&&(u.crossOrigin=s),u.onload=function(){var s=function(e){return e(1)};return"undefined"!=typeof EXIF&&null!==EXIF&&r&&(s=function(e){return EXIF.getData(u,function(){return e(EXIF.getTag(this,"Orientation"))})}),s(function(r){e.width=u.width,e.height=u.height;var s=a.options.resize.call(a,e,t,i,n),d=document.createElement("canvas"),c=d.getContext("2d");switch(d.width=s.trgWidth,d.height=s.trgHeight,r>4&&(d.width=s.trgHeight,d.height=s.trgWidth),r){case 2:c.translate(d.width,0),c.scale(-1,1);break;case 3:c.translate(d.width,d.height),c.rotate(Math.PI);break;case 4:c.translate(0,d.height),c.scale(1,-1);break;case 5:c.rotate(.5*Math.PI),c.scale(1,-1);break;case 6:c.rotate(.5*Math.PI),c.translate(0,-d.width);break;case 7:c.rotate(.5*Math.PI),c.translate(d.height,-d.width),c.scale(-1,1);break;case 8:c.rotate(-.5*Math.PI),c.translate(-d.height,0)}l(c,u,null!=s.srcX?s.srcX:0,null!=s.srcY?s.srcY:0,s.srcWidth,s.srcHeight,null!=s.trgX?s.trgX:0,null!=s.trgY?s.trgY:0,s.trgWidth,s.trgHeight);var p=d.toDataURL("image/png");if(null!=o)return o(p,d)})},null!=o&&(u.onerror=o),u.src=e.dataURL}},{key:"processQueue",value:function(){var e=this.options.parallelUploads,t=this.getUploadingFiles().length,i=t;if(!(t>=e)){var n=this.getQueuedFiles();if(n.length>0){if(this.options.uploadMultiple)return this.processFiles(n.slice(0,e-t));for(;i<e;){if(!n.length)return;this.processFile(n.shift()),i++}}}}},{key:"processFile",value:function(e){return this.processFiles([e])}},{key:"processFiles",value:function(e){for(var t=0,i=i=e;;){if(t>=i.length)break;var n=i[t++];n.processing=!0,n.status=o.UPLOADING,this.emit("processing",n)}return this.options.uploadMultiple&&this.emit("processingmultiple",e),this.uploadFiles(e)}},{key:"_getFilesWithXhr",value:function(e){return this.files.filter(function(t){return t.xhr===e}).map(function(e){return e})}},{key:"cancelUpload",value:function(e){if(e.status===o.UPLOADING){for(var t=this._getFilesWithXhr(e.xhr),i=0,n=n=t;;){if(i>=n.length)break;n[i++].status=o.CANCELED}void 0!==e.xhr&&e.xhr.abort();for(var r=0,s=s=t;;){if(r>=s.length)break;var a=s[r++];this.emit("canceled",a)}this.options.uploadMultiple&&this.emit("canceledmultiple",t)}else e.status!==o.ADDED&&e.status!==o.QUEUED||(e.status=o.CANCELED,this.emit("canceled",e),this.options.uploadMultiple&&this.emit("canceledmultiple",[e]));if(this.options.autoProcessQueue)return this.processQueue()}},{key:"resolveOption",value:function(e){if("function"==typeof e){for(var t=arguments.length,i=Array(t>1?t-1:0),n=1;n<t;n++)i[n-1]=arguments[n];return e.apply(this,i)}return e}},{key:"uploadFile",value:function(e){return this.uploadFiles([e])}},{key:"uploadFiles",value:function(e){var t=this;this._transformFiles(e,function(i){if(e[0].upload.chunked){var n=e[0],r=i[0];n.upload.chunks=[];var s=function(){for(var i=0;void 0!==n.upload.chunks[i];)i++;if(!(i>=n.upload.totalChunkCount)){var s=i*t.options.chunkSize,a=Math.min(s+t.options.chunkSize,n.size),l={name:t._getParamName(0),data:r.webkitSlice?r.webkitSlice(s,a):r.slice(s,a),filename:n.upload.filename,chunkIndex:i};n.upload.chunks[i]={file:n,index:i,dataBlock:l,status:o.UPLOADING,progress:0,retries:0},t._uploadData(e,[l])}};if(n.upload.finishedChunkUpload=function(i){var r=!0;i.status=o.SUCCESS,i.dataBlock=null,i.xhr=null;for(var a=0;a<n.upload.totalChunkCount;a++){if(void 0===n.upload.chunks[a])return s();n.upload.chunks[a].status!==o.SUCCESS&&(r=!1)}r&&t.options.chunksUploaded(n,function(){t._finished(e,"",null)})},t.options.parallelChunkUploads)for(var a=0;a<n.upload.totalChunkCount;a++)s();else s()}else{for(var l=[],u=0;u<e.length;u++)l[u]={name:t._getParamName(u),data:i[u],filename:e[u].upload.filename};t._uploadData(e,l)}})}},{key:"_getChunk",value:function(e,t){for(var i=0;i<e.upload.totalChunkCount;i++)if(void 0!==e.upload.chunks[i]&&e.upload.chunks[i].xhr===t)return e.upload.chunks[i]}},{key:"_uploadData",value:function(e,t){for(var i=this,n=new XMLHttpRequest,r=0,s=s=e;;){if(r>=s.length)break;s[r++].xhr=n}e[0].upload.chunked&&(e[0].upload.chunks[t[0].chunkIndex].xhr=n);var a=this.resolveOption(this.options.method,e),l=this.resolveOption(this.options.url,e);n.open(a,l,!0),n.timeout=this.resolveOption(this.options.timeout,e),n.withCredentials=!!this.options.withCredentials,n.onload=function(t){i._finishedUploading(e,n,t)},n.onerror=function(){i._handleUploadError(e,n)},(null!=n.upload?n.upload:n).onprogress=function(t){return i._updateFilesUploadProgress(e,n,t)};var u={Accept:"application/json","Cache-Control":"no-cache","X-Requested-With":"XMLHttpRequest"};for(var d in this.options.headers&&o.extend(u,this.options.headers),u){var c=u[d];c&&n.setRequestHeader(d,c)}var p=new FormData;if(this.options.params){var h=this.options.params;for(var f in"function"==typeof h&&(h=h.call(this,e,n,e[0].upload.chunked?this._getChunk(e[0],n):null)),h){var m=h[f];p.append(f,m)}}for(var v=0,g=g=e;;){if(v>=g.length)break;var k=g[v++];this.emit("sending",k,n,p)}this.options.uploadMultiple&&this.emit("sendingmultiple",e,n,p),this._addFormElementData(p);for(var y=0;y<t.length;y++){var b=t[y];p.append(b.name,b.data,b.filename)}this.submitRequest(n,p,e)}},{key:"_transformFiles",value:function(e,t){for(var i=this,n=[],r=0,o=function(o){i.options.transformFile.call(i,e[o],function(i){n[o]=i,++r===e.length&&t(n)})},s=0;s<e.length;s++)o(s)}},{key:"_addFormElementData",value:function(e){if("FORM"===this.element.tagName)for(var t=0,i=i=this.element.querySelectorAll("input, textarea, select, button");;){if(t>=i.length)break;var n=i[t++],r=n.getAttribute("name"),o=n.getAttribute("type");if(o&&(o=o.toLowerCase()),null!=r)if("SELECT"===n.tagName&&n.hasAttribute("multiple"))for(var s=0,a=a=n.options;;){if(s>=a.length)break;var l=a[s++];l.selected&&e.append(r,l.value)}else(!o||"checkbox"!==o&&"radio"!==o||n.checked)&&e.append(r,n.value)}}},{key:"_updateFilesUploadProgress",value:function(e,t,i){var n=void 0;if(void 0!==i){if(n=100*i.loaded/i.total,e[0].upload.chunked){var r=e[0],o=this._getChunk(r,t);o.progress=n,o.total=i.total,o.bytesSent=i.loaded,r.upload.progress=0,r.upload.total=0,r.upload.bytesSent=0;for(var s=0;s<r.upload.totalChunkCount;s++)void 0!==r.upload.chunks[s]&&void 0!==r.upload.chunks[s].progress&&(r.upload.progress+=r.upload.chunks[s].progress,r.upload.total+=r.upload.chunks[s].total,r.upload.bytesSent+=r.upload.chunks[s].bytesSent);r.upload.progress=r.upload.progress/r.upload.totalChunkCount}else for(var a=0,l=l=e;;){if(a>=l.length)break;var u=l[a++];u.upload.progress=n,u.upload.total=i.total,u.upload.bytesSent=i.loaded}for(var d=0,c=c=e;;){if(d>=c.length)break;var p=c[d++];this.emit("uploadprogress",p,p.upload.progress,p.upload.bytesSent)}}else{var h=!0;n=100;for(var f=0,m=m=e;;){if(f>=m.length)break;var v=m[f++];100===v.upload.progress&&v.upload.bytesSent===v.upload.total||(h=!1),v.upload.progress=n,v.upload.bytesSent=v.upload.total}if(h)return;for(var g=0,k=k=e;;){if(g>=k.length)break;var y=k[g++];this.emit("uploadprogress",y,n,y.upload.bytesSent)}}}},{key:"_finishedUploading",value:function(e,t,i){var n=void 0;if(e[0].status!==o.CANCELED&&4===t.readyState){if("arraybuffer"!==t.responseType&&"blob"!==t.responseType&&(n=t.responseText,t.getResponseHeader("content-type")&&~t.getResponseHeader("content-type").indexOf("application/json")))try{n=JSON.parse(n)}catch(e){i=e,n="Invalid JSON response from server."}this._updateFilesUploadProgress(e),200<=t.status&&t.status<300?e[0].upload.chunked?e[0].upload.finishedChunkUpload(this._getChunk(e[0],t)):this._finished(e,n,i):this._handleUploadError(e,t,n)}}},{key:"_handleUploadError",value:function(e,t,i){if(e[0].status!==o.CANCELED){if(e[0].upload.chunked&&this.options.retryChunks){var n=this._getChunk(e[0],t);if(n.retries++<this.options.retryChunksLimit)return void this._uploadData(e,[n.dataBlock]);console.warn("Retried this chunk too often. Giving up.")}for(var r=0,s=s=e;;){if(r>=s.length)break;s[r++],this._errorProcessing(e,i||this.options.dictResponseError.replace("{{statusCode}}",t.status),t)}}}},{key:"submitRequest",value:function(e,t,i){e.send(t)}},{key:"_finished",value:function(e,t,i){for(var n=0,r=r=e;;){if(n>=r.length)break;var s=r[n++];s.status=o.SUCCESS,this.emit("success",s,t,i),this.emit("complete",s)}if(this.options.uploadMultiple&&(this.emit("successmultiple",e,t,i),this.emit("completemultiple",e)),this.options.autoProcessQueue)return this.processQueue()}},{key:"_errorProcessing",value:function(e,t,i){for(var n=0,r=r=e;;){if(n>=r.length)break;var s=r[n++];s.status=o.ERROR,this.emit("error",s,t,i),this.emit("complete",s)}if(this.options.uploadMultiple&&(this.emit("errormultiple",e,t,i),this.emit("completemultiple",e)),this.options.autoProcessQueue)return this.processQueue()}}],[{key:"uuidv4",value:function(){return"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,function(e){var t=16*Math.random()|0;return("x"===e?t:3&t|8).toString(16)})}}]),o}();o.initClass(),o.version="5.5.1",o.options={},o.optionsForElement=function(e){return e.getAttribute("id")?o.options[a(e.getAttribute("id"))]:void 0},o.instances=[],o.forElement=function(e){if("string"==typeof e&&(e=document.querySelector(e)),null==(null!=e?e.dropzone:void 0))throw new Error("No Dropzone found for given element. This is probably because you're trying to access it before Dropzone had the time to initialize. Use the `init` option to setup any additional observers on your Dropzone.");return e.dropzone},o.autoDiscover=!0,o.discover=function(){var e=void 0;if(document.querySelectorAll)e=document.querySelectorAll(".dropzone");else{e=[];var t=function(t){return function(){for(var i=[],n=0,r=r=t;;){if(n>=r.length)break;var o=r[n++];/(^| )dropzone($| )/.test(o.className)?i.push(e.push(o)):i.push(void 0)}return i}()};t(document.getElementsByTagName("div")),t(document.getElementsByTagName("form"))}return function(){for(var t=[],i=0,n=n=e;;){if(i>=n.length)break;var r=n[i++];!1!==o.optionsForElement(r)?t.push(new o(r)):t.push(void 0)}return t}()},o.blacklistedBrowsers=[/opera.*(Macintosh|Windows Phone).*version\/12/i],o.isBrowserSupported=function(){var e=!0;if(window.File&&window.FileReader&&window.FileList&&window.Blob&&window.FormData&&document.querySelector)if("classList"in document.createElement("a"))for(var t=0,i=i=o.blacklistedBrowsers;;){if(t>=i.length)break;i[t++].test(navigator.userAgent)&&(e=!1)}else e=!1;else e=!1;return e},o.dataURItoBlob=function(e){for(var t=atob(e.split(",")[1]),i=e.split(",")[0].split(":")[1].split(";")[0],n=new ArrayBuffer(t.length),r=new Uint8Array(n),o=0,s=t.length,a=0<=s;a?o<=s:o>=s;a?o++:o--)r[o]=t.charCodeAt(o);return new Blob([n],{type:i})};var s=function(e,t){return e.filter(function(e){return e!==t}).map(function(e){return e})},a=function(e){return e.replace(/[\-_](\w)/g,function(e){return e.charAt(1).toUpperCase()})};o.createElement=function(e){var t=document.createElement("div");return t.innerHTML=e,t.childNodes[0]},o.elementInside=function(e,t){if(e===t)return!0;for(;e=e.parentNode;)if(e===t)return!0;return!1},o.getElement=function(e,t){var i=void 0;if("string"==typeof e?i=document.querySelector(e):null!=e.nodeType&&(i=e),null==i)throw new Error("Invalid `"+t+"` option provided. Please provide a CSS selector or a plain HTML element.");return i},o.getElements=function(e,t){var i=void 0,n=void 0;if(e instanceof Array){n=[];try{for(var r=0,o=o=e;!(r>=o.length);)i=o[r++],n.push(this.getElement(i,t))}catch(e){n=null}}else if("string"==typeof e){n=[];for(var s=0,a=a=document.querySelectorAll(e);!(s>=a.length);)i=a[s++],n.push(i)}else null!=e.nodeType&&(n=[e]);if(null==n||!n.length)throw new Error("Invalid `"+t+"` option provided. Please provide a CSS selector, a plain HTML element or a list of those.");return n},o.confirm=function(e,t,i){return window.confirm(e)?t():null!=i?i():void 0},o.isValidFile=function(e,t){if(!t)return!0;t=t.split(",");for(var i=e.type,n=i.replace(/\/.*$/,""),r=0,o=o=t;;){if(r>=o.length)break;var s=o[r++];if("."===(s=s.trim()).charAt(0)){if(-1!==e.name.toLowerCase().indexOf(s.toLowerCase(),e.name.length-s.length))return!0}else if(/\/\*$/.test(s)){if(n===s.replace(/\/.*$/,""))return!0}else if(i===s)return!0}return!1},"undefined"!=typeof jQuery&&null!==jQuery&&(jQuery.fn.dropzone=function(e){return this.each(function(){return new o(this,e)})}),null!==e?e.exports=o:window.Dropzone=o,o.ADDED="added",o.QUEUED="queued",o.ACCEPTED=o.QUEUED,o.UPLOADING="uploading",o.PROCESSING=o.UPLOADING,o.CANCELED="canceled",o.ERROR="error",o.SUCCESS="success";var l=function(e,t,i,n,r,o,s,a,l,u){var d=function(e){e.naturalWidth;var t=e.naturalHeight,i=document.createElement("canvas");i.width=1,i.height=t;var n=i.getContext("2d");n.drawImage(e,0,0);for(var r=n.getImageData(1,0,1,t).data,o=0,s=t,a=t;a>o;)0===r[4*(a-1)+3]?s=a:o=a,a=s+o>>1;var l=a/t;return 0===l?1:l}(t);return e.drawImage(t,i,n,r,o,s,a,l,u/d)},u=function(){function e(){n(this,e)}return t(e,null,[{key:"initClass",value:function(){this.KEY_STR="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/="}},{key:"encode64",value:function(e){for(var t="",i=void 0,n=void 0,r="",o=void 0,s=void 0,a=void 0,l="",u=0;o=(i=e[u++])>>2,s=(3&i)<<4|(n=e[u++])>>4,a=(15&n)<<2|(r=e[u++])>>6,l=63&r,isNaN(n)?a=l=64:isNaN(r)&&(l=64),t=t+this.KEY_STR.charAt(o)+this.KEY_STR.charAt(s)+this.KEY_STR.charAt(a)+this.KEY_STR.charAt(l),i=n=r="",o=s=a=l="",u<e.length;);return t}},{key:"restore",value:function(e,t){if(!e.match("data:image/jpeg;base64,"))return t;var i=this.decode64(e.replace("data:image/jpeg;base64,","")),n=this.slice2Segments(i),r=this.exifManipulation(t,n);return"data:image/jpeg;base64,"+this.encode64(r)}},{key:"exifManipulation",value:function(e,t){var i=this.getExifArray(t),n=this.insertExif(e,i);return new Uint8Array(n)}},{key:"getExifArray",value:function(e){for(var t=void 0,i=0;i<e.length;){if(255===(t=e[i])[0]&225===t[1])return t;i++}return[]}},{key:"insertExif",value:function(e,t){var i=e.replace("data:image/jpeg;base64,",""),n=this.decode64(i),r=n.indexOf(255,3),o=n.slice(0,r),s=n.slice(r),a=o;return a=(a=a.concat(t)).concat(s)}},{key:"slice2Segments",value:function(e){for(var t=0,i=[];;){if(255===e[t]&218===e[t+1])break;if(255===e[t]&216===e[t+1])t+=2;else{var n=t+(256*e[t+2]+e[t+3])+2,r=e.slice(t,n);i.push(r),t=n}if(t>e.length)break}return i}},{key:"decode64",value:function(e){var t=void 0,i=void 0,n="",r=void 0,o=void 0,s="",a=0,l=[];for(/[^A-Za-z0-9\+\/\=]/g.exec(e)&&console.warn("There were invalid base64 characters in the input text.\nValid base64 characters are A-Z, a-z, 0-9, '+', '/',and '='\nExpect errors in decoding."),e=e.replace(/[^A-Za-z0-9\+\/\=]/g,"");t=this.KEY_STR.indexOf(e.charAt(a++))<<2|(r=this.KEY_STR.indexOf(e.charAt(a++)))>>4,i=(15&r)<<4|(o=this.KEY_STR.indexOf(e.charAt(a++)))>>2,n=(3&o)<<6|(s=this.KEY_STR.indexOf(e.charAt(a++))),l.push(t),64!==o&&l.push(i),64!==s&&l.push(n),t=i=n="",r=o=s="",a<e.length;);return l}}]),e}();u.initClass(),o._autoDiscoverFunction=function(){if(o.autoDiscover)return o.discover()},function(e,t){var i=!1,n=!0,r=e.document,o=r.documentElement,s=r.addEventListener?"addEventListener":"attachEvent",a=r.addEventListener?"removeEventListener":"detachEvent",l=r.addEventListener?"":"on",u=function n(o){if("readystatechange"!==o.type||"complete"===r.readyState)return("load"===o.type?e:r)[a](l+o.type,n,!1),!i&&(i=!0)?t.call(e,o.type||o):void 0};if("complete"!==r.readyState){if(r.createEventObject&&o.doScroll){try{n=!e.frameElement}catch(e){}n&&function e(){try{o.doScroll("left")}catch(t){return void setTimeout(e,50)}return u("poll")}()}r[s](l+"DOMContentLoaded",u,!1),r[s](l+"readystatechange",u,!1),e[s](l+"load",u,!1)}}(window,o._autoDiscoverFunction)}(e={exports:{}},e.exports),e.exports),i={getSignedURL(e,t){let i={filePath:e.name,contentType:e.type};return new Promise((n,r)=>{var o=new FormData;let s=new XMLHttpRequest,a="function"==typeof t.signingURL?t.signingURL(e):t.signingURL;s.open("POST",a),s.onload=function(){200==s.status?n(JSON.parse(s.response)):r(s.statusText)},s.onerror=function(e){console.error("Network Error : Could not send request to AWS (Maybe CORS errors)"),r(e)},!0===t.withCredentials&&(s.withCredentials=!0),Object.entries(t.headers||{}).forEach(([e,t])=>{s.setRequestHeader(e,t)}),i=Object.assign(i,t.params||{}),Object.entries(i).forEach(([e,t])=>{o.append(e,t)}),s.send(o)})},sendFile(e,t,i){var n=i?this.setResponseHandler:this.sendS3Handler;return this.getSignedURL(e,t).then(t=>n(t,e)).catch(e=>e)},setResponseHandler(e,t){t.s3Signature=e.signature,t.s3Url=e.postEndpoint},sendS3Handler(e,t){let i=new FormData,n=e.signature;return Object.keys(n).forEach(function(e){i.append(e,n[e])}),i.append("file",t),new Promise((t,n)=>{let r=new XMLHttpRequest;r.open("POST",e.postEndpoint),r.onload=function(){if(201==r.status){var e=(new window.DOMParser).parseFromString(r.response,"text/xml").firstChild.children[0].innerHTML;t({success:!0,message:e})}else{var i=(new window.DOMParser).parseFromString(r.response,"text/xml").firstChild.children[0].innerHTML;n({success:!1,message:i+". Request is marked as resolved when returns as status 201"})}},r.onerror=function(e){var t=(new window.DOMParser).parseFromString(r.response,"text/xml").firstChild.children[1].innerHTML;n({success:!1,message:t})},r.send(i)})}};t.autoDiscover=!1;return function(e,t,i,n,r,o,s,a,l,u){"boolean"!=typeof s&&(l=a,a=s,s=!1);var d,c="function"==typeof i?i.options:i;if(e&&e.render&&(c.render=e.render,c.staticRenderFns=e.staticRenderFns,c._compiled=!0,r&&(c.functional=!0)),n&&(c._scopeId=n),o?(d=function(e){(e=e||this.$vnode&&this.$vnode.ssrContext||this.parent&&this.parent.$vnode&&this.parent.$vnode.ssrContext)||"undefined"==typeof __VUE_SSR_CONTEXT__||(e=__VUE_SSR_CONTEXT__),t&&t.call(this,l(e)),e&&e._registeredComponents&&e._registeredComponents.add(o)},c._ssrRegister=d):t&&(d=s?function(){t.call(this,u(this.$root.$options.shadowRoot))}:function(e){t.call(this,a(e))}),d)if(c.functional){var p=c.render;c.render=function(e,t){return d.call(t),p(e,t)}}else{var h=c.beforeCreate;c.beforeCreate=h?[].concat(h,d):[d]}return i}({render:function(){var e=this.$createElement,t=this._self._c||e;return t("div",{ref:"dropzoneElement",class:{"vue-dropzone dropzone":this.includeStyling},attrs:{id:this.id}},[this.useCustomSlot?t("div",{staticClass:"dz-message"},[this._t("default",[this._v("Drop files here to upload")])],2):this._e()])},staticRenderFns:[]},void 0,{props:{id:{type:String,required:!0,default:"dropzone"},options:{type:Object,required:!0},includeStyling:{type:Boolean,default:!0,required:!1},awss3:{type:Object,required:!1,default:null},destroyDropzone:{type:Boolean,default:!0,required:!1},duplicateCheck:{type:Boolean,default:!1,required:!1},useCustomSlot:{type:Boolean,default:!1,required:!1}},data:()=>({isS3:!1,isS3OverridesServerPropagation:!1,wasQueueAutoProcess:!0}),computed:{dropzoneSettings(){let e={thumbnailWidth:200,thumbnailHeight:200};return Object.keys(this.options).forEach(function(t){e[t]=this.options[t]},this),null!==this.awss3&&(e.autoProcessQueue=!1,this.isS3=!0,this.isS3OverridesServerPropagation=!1===this.awss3.sendFileToServer,void 0!==this.options.autoProcessQueue&&(this.wasQueueAutoProcess=this.options.autoProcessQueue),this.isS3OverridesServerPropagation&&(e.url=(e=>e[0].s3Url))),e}},mounted(){if(this.$isServer&&this.hasBeenMounted)return;this.hasBeenMounted=!0,this.dropzone=new t(this.$refs.dropzoneElement,this.dropzoneSettings);let e=this;this.dropzone.on("thumbnail",function(t,i){e.$emit("vdropzone-thumbnail",t,i)}),this.dropzone.on("addedfile",function(t){var i,n;if(e.duplicateCheck&&this.files.length)for(i=0,n=this.files.length;i<n-1;i++)this.files[i].name===t.name&&this.files[i].size===t.size&&this.files[i].lastModifiedDate.toString()===t.lastModifiedDate.toString()&&(this.removeFile(t),e.$emit("vdropzone-duplicate-file",t));e.$emit("vdropzone-file-added",t),e.isS3&&e.wasQueueAutoProcess&&!t.manuallyAdded&&e.getSignedAndUploadToS3(t)}),this.dropzone.on("addedfiles",function(t){e.$emit("vdropzone-files-added",t)}),this.dropzone.on("removedfile",function(t){e.$emit("vdropzone-removed-file",t),t.manuallyAdded&&null!==e.dropzone.options.maxFiles&&e.dropzone.options.maxFiles++}),this.dropzone.on("success",function(t,i){if(e.$emit("vdropzone-success",t,i),e.isS3){if(e.isS3OverridesServerPropagation){var n=(new window.DOMParser).parseFromString(i,"text/xml").firstChild.children[0].innerHTML;e.$emit("vdropzone-s3-upload-success",n)}e.wasQueueAutoProcess&&e.setOption("autoProcessQueue",!1)}}),this.dropzone.on("successmultiple",function(t,i){e.$emit("vdropzone-success-multiple",t,i)}),this.dropzone.on("error",function(t,i,n){e.$emit("vdropzone-error",t,i,n),this.isS3&&e.$emit("vdropzone-s3-upload-error")}),this.dropzone.on("errormultiple",function(t,i,n){e.$emit("vdropzone-error-multiple",t,i,n)}),this.dropzone.on("sending",function(t,i,n){if(e.isS3)if(e.isS3OverridesServerPropagation){let e=t.s3Signature;Object.keys(e).forEach(function(t){n.append(t,e[t])})}else n.append("s3ObjectLocation",t.s3ObjectLocation);e.$emit("vdropzone-sending",t,i,n)}),this.dropzone.on("sendingmultiple",function(t,i,n){e.$emit("vdropzone-sending-multiple",t,i,n)}),this.dropzone.on("complete",function(t){e.$emit("vdropzone-complete",t)}),this.dropzone.on("completemultiple",function(t){e.$emit("vdropzone-complete-multiple",t)}),this.dropzone.on("canceled",function(t){e.$emit("vdropzone-canceled",t)}),this.dropzone.on("canceledmultiple",function(t){e.$emit("vdropzone-canceled-multiple",t)}),this.dropzone.on("maxfilesreached",function(t){e.$emit("vdropzone-max-files-reached",t)}),this.dropzone.on("maxfilesexceeded",function(t){e.$emit("vdropzone-max-files-exceeded",t)}),this.dropzone.on("processing",function(t){e.$emit("vdropzone-processing",t)}),this.dropzone.on("processingmultiple",function(t){e.$emit("vdropzone-processing-multiple",t)}),this.dropzone.on("uploadprogress",function(t,i,n){e.$emit("vdropzone-upload-progress",t,i,n)}),this.dropzone.on("totaluploadprogress",function(t,i,n){e.$emit("vdropzone-total-upload-progress",t,i,n)}),this.dropzone.on("reset",function(){e.$emit("vdropzone-reset")}),this.dropzone.on("queuecomplete",function(){e.$emit("vdropzone-queue-complete")}),this.dropzone.on("drop",function(t){e.$emit("vdropzone-drop",t)}),this.dropzone.on("dragstart",function(t){e.$emit("vdropzone-drag-start",t)}),this.dropzone.on("dragend",function(t){e.$emit("vdropzone-drag-end",t)}),this.dropzone.on("dragenter",function(t){e.$emit("vdropzone-drag-enter",t)}),this.dropzone.on("dragover",function(t){e.$emit("vdropzone-drag-over",t)}),this.dropzone.on("dragleave",function(t){e.$emit("vdropzone-drag-leave",t)}),e.$emit("vdropzone-mounted")},beforeDestroy(){this.destroyDropzone&&this.dropzone.destroy()},methods:{manuallyAddFile:function(e,t){e.manuallyAdded=!0,this.dropzone.emit("addedfile",e);let i=!1;if((t.indexOf(".svg")>-1||t.indexOf(".png")>-1||t.indexOf(".jpg")>-1||t.indexOf(".jpeg")>-1||t.indexOf(".gif")>-1||t.indexOf(".webp")>-1)&&(i=!0),this.dropzone.options.createImageThumbnails&&i&&e.size<=1024*this.dropzone.options.maxThumbnailFilesize*1024){t&&this.dropzone.emit("thumbnail",e,t);for(var n=e.previewElement.querySelectorAll("[data-dz-thumbnail]"),r=0;r<n.length;r++)n[r].style.width=this.dropzoneSettings.thumbnailWidth+"px",n[r].style.height=this.dropzoneSettings.thumbnailHeight+"px",n[r].style["object-fit"]="contain"}this.dropzone.emit("complete",e),this.dropzone.options.maxFiles&&this.dropzone.options.maxFiles--,this.dropzone.files.push(e),this.$emit("vdropzone-file-added-manually",e)},setOption:function(e,t){this.dropzone.options[e]=t},removeAllFiles:function(e){this.dropzone.removeAllFiles(e)},processQueue:function(){let e=this.dropzone;this.isS3&&!this.wasQueueAutoProcess?this.getQueuedFiles().forEach(e=>{this.getSignedAndUploadToS3(e)}):this.dropzone.processQueue(),this.dropzone.on("success",function(){e.options.autoProcessQueue=!0}),this.dropzone.on("queuecomplete",function(){e.options.autoProcessQueue=!1})},init:function(){return this.dropzone.init()},destroy:function(){return this.dropzone.destroy()},updateTotalUploadProgress:function(){return this.dropzone.updateTotalUploadProgress()},getFallbackForm:function(){return this.dropzone.getFallbackForm()},getExistingFallback:function(){return this.dropzone.getExistingFallback()},setupEventListeners:function(){return this.dropzone.setupEventListeners()},removeEventListeners:function(){return this.dropzone.removeEventListeners()},disable:function(){return this.dropzone.disable()},enable:function(){return this.dropzone.enable()},filesize:function(e){return this.dropzone.filesize(e)},accept:function(e,t){return this.dropzone.accept(e,t)},addFile:function(e){return this.dropzone.addFile(e)},removeFile:function(e){this.dropzone.removeFile(e)},getAcceptedFiles:function(){return this.dropzone.getAcceptedFiles()},getRejectedFiles:function(){return this.dropzone.getRejectedFiles()},getFilesWithStatus:function(){return this.dropzone.getFilesWithStatus()},getQueuedFiles:function(){return this.dropzone.getQueuedFiles()},getUploadingFiles:function(){return this.dropzone.getUploadingFiles()},getAddedFiles:function(){return this.dropzone.getAddedFiles()},getActiveFiles:function(){return this.dropzone.getActiveFiles()},getSignedAndUploadToS3(e){var t=i.sendFile(e,this.awss3,this.isS3OverridesServerPropagation);this.isS3OverridesServerPropagation?t.then(()=>{setTimeout(()=>this.dropzone.processFile(e))}):t.then(t=>{t.success?(e.s3ObjectLocation=t.message,setTimeout(()=>this.dropzone.processFile(e)),this.$emit("vdropzone-s3-upload-success",t.message)):void 0!==t.message?this.$emit("vdropzone-s3-upload-error",t.message):this.$emit("vdropzone-s3-upload-error","Network Error : Could not send request to AWS. (Maybe CORS error)")}),t.catch(e=>{alert(e)})},setAWSSigningURL(e){this.isS3&&(this.awss3.signingURL=e)}}},void 0,!1,void 0,void 0,void 0)});
 //# sourceMappingURL=vue2Dropzone.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/vue3-picture-swipe/dist/vue3-picture-swipe.umd.js":
-/*!************************************************************************!*\
-  !*** ./node_modules/vue3-picture-swipe/dist/vue3-picture-swipe.umd.js ***!
-  \************************************************************************/
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
-
-!function(e,t){ true?module.exports=t(__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js")):0}(this,(function(e){"use strict";function t(e){if(e&&e.__esModule)return e;var t={__proto__:null,[Symbol.toStringTag]:"Module"};return e&&Object.keys(e).forEach((function(n){if("default"!==n){var o=Object.getOwnPropertyDescriptor(e,n);Object.defineProperty(t,n,o.get?o:{enumerable:!0,get:function(){return e[n]}})}})),t.default=e,Object.freeze(t)}var n=t(e),o=("undefined"!=typeof globalThis?globalThis:"undefined"!=typeof window?window:"undefined"!=typeof __webpack_require__.g?__webpack_require__.g:"undefined"!=typeof self&&self,{exports:{}});o.exports=(()=>function(e,t,n,o){var i={features:null,bind(e,t,n,o){const i=(o?"remove":"add")+"EventListener";t=t.split(" ");for(let a=0;a<t.length;a++)t[a]&&e[i](t[a],n,!1)},isArray:e=>e instanceof Array,createEl(e,t){const n=document.createElement(t||"div");return e&&(n.className=e),n},getScrollY(){const e=window.pageYOffset;return void 0!==e?e:document.documentElement.scrollTop},unbind(e,t,n){i.bind(e,t,n,!0)},removeClass(e,t){const n=new RegExp(`(\\s|^)${t}(\\s|$)`);e.className=e.className.replace(n," ").replace(/^\s\s*/,"").replace(/\s\s*$/,"")},addClass(e,t){i.hasClass(e,t)||(e.className+=(e.className?" ":"")+t)},hasClass:(e,t)=>e.className&&new RegExp(`(^|\\s)${t}(\\s|$)`).test(e.className),getChildByClass(e,t){let n=e.firstChild;for(;n;){if(i.hasClass(n,t))return n;n=n.nextSibling}},arraySearch(e,t,n){let o=e.length;for(;o--;)if(e[o][n]===t)return o;return-1},extend(e,t,n){for(const o in t)if(t.hasOwnProperty(o)){if(n&&e.hasOwnProperty(o))continue;e[o]=t[o]}},easing:{sine:{out:e=>Math.sin(e*(Math.PI/2)),inOut:e=>-(Math.cos(Math.PI*e)-1)/2},cubic:{out:e=>--e*e*e+1}},detectFeatures(){if(i.features)return i.features;let e=i.createEl().style,t="",n={};if(n.oldIE=document.all&&!document.addEventListener,n.touch="ontouchstart"in window,window.requestAnimationFrame&&(n.raf=window.requestAnimationFrame,n.caf=window.cancelAnimationFrame),n.pointerEvent=!!window.PointerEvent||navigator.msPointerEnabled,!n.pointerEvent){const e=navigator.userAgent;if(/iP(hone|od)/.test(navigator.platform)){let e=navigator.appVersion.match(/OS (\d+)_(\d+)_?(\d+)?/);e&&e.length>0&&(e=parseInt(e[1],10),e>=1&&e<8&&(n.isOldIOSPhone=!0))}const t=e.match(/Android\s([0-9\.]*)/);let o=t?t[1]:0;o=parseFloat(o),o>=1&&(o<4.4&&(n.isOldAndroid=!0),n.androidVersion=o),n.isMobileOpera=/opera mini|opera mobi/i.test(e)}let o,a,l=["transform","perspective","animationName"],r=["","webkit","Moz","ms","O"];for(let i=0;i<4;i++){t=r[i];for(let i=0;i<3;i++)o=l[i],a=t+(t?o.charAt(0).toUpperCase()+o.slice(1):o),!n[o]&&a in e&&(n[o]=a);t&&!n.raf&&(t=t.toLowerCase(),n.raf=window[`${t}RequestAnimationFrame`],n.raf&&(n.caf=window[`${t}CancelAnimationFrame`]||window[`${t}CancelRequestAnimationFrame`]))}if(!n.raf){let e=0;n.raf=function(t){const n=(new Date).getTime(),o=Math.max(0,16-(n-e)),i=window.setTimeout((()=>{t(n+o)}),o);return e=n+o,i},n.caf=function(e){clearTimeout(e)}}return n.svg=!!document.createElementNS&&!!document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect,i.features=n,n}};i.detectFeatures(),i.features.oldIE&&(i.bind=function(e,t,n,o){t=t.split(" ");let i,a=(o?"detach":"attach")+"Event",l=function(){n.handleEvent.call(n)};for(let r=0;r<t.length;r++)if(i=t[r],i)if("object"==typeof n&&n.handleEvent){if(o){if(!n[`oldIE${i}`])return!1}else n[`oldIE${i}`]=l;e[a](`on${i}`,n[`oldIE${i}`])}else e[a](`on${i}`,n)});const a=this,l={allowPanToNext:!0,spacing:.12,bgOpacity:1,mouseUsed:!1,loop:!0,pinchToClose:!0,closeOnScroll:!0,closeOnVerticalDrag:!0,verticalDragRange:.75,hideAnimationDuration:333,showAnimationDuration:333,showHideOpacity:!1,focus:!0,escKey:!0,arrowKeys:!0,mainScrollEndFriction:.35,panEndFriction:.35,isClickableElement:e=>"A"===e.tagName,getDoubleTapZoom:(e,t)=>e||t.initialZoomLevel<.7?1:1.33,maxSpreadZoom:1.33,modal:!0,scaleMode:"fit"};i.extend(l,o);var r,s,c,u,d,p,m,f,h,g,w,y,x,b,v,_,I,C,T,E,S,D,k,A,O,M,F,R,L,P,Z,z,$={x:0,y:0},N={x:0,y:0},U={x:0,y:0},B={},K=0,H={},W={x:0,y:0},q=0,G=!0,Y=[],V={},X=!1,j=function(e,t){i.extend(a,t.publicMethods),Y.push(e)},J=function(e){const t=Wt();return e>t-1?e-t:e<0?t+e:e},Q={},ee=function(e,t){return Q[e]||(Q[e]=[]),Q[e].push(t)},te=function(e){const t=Q[e];if(t){const e=Array.prototype.slice.call(arguments);e.shift();for(let n=0;n<t.length;n++)t[n].apply(a,e)}},ne=function(){return(new Date).getTime()},oe=function(e){Ve=e,a.bg.style.opacity=e*l.bgOpacity},ie=function(e,t,n,o,i){(!X||i&&i!==a.currItem)&&(o/=i?i.fitRatio:a.currItem.fitRatio),e[D]=`${y+t}px, ${n}px${x} scale(${o})`},ae=function(e){He&&(e&&(g>a.currItem.fitRatio?X||(Xt(a.currItem,!1,!0),X=!0):X&&(Xt(a.currItem),X=!1)),ie(He,U.x,U.y,g))},le=function(e){e.container&&ie(e.container.style,e.initialPosition.x,e.initialPosition.y,e.initialZoomLevel,e)},re=function(e,t){t[D]=`${y+e}px, 0px${x}`},se=function(e,t){if(!l.loop&&t){const t=u+(W.x*K-e)/W.x,n=Math.round(e-ut.x);(t<0&&n>0||t>=Wt()-1&&n<0)&&(e=ut.x+n*l.mainScrollEndFriction)}ut.x=e,re(e,d)},ce=function(e,t){const n=dt[e]-H[e];return N[e]+$[e]+n-n*(t/w)},ue=function(e,t){e.x=t.x,e.y=t.y,t.id&&(e.id=t.id)},de=function(e){e.x=Math.round(e.x),e.y=Math.round(e.y)},pe=null,me=function(){pe&&(i.unbind(document,"mousemove",me),i.addClass(e,"pswp--has_mouse"),l.mouseUsed=!0,te("mouseUsed")),pe=setTimeout((()=>{pe=null}),100)},fe=function(e,t){const n=qt(a.currItem,B,e);return t&&(Ke=n),n},he=function(e){return e||(e=a.currItem),e.initialZoomLevel},ge=function(e){return e||(e=a.currItem),e.w>0?l.maxSpreadZoom:1},we=function(e,t,n,o){return o===a.currItem.initialZoomLevel?(n[e]=a.currItem.initialPosition[e],!0):(n[e]=ce(e,o),n[e]>t.min[e]?(n[e]=t.min[e],!0):n[e]<t.max[e]&&(n[e]=t.max[e],!0))},ye=function(e){let t="";l.escKey&&27===e.keyCode?t="close":l.arrowKeys&&(37===e.keyCode?t="prev":39===e.keyCode&&(t="next")),t&&(e.ctrlKey||e.altKey||e.shiftKey||e.metaKey||(e.preventDefault?e.preventDefault():e.returnValue=!1,a[t]()))},xe=function(e){e&&(Ze||Pe||We||Me)&&(e.preventDefault(),e.stopPropagation())},be=function(){a.setScrollOffset(0,i.getScrollY())};let ve={},_e=0,Ie=function(e){ve[e]&&(ve[e].raf&&M(ve[e].raf),_e--,delete ve[e])},Ce=function(e){ve[e]&&Ie(e),ve[e]||(_e++,ve[e]={})},Te=function(){for(const e in ve)ve.hasOwnProperty(e)&&Ie(e)},Ee=function(e,t,n,o,i,a,l){let r,s=ne();Ce(e);var c=function(){if(ve[e]){if(r=ne()-s,r>=o)return Ie(e),a(n),void(l&&l());a((n-t)*i(r/o)+t),ve[e].raf=O(c)}};c()};const Se={shout:te,listen:ee,viewportSize:B,options:l,isMainScrollAnimating:()=>We,getZoomLevel:()=>g,getCurrentIndex:()=>u,isDragging:()=>Re,isZooming:()=>Ue,setScrollOffset(e,t){H.x=e,P=H.y=t,te("updateScrollOffset",H)},applyZoomPan(e,t,n,o){U.x=t,U.y=n,g=e,ae(o)},init(){if(r||s)return;let n;a.framework=i,a.template=e,a.bg=i.getChildByClass(e,"pswp__bg"),F=e.className,r=!0,Z=i.detectFeatures(),O=Z.raf,M=Z.caf,D=Z.transform,L=Z.oldIE,a.scrollWrap=i.getChildByClass(e,"pswp__scroll-wrap"),a.container=i.getChildByClass(a.scrollWrap,"pswp__container"),d=a.container.style,a.itemHolders=_=[{el:a.container.children[0],wrap:0,index:-1},{el:a.container.children[1],wrap:0,index:-1},{el:a.container.children[2],wrap:0,index:-1}],_[0].el.style.display=_[2].el.style.display="none",function(){if(D){const e=Z.perspective&&!A;return y="translate"+(e?"3d(":"("),void(x=Z.perspective?", 0px)":")")}D="left",i.addClass(e,"pswp--ie"),re=function(e,t){t.left=`${e}px`},le=function(e){const t=e.fitRatio>1?1:e.fitRatio,n=e.container.style,o=t*e.w,i=t*e.h;n.width=`${o}px`,n.height=`${i}px`,n.left=`${e.initialPosition.x}px`,n.top=`${e.initialPosition.y}px`},ae=function(){if(He){const e=He,t=a.currItem,n=t.fitRatio>1?1:t.fitRatio,o=n*t.w,i=n*t.h;e.width=`${o}px`,e.height=`${i}px`,e.left=`${U.x}px`,e.top=`${U.y}px`}}}(),h={resize:a.updateSize,orientationchange(){clearTimeout(z),z=setTimeout((()=>{B.x!==a.scrollWrap.clientWidth&&a.updateSize()}),500)},scroll:be,keydown:ye,click:xe};const o=Z.isOldIOSPhone||Z.isOldAndroid||Z.isMobileOpera;for(Z.animationName&&Z.transform&&!o||(l.showAnimationDuration=l.hideAnimationDuration=0),n=0;n<Y.length;n++)a[`init${Y[n]}`]();t&&(a.ui=new t(a,i)).init(),te("firstUpdate"),u=u||l.index||0,(isNaN(u)||u<0||u>=Wt())&&(u=0),a.currItem=Ht(u),(Z.isOldIOSPhone||Z.isOldAndroid)&&(G=!1),e.setAttribute("aria-hidden","false"),l.modal&&(G?e.style.position="fixed":(e.style.position="absolute",e.style.top=`${i.getScrollY()}px`)),void 0===P&&(te("initialLayout"),P=R=i.getScrollY());let c="pswp--open ";for(l.mainClass&&(c+=`${l.mainClass} `),l.showHideOpacity&&(c+="pswp--animate_opacity "),c+=A?"pswp--touch":"pswp--notouch",c+=Z.animationName?" pswp--css_animation":"",c+=Z.svg?" pswp--svg":"",i.addClass(e,c),a.updateSize(),p=-1,q=null,n=0;n<3;n++)re((n+p)*W.x,_[n].el.style);L||i.bind(a.scrollWrap,f,a),ee("initialZoomInEnd",(()=>{a.setContent(_[0],u-1),a.setContent(_[2],u+1),_[0].el.style.display=_[2].el.style.display="block",l.focus&&e.focus(),i.bind(document,"keydown",a),Z.transform&&i.bind(a.scrollWrap,"click",a),l.mouseUsed||i.bind(document,"mousemove",me),i.bind(window,"resize scroll orientationchange",a),te("bindEvents")})),a.setContent(_[1],u),a.updateCurrItem(),te("afterInit"),G||(b=setInterval((()=>{_e||Re||Ue||g!==a.currItem.initialZoomLevel||a.updateSize()}),1e3)),i.addClass(e,"pswp--visible")},close(){r&&(r=!1,s=!0,te("close"),i.unbind(window,"resize scroll orientationchange",a),i.unbind(window,"scroll",h.scroll),i.unbind(document,"keydown",a),i.unbind(document,"mousemove",me),Z.transform&&i.unbind(a.scrollWrap,"click",a),Re&&i.unbind(window,m,a),clearTimeout(z),te("unbindEvents"),Zt(a.currItem,null,!0,a.destroy))},destroy(){te("destroy"),Pt&&clearTimeout(Pt),e.setAttribute("aria-hidden","true"),e.className=F,b&&clearInterval(b),i.unbind(a.scrollWrap,f,a),i.unbind(window,"scroll",a),ft(),Te(),Q=null},panTo(e,t,n){n||(e>Ke.min.x?e=Ke.min.x:e<Ke.max.x&&(e=Ke.max.x),t>Ke.min.y?t=Ke.min.y:t<Ke.max.y&&(t=Ke.max.y)),U.x=e,U.y=t,ae()},handleEvent(e){e=e||window.event,h[e.type]&&h[e.type](e)},goTo(e){const t=(e=J(e))-u;q=t,u=e,a.currItem=Ht(u),K-=t,se(W.x*K),Te(),We=!1,a.updateCurrItem()},next(){a.goTo(u+1)},prev(){a.goTo(u-1)},updateCurrZoomItem(e){if(e&&te("beforeChange",0),_[1].el.children.length){const e=_[1].el.children[0];He=i.hasClass(e,"pswp__zoom-wrap")?e.style:null}else He=null;Ke=a.currItem.bounds,w=g=a.currItem.initialZoomLevel,U.x=Ke.center.x,U.y=Ke.center.y,e&&te("afterChange")},invalidateCurrItems(){v=!0;for(let e=0;e<3;e++)_[e].item&&(_[e].item.needsUpdate=!0)},updateCurrItem(e){if(0===q)return;let t,n=Math.abs(q);if(!(e&&n<2)){a.currItem=Ht(u),X=!1,te("beforeChange",q),n>=3&&(p+=q+(q>0?-3:3),n=3);for(let e=0;e<n;e++)q>0?(t=_.shift(),_[2]=t,p++,re((p+2)*W.x,t.el.style),a.setContent(t,u-n+e+1+1)):(t=_.pop(),_.unshift(t),p--,re(p*W.x,t.el.style),a.setContent(t,u+n-e-1-1));if(He&&1===Math.abs(q)){const e=Ht(I);e.initialZoomLevel!==g&&(qt(e,B),Xt(e),le(e))}q=0,a.updateCurrZoomItem(),I=u,te("afterChange")}},updateSize(t){if(!G&&l.modal){const n=i.getScrollY();if(P!==n&&(e.style.top=`${n}px`,P=n),!t&&V.x===window.innerWidth&&V.y===window.innerHeight)return;V.x=window.innerWidth,V.y=window.innerHeight,e.style.height=`${V.y}px`}if(B.x=a.scrollWrap.clientWidth,B.y=a.scrollWrap.clientHeight,be(),W.x=B.x+Math.round(B.x*l.spacing),W.y=B.y,se(W.x*K),te("beforeResize"),void 0!==p){let e,t,n;for(let o=0;o<3;o++)e=_[o],re((o+p)*W.x,e.el.style),n=u+o-1,l.loop&&Wt()>2&&(n=J(n)),t=Ht(n),t&&(v||t.needsUpdate||!t.bounds)?(a.cleanSlide(t),a.setContent(e,n),1===o&&(a.currItem=t,a.updateCurrZoomItem(!0)),t.needsUpdate=!1):-1===e.index&&n>=0&&a.setContent(e,n),t&&t.container&&(qt(t,B),Xt(t),le(t));v=!1}w=g=a.currItem.initialZoomLevel,(Ke=a.currItem.bounds)&&(U.x=Ke.center.x,U.y=Ke.center.y,ae(!0)),te("resize")},zoomTo(e,t,n,o,a){t&&(w=g,dt.x=Math.abs(t.x)-U.x,dt.y=Math.abs(t.y)-U.y,ue(N,U));const l=fe(e,!1),r={};we("x",l,r,e),we("y",l,r,e);const s=g,c=U.x,u=U.y;de(r);const d=function(t){1===t?(g=e,U.x=r.x,U.y=r.y):(g=(e-s)*t+s,U.x=(r.x-c)*t+c,U.y=(r.y-u)*t+u),a&&a(t),ae(1===t)};n?Ee("customZoomTo",0,1,n,o||i.easing.sine.inOut,d):d(1)}};var De,ke,Ae,Oe,Me,Fe,Re,Le,Pe,Ze,ze,$e,Ne,Ue,Be,Ke,He,We,qe,Ge,Ye,Ve,Xe,je,Je={},Qe={},et={},tt={},nt={},ot=[],it={},at=[],lt={},rt=0,st={x:0,y:0},ct=0,ut={x:0,y:0},dt={x:0,y:0},pt={x:0,y:0},mt=function(e,t){return lt.x=Math.abs(e.x-t.x),lt.y=Math.abs(e.y-t.y),Math.sqrt(lt.x*lt.x+lt.y*lt.y)},ft=function(){ze&&(M(ze),ze=null)},ht=function(){Re&&(ze=O(ht),kt())},gt=function(e,t){return!(!e||e===document)&&!(e.getAttribute("class")&&e.getAttribute("class").indexOf("pswp__scroll-wrap")>-1)&&(t(e)?e:gt(e.parentNode,t))},wt={},yt=function(e,t){return wt.prevent=!gt(e.target,l.isClickableElement),te("preventDragEvent",e,t,wt),wt.prevent},xt=function(e,t){return t.x=e.pageX,t.y=e.pageY,t.id=e.identifier,t},bt=function(e,t,n){n.x=.5*(e.x+t.x),n.y=.5*(e.y+t.y)},vt=function(){const e=U.y-a.currItem.initialPosition.y;return 1-Math.abs(e/(B.y/2))},_t={},It={},Ct=[],Tt=function(e){for(;Ct.length>0;)Ct.pop();return k?(je=0,ot.forEach((e=>{0===je?Ct[0]=e:1===je&&(Ct[1]=e),je++}))):e.type.indexOf("touch")>-1?e.touches&&e.touches.length>0&&(Ct[0]=xt(e.touches[0],_t),e.touches.length>1&&(Ct[1]=xt(e.touches[1],It))):(_t.x=e.pageX,_t.y=e.pageY,_t.id="",Ct[0]=_t),Ct},Et=function(e,t){let n,o,i,r,s=U[e]+t[e],c=t[e]>0,u=ut.x+t.x,d=ut.x-it.x;if(n=s>Ke.min[e]||s<Ke.max[e]?l.panEndFriction:1,s=U[e]+t[e]*n,(l.allowPanToNext||g===a.currItem.initialZoomLevel)&&(He?"h"!==qe||"x"!==e||Pe||(c?(s>Ke.min[e]&&(n=l.panEndFriction,Ke.min[e],o=Ke.min[e]-N[e]),(o<=0||d<0)&&Wt()>1?(r=u,d<0&&u>it.x&&(r=it.x)):Ke.min.x!==Ke.max.x&&(i=s)):(s<Ke.max[e]&&(n=l.panEndFriction,Ke.max[e],o=N[e]-Ke.max[e]),(o<=0||d>0)&&Wt()>1?(r=u,d>0&&u<it.x&&(r=it.x)):Ke.min.x!==Ke.max.x&&(i=s))):r=u,"x"===e))return void 0!==r&&(se(r,!0),$e=r!==it.x),Ke.min.x!==Ke.max.x&&(void 0!==i?U.x=i:$e||(U.x+=t.x*n)),void 0!==r;We||$e||g>a.currItem.fitRatio&&(U[e]+=t[e]*n)},St=function(e){if("mousedown"===e.type&&e.button>0)return;if(Nt)return void e.preventDefault();if(Fe&&"mousedown"===e.type)return;if(yt(e,!0)&&e.preventDefault(),te("pointerDown"),k){let t=i.arraySearch(ot,e.pointerId,"id");t<0&&(t=ot.length),ot[t]={x:e.pageX,y:e.pageY,id:e.pointerId}}const t=Tt(e),n=t.length;Ne=null,Te(),Re&&1!==n||(Re=Ge=!0,i.bind(window,m,a),Oe=Xe=Ye=Me=$e=Ze=Le=Pe=!1,qe=null,te("firstTouchStart",t),ue(N,U),$.x=$.y=0,ue(tt,t[0]),ue(nt,tt),it.x=W.x*K,at=[{x:tt.x,y:tt.y}],ke=De=ne(),fe(g,!0),ft(),ht()),!Ue&&n>1&&!We&&!$e&&(w=g,Pe=!1,Ue=Le=!0,$.y=$.x=0,ue(N,U),ue(Je,t[0]),ue(Qe,t[1]),bt(Je,Qe,pt),dt.x=Math.abs(pt.x)-U.x,dt.y=Math.abs(pt.y)-U.y,Be=mt(Je,Qe))},Dt=function(e){if(e.preventDefault(),k){const t=i.arraySearch(ot,e.pointerId,"id");if(t>-1){const n=ot[t];n.x=e.pageX,n.y=e.pageY}}if(Re){const t=Tt(e);if(qe||Ze||Ue)Ne=t;else if(ut.x!==W.x*K)qe="h";else{const e=Math.abs(t[0].x-tt.x)-Math.abs(t[0].y-tt.y);Math.abs(e)>=10&&(qe=e>0?"h":"v",Ne=t)}}},kt=function(){if(!Ne)return;const e=Ne.length;var t,n;if(0!==e)if(ue(Je,Ne[0]),et.x=Je.x-tt.x,et.y=Je.y-tt.y,Ue&&e>1){if(tt.x=Je.x,tt.y=Je.y,!et.x&&!et.y&&(t=Ne[1],n=Qe,t.x===n.x&&t.y===n.y))return;ue(Qe,Ne[1]),Pe||(Pe=!0,te("zoomGestureStarted"));const e=mt(Je,Qe);let o=Rt(e);o>a.currItem.initialZoomLevel+a.currItem.initialZoomLevel/15&&(Xe=!0);let i=1,r=he(),s=ge();if(o<r)if(l.pinchToClose&&!Xe&&w<=a.currItem.initialZoomLevel){const e=1-(r-o)/(r/1.2);oe(e),te("onPinchClose",e),Ye=!0}else i=(r-o)/r,i>1&&(i=1),o=r-i*(r/3);else o>s&&(i=(o-s)/(6*r),i>1&&(i=1),o=s+i*r);i<0&&(i=0),bt(Je,Qe,st),$.x+=st.x-pt.x,$.y+=st.y-pt.y,ue(pt,st),U.x=ce("x",o),U.y=ce("y",o),Oe=o>g,g=o,ae()}else{if(!qe)return;if(Ge&&(Ge=!1,Math.abs(et.x)>=10&&(et.x-=Ne[0].x-nt.x),Math.abs(et.y)>=10&&(et.y-=Ne[0].y-nt.y)),tt.x=Je.x,tt.y=Je.y,0===et.x&&0===et.y)return;if("v"===qe&&l.closeOnVerticalDrag&&"fit"===l.scaleMode&&g===a.currItem.initialZoomLevel){$.y+=et.y,U.y+=et.y;const e=vt();return Me=!0,te("onVerticalDrag",e),oe(e),void ae()}!function(e,t,n){if(e-ke>50){const o=at.length>2?at.shift():{};o.x=t,o.y=n,at.push(o),ke=e}}(ne(),Je.x,Je.y),Ze=!0,Ke=a.currItem.bounds,Et("x",et)||(Et("y",et),de(U),ae())}},At=function(e){if(Z.isOldAndroid){if(Fe&&"mouseup"===e.type)return;e.type.indexOf("touch")>-1&&(clearTimeout(Fe),Fe=setTimeout((()=>{Fe=0}),600))}let t;if(te("pointerUp"),yt(e,!1)&&e.preventDefault(),k){const n=i.arraySearch(ot,e.pointerId,"id");if(n>-1)if(t=ot.splice(n,1)[0],navigator.msPointerEnabled){const n={4:"mouse",2:"touch",3:"pen"};t.type=n[e.pointerType],t.type||(t.type=e.pointerType||"mouse")}else t.type=e.pointerType||"mouse"}let n,o=Tt(e),r=o.length;if("mouseup"===e.type&&(r=0),2===r)return Ne=null,!0;1===r&&ue(nt,o[0]),0!==r||qe||We||(t||("mouseup"===e.type?t={x:e.pageX,y:e.pageY,type:"mouse"}:e.changedTouches&&e.changedTouches[0]&&(t={x:e.changedTouches[0].pageX,y:e.changedTouches[0].pageY,type:"touch"})),te("touchRelease",e,t));let s=-1;if(0===r&&(Re=!1,i.unbind(window,m,a),ft(),Ue?s=0:-1!==ct&&(s=ne()-ct)),ct=1===r?ne():-1,n=-1!==s&&s<150?"zoom":"swipe",Ue&&r<2&&(Ue=!1,1===r&&(n="zoomPointerUp"),te("zoomGestureEnded")),Ne=null,Ze||Pe||We||Me)if(Te(),Ae||(Ae=Ot()),Ae.calculateSwipeSpeed("x"),Me)if(vt()<l.verticalDragRange)a.close();else{const e=U.y,t=Ve;Ee("verticalDrag",0,1,300,i.easing.cubic.out,(n=>{U.y=(a.currItem.initialPosition.y-e)*n+e,oe((1-t)*n+t),ae()})),te("onVerticalDrag",1)}else{if(($e||We)&&0===r){if(Ft(n,Ae))return;n="zoomPointerUp"}We||("swipe"===n?!$e&&g>a.currItem.fitRatio&&Mt(Ae):Lt())}},Ot=function(){let e,t;var n={lastFlickOffset:{},lastFlickDist:{},lastFlickSpeed:{},slowDownRatio:{},slowDownRatioReverse:{},speedDecelerationRatio:{},speedDecelerationRatioAbs:{},distanceOffset:{},backAnimDestination:{},backAnimStarted:{},calculateSwipeSpeed(o){at.length>1?(e=ne()-ke+50,t=at[at.length-2][o]):(e=ne()-De,t=nt[o]),n.lastFlickOffset[o]=tt[o]-t,n.lastFlickDist[o]=Math.abs(n.lastFlickOffset[o]),n.lastFlickDist[o]>20?n.lastFlickSpeed[o]=n.lastFlickOffset[o]/e:n.lastFlickSpeed[o]=0,Math.abs(n.lastFlickSpeed[o])<.1&&(n.lastFlickSpeed[o]=0),n.slowDownRatio[o]=.95,n.slowDownRatioReverse[o]=1-n.slowDownRatio[o],n.speedDecelerationRatio[o]=1},calculateOverBoundsAnimOffset(e,t){n.backAnimStarted[e]||(U[e]>Ke.min[e]?n.backAnimDestination[e]=Ke.min[e]:U[e]<Ke.max[e]&&(n.backAnimDestination[e]=Ke.max[e]),void 0!==n.backAnimDestination[e]&&(n.slowDownRatio[e]=.7,n.slowDownRatioReverse[e]=1-n.slowDownRatio[e],n.speedDecelerationRatioAbs[e]<.05&&(n.lastFlickSpeed[e]=0,n.backAnimStarted[e]=!0,Ee(`bounceZoomPan${e}`,U[e],n.backAnimDestination[e],t||300,i.easing.sine.out,(t=>{U[e]=t,ae()})))))},calculateAnimOffset(e){n.backAnimStarted[e]||(n.speedDecelerationRatio[e]=n.speedDecelerationRatio[e]*(n.slowDownRatio[e]+n.slowDownRatioReverse[e]-n.slowDownRatioReverse[e]*n.timeDiff/10),n.speedDecelerationRatioAbs[e]=Math.abs(n.lastFlickSpeed[e]*n.speedDecelerationRatio[e]),n.distanceOffset[e]=n.lastFlickSpeed[e]*n.speedDecelerationRatio[e]*n.timeDiff,U[e]+=n.distanceOffset[e])},panAnimLoop(){if(ve.zoomPan&&(ve.zoomPan.raf=O(n.panAnimLoop),n.now=ne(),n.timeDiff=n.now-n.lastNow,n.lastNow=n.now,n.calculateAnimOffset("x"),n.calculateAnimOffset("y"),ae(),n.calculateOverBoundsAnimOffset("x"),n.calculateOverBoundsAnimOffset("y"),n.speedDecelerationRatioAbs.x<.05&&n.speedDecelerationRatioAbs.y<.05))return U.x=Math.round(U.x),U.y=Math.round(U.y),ae(),void Ie("zoomPan")}};return n},Mt=function(e){if(e.calculateSwipeSpeed("y"),Ke=a.currItem.bounds,e.backAnimDestination={},e.backAnimStarted={},Math.abs(e.lastFlickSpeed.x)<=.05&&Math.abs(e.lastFlickSpeed.y)<=.05)return e.speedDecelerationRatioAbs.x=e.speedDecelerationRatioAbs.y=0,e.calculateOverBoundsAnimOffset("x"),e.calculateOverBoundsAnimOffset("y"),!0;Ce("zoomPan"),e.lastNow=ne(),e.panAnimLoop()},Ft=function(e,t){let n,o,r;if(We||(rt=u),"swipe"===e){const e=tt.x-nt.x,n=t.lastFlickDist.x<10;e>30&&(n||t.lastFlickOffset.x>20)?o=-1:e<-30&&(n||t.lastFlickOffset.x<-20)&&(o=1)}o&&((u+=o)<0?(u=l.loop?Wt()-1:0,r=!0):u>=Wt()&&(u=l.loop?0:Wt()-1,r=!0),r&&!l.loop||(q+=o,K-=o,n=!0));const s=W.x*K,c=Math.abs(s-ut.x);let d;return n||s>ut.x==t.lastFlickSpeed.x>0?(d=Math.abs(t.lastFlickSpeed.x)>0?c/Math.abs(t.lastFlickSpeed.x):333,d=Math.min(d,400),d=Math.max(d,250)):d=333,rt===u&&(n=!1),We=!0,te("mainScrollAnimStart"),Ee("mainScroll",ut.x,s,d,i.easing.cubic.out,se,(()=>{Te(),We=!1,rt=-1,(n||rt!==u)&&a.updateCurrItem(),te("mainScrollAnimComplete")})),n&&a.updateCurrItem(!0),n},Rt=function(e){return 1/Be*e*w},Lt=function(){let e=g,t=he(),n=ge();g<t?e=t:g>n&&(e=n);let o,l=Ve;return Ye&&!Oe&&!Xe&&g<t?(a.close(),!0):(Ye&&(o=function(e){oe((1-l)*e+l)}),a.zoomTo(e,0,200,i.easing.cubic.out,o),!0)};j("Gestures",{publicMethods:{initGestures(){const e=function(e,t,n,o,i){C=e+t,T=e+n,E=e+o,S=i?e+i:""};(k=Z.pointerEvent)&&Z.touch&&(Z.touch=!1),k?navigator.msPointerEnabled?e("MSPointer","Down","Move","Up","Cancel"):e("pointer","down","move","up","cancel"):Z.touch?(e("touch","start","move","end","cancel"),A=!0):e("mouse","down","move","up"),m=`${T} ${E} ${S}`,f=C,k&&!A&&(A=navigator.maxTouchPoints>1||navigator.msMaxTouchPoints>1),a.likelyTouchDevice=A,h[C]=St,h[T]=Dt,h[E]=At,S&&(h[S]=h[E]),Z.touch&&(f+=" mousedown",m+=" mousemove mouseup",h.mousedown=h[C],h.mousemove=h[T],h.mouseup=h[E]),A||(l.allowPanToNext=!1)}}});var Pt,Zt=function(t,n,o,r){let s;Pt&&clearTimeout(Pt),Nt=!0,$t=!0,t.initialLayout?(s=t.initialLayout,t.initialLayout=null):s=l.getThumbBoundsFn&&l.getThumbBoundsFn(u);const d=o?l.hideAnimationDuration:l.showAnimationDuration,p=function(){Ie("initialZoom"),o?(a.template.removeAttribute("style"),a.bg.removeAttribute("style")):(oe(1),n&&(n.style.display="block"),i.addClass(e,"pswp--animated-in"),te("initialZoom"+(o?"OutEnd":"InEnd"))),r&&r(),Nt=!1};if(!d||!s||void 0===s.x)return te("initialZoom"+(o?"Out":"In")),g=t.initialZoomLevel,ue(U,t.initialPosition),ae(),e.style.opacity=o?0:1,oe(1),void(d?setTimeout((()=>{p()}),d):p());!function(){const n=c,r=!a.currItem.src||a.currItem.loadError||l.showHideOpacity;t.miniImg&&(t.miniImg.style.webkitBackfaceVisibility="hidden"),o||(g=s.w/t.w,U.x=s.x,U.y=s.y-R,a[r?"template":"bg"].style.opacity=.001,ae()),Ce("initialZoom"),o&&!n&&i.removeClass(e,"pswp--animated-in"),r&&(o?i[(n?"remove":"add")+"Class"](e,"pswp--animate_opacity"):setTimeout((()=>{i.addClass(e,"pswp--animate_opacity")}),30)),Pt=setTimeout((()=>{if(te("initialZoom"+(o?"Out":"In")),o){const o=s.w/t.w,a={x:U.x,y:U.y},l=g,c=Ve,u=function(t){1===t?(g=o,U.x=s.x,U.y=s.y-P):(g=(o-l)*t+l,U.x=(s.x-a.x)*t+a.x,U.y=(s.y-P-a.y)*t+a.y),ae(),r?e.style.opacity=1-t:oe(c-t*c)};n?Ee("initialZoom",0,1,d,i.easing.cubic.out,u,p):(u(1),Pt=setTimeout(p,d+20))}else g=t.initialZoomLevel,ue(U,t.initialPosition),ae(),oe(1),r?e.style.opacity=1:oe(1),Pt=setTimeout(p,d+20)}),o?25:90)}()};let zt,$t,Nt,Ut={},Bt=[],Kt={index:0,errorMsg:'<div class="pswp__error-msg"><a href="%url%" target="_blank">The image</a> could not be loaded.</div>',forceProgressiveLoading:!1,preload:[1,1],getNumItemsFn:()=>zt.length};var Ht,Wt,qt=function(e,t,n){if(e.src&&!e.loadError){const o=!n;if(o&&(e.vGap||(e.vGap={top:0,bottom:0}),te("parseVerticalMargin",e)),Ut.x=t.x,Ut.y=t.y-e.vGap.top-e.vGap.bottom,o){const t=Ut.x/e.w,o=Ut.y/e.h;e.fitRatio=t<o?t:o;const i=l.scaleMode;"orig"===i?n=1:"fit"===i&&(n=e.fitRatio),n>1&&(n=1),e.initialZoomLevel=n,e.bounds||(e.bounds={center:{x:0,y:0},max:{x:0,y:0},min:{x:0,y:0}})}if(!n)return;return function(e,t,n){const o=e.bounds;o.center.x=Math.round((Ut.x-t)/2),o.center.y=Math.round((Ut.y-n)/2)+e.vGap.top,o.max.x=t>Ut.x?Math.round(Ut.x-t):o.center.x,o.max.y=n>Ut.y?Math.round(Ut.y-n)+e.vGap.top:o.center.y,o.min.x=t>Ut.x?0:o.center.x,o.min.y=n>Ut.y?e.vGap.top:o.center.y}(e,e.w*n,e.h*n),o&&n===e.initialZoomLevel&&(e.initialPosition=e.bounds.center),e.bounds}return e.w=e.h=0,e.initialZoomLevel=e.fitRatio=1,e.bounds={center:{x:0,y:0},max:{x:0,y:0},min:{x:0,y:0}},e.initialPosition=e.bounds.center,e.bounds},Gt=function(e,t,n,o,i,l){t.loadError||o&&(t.imageAppended=!0,Xt(t,o,t===a.currItem&&X),n.appendChild(o),l&&setTimeout((()=>{t&&t.loaded&&t.placeholder&&(t.placeholder.style.display="none",t.placeholder=null)}),500))},Yt=function(e){e.loading=!0,e.loaded=!1;let t=e.img=i.createEl("pswp__img","img");const n=function(){e.loading=!1,e.loaded=!0,e.loadComplete?e.loadComplete(e):e.img=null,t.onload=t.onerror=null,t=null};return t.onload=n,t.onerror=function(){e.loadError=!0,n()},t.src=e.src,t},Vt=function(e,t){if(e.src&&e.loadError&&e.container)return t&&(e.container.innerHTML=""),e.container.innerHTML=l.errorMsg.replace("%url%",e.src),!0},Xt=function(e,t,n){if(!e.src)return;t||(t=e.container.lastChild);const o=n?e.w:Math.round(e.w*e.fitRatio),i=n?e.h:Math.round(e.h*e.fitRatio);e.placeholder&&!e.loaded&&(e.placeholder.style.width=`${o}px`,e.placeholder.style.height=`${i}px`),t.style.width=`${o}px`,t.style.height=`${i}px`},jt=function(){if(Bt.length){let e;for(let t=0;t<Bt.length;t++)e=Bt[t],e.holder.index===e.index&&Gt(e.index,e.item,e.baseDiv,e.img,0,e.clearPlaceholder);Bt=[]}};j("Controller",{publicMethods:{lazyLoadItem(e){e=J(e);const t=Ht(e);t&&(!t.loaded&&!t.loading||v)&&(te("gettingData",e,t),t.src&&Yt(t))},initController(){i.extend(l,Kt,!0),a.items=zt=n,Ht=a.getItemAt,(Wt=l.getNumItemsFn)()<3&&(l.loop=!1),ee("beforeChange",(e=>{let t,n=l.preload,o=null===e||e>=0,i=Math.min(n[0],Wt()),r=Math.min(n[1],Wt());for(t=1;t<=(o?r:i);t++)a.lazyLoadItem(u+t);for(t=1;t<=(o?i:r);t++)a.lazyLoadItem(u-t)})),ee("initialLayout",(()=>{a.currItem.initialLayout=l.getThumbBoundsFn&&l.getThumbBoundsFn(u)})),ee("mainScrollAnimComplete",jt),ee("initialZoomInEnd",jt),ee("destroy",(()=>{let e;for(let t=0;t<zt.length;t++)e=zt[t],e.container&&(e.container=null),e.placeholder&&(e.placeholder=null),e.img&&(e.img=null),e.preloader&&(e.preloader=null),e.loadError&&(e.loaded=e.loadError=!1);Bt=null}))},getItemAt:e=>e>=0&&void 0!==zt[e]&&zt[e],allowProgressiveImg:()=>l.forceProgressiveLoading||!A||l.mouseUsed||screen.width>1200,setContent(e,t){l.loop&&(t=J(t));const n=a.getItemAt(e.index);n&&(n.container=null);let o,s=a.getItemAt(t);if(!s)return void(e.el.innerHTML="");te("gettingData",t,s),e.index=t,e.item=s;const c=s.container=i.createEl("pswp__zoom-wrap");if(!s.src&&s.html&&(s.html.tagName?c.appendChild(s.html):c.innerHTML=s.html),Vt(s),qt(s,B),!s.src||s.loadError||s.loaded)s.src&&!s.loadError&&(o=i.createEl("pswp__img","img"),o.style.opacity=1,o.src=s.src,Xt(s,o),Gt(0,s,c,o));else{if(s.loadComplete=function(n){if(r){if(e&&e.index===t){if(Vt(n,!0))return n.loadComplete=n.img=null,qt(n,B),le(n),void(e.index===u&&a.updateCurrZoomItem());n.imageAppended?!Nt&&n.placeholder&&(n.placeholder.style.display="none",n.placeholder=null):Z.transform&&(We||Nt)?Bt.push({item:n,baseDiv:c,img:n.img,index:t,holder:e,clearPlaceholder:!0}):Gt(0,n,c,n.img,0,!0)}n.loadComplete=null,n.img=null,te("imageLoadComplete",t,n)}},i.features.transform){let e="pswp__img pswp__img--placeholder";e+=s.msrc?"":" pswp__img--placeholder--blank";const t=i.createEl(e,s.msrc?"img":"");s.msrc&&(t.src=s.msrc),Xt(s,t),c.appendChild(t),s.placeholder=t}s.loading||Yt(s),a.allowProgressiveImg()&&(!$t&&Z.transform?Bt.push({item:s,baseDiv:c,img:s.img,index:t,holder:e}):Gt(0,s,c,s.img,0,!0))}$t||t!==u?le(s):(He=c.style,Zt(s,o||s.img)),e.el.innerHTML="",e.el.appendChild(c)},cleanSlide(e){e.img&&(e.img.onload=e.img.onerror=null),e.loaded=e.loading=e.img=e.imageAppended=!1}}});let Jt,Qt,en={},tn=function(e,t,n){const o=document.createEvent("CustomEvent"),i={origEvent:e,target:e.target,releasePoint:t,pointerType:n||"touch"};o.initCustomEvent("pswpTap",!0,!0,i),o.preventDefault(),o.stopPropagation(),e.target.dispatchEvent(o)};j("Tap",{publicMethods:{initTap(){ee("firstTouchStart",a.onTapStart),ee("touchRelease",a.onTapRelease),ee("destroy",(()=>{en={},Jt=null}))},onTapStart(e){e.length>1&&(clearTimeout(Jt),Jt=null)},onTapRelease(e,t){var n,o;if(t&&!Ze&&!Le&&!_e){const a=t;if(Jt&&(clearTimeout(Jt),Jt=null,n=a,o=en,Math.abs(n.x-o.x)<25&&Math.abs(n.y-o.y)<25))return void te("doubleTap",a);if("mouse"===t.type)return void tn(e,t,"mouse");if("BUTTON"===e.target.tagName.toUpperCase()||i.hasClass(e.target,"pswp__single-tap"))return void tn(e,t);ue(en,a),Jt=setTimeout((()=>{tn(e,t),Jt=null}),300)}}}}),j("DesktopZoom",{publicMethods:{initDesktopZoom(){L||(A?ee("mouseUsed",(()=>{a.setupDesktopZoom()})):a.setupDesktopZoom(!0))},setupDesktopZoom(t){Qt={};const n="wheel mousewheel DOMMouseScroll";ee("bindEvents",(()=>{i.bind(e,n,a.handleMouseWheel)})),ee("unbindEvents",(()=>{Qt&&i.unbind(e,n,a.handleMouseWheel)})),a.mouseZoomedIn=!1;var o,l=function(){a.mouseZoomedIn&&(i.removeClass(e,"pswp--zoomed-in"),a.mouseZoomedIn=!1),g<1?i.addClass(e,"pswp--zoom-allowed"):i.removeClass(e,"pswp--zoom-allowed"),r()},r=function(){o&&(i.removeClass(e,"pswp--dragging"),o=!1)};ee("resize",l),ee("afterChange",l),ee("pointerDown",(()=>{a.mouseZoomedIn&&(o=!0,i.addClass(e,"pswp--dragging"))})),ee("pointerUp",r),t||l()},handleMouseWheel(e){if(g<=a.currItem.fitRatio)return l.modal&&(!l.closeOnScroll||_e||Re?e.preventDefault():D&&Math.abs(e.deltaY)>2&&(c=!0,a.close())),!0;if(e.stopPropagation(),Qt.x=0,"deltaX"in e)1===e.deltaMode?(Qt.x=18*e.deltaX,Qt.y=18*e.deltaY):(Qt.x=e.deltaX,Qt.y=e.deltaY);else if("wheelDelta"in e)e.wheelDeltaX&&(Qt.x=-.16*e.wheelDeltaX),e.wheelDeltaY?Qt.y=-.16*e.wheelDeltaY:Qt.y=-.16*e.wheelDelta;else{if(!("detail"in e))return;Qt.y=e.detail}fe(g,!0);const t=U.x-Qt.x,n=U.y-Qt.y;(l.modal||t<=Ke.min.x&&t>=Ke.max.x&&n<=Ke.min.y&&n>=Ke.max.y)&&e.preventDefault(),a.panTo(t,n)},toggleDesktopZoom(t){t=t||{x:B.x/2+H.x,y:B.y/2+H.y};const n=l.getDoubleTapZoom(!0,a.currItem),o=g===n;a.mouseZoomedIn=!o,a.zoomTo(o?a.currItem.initialZoomLevel:n,t,333),i[(o?"remove":"add")+"Class"](e,"pswp--zoomed-in")}}});const nn={history:!0,galleryUID:1};var on,an,ln,rn,sn,cn,un,dn,pn,mn,fn,hn,gn=function(){return fn.hash.substring(1)},wn=function(){on&&clearTimeout(on),ln&&clearTimeout(ln)},yn=function(){const e=gn(),t={};if(e.length<5)return t;let n,o=e.split("&");for(n=0;n<o.length;n++){if(!o[n])continue;const e=o[n].split("=");e.length<2||(t[e[0]]=e[1])}if(l.galleryPIDs){const e=t.pid;for(t.pid=0,n=0;n<zt.length;n++)if(zt[n].pid===e){t.pid=n;break}}else t.pid=parseInt(t.pid,10)-1;return t.pid<0&&(t.pid=0),t},xn=function(){if(ln&&clearTimeout(ln),_e||Re)return void(ln=setTimeout(xn,500));rn?clearTimeout(an):rn=!0;let e=u+1;const t=Ht(u);t.hasOwnProperty("pid")&&(e=t.pid);const n=`${un}&gid=${l.galleryUID}&pid=${e}`;dn||-1===fn.hash.indexOf(n)&&(mn=!0);const o=`${fn.href.split("#")[0]}#${n}`;hn?`#${n}`!==window.location.hash&&history[dn?"replaceState":"pushState"]("",document.title,o):dn?fn.replace(o):fn.hash=n,dn=!0,an=setTimeout((()=>{rn=!1}),60)};j("History",{publicMethods:{initHistory(){if(i.extend(l,nn,!0),!l.history)return;fn=window.location,mn=!1,pn=!1,dn=!1,un=gn(),hn="pushState"in history,un.indexOf("gid=")>-1&&(un=(un=un.split("&gid=")[0]).split("?gid=")[0]),ee("afterChange",a.updateURL),ee("unbindEvents",(()=>{i.unbind(window,"hashchange",a.onHashChange)}));const e=function(){cn=!0,pn||(mn?history.back():un?fn.hash=un:hn?history.pushState("",document.title,fn.pathname+fn.search):fn.hash=""),wn()};ee("unbindEvents",(()=>{c&&e()})),ee("destroy",(()=>{cn||e()})),ee("firstUpdate",(()=>{u=yn().pid}));const t=un.indexOf("pid=");t>-1&&"&"===(un=un.substring(0,t)).slice(-1)&&(un=un.slice(0,-1)),setTimeout((()=>{r&&i.bind(window,"hashchange",a.onHashChange)}),40)},onHashChange(){if(gn()===un)return pn=!0,void a.close();rn||(sn=!0,a.goTo(yn().pid),sn=!1)},updateURL(){wn(),sn||(dn?on=setTimeout(xn,800):xn())}}}),i.extend(a,Se)})();var i=o.exports,a={exports:{}};
-/*! PhotoSwipe Default UI - 4.1.3 - 2019-01-08
-  * http://photoswipe.com
-  * Copyright (c) 2019 Dmitry Semenov; */
-!function(e,t){e.exports=function(e,t){var n,o,i,a,l,r,s,c,u,d,p,m,f,h,g,w,y,x,b=this,v=!1,_=!0,I=!0,C={barsSize:{top:44,bottom:"auto"},closeElClasses:["item","caption","zoom-wrap","ui","top-bar"],timeToIdle:4e3,timeToIdleOutside:1e3,loadingIndicatorDelay:1e3,addCaptionHTMLFn:function(e,t){return e.title?(t.children[0].innerHTML=e.title,!0):(t.children[0].innerHTML="",!1)},closeEl:!0,captionEl:!0,fullscreenEl:!0,zoomEl:!0,shareEl:!0,counterEl:!0,arrowEl:!0,preloaderEl:!0,tapToClose:!1,tapToToggleControls:!0,clickToCloseNonZoomable:!0,shareButtons:[{id:"facebook",label:"Share on Facebook",url:"https://www.facebook.com/sharer/sharer.php?u={{url}}"},{id:"twitter",label:"Tweet",url:"https://twitter.com/intent/tweet?text={{text}}&url={{url}}"},{id:"pinterest",label:"Pin it",url:"http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}"},{id:"download",label:"Download image",url:"{{raw_image_url}}",download:!0}],getImageURLForShare:function(){return e.currItem.src||""},getPageURLForShare:function(){return window.location.href},getTextForShare:function(){return e.currItem.title||""},indexIndicatorSep:" / ",fitControlsWidth:1200},T=function(e){if(w)return!0;e=e||window.event,g.timeToIdle&&g.mouseUsed&&!u&&L();for(var n,o,i=(e.target||e.srcElement).getAttribute("class")||"",a=0;a<K.length;a++)(n=K[a]).onTap&&i.indexOf("pswp__"+n.name)>-1&&(n.onTap(),o=!0);if(o){e.stopPropagation&&e.stopPropagation(),w=!0;var l=t.features.isOldAndroid?600:30;setTimeout((function(){w=!1}),l)}},E=function(){return!e.likelyTouchDevice||g.mouseUsed||screen.width>g.fitControlsWidth},S=function(e,n,o){t[(o?"add":"remove")+"Class"](e,"pswp__"+n)},D=function(){var e=1===g.getNumItemsFn();e!==h&&(S(o,"ui--one-slide",e),h=e)},k=function(){S(s,"share-modal--hidden",I)},A=function(){return(I=!I)?(t.removeClass(s,"pswp__share-modal--fade-in"),setTimeout((function(){I&&k()}),300)):(k(),setTimeout((function(){I||t.addClass(s,"pswp__share-modal--fade-in")}),30)),I||M(),!1},O=function(t){var n=(t=t||window.event).target||t.srcElement;return e.shout("shareLinkClick",t,n),!(!n.href||!n.hasAttribute("download")&&(window.open(n.href,"pswp_share","scrollbars=yes,resizable=yes,toolbar=no,location=yes,width=550,height=420,top=100,left="+(window.screen?Math.round(screen.width/2-275):100)),I||A(),1))},M=function(){for(var e,t,n,o,i="",a=0;a<g.shareButtons.length;a++)e=g.shareButtons[a],t=g.getImageURLForShare(e),n=g.getPageURLForShare(e),o=g.getTextForShare(e),i+='<a href="'+e.url.replace("{{url}}",encodeURIComponent(n)).replace("{{image_url}}",encodeURIComponent(t)).replace("{{raw_image_url}}",t).replace("{{text}}",encodeURIComponent(o))+'" target="_blank" class="pswp__share--'+e.id+'"'+(e.download?"download":"")+">"+e.label+"</a>",g.parseShareButtonOut&&(i=g.parseShareButtonOut(e,i));s.children[0].innerHTML=i,s.children[0].onclick=O},F=function(e){for(var n=0;n<g.closeElClasses.length;n++)if(t.hasClass(e,"pswp__"+g.closeElClasses[n]))return!0},R=0,L=function(){clearTimeout(x),R=0,u&&b.setIdle(!1)},P=function(e){var t=(e=e||window.event).relatedTarget||e.toElement;t&&"HTML"!==t.nodeName||(clearTimeout(x),x=setTimeout((function(){b.setIdle(!0)}),g.timeToIdleOutside))},Z=function(){g.fullscreenEl&&!t.features.isOldAndroid&&(n||(n=b.getFullscreenAPI()),n?(t.bind(document,n.eventK,b.updateFullscreen),b.updateFullscreen(),t.addClass(e.template,"pswp--supports-fs")):t.removeClass(e.template,"pswp--supports-fs"))},z=function(){g.preloaderEl&&($(!0),d("beforeChange",(function(){clearTimeout(f),f=setTimeout((function(){e.currItem&&e.currItem.loading?(!e.allowProgressiveImg()||e.currItem.img&&!e.currItem.img.naturalWidth)&&$(!1):$(!0)}),g.loadingIndicatorDelay)})),d("imageLoadComplete",(function(t,n){e.currItem===n&&$(!0)})))},$=function(e){m!==e&&(S(p,"preloader--active",!e),m=e)},N=function(e){var n=e.vGap;if(E()){var l=g.barsSize;if(g.captionEl&&"auto"===l.bottom)if(a||((a=t.createEl("pswp__caption pswp__caption--fake")).appendChild(t.createEl("pswp__caption__center")),o.insertBefore(a,i),t.addClass(o,"pswp__ui--fit")),g.addCaptionHTMLFn(e,a,!0)){var r=a.clientHeight;n.bottom=parseInt(r,10)||44}else n.bottom=l.top;else n.bottom="auto"===l.bottom?0:l.bottom;n.top=l.top}else n.top=n.bottom=0},U=function(){g.timeToIdle&&d("mouseUsed",(function(){t.bind(document,"mousemove",L),t.bind(document,"mouseout",P),y=setInterval((function(){2==++R&&b.setIdle(!0)}),g.timeToIdle/2)}))},B=function(){var e;d("onVerticalDrag",(function(e){_&&e<.95?b.hideControls():!_&&e>=.95&&b.showControls()})),d("onPinchClose",(function(t){_&&t<.9?(b.hideControls(),e=!0):e&&!_&&t>.9&&b.showControls()})),d("zoomGestureEnded",(function(){(e=!1)&&!_&&b.showControls()}))},K=[{name:"caption",option:"captionEl",onInit:function(e){i=e}},{name:"share-modal",option:"shareEl",onInit:function(e){s=e},onTap:function(){A()}},{name:"button--share",option:"shareEl",onInit:function(e){r=e},onTap:function(){A()}},{name:"button--zoom",option:"zoomEl",onTap:e.toggleDesktopZoom},{name:"counter",option:"counterEl",onInit:function(e){l=e}},{name:"button--close",option:"closeEl",onTap:e.close},{name:"button--arrow--left",option:"arrowEl",onTap:e.prev},{name:"button--arrow--right",option:"arrowEl",onTap:e.next},{name:"button--fs",option:"fullscreenEl",onTap:function(){n.isFullscreen()?n.exit():n.enter()}},{name:"preloader",option:"preloaderEl",onInit:function(e){p=e}}],H=function(){var e,n,i,a=function(o){if(o)for(var a=o.length,l=0;l<a;l++){e=o[l],n=e.className;for(var r=0;r<K.length;r++)i=K[r],n.indexOf("pswp__"+i.name)>-1&&(g[i.option]?(t.removeClass(e,"pswp__element--disabled"),i.onInit&&i.onInit(e)):t.addClass(e,"pswp__element--disabled"))}};a(o.children);var l=t.getChildByClass(o,"pswp__top-bar");l&&a(l.children)};b.init=function(){t.extend(e.options,C,!0),g=e.options,o=t.getChildByClass(e.scrollWrap,"pswp__ui"),d=e.listen,B(),d("beforeChange",b.update),d("doubleTap",(function(t){var n=e.currItem.initialZoomLevel;e.getZoomLevel()!==n?e.zoomTo(n,t,333):e.zoomTo(g.getDoubleTapZoom(!1,e.currItem),t,333)})),d("preventDragEvent",(function(e,t,n){var o=e.target||e.srcElement;o&&o.getAttribute("class")&&e.type.indexOf("mouse")>-1&&(o.getAttribute("class").indexOf("__caption")>0||/(SMALL|STRONG|EM)/i.test(o.tagName))&&(n.prevent=!1)})),d("bindEvents",(function(){t.bind(o,"pswpTap click",T),t.bind(e.scrollWrap,"pswpTap",b.onGlobalTap),e.likelyTouchDevice||t.bind(e.scrollWrap,"mouseover",b.onMouseOver)})),d("unbindEvents",(function(){I||A(),y&&clearInterval(y),t.unbind(document,"mouseout",P),t.unbind(document,"mousemove",L),t.unbind(o,"pswpTap click",T),t.unbind(e.scrollWrap,"pswpTap",b.onGlobalTap),t.unbind(e.scrollWrap,"mouseover",b.onMouseOver),n&&(t.unbind(document,n.eventK,b.updateFullscreen),n.isFullscreen()&&(g.hideAnimationDuration=0,n.exit()),n=null)})),d("destroy",(function(){g.captionEl&&(a&&o.removeChild(a),t.removeClass(i,"pswp__caption--empty")),s&&(s.children[0].onclick=null),t.removeClass(o,"pswp__ui--over-close"),t.addClass(o,"pswp__ui--hidden"),b.setIdle(!1)})),g.showAnimationDuration||t.removeClass(o,"pswp__ui--hidden"),d("initialZoomIn",(function(){g.showAnimationDuration&&t.removeClass(o,"pswp__ui--hidden")})),d("initialZoomOut",(function(){t.addClass(o,"pswp__ui--hidden")})),d("parseVerticalMargin",N),H(),g.shareEl&&r&&s&&(I=!0),D(),U(),Z(),z()},b.setIdle=function(e){u=e,S(o,"ui--idle",e)},b.update=function(){_&&e.currItem?(b.updateIndexIndicator(),g.captionEl&&(g.addCaptionHTMLFn(e.currItem,i),S(i,"caption--empty",!e.currItem.title)),v=!0):v=!1,I||A(),D()},b.updateFullscreen=function(o){o&&setTimeout((function(){e.setScrollOffset(0,t.getScrollY())}),50),t[(n.isFullscreen()?"add":"remove")+"Class"](e.template,"pswp--fs")},b.updateIndexIndicator=function(){g.counterEl&&(l.innerHTML=e.getCurrentIndex()+1+g.indexIndicatorSep+g.getNumItemsFn())},b.onGlobalTap=function(n){var o=(n=n||window.event).target||n.srcElement;if(!w)if(n.detail&&"mouse"===n.detail.pointerType){if(F(o))return void e.close();t.hasClass(o,"pswp__img")&&(1===e.getZoomLevel()&&e.getZoomLevel()<=e.currItem.fitRatio?g.clickToCloseNonZoomable&&e.close():e.toggleDesktopZoom(n.detail.releasePoint))}else if(g.tapToToggleControls&&(_?b.hideControls():b.showControls()),g.tapToClose&&(t.hasClass(o,"pswp__img")||F(o)))return void e.close()},b.onMouseOver=function(e){var t=(e=e||window.event).target||e.srcElement;S(o,"ui--over-close",F(t))},b.hideControls=function(){t.addClass(o,"pswp__ui--hidden"),_=!1},b.showControls=function(){_=!0,v||b.update(),t.removeClass(o,"pswp__ui--hidden")},b.supportsFullscreen=function(){var e=document;return!!(e.exitFullscreen||e.mozCancelFullScreen||e.webkitExitFullscreen||e.msExitFullscreen)},b.getFullscreenAPI=function(){var t,n=document.documentElement,o="fullscreenchange";return n.requestFullscreen?t={enterK:"requestFullscreen",exitK:"exitFullscreen",elementK:"fullscreenElement",eventK:o}:n.mozRequestFullScreen?t={enterK:"mozRequestFullScreen",exitK:"mozCancelFullScreen",elementK:"mozFullScreenElement",eventK:"moz"+o}:n.webkitRequestFullscreen?t={enterK:"webkitRequestFullscreen",exitK:"webkitExitFullscreen",elementK:"webkitFullscreenElement",eventK:"webkit"+o}:n.msRequestFullscreen&&(t={enterK:"msRequestFullscreen",exitK:"msExitFullscreen",elementK:"msFullscreenElement",eventK:"MSFullscreenChange"}),t&&(t.enter=function(){if(c=g.closeOnScroll,g.closeOnScroll=!1,"webkitRequestFullscreen"!==this.enterK)return e.template[this.enterK]();e.template[this.enterK](Element.ALLOW_KEYBOARD_INPUT)},t.exit=function(){return g.closeOnScroll=c,document[this.exitK]()},t.isFullscreen=function(){return document[this.elementK]}),t}}}(a);var l=a.exports;const{h:r}=n,s={props:{options:{default:()=>({}),type:Object}},data:()=>({pswp:null,angle:0}),mounted(){const e=this;!function(t){const n=function e(t,n){return t&&(n(t)?t:e(t.parentNode,n))},o=function(e){(e=e||window.event).preventDefault?e.preventDefault():e.returnValue=!1;const t=e.target||e.srcElement,o=n(t,(e=>e.tagName&&"FIGURE"===e.tagName.toUpperCase()));if(!o)return;const i=o.parentNode,l=o.parentNode.childNodes,r=l.length;let s,c=0;for(let n=0;n<r;n++)if(1===l[n].nodeType){if(l[n]===o){s=c;break}c++}return s>=0&&a(s,i),!1},a=function(t,n,o,a){const r=document.querySelectorAll(".pswp")[0],s=function(e){const t=e.childNodes,n=t.length,o=[];let i,a,l,r;for(let s=0;s<n;s++)i=t[s],1===i.nodeType&&(a=i.children[0],l=a.getAttribute("data-size").split("x"),r={src:a.getAttribute("href"),w:parseInt(l[0],10),h:parseInt(l[1],10),title:a.getAttribute("title")},i.children.length>1&&(r.title=i.children[1].innerHTML),a.children.length>0&&(r.msrc=a.children[0].getAttribute("src")),r.el=i,o.push(r));return o}(n),c={galleryUID:n.getAttribute("data-pswp-uid"),getThumbBoundsFn(e){const t=s[e].el.getElementsByTagName("img")[0],n=window.pageYOffset||document.documentElement.scrollTop,o=t.getBoundingClientRect();return{x:o.left,y:o.top+n,w:o.width}}};if(a)if(c.galleryPIDs){for(let e=0;e<s.length;e++)if(s[e].pid===t){c.index=e;break}}else c.index=parseInt(t,10)-1;else c.index=parseInt(t,10);if(isNaN(c.index))return;o&&(c.showAnimationDuration=0);const u=new i(r,l,s,Object.assign(c,e.options));u.listen("gettingData",((e,t)=>{if(t.w<1||t.h<1){const e=new Image;e.onload=function(){t.w=this.width,t.h=this.height,u.invalidateCurrItems(),u.updateSize(!0)},e.src=t.src}})),u.init(),e.pswp=u,e.$emit("open"),u.listen("destroy",(()=>e.$emit("close")))},r=setTimeout((()=>{clearInterval(s)}),5e3),s=setInterval((()=>{if(document.querySelectorAll(t)){clearInterval(s),clearTimeout(r);const e=document.querySelectorAll(t);for(let t=0,i=e.length;t<i;t++)e[t].setAttribute("data-pswp-uid",t+1),e[t].onclick=o;const n=function(){const e=window.location.hash.substring(1),t={};if(e.length<5)return t;const n=e.split("&");for(let o=0;o<n.length;o++){if(!n[o])continue;const e=n[o].split("=");e.length<2||(t[e[0]]=e[1])}return t.gid&&(t.gid=parseInt(t.gid,10)),t}();n.pid&&n.gid&&a(n.pid,e[n.gid-1],!0,!0)}}),50)}(".my-gallery")},methods:{rotate(e){this.angle+=e,this.$el.querySelectorAll(".pswp__img").forEach((e=>e.style.transform=`rotate(${this.angle}deg)`))},resetAngle(){this.angle=0,this.$el.querySelectorAll(".pswp__img").forEach((e=>e.style.transform=`rotate(${this.angle}deg)`))}},render(){const e=this;return r("div",{class:"pswp",tabindex:"-1",role:"dialog","aria-hidden":!0},[r("div",{class:"pswp__bg"}),r("div",{class:"pswp__scroll-wrap"},[r("div",{class:"pswp__container"},[r("div",{class:"pswp__item"}),r("div",{class:"pswp__item"}),r("div",{class:"pswp__item"})]),r("div",{class:"pswp__ui pswp__ui--hidden"},[r("div",{class:"pswp__top-bar"},[r("div",{class:"pswp__counter"}),r("button",{class:"pswp__button pswp__button--close",title:"Close (Esc)"}),e.options.rotationOn?r("button",{class:"pswp__button pswp__button--rotate pswp__button--rotate--left",title:"Rotate left",onClick(){e.rotate(-90)}}):"",e.options.rotationOn?r("button",{class:"pswp__button pswp__button--rotate pswp__button--rotate--right",title:"Rotate left",onClick(){e.rotate(90)}}):"",r("button",{class:"pswp__button pswp__button--share",title:"Share"}),r("button",{class:"pswp__button pswp__button--fs",title:"Toggle fullscreen"}),r("button",{class:"pswp__button pswp__button--zoom",title:"Zoom in/out"}),r("div",{class:"pswp__preloader"},r("div",{class:"pswp__preloader__icn"},r("div",{class:"pswp__preloader__cut"},r("div",{class:"pswp__preloader__donut"}))))]),r("div",{class:"pswp__share-modal pswp__share-modal--hidden pswp__single-tap"},r("div",{class:"pswp__share-tooltip"})),r("button",{class:"pswp__button pswp__button--arrow--left",title:"Previous (arrow left)",onClick(){e.resetAngle()}}),r("button",{class:"pswp__button pswp__button--arrow--right",title:"Next (arrow right)",onClick(){e.resetAngle()}}),r("div",{class:"pswp__caption"},r("div",{class:"pswp__caption__center"}))])])])},__scopeId:"data-v-22ef8ea6"};const c={components:{PhotoSwipeComponent:s},props:{items:{default:[{src:"http://via.placeholder.com/600x400",thumbnail:"http://via.placeholder.com/64x64",w:0,h:0,alt:"some numbers on a grey background"},{src:"http://via.placeholder.com/1200x900",thumbnail:"http://via.placeholder.com/64x64",w:0,h:0}],type:Array},options:{default:()=>({}),type:Object},singleThumbnail:{type:Boolean,default:!1},nbThumbnailsDisplayed:{default:-1,type:Number},defaultStructure:{type:Boolean,default:!0}}},u=e.withScopeId("data-v-42ff1306");e.pushScopeId("data-v-42ff1306");const d={class:"my-gallery",itemscope:"",itemtype:"http://schema.org/ImageGallery"};e.popScopeId();const p=u(((t,n,o,i,a,l)=>{const r=e.resolveComponent("photo-swipe-component");return e.openBlock(),e.createBlock("div",null,[e.createVNode("div",d,[(e.openBlock(!0),e.createBlock(e.Fragment,null,e.renderList(o.items,((t,n)=>e.withDirectives((e.openBlock(),e.createBlock("figure",{key:n,class:"gallery-thumbnail",itemprop:"associatedMedia",itemscope:"",itemtype:"http://schema.org/ImageObject",src:t.src},[e.withDirectives(e.createVNode("a",{href:t.src,itemprop:"contentUrl","data-size":`${t.w}x${t.h}`,title:t.title},[e.createVNode("img",{src:t.thumbnail,alt:t.alt,itemprop:"thumbnail"},null,8,["src","alt"])],8,["href","data-size","title"]),[[e.vShow,-1===o.nbThumbnailsDisplayed||n<o.nbThumbnailsDisplayed]])],8,["src"])),[[e.vShow,0===n||!o.singleThumbnail]]))),128))]),o.defaultStructure?(e.openBlock(),e.createBlock(r,{key:0,options:o.options},null,8,["options"])):e.createCommentVNode("",!0)])}));return c.render=p,c.__scopeId="data-v-42ff1306",c}));
-
-
-/***/ }),
-
-/***/ "./node_modules/vue3-picture-swipe/index.js":
-/*!**************************************************!*\
-  !*** ./node_modules/vue3-picture-swipe/index.js ***!
-  \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _dist_vue3_picture_swipe_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dist/vue3-picture-swipe.css */ "./node_modules/vue3-picture-swipe/dist/vue3-picture-swipe.css");
-/* harmony import */ var _dist_vue3_picture_swipe_umd_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dist/vue3-picture-swipe.umd.js */ "./node_modules/vue3-picture-swipe/dist/vue3-picture-swipe.umd.js");
-/* harmony import */ var _dist_vue3_picture_swipe_umd_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_dist_vue3_picture_swipe_umd_js__WEBPACK_IMPORTED_MODULE_1__);
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((_dist_vue3_picture_swipe_umd_js__WEBPACK_IMPORTED_MODULE_1___default()));
 
 
 /***/ }),

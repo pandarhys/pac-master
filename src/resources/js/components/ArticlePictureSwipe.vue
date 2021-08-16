@@ -1,5 +1,5 @@
 <template>
-    <vue3-picture-swipe :items="items"></vue3-picture-swipe>
+    <vue-picture-swipe :items="items"></vue-picture-swipe>
 </template>
 <script>
     import VuePictureSwipe from 'vue-picture-swipe';
@@ -29,11 +29,12 @@
                 var obj = {};
                 obj.src = 'http://127.0.0.1/images/' + arr[i];
                 obj.thumbnail = 'http://127.0.0.1/thumbnail/' + arr[i];
-                obj.w = 1200;
-                obj.h = 900;
+                // obj.w = 1200;
+                // obj.h = 900;
                 itemArray.push(obj);
             }
             this.items = itemArray;
-        }
+        },
+
     }
 </script>
